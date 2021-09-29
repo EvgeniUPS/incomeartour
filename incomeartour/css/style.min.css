@@ -1,32 +1,229 @@
 @charset "UTF-8";
 @font-face {
-  font-family: "Gilroy-Bold";
+  font-family: "raleway";
   font-display: swap;
-  src: url("../fonts/Gilroy-Bold.woff2") format("woff2"), url("../fonts/Gilroy-Bold.woff") format("woff");
+  src: url("../fonts/raleway-regular.woff2") format("woff2"), url("../fonts/raleway-regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
 @font-face {
-  font-family: "Gilroy-Medium";
+  font-family: "raleway";
   font-display: swap;
-  src: url("../fonts/Gilroy-Medium.woff2") format("woff2"), url("../fonts/Gilroy-Medium.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/raleway-semibold.woff2") format("woff2"), url("../fonts/raleway-semibold.woff") format("woff");
+  font-weight: 600;
   font-style: normal;
 }
 @font-face {
-  font-family: "Gilroy-SemiBold";
+  font-family: "raleway";
   font-display: swap;
-  src: url("../fonts/Gilroy-SemiBold.woff2") format("woff2"), url("../fonts/Gilroy-SemiBold.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/raleway-bold.woff2") format("woff2"), url("../fonts/raleway-bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
 @font-face {
-  font-family: "Gilroy-Regular";
+  font-family: "icons";
   font-display: swap;
-  src: url("../fonts/Gilroy-Regular.woff2") format("woff2"), url("../fonts/Gilroy-Regular.woff") format("woff");
+  src: url("../fonts/icons.woff2") format("woff2"), url("../fonts/icons.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
+[class^=_icon-]:before,
+[class*=" _icon-"]:before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^=_icon-]:before,
+[class*=" _icon-"]:before {
+  display: block;
+}
+
+._icon-account:before {
+  content: "\e900";
+}
+
+._icon-airplane:before {
+  content: "\e901";
+}
+
+._icon-arrow2-right:before {
+  content: "\e902";
+}
+
+._icon-arrow2-up:before {
+  content: "\e903";
+}
+
+._icon-arrow-down:before {
+  content: "\e904";
+}
+
+._icon-arrow-left:before {
+  content: "\e905";
+}
+
+._icon-arrow-right:before {
+  content: "\e906";
+}
+
+._icon-bag:before {
+  content: "\e907";
+}
+
+._icon-bus:before {
+  content: "\e908";
+}
+
+._icon-calendar:before {
+  content: "\e909";
+}
+
+._icon-calendar-dark:before {
+  content: "\e90a";
+}
+
+._icon-calendar-dec:before {
+  content: "\e90b";
+}
+
+._icon-calendar-oct:before {
+  content: "\e90c";
+}
+
+._icon-calendar-sep:before {
+  content: "\e90d";
+}
+
+._icon-children:before {
+  content: "\e90e";
+}
+
+._icon-christmas-tree:before {
+  content: "\e90f";
+}
+
+._icon-close:before {
+  content: "\e910";
+}
+
+._icon-diamond:before {
+  content: "\e911";
+}
+
+._icon-email:before {
+  content: "\e912";
+}
+
+._icon-euro:before {
+  content: "\e913";
+}
+
+._icon-facebook:before {
+  content: "\e914";
+}
+
+._icon-firework:before {
+  content: "\e915";
+}
+
+._icon-flower:before {
+  content: "\e916";
+}
+
+._icon-flower2:before {
+  content: "\e917";
+}
+
+._icon-guard:before {
+  content: "\e918";
+}
+
+._icon-hearth-two:before {
+  content: "\e919";
+}
+
+._icon-instagram:before {
+  content: "\e91a";
+}
+
+._icon-like:before {
+  content: "\e91b";
+}
+
+._icon-mask:before {
+  content: "\e91c";
+}
+
+._icon-mountains:before {
+  content: "\e91d";
+}
+
+._icon-new:before {
+  content: "\e91e";
+}
+
+._icon-page:before {
+  content: "\e91f";
+}
+
+._icon-palm:before {
+  content: "\e920";
+}
+
+._icon-search:before {
+  content: "\e921";
+}
+
+._icon-star:before {
+  content: "\e922";
+}
+
+._icon-telegram:before {
+  content: "\e923";
+}
+
+._icon-telegram-round:before {
+  content: "\e924";
+}
+
+._icon-tiktok:before {
+  content: "\e925";
+}
+
+._icon-user-flag:before {
+  content: "\e926";
+}
+
+._icon-user-group:before {
+  content: "\e927";
+}
+
+._icon-user-king:before {
+  content: "\e928";
+}
+
+._icon-user-two:before {
+  content: "\e929";
+}
+
+._icon-view-grid:before {
+  content: "\e92a";
+}
+
+._icon-view-list:before {
+  content: "\e92b";
+}
+
+._icon-youtube:before {
+  content: "\e92c";
+}
+
 * {
   padding: 0px;
   margin: 0px;
@@ -61,7 +258,7 @@ body {
 
 body {
   line-height: 1;
-  font-family: "";
+  font-family: "raleway";
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -70,7 +267,7 @@ body {
 input,
 button,
 textarea {
-  font-family: "";
+  font-family: "raleway";
   font-size: inherit;
 }
 
@@ -122,6 +319,7 @@ h6 {
 */
 body {
   color: #000;
+  font-weight: 700;
 }
 body._lock {
   overflow: hidden;
@@ -135,10 +333,11 @@ body._lock {
   flex-direction: column;
 }
 ._container {
-  max-width: 1170px;
+  padding: 0 15px;
+  max-width: 1230px;
   margin: 0 auto;
 }
-@media (max-width: 1182px) {
+@media (max-width: 1242px) {
   ._container {
     max-width: 970px;
   }
@@ -776,6 +975,35 @@ body.ie ._ibg img {
   background: url("../img/icons/close.svg") 0 0 no-repeat;
 }
 
+.header a {
+  color: #000;
+}
+
+.top-header {
+  min-height: 30px;
+  background-color: #990000;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+}
+.top-header a {
+  color: inherit;
+}
+.top-header__container {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.top-header__center {
+  display: flex;
+  gap: 15px;
+  color: #000;
+}
+.top-header__date {
+  display: flex;
+}
 /*
 //Burger
 .icon-menu {
