@@ -975,10 +975,6 @@ body.ie ._ibg img {
   background: url("../img/icons/close.svg") 0 0 no-repeat;
 }
 
-.header a {
-  color: #000;
-}
-
 .top-header {
   min-height: 30px;
   background-color: #990000;
@@ -988,7 +984,7 @@ body.ie ._ibg img {
   font-size: 11px;
 }
 .top-header a {
-  color: inherit;
+  color: #fff;
 }
 .top-header__container {
   width: 100%;
@@ -999,11 +995,87 @@ body.ie ._ibg img {
 .top-header__center {
   display: flex;
   gap: 15px;
-  color: #000;
 }
 .top-header__date {
   display: flex;
 }
+.header__bottom {
+  height: 90px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+.botton-header__container {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.bottom-header {
+  height: 90px;
+}
+.bottom-header__left {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+.bottom-header__center {
+  flex-grow: 1;
+}
+.bottom-header__right {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+}
+.bottom-header__right a {
+  color: #000;
+}
+.bottom-header__right .login {
+  display: flex;
+  align-items: center;
+  font-size: 11px;
+}
+.bottom-header__right .login i {
+  font-size: 20px;
+  margin-right: 7px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+.menu__list {
+  display: flex;
+  gap: 35px;
+}
+.menu__link {
+  color: #000;
+  text-transform: uppercase;
+}
+
+.desktop-burger {
+  position: relative;
+  height: 11px;
+}
+.desktop-burger:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 35px;
+  height: 2px;
+  background: #000;
+}
+.desktop-burger:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  content: "";
+  width: 35px;
+  height: 2px;
+  background: #000;
+}
+
 /*
 //Burger
 .icon-menu {
