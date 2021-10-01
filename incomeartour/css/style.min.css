@@ -1741,11 +1741,8 @@ button.swiper-pagination-bullet {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   padding: 10px;
   display: grid;
-  grid-template-columns: 4fr 1fr 1fr 1fr;
-  grid-template-rows: 60px 1fr 1fr 1fr 40px;
-  gap: 0px 0px;
-  grid-auto-flow: row;
-  grid-template-areas: "title title title title" "image image image image" "labels price info price" "image image date buttons" "flags flags icons reviews";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto;
 }
 
 .tour-list_list {
@@ -1765,7 +1762,7 @@ button.swiper-pagination-bullet {
 /* ***************** */
 .tour-list__image {
   grid-area: image;
-  background: #031a79;
+  background: #f18f90;
   min-width: 400px;
   width: 100%;
 }
@@ -1777,42 +1774,42 @@ button.swiper-pagination-bullet {
 
 .tour-list__flags {
   grid-area: flags;
-  background: #6ea1a6;
+  background: #b38349;
 }
 
 .tour-list__icons {
   grid-area: icons;
-  background: #08c5a9;
+  background: #76d73b;
 }
 
 .tour-list__price {
   grid-area: price;
-  background: #5fce5f;
+  background: #a66dbd;
 }
 
 .tour-list__buttons {
   grid-area: buttons;
-  background: #210fcc;
+  background: #6f499b;
 }
 
 .tour-list__labels {
   grid-area: labels;
-  background: #850ed1;
+  background: #80e71a;
 }
 
 .tour-list__date {
   grid-area: date;
-  background: #5541ec;
+  background: #81bc35;
 }
 
 .tour-list__info {
   grid-area: info;
-  background: #b63fbf;
+  background: #0c37de;
 }
 
 .tour-list__title {
   grid-area: title;
-  background: #508b81;
+  background: #80a71a;
   font-size: 32px;
   display: flex;
   align-items: center;
@@ -1821,7 +1818,7 @@ button.swiper-pagination-bullet {
 
 .tour-list__reviews {
   grid-area: reviews;
-  background: #edd36c;
+  background: #61ccae;
 }
 
 .popup {
