@@ -1,0 +1,142 @@
+.list-tour__filter {
+  background-color: #ccc;
+  height: 50px;
+  // margin-bottom: 20px;
+  text-align: center;
+}
+#changeViewButton {
+  padding: 15px 100px;
+  background-color: #333;
+  color: #fff;
+}
+.item-tour_list {
+  font-size: 13px;
+  font-weight: 400;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr 1fr;
+  grid-template-rows: 60px 1fr 1fr 1fr 40px;
+  gap: 0px 0px;
+  // gap: 10px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    'title title title title'
+    'image image labels price'
+    'image image info price'
+    'image image date buttons'
+    'flags flags icons reviews';
+
+  // .tour-list__detail {
+  //   display: grid;
+  //   grid-template-columns: 1fr 1fr 1fr;
+  //   grid-template-rows: 1fr 1fr 1fr;
+  //   gap: 0px 0px;
+  //   grid-auto-flow: row;
+  //   grid-template-areas:
+  //     'labels labels labels'
+  //     'info info info'
+  //     'date date date';
+  //   grid-area: detail;
+  //   @include randBg;
+  // }
+}
+
+.item-tour_grid {
+  font-size: 13px;
+  font-weight: 400;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  display: grid;
+  grid-template-columns: 4fr 1fr 1fr 1fr;
+  grid-template-rows: 60px 1fr 1fr 1fr 40px;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    'title title title title'
+    'image image image image'
+    'labels price info price'
+    'image image date buttons'
+    'flags flags icons reviews';
+  // grid-template-areas:
+  //   'title title title title'
+  //   'image image labels price'
+  //   'image image info price'
+  //   'image image date buttons'
+  //   'flags flags icons reviews';
+}
+
+.tour-list_list {
+  transition: all 2s ease 0s;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+.tour-list_grid {
+  transition: all 2s ease 0s;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+/* ***************** */
+.tour-list__image {
+  grid-area: image;
+  @include randBg;
+  min-width: 400px;
+  width: 100%;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.tour-list__flags {
+  grid-area: flags;
+  @include randBg;
+}
+
+.tour-list__icons {
+  grid-area: icons;
+  @include randBg;
+}
+
+.tour-list__price {
+  grid-area: price;
+  @include randBg;
+}
+
+.tour-list__buttons {
+  grid-area: buttons;
+  @include randBg;
+}
+
+.tour-list__labels {
+  grid-area: labels;
+  @include randBg;
+}
+
+.tour-list__date {
+  grid-area: date;
+  @include randBg;
+}
+
+.tour-list__info {
+  grid-area: info;
+  @include randBg;
+}
+
+.tour-list__title {
+  grid-area: title;
+  @include randBg;
+  font-size: 32px;
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  font-weight: 600;
+}
+
+.tour-list__reviews {
+  grid-area: reviews;
+  @include randBg;
+}

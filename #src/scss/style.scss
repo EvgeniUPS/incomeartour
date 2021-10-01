@@ -5,6 +5,8 @@ $colorBlue: #0093dd;
 $colorGreen: #71ab1c;
 $colorDarkGrey: #272727;
 
+$randColor: rgb(random(255), random(255), random(255));
+
 //<МИКСИНЫ>===============================================================================================
 @import 'mixins';
 //</МИКСИНЫ>===============================================================================================
@@ -77,16 +79,16 @@ body {
   padding: 0 15px;
   max-width: $maxWidthContainer + px;
   margin: 0 auto;
-  @media (max-width: $md1 + px) {
-    max-width: 970px;
-  }
-  @media (max-width: $md2+px) {
-    max-width: 750px;
-  }
-  @media (max-width: $md3+px) {
-    max-width: none;
-    padding: 0 10px;
-  }
+  // @media (max-width: $md1 + px) {
+  //   max-width: 970px;
+  // }
+  // @media (max-width: $md2+px) {
+  //   max-width: 750px;
+  // }
+  // @media (max-width: $md3+px) {
+  //   max-width: none;
+  //   padding: 0 10px;
+  // }
 }
 //</ОСНОВНАЯ СЕТКА>===========================================================================================================
 
@@ -100,6 +102,8 @@ body {
 //@import "lightgallery";
 //@import "pagging";
 @import 'main-slider';
+@import 'search-block';
+@import 'tour-list';
 @import 'popup';
 @import 'header';
 @import 'footer';
