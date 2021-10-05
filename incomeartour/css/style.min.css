@@ -1722,34 +1722,36 @@ button.swiper-pagination-bullet {
   color: #fff;
 }
 
-.item-tour_list {
+.item-tour {
   font-size: 13px;
   font-weight: 400;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  padding: 10px;
   display: grid;
-  grid-template-columns: 4fr 1fr 1fr 1fr;
-  grid-template-rows: 60px 1fr 1fr 1fr 40px;
-  gap: 0px 0px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  gap: 10px;
+}
+.item-tour > div {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.item-tour_list {
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-rows: 50px 1fr 2fr 2fr 40px;
   grid-auto-flow: row;
   grid-template-areas: "title title title title" "image image labels price" "image image info price" "image image date buttons" "flags flags icons reviews";
 }
 
 .item-tour_grid {
-  font-size: 13px;
-  font-weight: 400;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
+  grid-template-rows: 50px 4fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-flow: row;
+  grid-template-areas: "title title" "image image" "date price" "date info" "flags flags" "icons reviews" "buttons buttons" "labels labels";
 }
 
 .tour-list_list {
   transition: all 2s ease 0s;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: 60px;
 }
 
 .tour-list_grid {
@@ -1762,8 +1764,6 @@ button.swiper-pagination-bullet {
 /* ***************** */
 .tour-list__image {
   grid-area: image;
-  background: #f18f90;
-  min-width: 400px;
   width: 100%;
 }
 .tour-list__image img {
@@ -1774,51 +1774,167 @@ button.swiper-pagination-bullet {
 
 .tour-list__flags {
   grid-area: flags;
-  background: #b38349;
 }
 
 .tour-list__icons {
   grid-area: icons;
-  background: #76d73b;
 }
 
 .tour-list__price {
   grid-area: price;
-  background: #a66dbd;
 }
 
 .tour-list__buttons {
   grid-area: buttons;
-  background: #6f499b;
 }
 
 .tour-list__labels {
   grid-area: labels;
-  background: #80e71a;
 }
 
 .tour-list__date {
   grid-area: date;
-  background: #81bc35;
 }
 
 .tour-list__info {
   grid-area: info;
-  background: #0c37de;
 }
 
 .tour-list__title {
   grid-area: title;
-  background: #80a71a;
   font-size: 32px;
-  display: flex;
-  align-items: center;
   font-weight: 600;
 }
 
 .tour-list__reviews {
   grid-area: reviews;
-  background: #61ccae;
+}
+
+.tour-labels {
+  font-size: 11px;
+  display: flex;
+  align-items: start;
+  gap: 5px;
+}
+.tour-labels__item {
+  padding: 5px;
+  border: 1px solid #000;
+}
+.tour-labels .color-red {
+  background-color: #990000;
+  color: #fff;
+  border: 1px solid #990000;
+}
+
+.tour-flags {
+  display: flex;
+  align-items: center;
+}
+.tour-flags__countries {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.tour-flags__cities {
+  margin-left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.tour-info__duration {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.tour-info__duration_value {
+  margin-bottom: 20px;
+}
+.tour-info__group {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.tour-reviews {
+  color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.tour-reviews i {
+  font-size: 17px;
+}
+.tour-reviews__rev {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.tour-reviews__value {
+  font-size: 15px;
+  font-weight: 700;
+}
+.tour-reviews__stars {
+  display: flex;
+  align-items: center;
+  line-height: 17px;
+  margin-left: 17.5px;
+}
+
+.tour-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.tour-date__title {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+.tour-date__value {
+  margin-bottom: 10px;
+}
+.tour-date__viewall {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: rgba(0, 0, 0, 0.75);
+}
+
+.tour-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.tour-icons a {
+  padding: 5px;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 26px;
+}
+
+.tooltip {
+  position: relative;
+}
+.tooltip:before {
+  text-align: center;
+  position: absolute;
+  content: attr(data-tooltip);
+  font-size: 12px;
+  min-width: 150px;
+  padding: 5px;
+  top: 0px;
+  background-color: #ccc;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  transition: all 0.3s ease 0s;
+}
+.tooltip:hover:before {
+  opacity: 1;
+  top: -25px;
 }
 
 .popup {

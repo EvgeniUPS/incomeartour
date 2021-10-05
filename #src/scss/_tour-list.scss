@@ -9,16 +9,22 @@
   background-color: #333;
   color: #fff;
 }
-.item-tour_list {
+.item-tour {
   font-size: 13px;
   font-weight: 400;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  padding: 10px;
+  // padding: 10px;
   display: grid;
-  grid-template-columns: 4fr 1fr 1fr 1fr;
-  grid-template-rows: 60px 1fr 1fr 1fr 40px;
-  gap: 0px 0px;
-  // gap: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  gap: 10px;
+
+  & > div {
+    // border: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+}
+.item-tour_list {
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-rows: 50px 1fr 2fr 2fr 40px;
   grid-auto-flow: row;
   grid-template-areas:
     'title title title title'
@@ -26,37 +32,33 @@
     'image image info price'
     'image image date buttons'
     'flags flags icons reviews';
-
-  // .tour-list__detail {
-  //   display: grid;
-  //   grid-template-columns: 1fr 1fr 1fr;
-  //   grid-template-rows: 1fr 1fr 1fr;
-  //   gap: 0px 0px;
-  //   grid-auto-flow: row;
-  //   grid-template-areas:
-  //     'labels labels labels'
-  //     'info info info'
-  //     'date date date';
-  //   grid-area: detail;
-  //   @include randBg;
-  // }
 }
 
 .item-tour_grid {
-  font-size: 13px;
-  font-weight: 400;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  padding: 10px;
-  display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto;
-}
+  grid-template-rows: 50px 4fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-auto-flow: row;
+  grid-template-areas:
+    'title title'
+    'image image'
+    'date price'
+    'date info'
+    'flags flags'
+    'icons reviews'
+    'buttons buttons'
+    'labels labels';
 
+  // 'title title  title'
+  // 'image image image'
+  // 'labels info price'
+  // 'flags date reviews'
+  // 'flags icons buttons'
+}
 .tour-list_list {
   transition: all 2s ease 0s;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: 60px;
 }
 .tour-list_grid {
   transition: all 2s ease 0s;
@@ -67,8 +69,8 @@
 /* ***************** */
 .tour-list__image {
   grid-area: image;
-  @include randBg;
-  min-width: 400px;
+
+  // min-width: 400px;
   width: 100%;
   img {
     width: 100%;
@@ -79,50 +81,266 @@
 
 .tour-list__flags {
   grid-area: flags;
-  @include randBg;
 }
 
 .tour-list__icons {
   grid-area: icons;
-  @include randBg;
 }
 
 .tour-list__price {
   grid-area: price;
-  @include randBg;
 }
 
 .tour-list__buttons {
   grid-area: buttons;
-  @include randBg;
 }
 
 .tour-list__labels {
   grid-area: labels;
-  @include randBg;
 }
 
 .tour-list__date {
   grid-area: date;
-  @include randBg;
 }
 
 .tour-list__info {
   grid-area: info;
-  @include randBg;
 }
 
 .tour-list__title {
   grid-area: title;
-  @include randBg;
+
   font-size: 32px;
-  display: flex;
+  // display: flex;
   // justify-content: center;
-  align-items: center;
+  // align-items: center;
   font-weight: 600;
 }
 
 .tour-list__reviews {
   grid-area: reviews;
-  @include randBg;
+}
+
+.tour-labels {
+  font-size: 11px;
+  // padding: 10px;
+  display: flex;
+  align-items: start;
+  gap: 5px;
+  &__item {
+    padding: 5px;
+    border: 1px solid #000;
+  }
+  .color-red {
+    background-color: $colorRed;
+    color: #fff;
+    border: 1px solid $colorRed;
+  }
+}
+
+.tour-info {
+}
+
+.tour-list {
+  // .tour-list__item
+  &__item {
+  }
+  // .tour-list__title
+  &__title {
+  }
+  // .tour-list__image
+  &__image {
+  }
+  // .tour-list__flags
+  &__flags {
+  }
+  // .tour-list__icons
+  &__icons {
+  }
+  // .tour-list__info
+  &__info {
+  }
+  // .tour-list__price
+  &__price {
+  }
+  // .tour-list__buttons
+  &__buttons {
+  }
+  // .tour-list__labels
+  &__labels {
+  }
+  // .tour-list__reviews
+  &__reviews {
+  }
+  // .tour-list__date
+  &__date {
+  }
+}
+.item-tour {
+  // .item-tour_list
+  &_list {
+  }
+}
+.tour-flags {
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  // .tour-flags__countries
+  &__countries {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+  }
+  // .tour-flags__flag
+  &__flag {
+  }
+  // .tour-flags__cities
+  &__cities {
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.tour-info {
+  // .tour-info__duration
+  &__duration {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    // .tour-info__duration_value
+    &_value {
+      margin-bottom: 20px;
+    }
+  }
+  // .tour-info__group
+  &__group {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    // .tour-info__group_value
+    &_value {
+    }
+  }
+}
+.tour-price {
+  // .tour-price__main
+  &__main {
+  }
+  // .tour-price__currency
+  &__currency {
+  }
+  // .tour-price__description
+  &__description {
+  }
+}
+.tour-buttons {
+  // .tour-buttons__reserve
+  &__reserve {
+  }
+  // .tour-buttons__details
+  &__details {
+  }
+}
+.tour-labels {
+  // .tour-labels__item
+  &__item {
+  }
+}
+.color-red {
+}
+.tour-reviews {
+  color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  i {
+    font-size: 17px;
+  }
+  // .tour-reviews__rev
+  &__rev {
+    display: flex;
+    align-items: center;
+    // margin: 0 5px;
+    // padding: 0 5px;
+    gap: 5px;
+  }
+  // .tour-reviews__value
+  &__value {
+    // margin-left: 5px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  // .tour-reviews__stars
+  &__stars {
+    display: flex;
+    align-items: center;
+    line-height: 17px;
+    margin-left: 17.5px;
+  }
+}
+.tour-date {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  // .tour-date__title
+  &__title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+  }
+  // .tour-date__body
+  &__body {
+  }
+  // .tour-date__value
+  &__value {
+    margin-bottom: 10px;
+  }
+  // .tour-date__viewall
+  &__viewall {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: rgba(0, 0, 0, 0.75);
+  }
+}
+.tour-icons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  a {
+    padding: 5px;
+    color: rgba(0, 0, 0, 0.8);
+    font-size: 26px;
+  }
+}
+
+.tooltip {
+  position: relative;
+  &:before {
+    text-align: center;
+    position: absolute;
+    content: attr(data-tooltip);
+    font-size: 12px;
+    min-width: 150px;
+    padding: 5px;
+    top: 0px;
+    background-color: #ccc;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: all 0.3s ease 0s;
+  }
+
+  &:hover {
+    &:before {
+      opacity: 1;
+      top: -25px;
+    }
+  }
 }
