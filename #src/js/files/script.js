@@ -44,3 +44,9 @@ const changeViewHandler = e => {
 if (changeViewButton) {
   changeViewButton.addEventListener('click', changeViewHandler)
 }
+
+tippy('.tooltip-link', {
+  duration: 0,
+  animation: 'fade',
+  theme: 'material',
+})

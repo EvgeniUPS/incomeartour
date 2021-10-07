@@ -140,8 +140,62 @@
 
         <!--  -->
         <section class="search-block">
-  <div class="search-block__container _container">search-block</div>
+  <div class="search-block__container _container">
+    <!-- <div class="region-rating__select select-wrapper">
+      <div class="custom-select">
+        <div class="custom-select__output has-arrow">
+          <span class="custom-select__value">Одесская об.</span>
+          <button
+            class="custom-select__btn delete-btn-style arrow"
+            type="button"
+          ></button>
+        </div>
+        <ul class="custom-select__list">
+          <li data-option="odeska">Одесская об.</li>
+          <li data-option="kiyvska">Киевская об.</li>
+          <li data-option="lvivska">Львовская об.</li>
+        </ul>
+      </div>
+    </div> -->
+
+    search-block
+  </div>
 </section>
+
+<script>
+  // window.addEventListener('load', () => {
+  //   initSelect()
+  // })
+  // function initSelect() {
+  //   const selects = document.querySelectorAll('.select-wrapper')
+
+  //   if (selects.length) {
+  //     selects.forEach(select => {
+  //       const otput = select.querySelector('.custom-select__value')
+  //       select.addEventListener('click', event => {
+  //         const target = event.target
+  //         if (target.hasAttribute('data-option')) {
+  //           const option = target.getAttribute('data-option')
+  //           const value = target.textContent
+  //           otput.textContent = value
+  //           otput.parentElement.classList.remove('open')
+  //         }
+  //       })
+  //     })
+  //   }
+  // }
+
+  // // открытие подменю
+  // function openSubmenu(btn) {
+  //   document.querySelectorAll(btn).forEach(btn => {
+  //     btn.addEventListener('click', () => {
+  //       btn.parentElement.classList.toggle('open')
+  //     })
+  //   })
+  // }
+
+  // openSubmenu('.arrow')
+</script>
 
         <!--  -->
         <section class="tour-list-block">
@@ -181,13 +235,17 @@
             </div>
           </div>
           <div class="tour-list__icons tour-icons">
-            <a href="#" class="tooltip" data-tooltip="Tooltip текст"
+            <a
+              href="#"
+              class="tooltip-link"
+              data-tippy-content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident modi distinctio est maxime? At suscipit nulla, excepturi nemo quis aut id, explicabo itaque, repudiandae cumque temporibus recusandae doloremque blanditiis ad!"
               ><i class="_icon-airplane"></i
             ></a>
-            <a href="#" class="tooltip" data-tooltip="Tooltip текст"
+
+            <a href="#" class="tooltip-link" data-tippy-content="hello2"
               ><i class="_icon-calendar-dark"></i
             ></a>
-            <a href="#" class="tooltip" data-tooltip="Tooltip текст"
+            <a href="#" class="tooltip-link" data-tippy-content="hello3"
               ><i class="_icon-palm"></i
             ></a>
           </div>
@@ -208,15 +266,18 @@
           </div>
           <div class="tour-list__buttons tour-buttons">
             <div class="tour-buttons__reserve">
-              <a href="#">забронировать</a>
+              <a class="btn btn__green" href="#">забронировать</a>
             </div>
-            <div class="tour-buttons__details"><a href="#">подробнее</a></div>
+            <div class="tour-buttons__details">
+              <a class="btn btn__white" href="#">подробнее</a>
+            </div>
           </div>
           <div class="tour-list__labels tour-labels">
             <div class="tour-labels__item color-red">NEW</div>
             <div class="tour-labels__item">ФРАНЦИЯ</div>
             <div class="tour-labels__item">2021</div>
           </div>
+
           <div class="tour-list__reviews tour-reviews">
             <div class="tour-reviews__rev">
               <i class="_icon-like"></i
@@ -244,22 +305,340 @@
         <!-- *** -->
 
         <div class="tour-list__item item-tour item-tour_list">
-          <div class="tour-list__title">ОЗЕРА СЕВЕРНОЙ ИТАЛИИ</div>
+          <div class="tour-list__title">ПОД НЕБОМ ПАРИЖА</div>
           <div class="tour-list__image">
-            <img src="./img/italy.jpg" alt="" />
+            <img src="./img/paris.jpg" alt="Париж" />
           </div>
-          <div class="tour-list__flags">flags</div>
-          <div class="tour-list__icons">icons</div>
-          <div class="tour-list__price">price</div>
-          <div class="tour-list__buttons">buttons</div>
-          <div class="tour-list__labels">labels</div>
-          <div class="tour-list__date">date</div>
-          <div class="tour-list__info">info</div>
-          <div class="tour-list__reviews">reviews</div>
+          <div class="tour-list__flags tour-flags">
+            <div class="tour-flags__countries">
+              <div class="tour-flags__flag">
+                <img src="./img/countries/germany.svg" alt="Германия" />
+              </div>
+              <div class="tour-flags__flag">
+                <img src="./img/countries/netherlands.svg" alt="Нидерланды" />
+              </div>
+              <div class="tour-flags__flag">
+                <img src="./img/countries/france.svg" alt="Франция" />
+              </div>
+            </div>
+            <div class="tour-flags__cities">
+              Дрезден – Люксембург – Париж (4 дня)
+            </div>
+          </div>
+          <div class="tour-list__icons tour-icons">
+            <a href="#" class="tooltip-link" data-tippy-content="lorem"
+              ><i class="_icon-airplane"></i
+            ></a>
+
+            <a href="#" class="tooltip-link" data-tippy-content="hello2"
+              ><i class="_icon-calendar-dark"></i
+            ></a>
+            <a href="#" class="tooltip-link" data-tippy-content="hello3"
+              ><i class="_icon-palm"></i
+            ></a>
+          </div>
+          <div class="tour-list__info tour-info">
+            <div class="tour-info__duration">Длительность</div>
+            <div class="tour-info__duration_value">8 дней</div>
+            <div class="tour-info__group">Группа</div>
+            <div class="tour-info__group_value">От 12 человек</div>
+          </div>
+          <div class="tour-list__price tour-price">
+            <div class="tour-price__main">от <span>22 494 UAH</span></div>
+            <div class="tour-price__currency">690 EUR / 720 USD</div>
+            <div class="tour-price__description">
+              <span> Минимальная цена за человека 15</span>
+              <span> Минимальная цена за человекас авиа</span>
+              <span> Минимальная цена за человека без авиа </span>
+            </div>
+          </div>
+          <div class="tour-list__buttons tour-buttons">
+            <div class="tour-buttons__reserve">
+              <a class="btn btn__green" href="#">забронировать</a>
+            </div>
+            <div class="tour-buttons__details">
+              <a class="btn btn__white" href="#">подробнее</a>
+            </div>
+          </div>
+          <div class="tour-list__labels tour-labels">
+            <div class="tour-labels__item color-red">NEW</div>
+            <div class="tour-labels__item">ФРАНЦИЯ</div>
+            <div class="tour-labels__item">2021</div>
+          </div>
+
+          <div class="tour-list__reviews tour-reviews">
+            <div class="tour-reviews__rev">
+              <i class="_icon-like"></i
+              ><span class="tour-reviews__value">104 </span> отзыва
+            </div>
+            <div class="tour-reviews__stars">
+              <i class="_icon-star"></i
+              ><span class="tour-reviews__value">4,9</span>
+            </div>
+          </div>
+          <div class="tour-list__date tour-date">
+            <div class="tour-date__title">Даты тура:</div>
+            <div class="tour-date__body">
+              <div class="tour-date__value">01.01.2021—10.01.2021</div>
+              <div class="tour-date__value">10.01.2021—20.01.2021</div>
+              <div class="tour-date__value">20.01.2021—30.01.2021</div>
+              <div class="tour-date__value">31.01.2021—30.01.2021</div>
+              <div class="tour-date__value">09.02.2021—30.01.2021</div>
+            </div>
+            <div class="tour-date__viewall">Cмотреть все даты ></div>
+          </div>
+        </div>
+
+        <div class="tour-list__item item-tour item-tour_list">
+          <div class="tour-list__title">ПОД НЕБОМ ПАРИЖА</div>
+          <div class="tour-list__image">
+            <img src="./img/paris.jpg" alt="Париж" />
+          </div>
+          <div class="tour-list__flags tour-flags">
+            <div class="tour-flags__countries">
+              <div class="tour-flags__flag">
+                <img src="./img/countries/germany.svg" alt="Германия" />
+              </div>
+              <div class="tour-flags__flag">
+                <img src="./img/countries/netherlands.svg" alt="Нидерланды" />
+              </div>
+              <div class="tour-flags__flag">
+                <img src="./img/countries/france.svg" alt="Франция" />
+              </div>
+            </div>
+            <div class="tour-flags__cities">
+              Дрезден – Люксембург – Париж (4 дня)
+            </div>
+          </div>
+          <div class="tour-list__icons tour-icons">
+            <a href="#" class="tooltip-link" data-tippy-content="hello1"
+              ><i class="_icon-airplane"></i
+            ></a>
+
+            <a href="#" class="tooltip-link" data-tippy-content="hello2"
+              ><i class="_icon-calendar-dark"></i
+            ></a>
+            <a href="#" class="tooltip-link" data-tippy-content="hello3"
+              ><i class="_icon-palm"></i
+            ></a>
+          </div>
+          <div class="tour-list__info tour-info">
+            <div class="tour-info__duration">Длительность</div>
+            <div class="tour-info__duration_value">8 дней</div>
+            <div class="tour-info__group">Группа</div>
+            <div class="tour-info__group_value">От 12 человек</div>
+          </div>
+          <div class="tour-list__price tour-price">
+            <div class="tour-price__main">от <span>22 494 UAH</span></div>
+            <div class="tour-price__currency">690 EUR / 720 USD</div>
+            <div class="tour-price__description">
+              <span> Минимальная цена за человека 15</span>
+              <span> Минимальная цена за человекас авиа</span>
+              <span> Минимальная цена за человека без авиа </span>
+            </div>
+          </div>
+          <div class="tour-list__buttons tour-buttons">
+            <div class="tour-buttons__reserve">
+              <a class="btn btn__green" href="#">забронировать</a>
+            </div>
+            <div class="tour-buttons__details">
+              <a class="btn btn__white" href="#">подробнее</a>
+            </div>
+          </div>
+          <div class="tour-list__labels tour-labels">
+            <div class="tour-labels__item color-red">NEW</div>
+            <div class="tour-labels__item">ФРАНЦИЯ</div>
+            <div class="tour-labels__item">2021</div>
+          </div>
+
+          <div class="tour-list__reviews tour-reviews">
+            <div class="tour-reviews__rev">
+              <i class="_icon-like"></i
+              ><span class="tour-reviews__value">104 </span> отзыва
+            </div>
+            <div class="tour-reviews__stars">
+              <i class="_icon-star"></i
+              ><span class="tour-reviews__value">4,9</span>
+            </div>
+          </div>
+          <div class="tour-list__date tour-date">
+            <div class="tour-date__title">Даты тура:</div>
+            <div class="tour-date__body">
+              <div class="tour-date__value">01.01.2021—10.01.2021</div>
+              <div class="tour-date__value">10.01.2021—20.01.2021</div>
+              <div class="tour-date__value">20.01.2021—30.01.2021</div>
+              <div class="tour-date__value">31.01.2021—30.01.2021</div>
+              <div class="tour-date__value">09.02.2021—30.01.2021</div>
+            </div>
+            <div class="tour-date__viewall">Cмотреть все даты ></div>
+          </div>
+        </div>
+
+        <div class="tour-list__item item-tour item-tour_list">
+          <div class="tour-list__title">ПОД НЕБОМ ПАРИЖА</div>
+          <div class="tour-list__image">
+            <img src="./img/paris.jpg" alt="Париж" />
+          </div>
+          <div class="tour-list__flags tour-flags">
+            <div class="tour-flags__countries">
+              <div class="tour-flags__flag">
+                <img src="./img/countries/germany.svg" alt="Германия" />
+              </div>
+              <div class="tour-flags__flag">
+                <img src="./img/countries/netherlands.svg" alt="Нидерланды" />
+              </div>
+              <div class="tour-flags__flag">
+                <img src="./img/countries/france.svg" alt="Франция" />
+              </div>
+            </div>
+            <div class="tour-flags__cities">
+              Дрезден – Люксембург – Париж (4 дня)
+            </div>
+          </div>
+          <div class="tour-list__icons tour-icons">
+            <a href="#" class="tooltip-link" data-tippy-content="hello1"
+              ><i class="_icon-airplane"></i
+            ></a>
+
+            <a href="#" class="tooltip-link" data-tippy-content="hello2"
+              ><i class="_icon-calendar-dark"></i
+            ></a>
+            <a href="#" class="tooltip-link" data-tippy-content="hello3"
+              ><i class="_icon-palm"></i
+            ></a>
+          </div>
+          <div class="tour-list__info tour-info">
+            <div class="tour-info__duration">Длительность</div>
+            <div class="tour-info__duration_value">8 дней</div>
+            <div class="tour-info__group">Группа</div>
+            <div class="tour-info__group_value">От 12 человек</div>
+          </div>
+          <div class="tour-list__price tour-price">
+            <div class="tour-price__main">от <span>22 494 UAH</span></div>
+            <div class="tour-price__currency">690 EUR / 720 USD</div>
+            <div class="tour-price__description">
+              <span> Минимальная цена за человека 15</span>
+              <span> Минимальная цена за человекас авиа</span>
+              <span> Минимальная цена за человека без авиа </span>
+            </div>
+          </div>
+          <div class="tour-list__buttons tour-buttons">
+            <div class="tour-buttons__reserve">
+              <a class="btn btn__green" href="#">забронировать</a>
+            </div>
+            <div class="tour-buttons__details">
+              <a class="btn btn__white" href="#">подробнее</a>
+            </div>
+          </div>
+          <div class="tour-list__labels tour-labels">
+            <div class="tour-labels__item color-red">NEW</div>
+            <div class="tour-labels__item">ФРАНЦИЯ</div>
+            <div class="tour-labels__item">2021</div>
+          </div>
+
+          <div class="tour-list__reviews tour-reviews">
+            <div class="tour-reviews__rev">
+              <i class="_icon-like"></i
+              ><span class="tour-reviews__value">104 </span> отзыва
+            </div>
+            <div class="tour-reviews__stars">
+              <i class="_icon-star"></i
+              ><span class="tour-reviews__value">4,9</span>
+            </div>
+          </div>
+          <div class="tour-list__date tour-date">
+            <div class="tour-date__title">Даты тура:</div>
+            <div class="tour-date__body">
+              <div class="tour-date__value">01.01.2021—10.01.2021</div>
+              <div class="tour-date__value">10.01.2021—20.01.2021</div>
+              <div class="tour-date__value">20.01.2021—30.01.2021</div>
+              <div class="tour-date__value">31.01.2021—30.01.2021</div>
+              <div class="tour-date__value">09.02.2021—30.01.2021</div>
+            </div>
+            <div class="tour-date__viewall">Cмотреть все даты ></div>
+          </div>
         </div>
       </div>
     </div>
-    <div class="tour-list-block__bottom">bottom</div>
+    <div class="tour-list-block__bottom">
+      <a href="#">смотреть больше<i class="_icon-arrow2-right"></i></a>
+    </div>
+  </div>
+</section>
+
+        <!--  -->
+        <section class="hot-offer-block">
+  <div class="hot-offer-block__container _container">
+    <div class="hot-offer-block__header">
+      <img src="./img/hot-list/hot-list-header.jpg" alt="" />
+    </div>
+    <div class="hot-offer-block__list hot-list">
+      <div class="hot-list__row">
+        <div class="hot-list__item item-hot">
+          <img src="./img/hot-list/hot-list-item01.jpg" alt="hot offer" />
+          <div class="item-hot__labels">
+            <div class="item-hot__label color-red">ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ</div>
+            <div class="item-hot__label">ЭСТОНИЯ1</div>
+            <div class="item-hot__label">2021</div>
+          </div>
+          <div class="item-hot__details">
+            <div class="item-hot__name">названи предложения</div>
+            <div class="item-hot__link">
+              <a href="#"> Подробнее <i class="_icon-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="hot-list__item item-hot">
+          <img src="./img/hot-list/hot-list-item02.jpg" alt="hot offer" />
+
+          <div class="item-hot__labels">
+            <div class="item-hot__label color-red">ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ</div>
+            <div class="item-hot__label">ЭСТОНИЯ2</div>
+            <div class="item-hot__label">2021</div>
+          </div>
+          <div class="item-hot__details">
+            <div class="item-hot__name">названи предложения</div>
+            <div class="item-hot__link">
+              <a href="#"> Подробнее <i class="_icon-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hot-list__row">
+        <div class="hot-list__item item-hot">
+          <img src="./img/hot-list/hot-list-item03.jpg" alt="hot offer" />
+
+          <div class="item-hot__labels">
+            <div class="item-hot__label color-red">ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ</div>
+            <div class="item-hot__label">ЭСТОНИЯ3</div>
+            <div class="item-hot__label">2021</div>
+          </div>
+          <div class="item-hot__details">
+            <div class="item-hot__name">названи предложения</div>
+            <div class="item-hot__link">
+              <a href="#"> Подробнее <i class="_icon-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="hot-list__item item-hot">
+          <img src="./img/hot-list/hot-list-item04.jpg" alt="hot offer" />
+
+          <div class="item-hot__labels">
+            <div class="item-hot__label color-red">ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ</div>
+            <div class="item-hot__label">ЭСТОНИЯ4</div>
+            <div class="item-hot__label">2021</div>
+          </div>
+          <div class="item-hot__details">
+            <div class="item-hot__name">названи предложения</div>
+            <div class="item-hot__link">
+              <a href="#"> Подробнее <i class="_icon-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -297,7 +676,10 @@
     <!--  -->
     <!-- Swiper -->
 <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<script src="https://unpkg.com/tippy.js@6"></script>
 <script src="js/vendors.min.js"></script>
 <script src="js/app.min.js"></script>
+
   </body>
 </html>
