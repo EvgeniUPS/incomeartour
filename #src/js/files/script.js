@@ -20,6 +20,18 @@ const swiper = new Swiper('.main-slider', {
   },
 })
 
+const photoSlider = new Swiper('.photo-slider', {
+  // Optional parameters
+  // direction: 'vertical',
+  loop: true,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.photo-slider-button-prev',
+    prevEl: '.photo-slider-button-next',
+  },
+})
+
 const changeViewButton = document.querySelector('#changeViewButton')
 const itemTour = document.querySelectorAll('.item-tour')
 const itemList = document.querySelector('.tour-list')
