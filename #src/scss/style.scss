@@ -98,6 +98,7 @@ body {
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+@import 'choices.min';
 //@import "datepicker";
 //@import "lightgallery";
 //@import "pagging";
@@ -107,6 +108,7 @@ body {
 @import 'hot-offer-block';
 @import 'photo-slider';
 @import 'news-block';
+@import 'reviews-slider-block';
 @import 'popup';
 @import 'header';
 @import 'footer';

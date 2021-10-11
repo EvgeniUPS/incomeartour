@@ -16,9 +16,11 @@
   }
   // .news-block__list
   &__list {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: space-between;
     gap: 10px;
+    margin-bottom: 75px;
   }
   // .news-block__item
   &__item {
@@ -27,6 +29,15 @@
   // .news-block__bottom
   &__bottom {
     color: #000;
+    margin-bottom: 200px;
+    a {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      i {
+        color: $colorRed;
+      }
+    }
   }
 }
 
@@ -49,14 +60,15 @@
     a {
       padding: 30px;
       display: flex;
-      // justify-content: space-between;
+      justify-content: space-between;
       align-items: center;
+      width: 100%;
       gap: 30px;
       span {
         font-size: 20px;
         line-height: 120%;
         text-transform: uppercase;
-        max-width: 200px;
+        max-width: 250px;
       }
       i {
         border: 1px solid #000;
