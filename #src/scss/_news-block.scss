@@ -30,6 +30,9 @@
   &__bottom {
     color: #000;
     margin-bottom: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     a {
       display: flex;
       justify-content: center;

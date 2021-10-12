@@ -287,4 +287,36 @@ body.ie {
     width: 100%;
   }
 }
+.spiner {
+  // width: 100%;
+  // margin: 0px auto;
+  position: relative;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  padding-right: 35px;
+  &:before {
+    content: '';
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    right: 0px;
+    top: -4px;
+    transform: rotate(0deg);
+    background-image: url(../img/circle.png);
+    background-size: contain;
+  }
+  &:hover:before {
+    animation: spin 2s linear 0s infinite;
+  }
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+}
 //</ГОТОВЫЕ КЛАССЫ>====================================================================================================
