@@ -16,7 +16,7 @@
   }
   // .news-block__list
   &__list {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    // box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     display: flex;
     justify-content: space-between;
     gap: 10px;
@@ -52,6 +52,8 @@
   }
   // .item-news__bottom
   &__bottom {
+    background: #ffffff;
+    border: 1px solid #000000;
     display: flex;
     // justify-content: center;
     align-items: center;

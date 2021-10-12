@@ -1,0 +1,45 @@
+.tours-types-block {
+  // .tours-types-block__container
+  &__container {
+  }
+  // .tours-types-block__list
+  &__list {
+    a {
+      color: #000;
+    }
+  }
+}
+
+.list-types {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 78px;
+  margin-bottom: 115px;
+  // .list-types__item
+  &__item {
+  }
+}
+.item-types {
+  text-align: center;
+  a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    img {
+      padding: 10px;
+      width: 55px;
+      height: 55px;
+      // object-fit: contain;
+      border: 1px solid #000;
+      border-radius: 50%;
+    }
+    span {
+      font-size: 15px;
+      line-height: 100%;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+}
