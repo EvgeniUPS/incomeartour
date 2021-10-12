@@ -63,19 +63,12 @@ tippy('.tooltip-link', {
   theme: 'material',
 })
 
-// const dirSelect = document.querySelector('.direction-select')
-// console.log(dirSelect)
-// const choices = new Choices(dirSelect)
-
 const reviewsSlider = new Swiper('.reviews-slider', {
-  // Optional parameters
-  // direction: 'vertical',
   loop: true,
   slidesPerView: 4.5,
   spaceBetween: 30,
   centeredSlides: true,
 
-  // Navigation arrows
   navigation: {
     nextEl: '.reviews-slider-button-next',
     prevEl: '.reviews-slider-button-prev',
