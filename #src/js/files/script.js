@@ -27,8 +27,8 @@ const photoSlider = new Swiper('.photo-slider', {
 
   // Navigation arrows
   navigation: {
-    nextEl: '.photo-slider-button-prev',
-    prevEl: '.photo-slider-button-next',
+    nextEl: '.photo-slider-button-next',
+    prevEl: '.photo-slider-button-prev',
   },
 })
 

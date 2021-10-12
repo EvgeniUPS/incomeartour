@@ -911,6 +911,69 @@ body.ie ._ibg img {
   width: 100%;
 }
 
+* {
+  outline: 1px solid rgba(255, 0, 0, 0.2);
+}
+* :hover {
+  outline: 1px solid rgba(255, 0, 0, 0.6);
+}
+
+* * {
+  outline: 1px solid rgba(0, 255, 0, 0.2);
+}
+* * :hover {
+  outline: 1px solid rgba(0, 255, 0, 0.6);
+}
+
+* * * {
+  outline: 1px solid rgba(0, 0, 255, 0.2);
+}
+* * * :hover {
+  outline: 1px solid rgba(0, 0, 255, 0.6);
+}
+
+* * * * {
+  outline: 1px solid rgba(255, 0, 255, 0.2);
+}
+* * * * :hover {
+  outline: 1px solid rgba(255, 0, 0, 0.6);
+}
+
+* * * * * {
+  outline: 1px solid rgba(0, 255, 255, 0.2);
+}
+* * * * * :hover {
+  outline: 1px solid rgba(0, 255, 0, 0.6);
+}
+
+* * * * * * {
+  outline: 1px solid rgba(255, 255, 0, 0.2);
+}
+* * * * * * :hover {
+  outline: 1px solid rgba(0, 0, 255, 0.6);
+}
+
+* * * * * * * {
+  outline: 1px solid rgba(255, 0, 0, 0.2);
+}
+* * * * * * * :hover {
+  outline: 1px solid rgba(255, 0, 0, 0.6);
+}
+
+* * * * * * * * {
+  outline: 1px solid rgba(0, 255, 0, 0.2);
+}
+* * * * * * * * :hover {
+  outline: 1px solid rgba(0, 255, 0, 0.6);
+}
+
+* * * * * * * * * {
+  outline: 1px solid rgba(0, 0, 255, 0.2);
+}
+* * * * * * * * * :hover {
+  outline: 1px solid rgba(0, 0, 255, 0.6);
+}
+
 .choices {
   position: relative;
   overflow: hidden;
@@ -2989,9 +3052,25 @@ button.swiper-pagination-bullet {
 	}
 }
 */
-footer {
-  height: 465px;
+.footer {
+  min-height: 465px;
   background: #000;
+  padding: 100px 0;
+}
+.footer a {
+  color: #fff;
+}
+.footer__logo {
+  margin-bottom: 50px;
+}
+.menu-footer {
+  display: flex;
+  justify-content: space-between;
+}
+.menu-footer__col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
 .page {
