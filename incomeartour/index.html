@@ -142,74 +142,72 @@
 
         <section class="search-block">
   <div class="search-block__container _container">
-    <!-- <select class="direction-select">
-      <option disabled>Куда</option>
-      <option value="france" selected>Франция</option>
-      <option value="greatBritain">Великобритания</option>
-      <option value="spain">Испания</option>
-      <option value="italy">Италия</option>
-      <option value="italy">Италия</option>
-      <option value="italy">Италия</option>
-      <option value="italy">Италия</option>
-      <option value="italy">Италия</option>
-      <option value="italy">Италия</option>
-      <option value="italy">Италия</option>
-      <option value="italy">Италия</option>
-      <option value="italy">Италия</option>
-      <option value="italy">Италия</option>
-      <option value="italy">Италия</option>
-      <option value="italy">Италия</option>
-    </select> -->
-
-    <select class="form1">
-      <option value="1" selected="selected">Пункт №1</option>
-      <option value="2">Пункт №2</option>
-      <option value="3">Пункт №3</option>
-      <option value="4">Пункт №4</option>
-    </select>
-
-    <!-- <div class="">Название тура</div>
-    <div class="">кудa</div>
-    <div class="">дата</div>
-    <div class="">транспорт</div>
-    <button>Поиск</button> -->
+    <form action="#" class="search-form">
+      <div class="search-form__search">
+        <input
+          autocomplete="off"
+          type="text"
+          name="form[]"
+          data-error="Ошибка"
+          data-value="Поиск"
+          class="input"
+        />
+      </div>
+      <div class="search-form__direction"></div>
+      <div class="search-form__date">
+        <input type="text" data-value="" class="form_date" id="searchDate" />
+      </div>
+      <div class="search-form__transport"></div>
+      <div class="search-form__button">
+        <button type="button" class="btn">Поиск</button>
+      </div>
+    </form>
   </div>
 </section>
 
-<script>
-  // window.addEventListener('load', () => {
-  //   initSelect()
-  // })
-  // function initSelect() {
-  //   const selects = document.querySelectorAll('.select-wrapper')
-
-  //   if (selects.length) {
-  //     selects.forEach(select => {
-  //       const otput = select.querySelector('.custom-select__value')
-  //       select.addEventListener('click', event => {
-  //         const target = event.target
-  //         if (target.hasAttribute('data-option')) {
-  //           const option = target.getAttribute('data-option')
-  //           const value = target.textContent
-  //           otput.textContent = value
-  //           otput.parentElement.classList.remove('open')
-  //         }
-  //       })
-  //     })
-  //   }
-  // }
-
-  // // открытие подменю
-  // function openSubmenu(btn) {
-  //   document.querySelectorAll(btn).forEach(btn => {
-  //     btn.addEventListener('click', () => {
-  //       btn.parentElement.classList.toggle('open')
-  //     })
-  //   })
-  // }
-
-  // openSubmenu('.arrow')
-</script>
+<!-- <section class="search-block">
+  <div class="search-block__container _container">
+    <form action="#" class="search-form">
+      <div class="search-form__search">
+        <input
+          autocomplete="off"
+          type="text"
+          name="form[]"
+          data-error="Ошибка"
+          data-value="Поиск"
+          class="input"
+        />
+      </div>
+      <div class="search-form__direction">
+        <select name="form[]" class="form-sel">
+          <option value="1" selected="selected">Куда</option>
+          <option value="2">Пункт №2</option>
+          <option value="3">Пункт №3</option>
+          <option value="4">Пункт №4</option>
+        </select>
+      </div>
+      <div class="search-form__date">
+        <select name="form[]" class="form-sel">
+          <option value="1" selected="selected">Дата</option>
+          <option value="2">Пункт №2</option>
+          <option value="3">Пункт №3</option>
+          <option value="4">Пункт №4</option>
+        </select>
+      </div>
+      <div class="search-form__transport">
+        <select name="form[]" class="form-sel">
+          <option value="1" selected="selected">Транспорт</option>
+          <option value="2">Пункт №2</option>
+          <option value="3">Пункт №3</option>
+          <option value="4">Пункт №4</option>
+        </select>
+      </div>
+      <div class="search-form__button">
+        <button type="button" class="btn">Поиск</button>
+      </div>
+    </form>
+  </div>
+</section> -->
 
         <!--  -->
 
