@@ -7,123 +7,132 @@
   &__container {
     width: 100%;
   }
-  // .search-block__container
-  // &__container {
-  //   height: 100%;
-  //   display: flex;
-  //   justify-content: space-between;
-  //   align-items: center;
-  //   div,
-  //   button {
-  //     height: 55px;
-  //     display: flex;
-  //     justify-content: center;
-  //     align-items: center;
-  //     padding: 0 15px;
-  //     min-width: 150px;
-  //   }
-  // background-color: #dfdfdf;
-  // background-color: #ccc;
-  // padding: 0 15px;
-  // }
 
   .search-form {
     display: flex;
     justify-content: space-between;
     height: 55px;
-    // align-items: center;
     > div {
       display: flex;
       align-items: center;
-      // background-color: #7a956d;
       height: 100%;
+      input {
+        height: 100%;
+        border: 1px solid #000000;
+        border-radius: 2px;
+        padding: 0 20px;
+      }
+      select {
+        border: 1px solid #000;
+      }
     }
   }
-}
-
-// *************
-.search-block {
-  // .search-block__container
-  &__container {
-  }
-}
-
-.search-form {
-  .select__title {
-  }
-  .select__title {
-  }
-  .select__value {
-    height: 55px;
-  }
-  .select__options {
-    top: 100%;
-    padding: 0;
-    :first-child {
-      // background-color: tomato;
-    }
-  }
-  .select__option {
-    padding: 10px 15px;
-  }
-
-  .select {
-    &__item {
-      // height: 55px;
-      // background-color: #7a956d !important;
-      min-width: 170px;
-    }
-    // height: 100%;
-    // display: flex;
-    // align-items: center;
-
-    &__title {
-      // height: 55px;
-      // display: flex;
-      // justify-content: space-between;
-      // align-items: center;
-      // width: 100%;
-    }
-    .select__value {
-      // display: flex;
-      // justify-content: space-between;
-    }
-  }
-  // .search-form__search
-  &__search {
-    width: 326px;
-    input {
+  .choices {
+    width: 170px;
+    font-weight: 400;
+    height: 100%;
+    border: 1px solid #000;
+    border-radius: 2px;
+    &__inner {
       height: 100%;
+      display: flex;
+      align-items: center;
+      border: none;
     }
-  }
-  // .search-form__direction
-  &__direction {
-    .select {
+    &__placeholder {
+      color: #000;
+    }
+    &__item--selectable {
       // background-color: tomato;
-    }
-    .form {
-    }
-  }
-  // .search-form__date
-  &__date {
-  }
-  // .search-form__transport
-  &__transport {
-  }
-  // .search-form__button
-  &__button {
-    .btn {
-      // background-color: tomato;
-      height: 100%;
+      padding-right: 0px !important;
+      color: #000;
     }
   }
-}
-.input {
-}
-.form {
-}
 
-#searchDate {
-  height: 100%;
-  padding: 15px;
+  // // *************
+  // .search-block {
+  //   // .search-block__container
+  //   &__container {
+  //   }
+  // }
+
+  // .search-form {
+  //   .select__title {
+  //   }
+  //   .select__title {
+  //   }
+  //   .select__value {
+  //     height: 55px;
+  //   }
+  //   .select__options {
+  //     top: 100%;
+  //     padding: 0;
+  //     :first-child {
+  //       // background-color: tomato;
+  //     }
+  //   }
+  //   .select__option {
+  //     padding: 10px 15px;
+  //   }
+
+  //   .select {
+  //     &__item {
+  //       // height: 55px;
+  //       // background-color: #7a956d !important;
+  //       min-width: 170px;
+  //     }
+  //     // height: 100%;
+  //     // display: flex;
+  //     // align-items: center;
+
+  //     &__title {
+  //       // height: 55px;
+  //       // display: flex;
+  //       // justify-content: space-between;
+  //       // align-items: center;
+  //       // width: 100%;
+  //     }
+  //     .select__value {
+  //       // display: flex;
+  //       // justify-content: space-between;
+  //     }
+  //   }
+  //   // .search-form__search
+  //   &__search {
+  //     width: 326px;
+  //     input {
+  //       height: 100%;
+  //     }
+  //   }
+  //   // .search-form__direction
+  //   &__direction {
+  //     .select {
+  //       // background-color: tomato;
+  //     }
+  //     .form {
+  //     }
+  //   }
+  //   // .search-form__date
+  //   &__date {
+  //   }
+  //   // .search-form__transport
+  //   &__transport {
+  //   }
+  //   // .search-form__button
+  //   &__button {
+  //     .btn {
+  //       // background-color: tomato;
+  //       height: 100%;
+  //     }
+  //   }
+  // }
+  // .input {
+  // }
+  // .form {
+  // }
+
+  // #searchDate {
+  //   height: 100%;
+  //   padding: 15px;
+  // }
 }

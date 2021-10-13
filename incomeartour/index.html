@@ -1,15 +1,20 @@
 <!DOCTYPE html>
 <html lang="ru">
-   <head>
-	<title>Главная</title>
-	<meta charset="UTF-8">
-	<meta name="format-detection" content="telephone=no">
-	<link rel="stylesheet" href="css/style.min.css">
-	<link rel="shortcut icon" href="favicon.ico">
-	<!-- <meta name="robots" content="noindex, nofollow"> -->
-	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+  <title>Главная</title>
+  <meta charset="UTF-8" />
+  <meta name="format-detection" content="telephone=no" />
+  <link rel="stylesheet" href="css/style.min.css" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+  />
+  <!-- <meta name="robots" content="noindex, nofollow"> -->
+  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 </head>
+
   <body>
     <div class="wrapper">
       <header class="header">
@@ -148,18 +153,41 @@
           autocomplete="off"
           type="text"
           name="form[]"
-          data-error="Ошибка"
           data-value="Поиск"
           class="input"
         />
       </div>
-      <div class="search-form__direction"></div>
+      <div class="search-form__direction">
+        <select class="search-direction" id="searchDirection">
+          <option value="">Куда</option>
+          <option value="1">Австралия</option>
+          <option value="2">Андорра</option>
+          <option value="3">Намибия</option>
+          <option value="3">Великобритания</option>
+          <option value="3">Намибия</option>
+          <option value="3">Намибия</option>
+          <option value="3">Намибия</option>
+          <option value="3">Намибия</option>
+          <option value="3">Намибия</option>
+          <option value="3">Намибия</option>
+          <option value="3">Намибия</option>
+          <option value="4">Шри-Ланка</option>
+        </select>
+      </div>
       <div class="search-form__date">
         <input type="text" data-value="" class="form_date" id="searchDate" />
+        <!-- <input type="date" name="" id="" /> -->
       </div>
-      <div class="search-form__transport"></div>
+      <div class="search-form__transport">
+        <select class="search-transport" id="searchTransport">
+          <option value="">Транспорт</option>
+          <option value="2">Пункт №2</option>
+          <option value="3">Пункт №3</option>
+          <option value="4">Пункт №4</option>
+        </select>
+      </div>
       <div class="search-form__button">
-        <button type="button" class="btn">Поиск</button>
+        <button type="button" class="btn btn__blue">Поиск</button>
       </div>
     </form>
   </div>

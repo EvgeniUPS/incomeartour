@@ -401,7 +401,6 @@ body._lock {
   min-width: 100%;
   left: 0;
   background-color: #fff;
-  border-top: 0;
   border: 1px solid #d9d9d9;
   border-top: 0;
   font-size: 14px;
@@ -448,7 +447,6 @@ textarea:focus {
 }
 
 .input {
-  border-radius: 0 !important;
   width: 100%;
   display: block;
   padding: 0px 20px;
@@ -687,6 +685,12 @@ textarea.input {
   border: 2px solid #000;
   background-color: #fff;
   color: #000;
+}
+.btn__blue {
+  color: #fff;
+  background-color: #0093dd;
+  border-radius: 2px;
+  height: 100%;
 }
 
 .color-red {
@@ -939,69 +943,6 @@ body.ie ._ibg img {
   to {
     transform: rotate(360deg);
   }
-}
-
-* {
-  outline: 1px solid rgba(255, 0, 0, 0.2);
-}
-* :hover {
-  outline: 1px solid rgba(255, 0, 0, 0.6);
-}
-
-* * {
-  outline: 1px solid rgba(0, 255, 0, 0.2);
-}
-* * :hover {
-  outline: 1px solid rgba(0, 255, 0, 0.6);
-}
-
-* * * {
-  outline: 1px solid rgba(0, 0, 255, 0.2);
-}
-* * * :hover {
-  outline: 1px solid rgba(0, 0, 255, 0.6);
-}
-
-* * * * {
-  outline: 1px solid rgba(255, 0, 255, 0.2);
-}
-* * * * :hover {
-  outline: 1px solid rgba(255, 0, 0, 0.6);
-}
-
-* * * * * {
-  outline: 1px solid rgba(0, 255, 255, 0.2);
-}
-* * * * * :hover {
-  outline: 1px solid rgba(0, 255, 0, 0.6);
-}
-
-* * * * * * {
-  outline: 1px solid rgba(255, 255, 0, 0.2);
-}
-* * * * * * :hover {
-  outline: 1px solid rgba(0, 0, 255, 0.6);
-}
-
-* * * * * * * {
-  outline: 1px solid rgba(255, 0, 0, 0.2);
-}
-* * * * * * * :hover {
-  outline: 1px solid rgba(255, 0, 0, 0.6);
-}
-
-* * * * * * * * {
-  outline: 1px solid rgba(0, 255, 0, 0.2);
-}
-* * * * * * * * :hover {
-  outline: 1px solid rgba(0, 255, 0, 0.6);
-}
-
-* * * * * * * * * {
-  outline: 1px solid rgba(0, 0, 255, 0.2);
-}
-* * * * * * * * * :hover {
-  outline: 1px solid rgba(0, 0, 255, 0.6);
 }
 
 .qs-datepicker-container {
@@ -2225,33 +2166,34 @@ button.swiper-pagination-bullet {
   align-items: center;
   height: 100%;
 }
-
-.search-form .select__value {
-  height: 55px;
-}
-.search-form .select__options {
-  top: 100%;
-  padding: 0;
-}
-.search-form .select__option {
-  padding: 10px 15px;
-}
-.search-form .select__item {
-  min-width: 170px;
-}
-.search-form__search {
-  width: 326px;
-}
-.search-form__search input {
+.search-block .search-form > div input {
   height: 100%;
+  border: 1px solid #000000;
+  border-radius: 2px;
+  padding: 0 20px;
 }
-.search-form__button .btn {
-  height: 100%;
+.search-block .search-form > div select {
+  border: 1px solid #000;
 }
-
-#searchDate {
+.search-block .choices {
+  width: 170px;
+  font-weight: 400;
   height: 100%;
-  padding: 15px;
+  border: 1px solid #000;
+  border-radius: 2px;
+}
+.search-block .choices__inner {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  border: none;
+}
+.search-block .choices__placeholder {
+  color: #000;
+}
+.search-block .choices__item--selectable {
+  padding-right: 0px !important;
+  color: #000;
 }
 
 .tour-list-block__top {

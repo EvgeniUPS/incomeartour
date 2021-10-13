@@ -172,226 +172,226 @@ for (let index = 0; index < viewPass.length; index++) {
 }
 
 //Select
-let selects = document.getElementsByTagName('select')
-if (selects.length > 0) {
-  selects_init()
-}
-function selects_init() {
-  for (let index = 0; index < selects.length; index++) {
-    const select = selects[index]
-    select_init(select)
-  }
-  //select_callback();
-  document.addEventListener('click', function (e) {
-    selects_close(e)
-  })
-  document.addEventListener('keydown', function (e) {
-    if (e.code === 'Escape') {
-      selects_close(e)
-    }
-  })
-}
-function selects_close(e) {
-  const selects = document.querySelectorAll('.select')
-  if (!e.target.closest('.select') && !e.target.classList.contains('_option')) {
-    for (let index = 0; index < selects.length; index++) {
-      const select = selects[index]
-      const select_body_options = select.querySelector('.select__options')
-      select.classList.remove('_active')
-      _slideUp(select_body_options, 100)
-    }
-  }
-}
-function select_init(select) {
-  const select_parent = select.parentElement
-  const select_modifikator = select.getAttribute('class')
-  const select_selected_option = select.querySelector('option:checked')
-  select.setAttribute('data-default', select_selected_option.value)
-  select.style.display = 'none'
+// let selects = document.getElementsByTagName('select')
+// if (selects.length > 0) {
+//   selects_init()
+// }
+// function selects_init() {
+//   for (let index = 0; index < selects.length; index++) {
+//     const select = selects[index]
+//     select_init(select)
+//   }
+//   //select_callback();
+//   document.addEventListener('click', function (e) {
+//     selects_close(e)
+//   })
+//   document.addEventListener('keydown', function (e) {
+//     if (e.code === 'Escape') {
+//       selects_close(e)
+//     }
+//   })
+// }
+// function selects_close(e) {
+//   const selects = document.querySelectorAll('.select')
+//   if (!e.target.closest('.select') && !e.target.classList.contains('_option')) {
+//     for (let index = 0; index < selects.length; index++) {
+//       const select = selects[index]
+//       const select_body_options = select.querySelector('.select__options')
+//       select.classList.remove('_active')
+//       _slideUp(select_body_options, 100)
+//     }
+//   }
+// }
+// function select_init(select) {
+//   const select_parent = select.parentElement
+//   const select_modifikator = select.getAttribute('class')
+//   const select_selected_option = select.querySelector('option:checked')
+//   select.setAttribute('data-default', select_selected_option.value)
+//   select.style.display = 'none'
 
-  select_parent.insertAdjacentHTML(
-    'beforeend',
-    '<div class="select select_' + select_modifikator + '"></div>'
-  )
+//   select_parent.insertAdjacentHTML(
+//     'beforeend',
+//     '<div class="select select_' + select_modifikator + '"></div>'
+//   )
 
-  let new_select = select.parentElement.querySelector('.select')
-  new_select.appendChild(select)
-  select_item(select)
-}
-function select_item(select) {
-  const select_parent = select.parentElement
-  const select_items = select_parent.querySelector('.select__item')
-  const select_options = select.querySelectorAll('option')
-  const select_selected_option = select.querySelector('option:checked')
-  const select_selected_text = select_selected_option.text
-  const select_type = select.getAttribute('data-type')
+//   let new_select = select.parentElement.querySelector('.select')
+//   new_select.appendChild(select)
+//   select_item(select)
+// }
+// function select_item(select) {
+//   const select_parent = select.parentElement
+//   const select_items = select_parent.querySelector('.select__item')
+//   const select_options = select.querySelectorAll('option')
+//   const select_selected_option = select.querySelector('option:checked')
+//   const select_selected_text = select_selected_option.text
+//   const select_type = select.getAttribute('data-type')
 
-  if (select_items) {
-    select_items.remove()
-  }
+//   if (select_items) {
+//     select_items.remove()
+//   }
 
-  let select_type_content = ''
-  if (select_type == 'input') {
-    select_type_content =
-      '<div class="select__value icon-select-arrow"><input autocomplete="off" type="text" name="form[]" value="' +
-      select_selected_text +
-      '" data-error="Ошибка" data-value="' +
-      select_selected_text +
-      '" class="select__input"></div>'
-  } else {
-    select_type_content =
-      '<div class="select__value icon-select-arrow"><span>' +
-      select_selected_text +
-      '</span></div>'
-  }
+//   let select_type_content = ''
+//   if (select_type == 'input') {
+//     select_type_content =
+//       '<div class="select__value icon-select-arrow"><input autocomplete="off" type="text" name="form[]" value="' +
+//       select_selected_text +
+//       '" data-error="Ошибка" data-value="' +
+//       select_selected_text +
+//       '" class="select__input"></div>'
+//   } else {
+//     select_type_content =
+//       '<div class="select__value icon-select-arrow"><span>' +
+//       select_selected_text +
+//       '</span></div>'
+//   }
 
-  select_parent.insertAdjacentHTML(
-    'beforeend',
-    '<div class="select__item">' +
-      '<div class="select__title">' +
-      select_type_content +
-      '</div>' +
-      '<div hidden class="select__options">' +
-      select_get_options(select_options) +
-      '</div>' +
-      '</div></div>'
-  )
+//   select_parent.insertAdjacentHTML(
+//     'beforeend',
+//     '<div class="select__item">' +
+//       '<div class="select__title">' +
+//       select_type_content +
+//       '</div>' +
+//       '<div hidden class="select__options">' +
+//       select_get_options(select_options) +
+//       '</div>' +
+//       '</div></div>'
+//   )
 
-  select_actions(select, select_parent)
-}
-function select_actions(original, select) {
-  const select_item = select.querySelector('.select__item')
-  const selectTitle = select.querySelector('.select__title')
-  const select_body_options = select.querySelector('.select__options')
-  const select_options = select.querySelectorAll('.select__option')
-  const select_type = original.getAttribute('data-type')
-  const select_input = select.querySelector('.select__input')
+//   select_actions(select, select_parent)
+// }
+// function select_actions(original, select) {
+//   const select_item = select.querySelector('.select__item')
+//   const selectTitle = select.querySelector('.select__title')
+//   const select_body_options = select.querySelector('.select__options')
+//   const select_options = select.querySelectorAll('.select__option')
+//   const select_type = original.getAttribute('data-type')
+//   const select_input = select.querySelector('.select__input')
 
-  selectTitle.addEventListener('click', function (e) {
-    selectItemActions()
-  })
+//   selectTitle.addEventListener('click', function (e) {
+//     selectItemActions()
+//   })
 
-  function selectMultiItems() {
-    let selectedOptions = select.querySelectorAll('.select__option')
-    let originalOptions = original.querySelectorAll('option')
-    let selectedOptionsText = []
-    for (let index = 0; index < selectedOptions.length; index++) {
-      const selectedOption = selectedOptions[index]
-      originalOptions[index].removeAttribute('selected')
-      if (selectedOption.classList.contains('_selected')) {
-        const selectOptionText = selectedOption.innerHTML
-        selectedOptionsText.push(selectOptionText)
-        originalOptions[index].setAttribute('selected', 'selected')
-      }
-    }
-    select.querySelector('.select__value').innerHTML =
-      '<span>' + selectedOptionsText + '</span>'
-  }
-  function selectItemActions(type) {
-    if (!type) {
-      let selects = document.querySelectorAll('.select')
-      for (let index = 0; index < selects.length; index++) {
-        const select = selects[index]
-        const select_body_options = select.querySelector('.select__options')
-        if (select != select_item.closest('.select')) {
-          select.classList.remove('_active')
-          _slideUp(select_body_options, 100)
-        }
-      }
-      _slideToggle(select_body_options, 100)
-      select.classList.toggle('_active')
-    }
-  }
-  for (let index = 0; index < select_options.length; index++) {
-    const select_option = select_options[index]
-    const select_option_value = select_option.getAttribute('data-value')
-    const select_option_text = select_option.innerHTML
+//   function selectMultiItems() {
+//     let selectedOptions = select.querySelectorAll('.select__option')
+//     let originalOptions = original.querySelectorAll('option')
+//     let selectedOptionsText = []
+//     for (let index = 0; index < selectedOptions.length; index++) {
+//       const selectedOption = selectedOptions[index]
+//       originalOptions[index].removeAttribute('selected')
+//       if (selectedOption.classList.contains('_selected')) {
+//         const selectOptionText = selectedOption.innerHTML
+//         selectedOptionsText.push(selectOptionText)
+//         originalOptions[index].setAttribute('selected', 'selected')
+//       }
+//     }
+//     select.querySelector('.select__value').innerHTML =
+//       '<span>' + selectedOptionsText + '</span>'
+//   }
+//   function selectItemActions(type) {
+//     if (!type) {
+//       let selects = document.querySelectorAll('.select')
+//       for (let index = 0; index < selects.length; index++) {
+//         const select = selects[index]
+//         const select_body_options = select.querySelector('.select__options')
+//         if (select != select_item.closest('.select')) {
+//           select.classList.remove('_active')
+//           _slideUp(select_body_options, 100)
+//         }
+//       }
+//       _slideToggle(select_body_options, 100)
+//       select.classList.toggle('_active')
+//     }
+//   }
+//   for (let index = 0; index < select_options.length; index++) {
+//     const select_option = select_options[index]
+//     const select_option_value = select_option.getAttribute('data-value')
+//     const select_option_text = select_option.innerHTML
 
-    if (select_type == 'input') {
-      select_input.addEventListener('keyup', select_search)
-    } else {
-      if (
-        select_option.getAttribute('data-value') == original.value &&
-        !original.hasAttribute('multiple')
-      ) {
-        select_option.style.display = 'none'
-      }
-    }
-    select_option.addEventListener('click', function () {
-      for (let index = 0; index < select_options.length; index++) {
-        const el = select_options[index]
-        el.style.display = 'block'
-      }
-      if (select_type == 'input') {
-        select_input.value = select_option_text
-        original.value = select_option_value
-      } else {
-        if (original.hasAttribute('multiple')) {
-          select_option.classList.toggle('_selected')
-          selectMultiItems()
-        } else {
-          select.querySelector('.select__value').innerHTML =
-            '<span>' + select_option_text + '</span>'
-          original.value = select_option_value
-          select_option.style.display = 'none'
-        }
-      }
-      let type
-      if (original.hasAttribute('multiple')) {
-        type = 'multiple'
-      }
-      selectItemActions(type)
-    })
-  }
-}
-function select_get_options(select_options) {
-  if (select_options) {
-    let select_options_content = ''
-    for (let index = 0; index < select_options.length; index++) {
-      const select_option = select_options[index]
-      const select_option_value = select_option.value
-      if (select_option_value != '') {
-        const select_option_text = select_option.innerHTML
-        select_options_content =
-          select_options_content +
-          '<div data-value="' +
-          select_option_value +
-          '" class="select__option">' +
-          select_option_text +
-          '</div>'
-      }
-    }
-    return select_options_content
-  }
-}
-function select_search(e) {
-  let select_block = e.target
-    .closest('.select ')
-    .querySelector('.select__options')
-  let select_options = e.target
-    .closest('.select ')
-    .querySelectorAll('.select__option')
-  let select_search_text = e.target.value.toUpperCase()
+//     if (select_type == 'input') {
+//       select_input.addEventListener('keyup', select_search)
+//     } else {
+//       if (
+//         select_option.getAttribute('data-value') == original.value &&
+//         !original.hasAttribute('multiple')
+//       ) {
+//         select_option.style.display = 'none'
+//       }
+//     }
+//     select_option.addEventListener('click', function () {
+//       for (let index = 0; index < select_options.length; index++) {
+//         const el = select_options[index]
+//         el.style.display = 'block'
+//       }
+//       if (select_type == 'input') {
+//         select_input.value = select_option_text
+//         original.value = select_option_value
+//       } else {
+//         if (original.hasAttribute('multiple')) {
+//           select_option.classList.toggle('_selected')
+//           selectMultiItems()
+//         } else {
+//           select.querySelector('.select__value').innerHTML =
+//             '<span>' + select_option_text + '</span>'
+//           original.value = select_option_value
+//           select_option.style.display = 'none'
+//         }
+//       }
+//       let type
+//       if (original.hasAttribute('multiple')) {
+//         type = 'multiple'
+//       }
+//       selectItemActions(type)
+//     })
+//   }
+// }
+// function select_get_options(select_options) {
+//   if (select_options) {
+//     let select_options_content = ''
+//     for (let index = 0; index < select_options.length; index++) {
+//       const select_option = select_options[index]
+//       const select_option_value = select_option.value
+//       if (select_option_value != '') {
+//         const select_option_text = select_option.innerHTML
+//         select_options_content =
+//           select_options_content +
+//           '<div data-value="' +
+//           select_option_value +
+//           '" class="select__option">' +
+//           select_option_text +
+//           '</div>'
+//       }
+//     }
+//     return select_options_content
+//   }
+// }
+// function select_search(e) {
+//   let select_block = e.target
+//     .closest('.select ')
+//     .querySelector('.select__options')
+//   let select_options = e.target
+//     .closest('.select ')
+//     .querySelectorAll('.select__option')
+//   let select_search_text = e.target.value.toUpperCase()
 
-  for (let i = 0; i < select_options.length; i++) {
-    let select_option = select_options[i]
-    let select_txt_value = select_option.textContent || select_option.innerText
-    if (select_txt_value.toUpperCase().indexOf(select_search_text) > -1) {
-      select_option.style.display = ''
-    } else {
-      select_option.style.display = 'none'
-    }
-  }
-}
-function selects_update_all() {
-  let selects = document.querySelectorAll('select')
-  if (selects) {
-    for (let index = 0; index < selects.length; index++) {
-      const select = selects[index]
-      select_item(select)
-    }
-  }
-}
+//   for (let i = 0; i < select_options.length; i++) {
+//     let select_option = select_options[i]
+//     let select_txt_value = select_option.textContent || select_option.innerText
+//     if (select_txt_value.toUpperCase().indexOf(select_search_text) > -1) {
+//       select_option.style.display = ''
+//     } else {
+//       select_option.style.display = 'none'
+//     }
+//   }
+// }
+// function selects_update_all() {
+//   let selects = document.querySelectorAll('select')
+//   if (selects) {
+//     for (let index = 0; index < selects.length; index++) {
+//       const select = selects[index]
+//       select_item(select)
+//     }
+//   }
+// }
 
 //Placeholers
 let inputs = document.querySelectorAll('input[data-value],textarea[data-value]')
@@ -425,6 +425,7 @@ function inputs_init(inputs) {
           }
         }
         if (input.classList.contains('_date')) {
+          console.log(11111111111)
           /*
 					input.classList.add('_mask');
 					Inputmask("99.99.9999", {
@@ -599,3 +600,243 @@ if (priceSlider) {
     priceSlider.noUiSlider.set([priceStartValue, priceEndValue])
   }
 }
+
+const searchDirection = document.querySelector('#searchDirection')
+const choices = new Choices(searchDirection, {
+  silent: false,
+  items: [],
+  choices: [],
+  renderChoiceLimit: -1,
+
+  maxItemCount: -1,
+  addItems: true,
+  addItemFilter: null,
+  removeItems: true,
+  removeItemButton: false,
+  editItems: false,
+  duplicateItemsAllowed: true,
+  delimiter: ',',
+  paste: true,
+  searchEnabled: true,
+  searchChoices: true,
+  searchFloor: 1,
+  searchResultLimit: 4,
+  searchFields: ['label', 'value'],
+  position: 'auto',
+  resetScrollPosition: true,
+  shouldSort: true,
+  shouldSortItems: false,
+  sorter: () => {},
+  placeholder: true,
+  placeholderValue: null,
+  searchPlaceholderValue: null,
+  prependValue: null,
+  appendValue: null,
+  renderSelectedChoices: 'auto',
+  loadingText: 'Loading...',
+  noResultsText: 'Не найдено',
+  noChoicesText: 'No choices to choose from',
+  itemSelectText: '',
+  addItemText: value => {
+    return `Press Enter to add <b>"${value}"</b>`
+  },
+  maxItemText: maxItemCount => {
+    return `Only ${maxItemCount} values can be added`
+  },
+  valueComparer: (value1, value2) => {
+    return value1 === value2
+  },
+  classNames: {
+    containerOuter: 'choices',
+    containerInner: 'choices__inner',
+    input: 'choices__input',
+    inputCloned: 'choices__input--cloned',
+    list: 'choices__list',
+    listItems: 'choices__list--multiple',
+    listSingle: 'choices__list--single',
+    listDropdown: 'choices__list--dropdown',
+    item: 'choices__item',
+    itemSelectable: 'choices__item--selectable',
+    itemDisabled: 'choices__item--disabled',
+    itemChoice: 'choices__item--choice',
+    placeholder: 'choices__placeholder',
+    group: 'choices__group',
+    groupHeading: 'choices__heading',
+    button: 'choices__button',
+    activeState: 'is-active',
+    focusState: 'is-focused',
+    openState: 'is-open',
+    disabledState: 'is-disabled',
+    highlightedState: 'is-highlighted',
+    selectedState: 'is-selected',
+    flippedState: 'is-flipped',
+    loadingState: 'is-loading',
+    noResults: 'has-no-results',
+    noChoices: 'has-no-choices',
+  },
+  // Choices uses the great Fuse library for searching. You
+  // can find more options here: https://github.com/krisk/Fuse#options
+  fuseOptions: {
+    include: 'score',
+  },
+  callbackOnInit: null,
+  callbackOnCreateTemplates: null,
+})
+
+const searchTransport = document.querySelector('#searchTransport')
+const choices1 = new Choices(searchTransport, {
+  silent: false,
+  items: [],
+  choices: [],
+  renderChoiceLimit: -1,
+
+  maxItemCount: -1,
+  addItems: true,
+  addItemFilter: null,
+  removeItems: true,
+  removeItemButton: false,
+  editItems: false,
+  duplicateItemsAllowed: true,
+  delimiter: ',',
+  paste: true,
+  searchEnabled: false,
+  searchChoices: true,
+  searchFloor: 1,
+  searchResultLimit: 4,
+  searchFields: ['label', 'value'],
+  position: 'auto',
+  resetScrollPosition: true,
+  shouldSort: true,
+  shouldSortItems: false,
+  sorter: () => {},
+  placeholder: true,
+  placeholderValue: null,
+  searchPlaceholderValue: null,
+  prependValue: null,
+  appendValue: null,
+  renderSelectedChoices: 'auto',
+  loadingText: 'Loading...',
+  noResultsText: 'Не найдено',
+  noChoicesText: 'No choices to choose from',
+  itemSelectText: '',
+  addItemText: value => {
+    return `Press Enter to add <b>"${value}"</b>`
+  },
+  maxItemText: maxItemCount => {
+    return `Only ${maxItemCount} values can be added`
+  },
+  valueComparer: (value1, value2) => {
+    return value1 === value2
+  },
+  classNames: {
+    containerOuter: 'choices',
+    containerInner: 'choices__inner',
+    input: 'choices__input',
+    inputCloned: 'choices__input--cloned',
+    list: 'choices__list',
+    listItems: 'choices__list--multiple',
+    listSingle: 'choices__list--single',
+    listDropdown: 'choices__list--dropdown',
+    item: 'choices__item',
+    itemSelectable: 'choices__item--selectable',
+    itemDisabled: 'choices__item--disabled',
+    itemChoice: 'choices__item--choice',
+    placeholder: 'choices__placeholder',
+    group: 'choices__group',
+    groupHeading: 'choices__heading',
+    button: 'choices__button',
+    activeState: 'is-active',
+    focusState: 'is-focused',
+    openState: 'is-open',
+    disabledState: 'is-disabled',
+    highlightedState: 'is-highlighted',
+    selectedState: 'is-selected',
+    flippedState: 'is-flipped',
+    loadingState: 'is-loading',
+    noResults: 'has-no-results',
+    noChoices: 'has-no-choices',
+  },
+  // Choices uses the great Fuse library for searching. You
+  // can find more options here: https://github.com/krisk/Fuse#options
+  fuseOptions: {
+    include: 'score',
+  },
+  callbackOnInit: null,
+  callbackOnCreateTemplates: null,
+})
+
+/* ********************** */
+const picker = datepicker('#searchDate', {
+  // Event callbacks.
+  onSelect: instance => {
+    // Show which date was selected.
+    // console.log(instance.dateSelected)
+  },
+  onShow: instance => {
+    // console.log('Calendar showing.')
+  },
+  onHide: instance => {
+    // console.log('Calendar hidden.')
+  },
+  onMonthChange: instance => {
+    // Show the month of the selected date.
+    console.log(instance.currentMonthName)
+  },
+
+  // Customizations.
+  formatter: (input, date, instance) => {
+    // This will display the date as `1/1/2019`.
+    input.value = date.toDateString()
+  },
+  position: '', // Top right.
+  startDay: 1, // Calendar week starts on a Monday.
+  customDays: ['S', 'M', 'T', 'W', 'Th', 'F', 'S'],
+  customMonths: [
+    'Jan',
+    'Feb',
+    'Mar',
+    'Apr',
+    'May',
+    'Jun',
+    'Jul',
+    'Aug',
+    'Sep',
+    'Окт',
+    'Nov',
+    'Dec',
+  ],
+  customOverlayMonths: [
+    '😀',
+    '😂',
+    '😎',
+    '😍',
+    '🤩',
+    '😜',
+    '😬',
+    '😳',
+    '🤪',
+    '🤓 ',
+    '😝',
+    '😮',
+  ],
+  overlayButton: 'Go!',
+  overlayPlaceholder: 'Enter a 4-digit year',
+
+  // Settings.
+  // alwaysShow: true, // Never hide the calendar.
+  dateSelected: new Date(), // Today is selected.
+  maxDate: new Date(2099, 0, 1), // Jan 1st, 2099.
+  minDate: new Date(2016, 5, 1), // June 1st, 2016.
+  startDate: new Date(), // This month.
+  showAllDates: true, // Numbers for leading & trailing days outside the current month will show.
+
+  // Disabling things.
+  noWeekends: true, // Saturday's and Sunday's will be unselectable.
+  disabler: date => date.getDay() === 2 && date.getMonth() === 9, // Disabled every Tuesday in October
+  disabledDates: [new Date(2050, 0, 1), new Date(2050, 0, 3)], // Specific disabled dates.
+  disableMobile: true, // Conditionally disabled on mobile devices.
+  disableYearOverlay: true, // Clicking the year or month will *not* bring up the year overlay.
+
+  // ID - be sure to provide a 2nd picker with the same id to create a daterange pair.
+  id: 1,
+})

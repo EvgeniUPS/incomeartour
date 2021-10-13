@@ -1,4 +1,5 @@
-// @@include('libs/choices.min.js', {})
+@@include('libs/choices.min.js', {})
+@@include('libs/datepicker-full.min.js', {})
 // @@include('libs/tippymin.js', {})
 @@include('libs/inputmask.min.js', {})
 @@include('libs/swiper.js', {})

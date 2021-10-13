@@ -17,6 +17,13 @@
     background-color: #fff;
     color: #000;
   }
+
+  &__blue {
+    color: #fff;
+    background-color: $colorBlue;
+    border-radius: 2px;
+    height: 100%;
+  }
 }
 
 .color-red {
