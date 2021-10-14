@@ -60,7 +60,6 @@ if (changeViewButton) {
 tippy('.tooltip-link', {
   duration: 0,
   animation: 'fade',
-  theme: 'material',
 })
 
 const reviewsSlider = new Swiper('.reviews-slider', {

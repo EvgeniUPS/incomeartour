@@ -1,3 +1,17 @@
+h2 {
+  font-weight: bold;
+  font-size: 25px;
+  line-height: 100%;
+  text-transform: uppercase;
+  font-feature-settings: 'pnum' on, 'lnum' on;
+  color: #000000;
+}
+h4 {
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 100%;
+}
+
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 .btn {
   width: 225px;

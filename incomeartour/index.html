@@ -30,8 +30,9 @@
       </div>
       <div class="top-header__center">
         <div class="top-header__currency">
-          <span>USD 26.70</span>
-          <span>EUR 31.60</span>
+          <span class="top-header__usd">USD 26.70</span>
+          |
+          <span class="top-header__eur">EUR 31.60</span>
         </div>
         <div class="top-header__date">
           <i class="_icon-calendar"></i> <span>09-CЕН-2021</span>
@@ -42,10 +43,16 @@
       </div>
     </div>
   </div>
+  <div class="header__center header-center">
+    <div class="header-center__container _container"></div>
+  </div>
 
   <div class="header__bottom botton-header">
     <div class="botton-header__container _container">
-      <a href="" class="bottom-header__left header__logo"
+      <a
+        data-da=".header-center__container, 768 , 1"
+        href=""
+        class="bottom-header__left header__logo"
         ><img src="img/logo.svg" alt=""
       /></a>
       <div class="bottom-header__center header__menu menu">
@@ -81,8 +88,13 @@
         </nav>
       </div>
       <div class="bottom-header__right">
-        <a href="#" class="login"> <i class="_icon-account"></i> ВХОД</a>
-        <a href="#" class="desktop-burger"></a>
+        <a data-da=".header-center__container, 768 , 2" href="#" class="login">
+          <i class="_icon-account"></i> ВХОД</a
+        >
+        <button
+          data-da=".header-center__container, 768 , 3"
+          class="desktop-burger"
+        ></button>
         <button></button>
       </div>
     </div>
@@ -153,7 +165,7 @@
           autocomplete="off"
           type="text"
           name="form[]"
-          data-value="Поиск"
+          data-value="Название тура"
           class="input"
         />
       </div>
@@ -175,15 +187,19 @@
         </select>
       </div>
       <div class="search-form__date">
-        <input type="text" data-value="" class="form_date" id="searchDate" />
+        <input
+          type="text"
+          data-value="Дата"
+          class="form_date"
+          id="searchDate"
+        />
         <!-- <input type="date" name="" id="" /> -->
       </div>
       <div class="search-form__transport">
         <select class="search-transport" id="searchTransport">
           <option value="">Транспорт</option>
-          <option value="2">Пункт №2</option>
-          <option value="3">Пункт №3</option>
-          <option value="4">Пункт №4</option>
+          <option value="2">Авиа тур</option>
+          <option value="3">Автобусный тур</option>
         </select>
       </div>
       <div class="search-form__button">
@@ -192,50 +208,6 @@
     </form>
   </div>
 </section>
-
-<!-- <section class="search-block">
-  <div class="search-block__container _container">
-    <form action="#" class="search-form">
-      <div class="search-form__search">
-        <input
-          autocomplete="off"
-          type="text"
-          name="form[]"
-          data-error="Ошибка"
-          data-value="Поиск"
-          class="input"
-        />
-      </div>
-      <div class="search-form__direction">
-        <select name="form[]" class="form-sel">
-          <option value="1" selected="selected">Куда</option>
-          <option value="2">Пункт №2</option>
-          <option value="3">Пункт №3</option>
-          <option value="4">Пункт №4</option>
-        </select>
-      </div>
-      <div class="search-form__date">
-        <select name="form[]" class="form-sel">
-          <option value="1" selected="selected">Дата</option>
-          <option value="2">Пункт №2</option>
-          <option value="3">Пункт №3</option>
-          <option value="4">Пункт №4</option>
-        </select>
-      </div>
-      <div class="search-form__transport">
-        <select name="form[]" class="form-sel">
-          <option value="1" selected="selected">Транспорт</option>
-          <option value="2">Пункт №2</option>
-          <option value="3">Пункт №3</option>
-          <option value="4">Пункт №4</option>
-        </select>
-      </div>
-      <div class="search-form__button">
-        <button type="button" class="btn">Поиск</button>
-      </div>
-    </form>
-  </div>
-</section> -->
 
         <!--  -->
 
@@ -255,7 +227,7 @@
         <!-- *** -->
         <!-- *** -->
         <div class="tour-list__item item-tour item-tour_list">
-          <div class="tour-list__title">ПОД НЕБОМ ПАРИЖА</div>
+          <h2 class="tour-list__title">ПОД НЕБОМ ПАРИЖА</h2>
           <div class="tour-list__image">
             <img src="./img/paris.jpg" alt="Париж" />
           </div>
@@ -297,7 +269,10 @@
             <div class="tour-info__group_value">От 12 человек</div>
           </div>
           <div class="tour-list__price tour-price">
-            <div class="tour-price__main">от <span>22 494 UAH</span></div>
+            <div class="tour-price__main">
+              от
+              <h2>22 494 UAH</h2>
+            </div>
             <div class="tour-price__currency">690 EUR / 720 USD</div>
             <div class="tour-price__description">
               <span> Минимальная цена за человека 15</span>
@@ -346,7 +321,7 @@
         <!-- *** -->
 
         <div class="tour-list__item item-tour item-tour_list">
-          <div class="tour-list__title">ПОД НЕБОМ ПАРИЖА</div>
+          <h2 class="tour-list__title">ПОД НЕБОМ ПАРИЖА</h2>
           <div class="tour-list__image">
             <img src="./img/paris.jpg" alt="Париж" />
           </div>
@@ -367,7 +342,10 @@
             </div>
           </div>
           <div class="tour-list__icons tour-icons">
-            <a href="#" class="tooltip-link" data-tippy-content="lorem"
+            <a
+              href="#"
+              class="tooltip-link"
+              data-tippy-content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident modi distinctio est maxime? At suscipit nulla, excepturi nemo quis aut id, explicabo itaque, repudiandae cumque temporibus recusandae doloremque blanditiis ad!"
               ><i class="_icon-airplane"></i
             ></a>
 
@@ -385,7 +363,10 @@
             <div class="tour-info__group_value">От 12 человек</div>
           </div>
           <div class="tour-list__price tour-price">
-            <div class="tour-price__main">от <span>22 494 UAH</span></div>
+            <div class="tour-price__main">
+              от
+              <h2>22 494 UAH</h2>
+            </div>
             <div class="tour-price__currency">690 EUR / 720 USD</div>
             <div class="tour-price__description">
               <span> Минимальная цена за человека 15</span>
@@ -429,9 +410,8 @@
             <div class="tour-date__viewall">Cмотреть все даты ></div>
           </div>
         </div>
-
         <div class="tour-list__item item-tour item-tour_list">
-          <div class="tour-list__title">ПОД НЕБОМ ПАРИЖА</div>
+          <h2 class="tour-list__title">ПОД НЕБОМ ПАРИЖА</h2>
           <div class="tour-list__image">
             <img src="./img/paris.jpg" alt="Париж" />
           </div>
@@ -452,7 +432,10 @@
             </div>
           </div>
           <div class="tour-list__icons tour-icons">
-            <a href="#" class="tooltip-link" data-tippy-content="hello1"
+            <a
+              href="#"
+              class="tooltip-link"
+              data-tippy-content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident modi distinctio est maxime? At suscipit nulla, excepturi nemo quis aut id, explicabo itaque, repudiandae cumque temporibus recusandae doloremque blanditiis ad!"
               ><i class="_icon-airplane"></i
             ></a>
 
@@ -470,7 +453,10 @@
             <div class="tour-info__group_value">От 12 человек</div>
           </div>
           <div class="tour-list__price tour-price">
-            <div class="tour-price__main">от <span>22 494 UAH</span></div>
+            <div class="tour-price__main">
+              от
+              <h2>22 494 UAH</h2>
+            </div>
             <div class="tour-price__currency">690 EUR / 720 USD</div>
             <div class="tour-price__description">
               <span> Минимальная цена за человека 15</span>
@@ -514,9 +500,8 @@
             <div class="tour-date__viewall">Cмотреть все даты ></div>
           </div>
         </div>
-
         <div class="tour-list__item item-tour item-tour_list">
-          <div class="tour-list__title">ПОД НЕБОМ ПАРИЖА</div>
+          <h2 class="tour-list__title">ПОД НЕБОМ ПАРИЖА</h2>
           <div class="tour-list__image">
             <img src="./img/paris.jpg" alt="Париж" />
           </div>
@@ -537,7 +522,10 @@
             </div>
           </div>
           <div class="tour-list__icons tour-icons">
-            <a href="#" class="tooltip-link" data-tippy-content="hello1"
+            <a
+              href="#"
+              class="tooltip-link"
+              data-tippy-content="Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident modi distinctio est maxime? At suscipit nulla, excepturi nemo quis aut id, explicabo itaque, repudiandae cumque temporibus recusandae doloremque blanditiis ad!"
               ><i class="_icon-airplane"></i
             ></a>
 
@@ -555,7 +543,10 @@
             <div class="tour-info__group_value">От 12 человек</div>
           </div>
           <div class="tour-list__price tour-price">
-            <div class="tour-price__main">от <span>22 494 UAH</span></div>
+            <div class="tour-price__main">
+              от
+              <h2>22 494 UAH</h2>
+            </div>
             <div class="tour-price__currency">690 EUR / 720 USD</div>
             <div class="tour-price__description">
               <span> Минимальная цена за человека 15</span>
@@ -706,8 +697,8 @@
       </div>
 
       <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev photo-slider-button-prev"></div>
-      <div class="swiper-button-next photo-slider-button-next"></div>
+      <div class="swiper-button-prev photo-slider-button-prev"> <i class="_icon-arrow-left"></i> </div>
+      <div class="swiper-button-next photo-slider-button-next"><i class="_icon-arrow-right"></i></div>
     </div>
   </div>
 </section>
@@ -1029,6 +1020,7 @@
           <li><a href="#">Новости </a></li>
         </ul>
       </div>
+
       <div class="menu-footer__col">
         <ul>
           <li><a href="#">Контакты</a></li>
@@ -1062,6 +1054,32 @@
         </ul>
       </div>
     </div>
+  </div>
+  <div class="temp _container" style="color: #555; margin-top: 20px">
+    <!-- ******************************************** -->
+    <!-- ********** UPS_SPOLLER_HTML START ********** -->
+    <!-- ******************************************** -->
+    <!-- <div
+      class="home-faq__spollers spollers-block _spollers _one"
+      data-spollers
+      data-one-spoller
+    >
+      <div class="spollers-block__item">
+        <div class="spollers-block__title _spoller" data-spoller>Заголовок</div>
+        <div class="spollers-block__body">Содержимое</div>
+      </div>
+      <div class="spollers-block__item">
+        <div class="spollers-block__title _spoller" data-spoller>Заголовок</div>
+        <div class="spollers-block__body">Содержимое</div>
+      </div>
+      <div class="spollers-block__item">
+        <div class="spollers-block__title _spoller" data-spoller>Заголовок</div>
+        <div class="spollers-block__body">Содержимое</div>
+      </div>
+    </div> -->
+    <!-- ******************************************* -->
+    <!-- **********  UPS_SPOLLER_HTML END ********** -->
+    <!-- ******************************************* -->
   </div>
 </footer>
 

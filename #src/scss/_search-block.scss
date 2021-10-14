@@ -1,11 +1,17 @@
 .search-block {
-  background-color: rgba(223, 223, 223, 0.6);
+  background-color: #ECE3DB;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 220px;
   &__container {
     width: 100%;
+    font-weight: 700;
+    font-size: 15px;
+    line-height: 100%;
+    text-transform: uppercase;
+    color: #000000;
+    // opacity: 0.9;
   }
 
   .search-form {
@@ -18,121 +24,98 @@
       height: 100%;
       input {
         height: 100%;
-        border: 1px solid #000000;
+        border: 1px solid #000;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 100%;
+
+        text-transform: uppercase;
         border-radius: 2px;
         padding: 0 20px;
       }
       select {
         border: 1px solid #000;
+        font-weight: bold;
+        font-size: 15px;
+        line-height: 100%;
+
+        text-transform: uppercase;
       }
     }
   }
   .choices {
     width: 170px;
-    font-weight: 400;
-    height: 100%;
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 100%;
+    text-transform: uppercase;
     border: 1px solid #000;
     border-radius: 2px;
+    height: 100%;
     &__inner {
       height: 100%;
       display: flex;
       align-items: center;
       border: none;
     }
+    &__input {
+    }
     &__placeholder {
       color: #000;
     }
     &__item--selectable {
-      // background-color: tomato;
       padding-right: 0px !important;
       color: #000;
     }
   }
+}
 
-  // // *************
-  // .search-block {
-  //   // .search-block__container
-  //   &__container {
-  //   }
-  // }
+.qs-datepicker-container {
+  background-color: #fff;
+  border: 1px solid $colorRed;
+  width: 100%;
+  margin: 0;
+  font-weight: 400;
+  padding: 0;
+  // margin-top: 5px;
+  &:before,
+  &:after {
+    content: '';
+    background-image: none;
+  }
 
-  // .search-form {
-  //   .select__title {
-  //   }
-  //   .select__title {
-  //   }
-  //   .select__value {
-  //     height: 55px;
-  //   }
-  //   .select__options {
-  //     top: 100%;
-  //     padding: 0;
-  //     :first-child {
-  //       // background-color: tomato;
-  //     }
-  //   }
-  //   .select__option {
-  //     padding: 10px 15px;
-  //   }
-
-  //   .select {
-  //     &__item {
-  //       // height: 55px;
-  //       // background-color: #7a956d !important;
-  //       min-width: 170px;
-  //     }
-  //     // height: 100%;
-  //     // display: flex;
-  //     // align-items: center;
-
-  //     &__title {
-  //       // height: 55px;
-  //       // display: flex;
-  //       // justify-content: space-between;
-  //       // align-items: center;
-  //       // width: 100%;
-  //     }
-  //     .select__value {
-  //       // display: flex;
-  //       // justify-content: space-between;
-  //     }
-  //   }
-  //   // .search-form__search
-  //   &__search {
-  //     width: 326px;
-  //     input {
-  //       height: 100%;
-  //     }
-  //   }
-  //   // .search-form__direction
-  //   &__direction {
-  //     .select {
-  //       // background-color: tomato;
-  //     }
-  //     .form {
-  //     }
-  //   }
-  //   // .search-form__date
-  //   &__date {
-  //   }
-  //   // .search-form__transport
-  //   &__transport {
-  //   }
-  //   // .search-form__button
-  //   &__button {
-  //     .btn {
-  //       // background-color: tomato;
-  //       height: 100%;
-  //     }
-  //   }
-  // }
-  // .input {
-  // }
-  // .form {
-  // }
-
-  // #searchDate {
-  //   height: 100%;
-  //   padding: 15px;
-  // }
+  .qs-num {
+    color: #000;
+  }
+  .qs-controls {
+    height: 40px;
+    background-color: $colorRed;
+    .qs-month-year {
+      font-weight: 400;
+    }
+    .qs-arrow {
+      &:before {
+        // content: '';
+      }
+    }
+  }
+  .qs-datepicker .qs-arrow.qs-left:after {
+    border-right-color: #fff;
+  }
+  .qs-datepicker .qs-arrow.qs-right:after {
+    border-left-color: #fff;
+  }
+  .qs-square:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active):hover {
+    background: $colorRed;
+    // color: #fff;
+    // color: tomato;
+  }
+  .qs-square:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active):hover
+    span {
+    // background: $colorRed;
+    color: #fff;
+  }
+  .qs-current span {
+    color: $colorRed;
+  }
 }

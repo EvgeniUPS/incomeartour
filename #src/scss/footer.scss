@@ -8,6 +8,10 @@
   }
   // .footer__container
   &__container {
+    @media (max-width: 992px) {
+      display: flex;
+      gap: 35px;
+    }
   }
   // .footer__logo
   &__logo {
@@ -20,15 +24,83 @@
 
 .menu-footer {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  gap: 15px;
   // .menu-footer__col
   &__col {
     ul {
       display: flex;
       flex-direction: column;
       gap: 22px;
+      margin-bottom: 60px;
     }
   }
 }
 
 //====================================================================================================
+/* ************************************* */
+/* ********UPS-SPOLLER-CSS START******** */
+/* ************************************* */
+.spollers-block__item {
+  margin: 0px 0px 10px 0px;
+}
+
+.spollers-block__item:last-child {
+  margin: 0px 0px 0px 0px;
+}
+
+.spollers-block__title {
+  background-color: #888;
+  color: #fff;
+  cursor: pointer;
+  padding: 20px 70px 20px 20px;
+  position: relative;
+}
+
+.spollers-block__title:before {
+  content: '';
+  width: 20px;
+  background-color: #fff;
+  height: 2px;
+  // -webkit-transition: -webkit-transform 0.3s ease 0s;
+  // transition: -webkit-transform 0.3s ease 0s;
+  transition: transform 0.3s ease 0s;
+  // transition: transform 0.3s ease 0s, -webkit-transform 0.3s ease 0s;
+  // -webkit-transform: translate(0, -50%) rotate(-45deg);
+  transform: translate(0, -50%) rotate(-45deg);
+  position: absolute;
+  right: 15px;
+  top: 50%;
+}
+
+.spollers-block__title:after {
+  content: '';
+  width: 20px;
+  background-color: #fff;
+  height: 2px;
+  transition: transform 0.3s ease 0s;
+  // -webkit-transform: translate(0, -50%) rotate(45deg);
+  transform: translate(0, -50%) rotate(45deg);
+  position: absolute;
+  right: 29px;
+  top: 50%;
+}
+
+.spollers-block__title._active:before {
+  content: '';
+  transform: translate(0, -50%) rotate(45deg);
+}
+
+.spollers-block__title._active:after {
+  content: '';
+  transform: translate(0, -50%) rotate(-45deg);
+}
+
+.spollers-block__body {
+  // display: none;
+  padding: 20px 0px 0px 0px;
+}
+/* *********************************** */
+/* ********UPS-SPOLLER-CSS END******** */
+/* *********************************** */

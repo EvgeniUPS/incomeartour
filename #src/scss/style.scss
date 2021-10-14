@@ -16,7 +16,6 @@ $randColor: rgb(random(255), random(255), random(255));
 //<Подключаем шрифты>=======================================================================================
 //&display=swap&subset=cyrillic-ext
 @import 'fonts';
-//  TODO: Решить со шрифтами
 // @import url('https://fonts.googleapis.com/css?family=Raleway:regular,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic');
 // @import url('https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,regular,italic,500,500italic,700,700italic,900,900italic&display=swap&subset=cyrillic-ext');
 //</Подключаем шрифты>=======================================================================================
@@ -28,9 +27,6 @@ $randColor: rgb(random(255), random(255), random(255));
 //<Шрифт по умолчанию>==========================================================================================
 // $fontFamily: 'Roboto';
 $fontFamily: 'raleway';
-
-// font-family: 'Roboto';
-
 $fontSize: 16;
 
 //</Шрифт по умолчанию>==========================================================================================

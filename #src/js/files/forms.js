@@ -606,7 +606,7 @@ const choices = new Choices(searchDirection, {
   silent: false,
   items: [],
   choices: [],
-  renderChoiceLimit: -1,
+  renderChoiceLimit: 5,
 
   maxItemCount: -1,
   addItems: true,
@@ -786,24 +786,25 @@ const picker = datepicker('#searchDate', {
   // Customizations.
   formatter: (input, date, instance) => {
     // This will display the date as `1/1/2019`.
-    input.value = date.toDateString()
+    // input.value = date.toLocaleDateString()
+    // input.value = date.toDateString()
   },
   position: '', // Top right.
   startDay: 1, // Calendar week starts on a Monday.
-  customDays: ['S', 'M', 'T', 'W', 'Th', 'F', 'S'],
+  customDays: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
   customMonths: [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
+    'Янв',
+    'Фев',
+    'Мар',
+    'Апр',
+    'Май',
+    'Июн',
+    'Июл',
+    'Авг',
+    'Сен',
     'Окт',
-    'Nov',
-    'Dec',
+    'Ноя',
+    'Дек',
   ],
   customOverlayMonths: [
     '😀',
@@ -831,8 +832,8 @@ const picker = datepicker('#searchDate', {
   showAllDates: true, // Numbers for leading & trailing days outside the current month will show.
 
   // Disabling things.
-  noWeekends: true, // Saturday's and Sunday's will be unselectable.
-  disabler: date => date.getDay() === 2 && date.getMonth() === 9, // Disabled every Tuesday in October
+  noWeekends: false, // Saturday's and Sunday's will be unselectable.
+  // disabler: date => date.getDay() === 2 && date.getMonth() === 9, // Disabled every Tuesday in October
   disabledDates: [new Date(2050, 0, 1), new Date(2050, 0, 3)], // Specific disabled dates.
   disableMobile: true, // Conditionally disabled on mobile devices.
   disableYearOverlay: true, // Clicking the year or month will *not* bring up the year overlay.
