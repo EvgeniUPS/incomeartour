@@ -349,6 +349,8 @@
   z-index: 3;
   width: 100%;
   padding: 100px 125px 0 280px;
+  @include adaptiv-value('padding-left', 280, 20, 0);
+  @include adaptiv-value('padding-right', 125, 20, 0);
   // padding: 10px;
   position: absolute;
   background-color: #fff;
@@ -388,13 +390,39 @@
 }
 .country-menu {
   display: flex;
-  // .country-menu__block
+  justify-content: center;
 
+  // .country-menu__block
   &__block {
     width: 33%;
+    position: relative;
+    &:not(:last-of-type) {
+      &:before {
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 100vh;
+        background-color: #7a956d;
+        top: -100px;
+        right: 0;
+      }
+    }
   }
   // .country-menu__continent
   &__continent {
+    &:not(:last-of-type) {
+      position: relative;
+      margin-bottom: 20px;
+      &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: -15px;
+        left: 0;
+        background-color: #7a956d;
+      }
+    }
   }
 }
 .menu-continent {
@@ -402,17 +430,33 @@
   &__title {
     font-size: 15px;
     margin-bottom: 20px;
+    // padding-left: 55px;
+    @include adaptiv-value('padding-left', 55, 15, 0);
+    @include adaptiv-value('padding-right', 35, 15, 0);
+    // padding-right: 35px;
   }
   // .menu-continent__list
   &__list {
+    // padding-left: 55px;
+    // padding-right: 35px;
+
+    @include adaptiv-value('padding-left', 55, 15, 0);
+    @include adaptiv-value('padding-right', 35, 15, 0);
+
     display: flex;
+    // justify-content: space-between;
+    // gap: 5px;
     flex-wrap: wrap;
+    margin-bottom: 35px;
   }
   // .menu-continent__item
   &__item {
     display: flex;
-    width: 50%;
+    // width: 40%;
+    flex: 0 0 50%;
     align-items: center;
     gap: 10px;
+    margin-bottom: 18px;
+    padding: 0 5px;
   }
 }
