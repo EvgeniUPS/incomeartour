@@ -68,3 +68,34 @@
     gap: 0;
   }
 }
+
+.temp-q {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  &__item {
+    flex: 0 0 30%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  }
+
+  text-align: center;
+  font-weight: 400;
+  // .temp__header
+  &__header {
+    font-size: 24px;
+    padding: 10px;
+  }
+  // .temp__dolgnost
+  &__dolgnost {
+    padding: 5px;
+  }
+  // .temp__image
+  &__image {
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
