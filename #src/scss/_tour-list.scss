@@ -1,8 +1,12 @@
 .tour-list-block__top {
-  padding: 200px 0;
-  // background-color: #7a956d;
+  padding: 200px 10px;
   display: flex;
-  justify-content: space-between;
+  gap: 40px;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 .tour-list-block__container {
