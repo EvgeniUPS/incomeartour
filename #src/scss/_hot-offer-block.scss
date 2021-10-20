@@ -1,11 +1,24 @@
 .hot-offer-block {
   padding-bottom: 200px;
+  @media (max-width: 992px) {
+    padding-bottom: 150px;
+  }
+  @media (max-width: 768px) {
+    padding-bottom: 10px;
+  }
   // .hot-offer-block__container
   &__container {
   }
   // .hot-offer-block__header
   &__header {
+    max-height: 330px;
     margin-bottom: 10px;
+    @media (max-width: 992px) {
+      height: 250px;
+    }
+    @media (max-width: 768px) {
+      height: 140px;
+    }
     img {
       width: 100%;
       height: 100%;
@@ -19,13 +32,10 @@
 
 .hot-list {
   display: flex;
-  // flex-wrap: wrap;
+
   flex-direction: column;
   gap: 10px;
 
-  // &:nth-child(even) {
-  //   background-color: #7a956d;
-  // }
   // .hot-list__row
   &__row {
     width: 100%;
@@ -40,20 +50,28 @@
     // min-width: 40%;
 
     // box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 5px tomato;
+    // box-shadow: 0 0 5px tomato;
     &:nth-child(even) {
       width: 60%;
-
       flex-direction: row-reverse;
+      @media (max-width: 768px) {
+        width: 50%;
+      }
     }
     &:nth-child(odd) {
       width: 40%;
+      @media (max-width: 768px) {
+        width: 50%;
+      }
     }
   }
 }
 .item-hot {
   height: 392px;
   position: relative;
+  @media (max-width: 992px) {
+    height: 260px;
+  }
   &:before {
     content: '';
     position: absolute;
@@ -82,6 +100,15 @@
     z-index: 3;
     font-size: 11px;
     max-width: 100px;
+    @media (max-width: 992px) {
+      left: 20px;
+      top: 20px;
+    }
+    @media (max-width: 768px) {
+      left: 10px;
+      top: 10px;
+      font-size: 9px;
+    }
   }
   // .item-hot__label
   &__label {
@@ -101,25 +128,50 @@
     color: #fff;
     z-index: 3;
     max-width: 250px;
+    @media (max-width: 992px) {
+      bottom: 20px;
+      left: 20px;
+    }
+    @media (max-width: 768px) {
+      left: 10px;
+      bottom: 10px;
+      font-size: 9px;
+    }
   }
   // .item-hot__name
   &__name {
     font-weight: 700;
-    font-size: 24px;
-    line-height: 24px;
     margin-bottom: 15px;
+    color: #fff;
+    @media (max-width: 992px) {
+      margin-bottom: 10px;
+    }
+    @media (max-width: 768px) {
+      margin-bottom: 5px;
+      font-size: 12px;
+    }
   }
   // .item-hot__link
   &__link {
     font-size: 15px;
     line-height: 15px;
     text-transform: uppercase;
+    @media (max-width: 992px) {
+      font-size: 12px;
+    }
+    @media (max-width: 768px) {
+      font-size: 9px;
+    }
     a {
       display: flex;
       color: inherit;
+
       i {
-        margin-left: 15px;
+        margin-left: 10px;
         font-size: 14px;
+        @media (max-width: 992px) {
+          margin-left: 5px;
+        }
       }
     }
   }

@@ -1,5 +1,5 @@
 @@include('files/regular.js', {})
-@@include('files/api.js', {})
+// @@include('files/api.js', {})
 @@include('files/dynamic_adapt.js', {})
 @@include('files/functions.js', {})
 // @@include('files/sliders.js', {})
