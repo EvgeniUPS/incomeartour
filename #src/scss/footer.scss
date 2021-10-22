@@ -99,3 +99,34 @@
     }
   }
 }
+
+.scroll-top {
+  opacity: 0;
+  background-color: #dfdfdf;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 50%;
+  position: fixed;
+  @include adaptiv-value('right', 50, 10, 1);
+  @include adaptiv-value('bottom', 50, 10, 1);
+
+  @include adaptiv-value('width', 60, 40, 1);
+  @include adaptiv-value('height', 60, 40, 1);
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  i {
+    font-size: 26px;
+    color: #000;
+    transition: all 0.3s ease 0s;
+    @media (max-width: 768px) {
+      font-size: 18px;
+    }
+  }
+}
+.scroll-top:hover {
+  background-color: $colorRed;
+  i {
+    color: #fff;
+  }
+}

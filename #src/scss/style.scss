@@ -50,6 +50,9 @@ $mainColor: #000;
 
 //<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
 @import 'null';
+html {
+  scroll-behavior: smooth;
+}
 body {
   color: $mainColor;
   font-weight: 700;
@@ -99,6 +102,7 @@ body {
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 // @import 'choices.min';
+// @import 'flatpickr';
 @import 'datepicker';
 //@import "lightgallery";
 //@import "pagging";
@@ -110,6 +114,7 @@ body {
 @import 'news-block';
 @import 'reviews-slider-block';
 @import 'tours-types-block';
+@import 'seo-block';
 @import 'popup';
 @import 'header';
 @import 'footer';

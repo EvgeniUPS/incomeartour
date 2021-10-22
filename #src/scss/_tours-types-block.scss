@@ -1,4 +1,6 @@
 .tours-types-block {
+  margin-bottom: 100px;
+
   // .tours-types-block__container
   &__container {
   }
@@ -14,7 +16,17 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 78px;
-  margin-bottom: 115px;
+  padding: 0 70px;
+  @media (max-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 40px;
+    // gap: 50px;
+  }
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 27px;
+    gap: 40px;
+  }
   // .list-types__item
   &__item {
   }

@@ -19,47 +19,65 @@
   }
 
   .search-form {
-    display: grid;
-    gap: 20px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
 
-    grid-template-areas: 'search dir date transport button';
-    // grid-template-rows: auto;
-
-    @media (max-width: 992px) {
-      grid-template-areas:
-        'search dir'
-        'date transport button';
-      grid-template-rows: auto;
+    @media (max-width: 768px) {
+      flex-wrap: wrap;
+      // flex-direction: column;
     }
+
     &__search {
-      grid-area: search;
+      @media (max-width: 992px) {
+        min-width: 49%;
+      }
+      ._focus {
+        color: #000000;
+      }
+      input {
+        height: 100%;
+      }
+      min-width: 400px;
+      @include adaptiv-value('width', 320, 150, 1);
     }
 
     &__direction {
-      grid-area: dir;
+      @media (max-width: 992px) {
+        min-width: 49%;
+      }
     }
 
     &__date {
-      grid-area: date;
       width: 100%;
+      input {
+        color: red;
+        // width: 100%;
+      }
     }
 
     &__transport {
-      grid-area: transport;
     }
 
     &__button {
-      grid-area: button;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
+      button {
+        width: 100%;
+      }
     }
 
     > div {
-      min-width: 170px;
       width: 100%;
-      min-height: 55px;
+      // min-height: 55px;
       background-color: $colorBeige;
       // display: flex;
       // align-items: center;
       // height: 100%;
+      @media (max-width: 768px) {
+        min-height: 30px;
+      }
       input {
         background-color: $colorBeige;
         height: 100%;
@@ -70,6 +88,7 @@
         text-transform: uppercase;
         border-radius: 2px;
         padding: 0 20px;
+        color: #999;
       }
       select {
         border: 1px solid #000;
@@ -100,12 +119,17 @@
     }
     &__input {
     }
+    &__list {
+      // background-color: tomato;
+      // height: 100%;
+      // color: #999;
+    }
     &__placeholder {
       color: #000;
     }
     &__item--selectable {
       padding-right: 0px !important;
-      color: #000;
+      // color: red;
     }
   }
 }
@@ -159,4 +183,13 @@
   .qs-current span {
     color: $colorRed;
   }
+}
+
+.choices__item
+  .choices__item--choice
+  .is-selected
+  .choices__placeholder
+  .choices__item--selectable
+  .is-highlighted {
+  background-color: tomato;
 }

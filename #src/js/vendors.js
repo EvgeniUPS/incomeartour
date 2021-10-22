@@ -1,3 +1,4 @@
+// @@include('libs/flatpickr.js', {})
 @@include('libs/choices.min.js', {})
 @@include('libs/datepicker-full.min.js', {})
 // @@include('libs/tippymin.js', {})

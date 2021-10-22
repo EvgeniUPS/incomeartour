@@ -8,6 +8,10 @@
   <link rel="shortcut icon" href="favicon.ico" />
   <link
     rel="stylesheet"
+    href="https://npmcdn.com/flatpickr@4.6.9/dist/themes/dark.css"
+  />
+  <link
+    rel="stylesheet"
     href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
   />
   <!-- <meta name="robots" content="noindex, nofollow"> -->
@@ -66,25 +70,55 @@
         <nav class="menu__body">
           <ul class="menu__list" data-da=".main-burger-top, 768 , 1">
             <li class="menu__item">
-              <a href="#" class="menu__link">Туры</a>
+              <a href="#" class="menu__link menu-tour-link">Туры</a>
+              <ul class="menu-tour-list sub-menu">
+                <li><a href="#">Календарь</a></li>
+                <li><a href="#tours-types-block">Типы туров</a></li>
+              </ul>
             </li>
             <li class="menu__item">
               <a href="#" class="menu__link">Поиск туров</a>
             </li>
+
             <li class="menu__item">
               <a href="#" class="menu__link menu__link_country">Страны</a>
             </li>
+
             <li class="menu__item">
-              <a href="#" class="menu__link">Авиабилеты</a>
+              <a href="#" class="menu__link menu-services-link menu-sub-link"
+                >Услуги</a
+              >
+              <ul class="menu-services-body sub-menu">
+                <li><a href="#">Пункт 1</a></li>
+                <li><a href="#">Пункт 2</a></li>
+                <li><a href="#">Пункт 3</a></li>
+                <li><a href="#">Пункт 4</a></li>
+              </ul>
             </li>
+
             <li class="menu__item">
               <a href="#" class="menu__link">Отели</a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link">Агентствам</a>
+              <a href="#" class="menu__link menu-agency-link">Агентствам</a>
+              <ul class="menu-agency-body sub-menu">
+                <li><a href="#">Сотрудничество</a></li>
+                <li><a href="#">Бонусная программа</a></li>
+                <li><a href="#">Рекламные туры</a></li>
+                <li><a href="#">Семинары и презентации</a></li>
+                <li><a href="#">Оплата</a></li>
+                <li><a href="#">Регистрации</a></li>
+              </ul>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link">Туристам</a>
+              <a href="#" class="menu__link menu-tourists-link">Туристам</a>
+              <ul class="menu-tourists-body sub-menu">
+                <li><a href="#">Договор</a></li>
+                <li><a href="#">Подарочный сертификат</a></li>
+                <li><a href="#">Оплата</a></li>
+                <li><a href="#">Регистрация</a></li>
+                <li><a href="#">Проверка статуса заявки</a></li>
+              </ul>
             </li>
           </ul>
         </nav>
@@ -292,6 +326,7 @@
               <li><a href="#">Где купить</a></li>
               <li><a href="#">Новости</a></li>
               <li><a href="#">Контакты</a></li>
+              <li><a href="#">Авиабилеты</a></li>
             </ul>
           </div>
           <div class="main-burger-bottom"></div>
@@ -303,51 +338,164 @@
 </header>
 
 <script>
+  // Main Burger Menu
   const mainMenuBtn = document.querySelector('.main-burger')
   const mainBurgerBody = document.querySelector('.main-burger-body')
+  if (mainMenuBtn) {
+    mainMenuBtn.addEventListener('click', function (e) {
+      e.stopPropagation()
+      mainBurgerBody.classList.toggle('main-burger-active')
+    })
 
-  mainMenuBtn.addEventListener('click', function (e) {
-    e.stopPropagation()
-    mainBurgerBody.classList.toggle('main-burger-active')
-  })
+    if (mainBurgerBody.classList.contains('main-burger-active')) {
+      console.log('active')
+    }
+    document.addEventListener('keydown', function (e) {
+      if (e.code === 'Escape') {
+        if (mainBurgerBody.classList.contains('main-burger-active')) {
+          closeMenu()
+        }
+        if (menuCountryList.classList.contains('_active')) {
+          menuCountryList.classList.remove('_active')
+        }
+      }
+    })
 
-  if (mainBurgerBody.classList.contains('main-burger-active')) {
-    console.log('active')
-  }
-  document.addEventListener('keydown', function (e) {
-    if (e.code === 'Escape') {
-      if (mainBurgerBody.classList.contains('main-burger-active')) {
+    document.addEventListener('click', function (e) {
+      if (
+        !e.target.classList.contains('main-burger-btn') &&
+        !e.target.classList.contains('main-burger-active')
+      ) {
         closeMenu()
       }
-      if (menuCountryList.classList.contains('_active')) {
-        menuCountryList.classList.remove('_active')
-      }
+    })
+    function closeMenu() {
+      mainBurgerBody.classList.remove('main-burger-active')
     }
-  })
-
-  document.addEventListener('click', function (e) {
-    if (
-      !e.target.classList.contains('main-burger-btn') &&
-      !e.target.classList.contains('main-burger-active')
-    ) {
-      closeMenu()
-    }
-  })
-  function closeMenu() {
-    mainBurgerBody.classList.remove('main-burger-active')
   }
 
+  //Country Menu
   const menuLinkCountry = document.querySelector('.menu__link_country')
   const menuCountryList = document.querySelector('.menu-country-list')
   const menuCountryClose = document.querySelector('.menu-country-close')
-
   menuLinkCountry.addEventListener('click', () => {
     menuCountryList.classList.add('_active')
   })
-
   menuCountryClose.addEventListener('click', function (e) {
     menuCountryList.classList.remove('_active')
   })
+
+  createSubmenu('.menu-tour-link', '.menu-tour-list')
+  /* Tour Menu  */
+  const menuTourLInk = document.querySelector('.menu-tour-link')
+  const menuTourList = document.querySelector('.menu-tour-list')
+  if (menuTourLInk) {
+    menuTourLInk.addEventListener('click', function (e) {
+      e.stopPropagation()
+      menuTourList.classList.toggle('menu-tour-active')
+    })
+
+    document.addEventListener('keydown', function (e) {
+      if (e.code === 'Escape') {
+        if (menuTourList.classList.contains('menu-tour-active')) {
+          closeMenu()
+        }
+      }
+    })
+
+    document.addEventListener('click', function (e) {
+      if (
+        !e.target.classList.contains('menu-tour-list') &&
+        !e.target.classList.contains('menu-tour-active')
+      ) {
+        closeMenu()
+      }
+    })
+
+    function closeMenu() {
+      menuTourList.classList.remove('menu-tour-active')
+    }
+
+    if (menuTourList.classList.contains('menu-tour-active')) {
+      console.log('active')
+    }
+  }
+
+  /* SERVICES MENU */
+
+  const menuServicesLInk = document.querySelector('.menu-services-link')
+  const menuServicesBody = document.querySelector('.menu-services-body')
+  if (menuServicesLInk) {
+    menuServicesLInk.addEventListener('click', function (e) {
+      e.stopPropagation()
+      menuServicesBody.classList.toggle('_active-menu')
+    })
+
+    document.addEventListener('keydown', function (e) {
+      if (e.code === 'Escape') {
+        if (menuServicesBody.classList.contains('_active-menu')) {
+          closeMenu()
+        }
+      }
+    })
+
+    document.addEventListener('click', function (e) {
+      if (
+        !e.target.classList.contains('menu-tour-list') &&
+        !e.target.classList.contains('_active-menu')
+      ) {
+        closeMenu()
+      }
+    })
+
+    function closeMenu() {
+      menuServicesBody.classList.remove('_active-menu')
+    }
+
+    // if (menuTourBody.classList.contains('_active')) {
+    //   console.log('active')
+    // }
+  }
+
+  createSubmenu('.menu-agency-link', '.menu-agency-body')
+  createSubmenu('.menu-tourists-link', '.menu-tourists-body')
+
+  function createSubmenu(subMenuLink, subMenuBody) {
+    // menuServicesLInk
+    // menuLink
+    const allSubMenuLink = document.querySelectorAll('sub-menu-link')
+    console.log(`allSubMenuLink`, allSubMenuLink)
+    const menuLink = document.querySelector(subMenuLink)
+    const menuBody = document.querySelector(subMenuBody)
+    if (menuLink) {
+      menuLink.addEventListener('click', function (e) {
+        e.stopPropagation()
+        menuBody.classList.toggle('_active-menu')
+      })
+
+      document.addEventListener('keydown', function (e) {
+        if (e.code === 'Escape') {
+          if (menuBody.classList.contains('_active-menu')) {
+            closeMenu()
+          }
+        }
+      })
+
+      document.addEventListener('click', function (e) {
+        if (
+          !e.target.classList.contains('sub-menu') &&
+          !e.target.classList.contains(subMenuBody + ' _active-menu')
+        ) {
+          console.log(e.target)
+          closeMenu()
+        }
+      })
+
+      function closeMenu() {
+        menuBody.classList.remove('_active-menu')
+      }
+    }
+  }
 </script>
 
       <main class="page">
@@ -433,7 +581,7 @@
       </div>
       <div class="search-form__direction">
         <select class="search-direction" id="searchDirection">
-          <option value="">Куда</option>
+          <option value="">Направление</option>
           <option value="1">Австралия</option>
           <option value="2">Андорра</option>
           <option value="3">Намибия</option>
@@ -449,17 +597,22 @@
         </select>
       </div>
       <div class="search-form__date">
+        <!-- <input type="text" class="form_date1 _date" id="searchDate" /> -->
+        <!-- <input type="text" name="" id="searchDate" /> -->
+        <!-- <input type="text" placeholder="Дата" id="flatDate2" /> -->
         <input
+          autocomplete="off"
           type="text"
+          name="form[]"
+          data-error="Ошибка"
           data-value="Дата"
-          class="form_date"
-          id="searchDate"
+          class="input _date"
         />
-        <!-- <input type="date" name="" id="" /> -->
       </div>
       <div class="search-form__transport">
         <select class="search-transport" id="searchTransport">
           <option value="">Транспорт</option>
+          <option value="3">Все туры</option>
           <option value="2">Авиа тур</option>
           <option value="3">Автобусный тур</option>
         </select>
@@ -470,6 +623,8 @@
     </form>
   </div>
 </section>
+
+<script></script>
 
         <!--  -->
 
@@ -1089,7 +1244,7 @@
 
         <section class="news-block">
   <div class="news-block__container _container">
-    <div class="news-block__title">НОВОСТИ</div>
+    <div class="news-block__title section-title">НОВОСТИ</div>
     <div class="news-block__list">
       <!--  -->
       <div class="news-block__item item-news">
@@ -1266,7 +1421,7 @@
 </section>
 
         <!--  -->
-        <section class="tours-types-block">
+        <section class="tours-types-block" id="tours-types-block">
   <div class="tours-types-block__container _container">
     <div class="tours-types-block__list list-types">
       <!--  -->
@@ -1386,6 +1541,213 @@
 </section>
 
         <!--  -->
+        <section class="seo-block">
+  <div class="seo-block__container _container">
+    <h1 class="seo-block__header">
+      Туристический оператор «Инкомартур 93» — экскурсионные туры по самой
+      выгодной цене в Украине
+    </h1>
+    <div class="seo-block__body body-seo">
+      <p>
+        Жизнь современного человека сложно представить без путешествий. В
+        масштабном плане это головокружительные турне в другие страны на
+        отдаленные континенты, в более локальном это ежедневная дорога на работу
+        и поездки к друзьям и родственникам на выходные. Желание же отправиться
+        в путешествие в полной мере поможет Вам воплотить в реальность
+        туристический оператор «Инкомартур 93». Мы предлагаем экскурсионные туры
+        по самой выгодной цене в Украине, а самое главное — безопасность и
+        максимальный комфорт во время вояжа.
+      </p>
+
+      <p>
+        Важнейший приоритет в нашей работе — удовлетворенность клиента. Мы
+        воплотим в жизнь Ваши самые дерзкие мечты, поможем объехать мир при этом
+        сохранив семейный бюджет. В нашей компетенции организация различных
+        трансферов, в том числе и автобусные туры за границу.
+      </p>
+
+      <h2>Почему украинцы путешествуют с нами?</h2>
+
+      <p>
+        Пандемия коронавирусной инфекции COVID-19 значительно реформировала
+        человеческое мироустройство. Люди сперва не понимали всего масштаба, но
+        по прошествию времени адаптировались и приняли новые условия
+        жизнедеятельности. Так, со стабилизацией эпидемической ситуации, которая
+        стала возможна благодаря вакцинации и карантинным ограничениям,
+        открылись границы государств, и теперь украинцы имеют возможность
+        отправиться на отдых у моря.
+      </p>
+
+      <p>
+        Но подобрать тур самостоятельно — сложная задача, требующая расчета
+        факторов риска, о которых туристы могут даже и не знать. Ведь это не
+        просто поиск тура онлайн, выбор гостиницы и мест для посещения, это
+        минимизация возможности проблем с транспортом, нехваткой документов и
+        банальное грамотное распределение финансов. Поэтому подбор тура
+        рекомендуется доверить специалистам.
+      </p>
+
+      <p>
+        Компания «Инкомартур 93» уже больше двадцати лет организовывает поездки
+        за границу на любой вкус и цвет. Наши опытные специалисты взяли на себя
+        обязанность дарить украинцам незабываемый досуг независимо от финансовых
+        вложений. Мы с большим удовольствием поможем найти тур в Турцию,
+        Болгарию, Египет, Балканы, Кипр, а для опытных туристов — экзотические
+        туры из Киева в Азию, Африку или Океанию.
+      </p>
+
+      <h2>Отдых на море: куда поехать в теплое время года?</h2>
+
+      <p>
+        Несмотря на то, что территория Украины богата природными памятниками, в
+        том числе большим количеством водных угодий и различных ландшафтов,
+        украинцы — заядлые путешественники, которые стремятся всегда познавать
+        что-то новое. Черное море — уникальный водоем, который омывает границы
+        многих государств: Украину, Болгарию, Турцию, Грузию, Абхазию, Румынию и
+        Россию. Причерноморье манит отдыхающих своим умиротворением и уютом.
+        Важно отметить, что южное солнце прогревает не только тело, но и душу.
+        Поэтому морская сиеста так ценилась во все времена и не теряет своей
+        актуальности сегодня.
+      </p>
+
+      <p>
+        Существует множество обворожительных мест, куда организовывает маршруты
+        наша турфирма. Авиатур, путешествие на автобусе или поезде — мы
+        предоставим Вам необходимый транспорт для обеспечения максимального
+        уровня комфорта.
+      </p>
+
+      <h2>Отдых в Турции: преимущества и недостатки</h2>
+
+      <p>
+        Блистательная Порта — традиционное место для развлечений жителей нашей
+        страны. Сегодня сложно встретить украинца, который никогда не бывал
+        здесь. Несомненно всех влечет знаменитая система «все включено»,
+        рекреатив у бассейна и купание в чистейшем море. Но путевки в Турцию —
+        это еще и отличная возможность испытать настоящий «культурный шок» от
+        восточной сказки.
+      </p>
+
+      <p>
+        Хорошо известно, что османская империя долгие годы была лидером на
+        мировой политической арене. Не стоит упускать шанс стать гостем этой
+        дружелюбной страны и погрузиться в атмосферу настоящего величия и
+        богатства.
+      </p>
+
+      <p>
+        Первое, что приходит на ум — это посещение старого города, который
+        разделяет государство на европейскую и азиатские части. Специалисты
+        «Инкомартур 93» рекомендуют купить экскурсионный тур в Стамбул, так как
+        в авторскую программу входит обязательное посещение следующих
+        достопримечательностей:
+      </p>
+
+      <ul>
+        <li>
+          <p>
+            Айя-София — наверное каждый хоть раз в жизни слышал о неземной
+            красоте данного собора. Ни один экскурсовод не проведет Вас мимо
+            этого представителя архитектуры времен Византии. Храм следует
+            назвать символом могущества империи, на строительство которого ушло
+            более пяти лет и труд десятков тысяч людей. Даже самые привередливые
+            отдыхающие ахнут при виде мозаик и фресок, а также куполов огромных
+            размеров.
+          </p>
+        </li>
+        <li>
+          <p>
+            Сераль или дворец Топкапи — главный дворец османов на протяжение
+            четырех столетий. Построенный в пятнадцатом веке для султана Мехмеда
+            II, сегодня дворец является одним из крупнейших музеев мира, который
+            ежегодно посещают миллионы ценителей прекрасного.
+          </p>
+        </li>
+        <li>
+          <p>
+            Мечеть Султанахмет — святыня мусульман, которая восхищает своим
+            убранством и поистине является прекрасным образцом исламской и
+            мировой архитектуры. Эклектика стилей завораживает гостей города и
+            как бы демонстрирует разом всю роскошь и монументальность времен,
+            которые давно канули в лету.
+          </p>
+        </li>
+      </ul>
+
+      <p>
+        Несомненно, список мест для посещения в данной стране можно продолжать и
+        дальше, но лучше один раз увидеть своими глазами, чем читать о
+        достопримечательностях десятки раз. Начните путешествовать с нами уже
+        сегодня.
+      </p>
+
+      <h2>Куда поехать осенью и зимой?</h2>
+
+      <p>
+        Для тех, кому Черное море кажется чем-то обыденным, предлагаем посетить
+        «море посреди земли». Средиземноморье смело называют райским местом, в
+        котором сосредоточено все то, что так необходимо человеку для
+        комфортного существования. Средиземное море омывает берег двадцати двух
+        государств и именно здесь расположены самые знаменитые мировые курорты.
+      </p>
+
+      <p>
+        Лето здесь заканчивается только поздней осенью — в середине октября, а в
+        странах Балканского полуострова только официально закрывается пляжный
+        сезон 1 октября. С приходом осени туристическая жизнь не затихает, а
+        вовсе наоборот, путешественники знают, что это самое оптимальное время
+        для запоминающегося отдыха. Поэтому если Вы все еще не решили, куда
+        поедете в осенний уик-энд, то мы советуем купить тур по Балканам.
+      </p>
+
+      <h2>Балканский полуостров — возможность продлить себе летние каникулы</h2>
+
+      <p>
+        Жизнь современного человека протекает в ускоренном темпе, где иногда
+        сложно выкроить денек другой для разрядки. Поэтому если Вы не успели
+        наладиться летом, смело отправляйтесь на Балканы.
+      </p>
+
+      <p>
+        Купить тур в Черногорию — шанс получить загар еще в ноябре, а чистый
+        морской воздух вдалеке от шума и суеты наполнит Вас желанием покорять
+        новые вершины по приезду домой.
+      </p>
+
+      <p>
+        Тут Вы испытаете единение с природой и по-настоящему насладитесь
+        прогулками по достопримечательностям. Осенняя погода создает уникальные
+        условия для поездок в природные парки или знакомства с отдаленными от
+        цивилизации старинными монастырями и средневековыми замками.
+      </p>
+
+      <p>
+        Если Вы любитель пешеходных маршрутов по горам или хотите пополнить
+        галерею фотографиями живописных каньонов и рек, то в Черногории Вы
+        воплотите эти желания в реальность. Любители культурных мероприятий
+        особенно оценят такую поездку из-за огромного количества музыкальных
+        фестивалей, спортивных соревнований, выставок и театральных премьер.
+      </p>
+
+      <p>
+        Туристический оператор «Инкомартур 93» предлагает своим клиентам только
+        авторские маршруты по демократичной цене. Путешествовать с нами —
+        комфортно и безопасно, убедитесь в этом сами.
+      </p>
+    </div>
+  </div>
+</section>
+<p>
+  <!-- <iframe
+    src="https://center.cruises/widget/?uuid=3fb1053b-2110-41b9-94bb-03e5fecc7de0&amp;lang=ru"
+    style="width: 100%; height: 1100px; overflow: scroll; border: none"
+  ></iframe -->
+  <!-- new widget end -->
+</p>
+
+<!-- *************** -->
+
+        <!--  -->
       </main>
       <footer class="footer">
   <div class="footer__container _container">
@@ -1437,6 +1799,7 @@
       </div>
     </div>
   </div>
+  <button class="scroll-top"><i class="_icon-arrow2-up"></i></button>
 </footer>
 
     </div>
@@ -1465,6 +1828,7 @@
 
     <!--  -->
     <!-- Swiper -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 <!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
 <script src="https://unpkg.com/@popperjs/core@2"></script>
 <script src="https://unpkg.com/tippy.js@6"></script>

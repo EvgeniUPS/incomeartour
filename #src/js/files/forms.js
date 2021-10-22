@@ -425,18 +425,18 @@ function inputs_init(inputs) {
           }
         }
         if (input.classList.contains('_date')) {
-          console.log(11111111111)
+          // console.log(11111111111)
           /*
-					input.classList.add('_mask');
-					Inputmask("99.99.9999", {
-						//"placeholder": '',
-						clearIncomplete: true,
-						clearMaskOnLostFocus: true,
-						onincomplete: function () {
-							input_clear_mask(input, input_g_value);
-						}
-					}).mask(input);
-					*/
+          input.classList.add('_mask');
+          Inputmask("99.99.9999", {
+          	//"placeholder": '',
+          	clearIncomplete: true,
+          	clearMaskOnLostFocus: true,
+          	onincomplete: function () {
+          		input_clear_mask(input, input_g_value);
+          	}
+          }).mask(input);
+          */
         }
         if (input.classList.contains('_phone')) {
           //'+7(999) 999 9999'
@@ -478,7 +478,7 @@ function inputs_init(inputs) {
         }
       })
       if (input.classList.contains('_date')) {
-        console.log('date')
+        // console.log('date')
 
         const calendarItem = datepicker(input, {
           customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
@@ -709,13 +709,12 @@ const choices1 = new Choices(searchTransport, {
   shouldSort: true,
   shouldSortItems: false,
   sorter: () => {},
-  placeholder: true,
-  placeholderValue: null,
+
   searchPlaceholderValue: null,
   prependValue: null,
   appendValue: null,
   renderSelectedChoices: 'auto',
-  loadingText: 'Loading...',
+  loadingText: 'Загрузка',
   noResultsText: 'Не найдено',
   noChoicesText: 'No choices to choose from',
   itemSelectText: '',
@@ -766,78 +765,78 @@ const choices1 = new Choices(searchTransport, {
 })
 
 /* ********************** */
-const picker = datepicker('#searchDate', {
-  // Event callbacks.
-  onSelect: instance => {
-    // Show which date was selected.
-    // console.log(instance.dateSelected)
-  },
-  onShow: instance => {
-    // console.log('Calendar showing.')
-  },
-  onHide: instance => {
-    // console.log('Calendar hidden.')
-  },
-  onMonthChange: instance => {
-    // Show the month of the selected date.
-    console.log(instance.currentMonthName)
-  },
+// const picker = datepicker('#searchDate', {
+//   // Event callbacks.
+//   onSelect: instance => {
+//     // Show which date was selected.
+//     // console.log(instance.dateSelected)
+//   },
+//   onShow: instance => {
+//     // console.log('Calendar showing.')
+//   },
+//   onHide: instance => {
+//     // console.log('Calendar hidden.')
+//   },
+//   onMonthChange: instance => {
+//     // Show the month of the selected date.
+//     console.log(instance.currentMonthName)
+//   },
 
-  // Customizations.
-  formatter: (input, date, instance) => {
-    // This will display the date as `1/1/2019`.
-    // input.value = date.toLocaleDateString()
-    // input.value = date.toDateString()
-  },
-  position: '', // Top right.
-  startDay: 1, // Calendar week starts on a Monday.
-  customDays: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
-  customMonths: [
-    'Янв',
-    'Фев',
-    'Мар',
-    'Апр',
-    'Май',
-    'Июн',
-    'Июл',
-    'Авг',
-    'Сен',
-    'Окт',
-    'Ноя',
-    'Дек',
-  ],
-  customOverlayMonths: [
-    '😀',
-    '😂',
-    '😎',
-    '😍',
-    '🤩',
-    '😜',
-    '😬',
-    '😳',
-    '🤪',
-    '🤓 ',
-    '😝',
-    '😮',
-  ],
-  overlayButton: 'Go!',
-  overlayPlaceholder: 'Enter a 4-digit year',
+//   // Customizations.
+//   formatter: (input, date, instance) => {
+//     // This will display the date as `1/1/2019`.
+//     // input.value = date.toLocaleDateString()
+//     // input.value = date.toDateString()
+//   },
+//   position: '', // Top right.
+//   startDay: 1, // Calendar week starts on a Monday.
+//   customDays: ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб'],
+//   customMonths: [
+//     'Янв',
+//     'Фев',
+//     'Мар',
+//     'Апр',
+//     'Май',
+//     'Июн',
+//     'Июл',
+//     'Авг',
+//     'Сен',
+//     'Окт',
+//     'Ноя',
+//     'Дек',
+//   ],
+//   customOverlayMonths: [
+//     '😀',
+//     '😂',
+//     '😎',
+//     '😍',
+//     '🤩',
+//     '😜',
+//     '😬',
+//     '😳',
+//     '🤪',
+//     '🤓 ',
+//     '😝',
+//     '😮',
+//   ],
+//   overlayButton: 'Go!',
+//   overlayPlaceholder: 'Enter a 4-digit year',
 
-  // Settings.
-  // alwaysShow: true, // Never hide the calendar.
-  dateSelected: new Date(), // Today is selected.
-  maxDate: new Date(2099, 0, 1), // Jan 1st, 2099.
-  minDate: new Date(2016, 5, 1), // June 1st, 2016.
-  startDate: new Date(), // This month.
-  showAllDates: true, // Numbers for leading & trailing days outside the current month will show.
+//   // Settings.
+//   // alwaysShow: true, // Never hide the calendar.
+//   dateSelected: new Date(), // Today is selected.
+//   maxDate: new Date(2099, 0, 1), // Jan 1st, 2099.
+//   minDate: new Date(2016, 5, 1), // June 1st, 2016.
+//   startDate: new Date(), // This month.
+//   showAllDates: true, // Numbers for leading & trailing days outside the current month will show.
 
-  // Disabling things.
-  noWeekends: false, // Saturday's and Sunday's will be unselectable.
-  // disabler: date => date.getDay() === 2 && date.getMonth() === 9, // Disabled every Tuesday in October
-  disabledDates: [new Date(2050, 0, 1), new Date(2050, 0, 3)], // Specific disabled dates.
-  disableMobile: true, // Conditionally disabled on mobile devices.
-  disableYearOverlay: true, // Clicking the year or month will *not* bring up the year overlay.
+//   // Disabling things.
+//   noWeekends: false, // Saturday's and Sunday's will be unselectable.
+//   // disabler: date => date.getDay() === 2 && date.getMonth() === 9, // Disabled every Tuesday in October
+//   disabledDates: [new Date(2050, 0, 1), new Date(2050, 0, 3)], // Specific disabled dates.
+//   disableMobile: true, // Conditionally disabled on mobile devices.
+//   disableYearOverlay: true, // Clicking the year or month will *not* bring up the year overlay.
 
-  // ID - be sure to provide a 2nd picker with the same id to create a daterange pair.
-  id: 1,
-})
+//   // ID - be sure to provide a 2nd picker with the same id to create a daterange pair.
+//   id: 1,
+// })

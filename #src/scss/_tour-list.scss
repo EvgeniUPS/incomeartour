@@ -24,9 +24,7 @@
 }
 
 .list-tour__filter {
-  // background-color: #ccc;
   height: 55px;
-  // margin-bottom: 20px;
   text-align: right;
 }
 #changeViewButton {
@@ -46,9 +44,11 @@
   }
 }
 .item-tour_list {
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  padding-bottom: 60px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  // box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   grid-template-columns: 2fr 1fr 1fr 1fr;
-  grid-template-rows: 50px 50px 2fr 2fr 40px;
+  grid-template-rows: 45px 50px 2fr 2fr 40px;
   grid-auto-flow: row;
   grid-template-areas:
     'title title title title'
@@ -57,7 +57,7 @@
     'image image date buttons'
     'flags flags icons reviews';
   @media (max-width: 992px) {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    // box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     grid-template-columns: 60% 1fr;
     // grid-template-rows: 50px 50px 2fr 2fr 40px;
     // grid-template-rows: 30px 40px 200px 1fr 50px 50px;
@@ -72,7 +72,7 @@
       'reviews  buttons';
   }
   @media (max-width: 768px) {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    // box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
     grid-template-columns: 45% 1fr;
     // grid-template-rows: 50px 50px 2fr 2fr 40px;
     // grid-template-rows: 30px 25px 150px 1fr 50px;
@@ -478,7 +478,12 @@
 
 .tour-list_grid {
   .item-tour_grid {
+    .tour-list__title {
+      // background-color: tomato;
+      height: 45px;
+    }
   }
+
   .tour-labels {
     // font-size: 11px;
     // padding: 10px;
@@ -509,6 +514,7 @@
   .tour-flags {
     display: flex;
     align-items: center;
+    padding-left: 35px;
 
     // .tour-flags__countries
     &__countries {
@@ -590,9 +596,10 @@
     }
   }
   .tour-buttons {
+    padding: 30px 35px;
     display: flex;
     gap: 5px;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     // .tour-buttons__reserve
     &__reserve {
@@ -606,7 +613,7 @@
   }
   .tour-labels {
     position: absolute;
-    top: 65px;
+    top: 75px;
     left: 35px;
     border-radius: 2px;
     // position: absolute;
@@ -649,6 +656,7 @@
     }
   }
   .tour-date {
+    padding-left: 35px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -688,9 +696,16 @@
 }
 
 .item-tour_grid {
-  // background-color: #7a956d;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  padding-bottom: 60px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
   position: relative;
+  .tour-list__image {
+    margin-bottom: 30px;
+  }
+
+  .tour-flags__flag {
+    justify-content: flex-start;
+  }
   .tour-labels {
   }
   .tour-labels__item {

@@ -63,7 +63,7 @@ function sliders_bild_callback(params) {}
 let slider_about = new Swiper('.about__slider', {
   /*
 	effect: 'fade',
-	autoplay: {
+	autoplay: { 
 		delay: 3000,
 		disableOnInteraction: false,
 	},
@@ -119,4 +119,71 @@ let slider_about = new Swiper('.about__slider', {
   //scrollbar: {
   //	el: '.swiper-scrollbar',
   //},
+})
+
+const swiper = new Swiper('.main-slider', {
+  // Optional parameters
+  // direction: 'vertical',
+  loop: true,
+
+  // If we need pagination
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.main-slider-btn-next',
+    prevEl: '.main-slider-btn-prev',
+  },
+
+  // And if we need scrollbar
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+})
+
+const photoSlider = new Swiper('.photo-slider', {
+  // Optional parameters
+  // direction: 'vertical',
+  loop: true,
+
+  // Navigation arrows
+  navigation: {
+    nextEl: '.photo-slider-button-next',
+    prevEl: '.photo-slider-button-prev',
+  },
+})
+
+const reviewsSlider = new Swiper('.reviews-slider', {
+  loop: true,
+  slidesPerView: 4.5,
+  spaceBetween: 30,
+  centeredSlides: true,
+
+  navigation: {
+    nextEl: '.reviews-slider-button-next',
+    prevEl: '.reviews-slider-button-prev',
+  },
+  breakpoints: {
+    // when window width is >= 320px
+    310: {
+      slidesPerView: 1.2,
+      spaceBetween: 20,
+    },
+    // when window width is >= 480px
+    480: {
+      slidesPerView: 2,
+      spaceBetween: 30,
+    },
+    // when window width is >= 640px
+    640: {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    },
+    992: {
+      slidesPerView: 4.5,
+      spaceBetween: 10,
+    },
+  },
 })

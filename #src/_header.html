@@ -47,25 +47,55 @@
         <nav class="menu__body">
           <ul class="menu__list" data-da=".main-burger-top, 768 , 1">
             <li class="menu__item">
-              <a href="#" class="menu__link">Туры</a>
+              <a href="#" class="menu__link menu-tour-link">Туры</a>
+              <ul class="menu-tour-list sub-menu">
+                <li><a href="#">Календарь</a></li>
+                <li><a href="#tours-types-block">Типы туров</a></li>
+              </ul>
             </li>
             <li class="menu__item">
               <a href="#" class="menu__link">Поиск туров</a>
             </li>
+
             <li class="menu__item">
               <a href="#" class="menu__link menu__link_country">Страны</a>
             </li>
+
             <li class="menu__item">
-              <a href="#" class="menu__link">Авиабилеты</a>
+              <a href="#" class="menu__link menu-services-link menu-sub-link"
+                >Услуги</a
+              >
+              <ul class="menu-services-body sub-menu">
+                <li><a href="#">Пункт 1</a></li>
+                <li><a href="#">Пункт 2</a></li>
+                <li><a href="#">Пункт 3</a></li>
+                <li><a href="#">Пункт 4</a></li>
+              </ul>
             </li>
+
             <li class="menu__item">
               <a href="#" class="menu__link">Отели</a>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link">Агентствам</a>
+              <a href="#" class="menu__link menu-agency-link">Агентствам</a>
+              <ul class="menu-agency-body sub-menu">
+                <li><a href="#">Сотрудничество</a></li>
+                <li><a href="#">Бонусная программа</a></li>
+                <li><a href="#">Рекламные туры</a></li>
+                <li><a href="#">Семинары и презентации</a></li>
+                <li><a href="#">Оплата</a></li>
+                <li><a href="#">Регистрации</a></li>
+              </ul>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link">Туристам</a>
+              <a href="#" class="menu__link menu-tourists-link">Туристам</a>
+              <ul class="menu-tourists-body sub-menu">
+                <li><a href="#">Договор</a></li>
+                <li><a href="#">Подарочный сертификат</a></li>
+                <li><a href="#">Оплата</a></li>
+                <li><a href="#">Регистрация</a></li>
+                <li><a href="#">Проверка статуса заявки</a></li>
+              </ul>
             </li>
           </ul>
         </nav>
@@ -273,6 +303,7 @@
               <li><a href="#">Где купить</a></li>
               <li><a href="#">Новости</a></li>
               <li><a href="#">Контакты</a></li>
+              <li><a href="#">Авиабилеты</a></li>
             </ul>
           </div>
           <div class="main-burger-bottom"></div>
@@ -284,49 +315,162 @@
 </header>
 
 <script>
+  // Main Burger Menu
   const mainMenuBtn = document.querySelector('.main-burger')
   const mainBurgerBody = document.querySelector('.main-burger-body')
+  if (mainMenuBtn) {
+    mainMenuBtn.addEventListener('click', function (e) {
+      e.stopPropagation()
+      mainBurgerBody.classList.toggle('main-burger-active')
+    })
 
-  mainMenuBtn.addEventListener('click', function (e) {
-    e.stopPropagation()
-    mainBurgerBody.classList.toggle('main-burger-active')
-  })
+    if (mainBurgerBody.classList.contains('main-burger-active')) {
+      console.log('active')
+    }
+    document.addEventListener('keydown', function (e) {
+      if (e.code === 'Escape') {
+        if (mainBurgerBody.classList.contains('main-burger-active')) {
+          closeMenu()
+        }
+        if (menuCountryList.classList.contains('_active')) {
+          menuCountryList.classList.remove('_active')
+        }
+      }
+    })
 
-  if (mainBurgerBody.classList.contains('main-burger-active')) {
-    console.log('active')
-  }
-  document.addEventListener('keydown', function (e) {
-    if (e.code === 'Escape') {
-      if (mainBurgerBody.classList.contains('main-burger-active')) {
+    document.addEventListener('click', function (e) {
+      if (
+        !e.target.classList.contains('main-burger-btn') &&
+        !e.target.classList.contains('main-burger-active')
+      ) {
         closeMenu()
       }
-      if (menuCountryList.classList.contains('_active')) {
-        menuCountryList.classList.remove('_active')
-      }
+    })
+    function closeMenu() {
+      mainBurgerBody.classList.remove('main-burger-active')
     }
-  })
-
-  document.addEventListener('click', function (e) {
-    if (
-      !e.target.classList.contains('main-burger-btn') &&
-      !e.target.classList.contains('main-burger-active')
-    ) {
-      closeMenu()
-    }
-  })
-  function closeMenu() {
-    mainBurgerBody.classList.remove('main-burger-active')
   }
 
+  //Country Menu
   const menuLinkCountry = document.querySelector('.menu__link_country')
   const menuCountryList = document.querySelector('.menu-country-list')
   const menuCountryClose = document.querySelector('.menu-country-close')
-
   menuLinkCountry.addEventListener('click', () => {
     menuCountryList.classList.add('_active')
   })
-
   menuCountryClose.addEventListener('click', function (e) {
     menuCountryList.classList.remove('_active')
   })
+
+  createSubmenu('.menu-tour-link', '.menu-tour-list')
+  /* Tour Menu  */
+  const menuTourLInk = document.querySelector('.menu-tour-link')
+  const menuTourList = document.querySelector('.menu-tour-list')
+  if (menuTourLInk) {
+    menuTourLInk.addEventListener('click', function (e) {
+      e.stopPropagation()
+      menuTourList.classList.toggle('menu-tour-active')
+    })
+
+    document.addEventListener('keydown', function (e) {
+      if (e.code === 'Escape') {
+        if (menuTourList.classList.contains('menu-tour-active')) {
+          closeMenu()
+        }
+      }
+    })
+
+    document.addEventListener('click', function (e) {
+      if (
+        !e.target.classList.contains('menu-tour-list') &&
+        !e.target.classList.contains('menu-tour-active')
+      ) {
+        closeMenu()
+      }
+    })
+
+    function closeMenu() {
+      menuTourList.classList.remove('menu-tour-active')
+    }
+
+    if (menuTourList.classList.contains('menu-tour-active')) {
+      console.log('active')
+    }
+  }
+
+  /* SERVICES MENU */
+
+  const menuServicesLInk = document.querySelector('.menu-services-link')
+  const menuServicesBody = document.querySelector('.menu-services-body')
+  if (menuServicesLInk) {
+    menuServicesLInk.addEventListener('click', function (e) {
+      e.stopPropagation()
+      menuServicesBody.classList.toggle('_active-menu')
+    })
+
+    document.addEventListener('keydown', function (e) {
+      if (e.code === 'Escape') {
+        if (menuServicesBody.classList.contains('_active-menu')) {
+          closeMenu()
+        }
+      }
+    })
+
+    document.addEventListener('click', function (e) {
+      if (
+        !e.target.classList.contains('menu-tour-list') &&
+        !e.target.classList.contains('_active-menu')
+      ) {
+        closeMenu()
+      }
+    })
+
+    function closeMenu() {
+      menuServicesBody.classList.remove('_active-menu')
+    }
+
+    // if (menuTourBody.classList.contains('_active')) {
+    //   console.log('active')
+    // }
+  }
+
+  createSubmenu('.menu-agency-link', '.menu-agency-body')
+  createSubmenu('.menu-tourists-link', '.menu-tourists-body')
+
+  function createSubmenu(subMenuLink, subMenuBody) {
+    // menuServicesLInk
+    // menuLink
+    const allSubMenuLink = document.querySelectorAll('sub-menu-link')
+    console.log(`allSubMenuLink`, allSubMenuLink)
+    const menuLink = document.querySelector(subMenuLink)
+    const menuBody = document.querySelector(subMenuBody)
+    if (menuLink) {
+      menuLink.addEventListener('click', function (e) {
+        e.stopPropagation()
+        menuBody.classList.toggle('_active-menu')
+      })
+
+      document.addEventListener('keydown', function (e) {
+        if (e.code === 'Escape') {
+          if (menuBody.classList.contains('_active-menu')) {
+            closeMenu()
+          }
+        }
+      })
+
+      document.addEventListener('click', function (e) {
+        if (
+          !e.target.classList.contains('sub-menu') &&
+          !e.target.classList.contains(subMenuBody + ' _active-menu')
+        ) {
+          console.log(e.target)
+          closeMenu()
+        }
+      })
+
+      function closeMenu() {
+        menuBody.classList.remove('_active-menu')
+      }
+    }
+  }
 </script>
