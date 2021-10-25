@@ -5,18 +5,18 @@ const itemList = document.querySelector('.tour-list')
 const changeViewHandler = e => {
   itemList.classList.toggle('tour-list_list')
   itemList.classList.toggle('tour-list_grid')
-  console.log(e.target)
 
   itemTour.forEach(item => {
     item.classList.toggle('item-tour_list')
     item.classList.toggle('item-tour_grid')
-    console.log(item)
   })
 
-  if (changeViewButton.innerHTML === 'List') {
-    changeViewButton.innerHTML = 'Grid'
+  if (changeViewButton.classList.contains('icon-grid-handler')) {
+    changeViewButton.classList.remove('icon-grid-handler')
+    changeViewButton.classList.add('icon-list-handler')
   } else {
-    changeViewButton.innerHTML = 'List'
+    changeViewButton.classList.remove('icon-list-handler')
+    changeViewButton.classList.add('icon-grid-handler')
   }
 }
 if (changeViewButton) {

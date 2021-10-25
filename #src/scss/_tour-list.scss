@@ -9,7 +9,7 @@
   }
   @media (max-width: 768px) {
     gap: 10px;
-    padding: 80px 0;
+    padding: 40px 0;
   }
 
   img {
@@ -28,10 +28,13 @@
   text-align: right;
 }
 #changeViewButton {
-  height: 100%;
-  padding: 15px;
-  background-color: #333;
+  // height: 100%;
+  // padding: 15px;
+  // background-color: #333;
   color: #fff;
+  @media (max-width: 600px) {
+    display: none;
+  }
 }
 .item-tour {
   font-size: 13px;
@@ -711,4 +714,18 @@
   .tour-labels__item {
     background-color: #fff;
   }
+}
+
+.icon-grid-handler {
+  width: 20px;
+  height: 20px;
+  background-image: url(../img/icons/view-grid.svg);
+  background-size: contain;
+}
+.icon-list-handler {
+  width: 20px;
+  height: 20px;
+  background-image: url(../img/icons/view-list.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
 }

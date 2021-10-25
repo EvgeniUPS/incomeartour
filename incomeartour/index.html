@@ -70,10 +70,12 @@
         <nav class="menu__body">
           <ul class="menu__list" data-da=".main-burger-top, 768 , 1">
             <li class="menu__item">
-              <a href="#" class="menu__link menu-tour-link">Туры</a>
+              <a href="#" class="menu__link menu-tour-link submenu-link"
+                >Туры</a
+              >
               <ul class="menu-tour-list sub-menu">
                 <li><a href="#">Календарь</a></li>
-                <li><a href="#tours-types-block">Типы туров</a></li>
+                <li><a href="#">Типы туров</a></li>
               </ul>
             </li>
             <li class="menu__item">
@@ -81,26 +83,35 @@
             </li>
 
             <li class="menu__item">
-              <a href="#" class="menu__link menu__link_country">Страны</a>
+              <a href="#" class="menu__link menu__link_country submenu-link"
+                >Страны</a
+              >
             </li>
 
             <li class="menu__item">
-              <a href="#" class="menu__link menu-services-link menu-sub-link"
+              <a
+                href="#"
+                class="menu__link menu-services-link menu-sub-link submenu-link"
                 >Услуги</a
               >
-              <ul class="menu-services-body sub-menu">
-                <li><a href="#">Пункт 1</a></li>
-                <li><a href="#">Пункт 2</a></li>
-                <li><a href="#">Пункт 3</a></li>
-                <li><a href="#">Пункт 4</a></li>
+              <ul class="menu__link menu-services-body sub-menu">
+                <li><a href="#">Авиатуры</a></li>
+                <li><a href="#">Автобусные туры</a></li>
+                <li><a href="#">Круизы</a></li>
+                <li><a href="#">Корпоративный туризм</a></li>
+                <li><a href="#">Авиабилеты</a></li>
+                <li><a href="#">ПЦР тестирование</a></li>
               </ul>
             </li>
 
             <li class="menu__item">
               <a href="#" class="menu__link">Отели</a>
             </li>
+
             <li class="menu__item">
-              <a href="#" class="menu__link menu-agency-link">Агентствам</a>
+              <a href="#" class="menu__link menu-agency-link submenu-link"
+                >Агентствам</a
+              >
               <ul class="menu-agency-body sub-menu">
                 <li><a href="#">Сотрудничество</a></li>
                 <li><a href="#">Бонусная программа</a></li>
@@ -111,7 +122,9 @@
               </ul>
             </li>
             <li class="menu__item">
-              <a href="#" class="menu__link menu-tourists-link">Туристам</a>
+              <a href="#" class="menu__link menu-tourists-link submenu-link"
+                >Туристам</a
+              >
               <ul class="menu-tourists-body sub-menu">
                 <li><a href="#">Договор</a></li>
                 <li><a href="#">Подарочный сертификат</a></li>
@@ -326,12 +339,20 @@
               <li><a href="#">Где купить</a></li>
               <li><a href="#">Новости</a></li>
               <li><a href="#">Контакты</a></li>
-              <li><a href="#">Авиабилеты</a></li>
+              <li>
+                <a class="menu-info-link submenu-link" href="#">Информация</a>
+                <ul class="menu-info-body sub-menu">
+                  <li><a href="#">Item</a></li>
+                  <li><a href="#">Item</a></li>
+                  <li><a href="#">Item</a></li>
+                  <li><a href="#">Item</a></li>
+                  <li><a href="#">Item</a></li>
+                </ul>
+              </li>
             </ul>
           </div>
           <div class="main-burger-bottom"></div>
         </div>
-        <!-- <button></button> -->
       </div>
     </div>
   </div>
@@ -386,90 +407,19 @@
   })
 
   createSubmenu('.menu-tour-link', '.menu-tour-list')
-  /* Tour Menu  */
-  const menuTourLInk = document.querySelector('.menu-tour-link')
-  const menuTourList = document.querySelector('.menu-tour-list')
-  if (menuTourLInk) {
-    menuTourLInk.addEventListener('click', function (e) {
-      e.stopPropagation()
-      menuTourList.classList.toggle('menu-tour-active')
-    })
-
-    document.addEventListener('keydown', function (e) {
-      if (e.code === 'Escape') {
-        if (menuTourList.classList.contains('menu-tour-active')) {
-          closeMenu()
-        }
-      }
-    })
-
-    document.addEventListener('click', function (e) {
-      if (
-        !e.target.classList.contains('menu-tour-list') &&
-        !e.target.classList.contains('menu-tour-active')
-      ) {
-        closeMenu()
-      }
-    })
-
-    function closeMenu() {
-      menuTourList.classList.remove('menu-tour-active')
-    }
-
-    if (menuTourList.classList.contains('menu-tour-active')) {
-      console.log('active')
-    }
-  }
-
-  /* SERVICES MENU */
-
-  const menuServicesLInk = document.querySelector('.menu-services-link')
-  const menuServicesBody = document.querySelector('.menu-services-body')
-  if (menuServicesLInk) {
-    menuServicesLInk.addEventListener('click', function (e) {
-      e.stopPropagation()
-      menuServicesBody.classList.toggle('_active-menu')
-    })
-
-    document.addEventListener('keydown', function (e) {
-      if (e.code === 'Escape') {
-        if (menuServicesBody.classList.contains('_active-menu')) {
-          closeMenu()
-        }
-      }
-    })
-
-    document.addEventListener('click', function (e) {
-      if (
-        !e.target.classList.contains('menu-tour-list') &&
-        !e.target.classList.contains('_active-menu')
-      ) {
-        closeMenu()
-      }
-    })
-
-    function closeMenu() {
-      menuServicesBody.classList.remove('_active-menu')
-    }
-
-    // if (menuTourBody.classList.contains('_active')) {
-    //   console.log('active')
-    // }
-  }
-
+  createSubmenu('.menu-services-link', '.menu-services-body')
   createSubmenu('.menu-agency-link', '.menu-agency-body')
   createSubmenu('.menu-tourists-link', '.menu-tourists-body')
+  createSubmenu('.menu-info-link', '.menu-info-body')
 
   function createSubmenu(subMenuLink, subMenuBody) {
-    // menuServicesLInk
-    // menuLink
-    const allSubMenuLink = document.querySelectorAll('sub-menu-link')
-    console.log(`allSubMenuLink`, allSubMenuLink)
     const menuLink = document.querySelector(subMenuLink)
     const menuBody = document.querySelector(subMenuBody)
     if (menuLink) {
       menuLink.addEventListener('click', function (e) {
-        e.stopPropagation()
+        // e.stopPropagation()
+        closeMenu()
+        menuLink.classList.toggle('_menu-active-link')
         menuBody.classList.toggle('_active-menu')
       })
 
@@ -486,12 +436,12 @@
           !e.target.classList.contains('sub-menu') &&
           !e.target.classList.contains(subMenuBody + ' _active-menu')
         ) {
-          console.log(e.target)
           closeMenu()
         }
       })
 
       function closeMenu() {
+        menuLink.classList.remove('_menu-active-link')
         menuBody.classList.remove('_active-menu')
       }
     }
@@ -644,7 +594,7 @@
     </div>
     <div class="tour-list-block__main list-tour">
       <div class="list-tour__filter">
-        <button id="changeViewButton">Grid</button>
+        <button id="changeViewButton" class="icon-grid-handler"></button>
       </div>
 
       <div class="list-tour__list tour-list tour-list_list">
