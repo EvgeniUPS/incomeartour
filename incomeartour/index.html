@@ -21,7 +21,17 @@
 
   <body>
     <div class="wrapper">
-      <header class="header">
+      <div class="preloader">
+  <div class="loading">
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+  </div>
+</div>
+
+<header class="header">
   <div class="header__top top-header">
     <div class="top-header__container _container">
       <div class="top-header__left" data-da=".main-burger-bottom, 768 , 0">
@@ -417,8 +427,8 @@
     const menuBody = document.querySelector(subMenuBody)
     if (menuLink) {
       menuLink.addEventListener('click', function (e) {
-        // e.stopPropagation()
-        closeMenu()
+        e.stopPropagation()
+        // closeMenu()
         menuLink.classList.toggle('_menu-active-link')
         menuBody.classList.toggle('_active-menu')
       })
@@ -459,10 +469,10 @@
           <img src="./img/slider.jpg" alt="" />
         </div>
         <div class="swiper-slide">
-          <img src="./img/slider.jpg" alt="" />
+          <img src="./img/image9.jpg" alt="" />
         </div>
         <div class="swiper-slide">
-          <img src="./img/slider.jpg" alt="" />
+          <img src="./img/slide03.jpg" alt="" />
         </div>
       </div>
       <!-- If we need pagination -->
@@ -568,7 +578,7 @@
         </select>
       </div>
       <div class="search-form__button">
-        <button type="button" class="btn btn__blue">Поиск</button>
+        <button type="button" class="btn1 btn__blue">Поиск</button>
       </div>
     </form>
   </div>
@@ -593,9 +603,11 @@
       </div>
     </div>
     <div class="tour-list-block__main list-tour">
-      <div class="list-tour__filter">
+      <div class="news-lock__title section-title">
+        <span>Путешествуй с нами</span>
         <button id="changeViewButton" class="icon-grid-handler"></button>
       </div>
+      <!-- <div class="list-tour__filter"></div> -->
 
       <div class="list-tour__list tour-list tour-list_list">
         <!-- *** -->
@@ -1090,6 +1102,7 @@
 
         <section class="hot-offer-block">
   <div class="hot-offer-block__container _container">
+    <div class="section-title">Горящие туры</div>
     <div class="hot-offer-block__header">
       <img src="./img/hot-list/hot-list-header.jpg" alt="" />
     </div>
@@ -1167,6 +1180,7 @@
 
         <section class="photo-slider-block">
   <div class="photo-slider-block__container _container">
+    <div class="news-block__title section-title">Рекомендуем посетить</div>
     <!-- Slider main container -->
     <div class="swiper photo-slider">
       <!-- Additional required wrapper -->
@@ -1184,8 +1198,12 @@
       </div>
 
       <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev photo-slider-button-prev"> <i class="_icon-arrow-left"></i> </div>
-      <div class="swiper-button-next photo-slider-button-next"><i class="_icon-arrow-right"></i></div>
+      <div class="swiper-button-prev photo-slider-button-prev">
+        <i class="_icon-arrow-left"></i>
+      </div>
+      <div class="swiper-button-next photo-slider-button-next">
+        <i class="_icon-arrow-right"></i>
+      </div>
     </div>
   </div>
 </section>
@@ -1243,6 +1261,7 @@
 
         <section class="reviews-slider-block">
   <div class="reviews-slider-block__container">
+    <div class="section-title">Отзывы</div>
     <!-- Slider main container -->
     <div class="swiper reviews-slider">
       <!-- Additional required wrapper -->
@@ -1373,6 +1392,7 @@
         <!--  -->
         <section class="tours-types-block" id="tours-types-block">
   <div class="tours-types-block__container _container">
+    <div class="section-title">Виды отдыха</div>
     <div class="tours-types-block__list list-types">
       <!--  -->
       <div class="list-types__item item-types">

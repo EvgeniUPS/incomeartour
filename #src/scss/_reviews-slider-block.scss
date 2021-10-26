@@ -1,7 +1,7 @@
 .reviews-slider-block {
   // background-color: #7a956d;
   // padding-bottom: 20px;
-  margin-bottom: 200px;
+  @include adaptiv-value('margin-bottom', 100, 60, 1);
 }
 
 .reviews-slider {

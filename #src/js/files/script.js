@@ -53,3 +53,8 @@ window.onscroll = showBtn
 //   altFormat: 'F j, Y',
 //   dateFormat: 'Y-m-d',
 // })
+
+const preloader = document.querySelector('.preloader')
+document.addEventListener('DOMContentLoaded', () => {
+  preloader.remove()
+})
