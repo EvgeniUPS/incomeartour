@@ -1,3 +1,13 @@
+const preloader = document.querySelector('.preloader')
+const body = document.querySelector('body')
+document.addEventListener('DOMContentLoaded', () => {
+  console.log(555);
+  body.classList.remove('_lock')
+  preloader.remove()
+})
+
+
+
 const changeViewButton = document.querySelector('#changeViewButton')
 const itemTour = document.querySelectorAll('.item-tour')
 const itemList = document.querySelector('.tour-list')
@@ -54,7 +64,3 @@ window.onscroll = showBtn
 //   dateFormat: 'Y-m-d',
 // })
 
-const preloader = document.querySelector('.preloader')
-document.addEventListener('DOMContentLoaded', () => {
-  preloader.remove()
-})

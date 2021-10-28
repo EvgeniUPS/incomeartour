@@ -6,7 +6,8 @@
   }
   // .hot-offer-block__header
   &__header {
-    @include adaptiv-value('height', 300, 150, 1);
+    // @include adaptiv-value('height', 300, 30, 1);
+    height: 300px;
     margin-bottom: 10px;
 
     @media (max-width: 768px) {
@@ -113,7 +114,7 @@
     @media (max-width: 768px) {
       left: 10px;
       top: 10px;
-      font-size: 9px;
+      font-size: 12px;
       display: flex;
       flex-direction: column;
       align-items: flex-start;

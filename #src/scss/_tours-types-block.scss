@@ -1,5 +1,6 @@
 .tours-types-block {
-  margin-bottom: 100px;
+  // margin-bottom: 100px;
+  @include adaptiv-value('margin-bottom', 100, 60, 1);
 
   // .tours-types-block__container
   &__container {

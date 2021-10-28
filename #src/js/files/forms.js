@@ -602,6 +602,7 @@ if (priceSlider) {
 }
 
 const searchDirection = document.querySelector('#searchDirection')
+if(searchDirection){
 const choices = new Choices(searchDirection, {
   silent: false,
   items: [],
@@ -682,8 +683,10 @@ const choices = new Choices(searchDirection, {
   callbackOnInit: null,
   callbackOnCreateTemplates: null,
 })
+}
 
 const searchTransport = document.querySelector('#searchTransport')
+if(searchTransport){
 const choices1 = new Choices(searchTransport, {
   silent: false,
   items: [],
@@ -763,6 +766,7 @@ const choices1 = new Choices(searchTransport, {
   callbackOnInit: null,
   callbackOnCreateTemplates: null,
 })
+}
 
 /* ********************** */
 // const picker = datepicker('#searchDate', {

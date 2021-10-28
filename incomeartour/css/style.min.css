@@ -2554,6 +2554,10 @@ button.swiper-pagination-bullet {
   background-color: tomato;
 }
 
+.news-block__title {
+  position: relative;
+}
+
 .tour-list-block__top {
   padding-top: 100px;
   padding-bottom: 100px;
@@ -2606,7 +2610,16 @@ button.swiper-pagination-bullet {
 }
 
 #changeViewButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
   color: #fff;
+}
+@media (max-width: 768px) {
+  #changeViewButton {
+    display: none;
+  }
 }
 
 .item-tour {
@@ -2615,11 +2628,16 @@ button.swiper-pagination-bullet {
   display: grid;
   gap: 10px;
 }
+@media (max-width: 768px) {
+  .item-tour {
+    gap: 0px;
+  }
+}
 .item-tour_list {
   padding-bottom: 60px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   grid-template-columns: 2fr 1fr 1fr 1fr;
-  grid-template-rows: 45px 50px 2fr 2fr 40px;
+  grid-template-rows: 45px 50px 2fr 2fr min-content;
   grid-auto-flow: row;
   grid-template-areas: "title title title title" "image image labels price" "image image info price" "image image date buttons" "flags flags icons reviews";
 }
@@ -2632,9 +2650,12 @@ button.swiper-pagination-bullet {
 }
 @media (max-width: 768px) {
   .item-tour_list {
-    grid-template-columns: 45% 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(8, min-content);
     grid-auto-flow: row;
-    grid-template-areas: "title  title" "image  info" "image  price" "flags  date" "flags   date" "icons  date" "reviews  reviews" "buttons  buttons";
+    grid-template-areas: "title title" "image image" "flags flags" "info info" "price price" "date icons" "date reviews" "buttons buttons";
+    padding-bottom: 15px;
+    border: 0;
   }
 }
 
@@ -2659,6 +2680,11 @@ button.swiper-pagination-bullet {
       );
   }
 }
+@media (max-width: 768px) {
+  .tour-list_list {
+    gap: 10px;
+  }
+}
 
 .tour-list_grid {
   display: grid;
@@ -2676,21 +2702,62 @@ button.swiper-pagination-bullet {
   height: 100%;
   object-fit: cover;
 }
+@media (max-width: 768px) {
+  .tour-list__image {
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+    border-top: 1px solid #000;
+    padding-bottom: 10px;
+  }
+}
 
 .tour-list__flags {
   grid-area: flags;
 }
+@media (max-width: 768px) {
+  .tour-list__flags {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    padding: 0 10px;
+    padding-bottom: 10px;
+  }
+}
 
 .tour-list__icons {
   grid-area: icons;
+  display: flex;
+}
+@media (max-width: 768px) {
+  .tour-list__icons {
+    border-right: 1px solid #000;
+    min-height: 20px;
+    gap: 0;
+  }
 }
 
 .tour-list__price {
   grid-area: price;
 }
+@media (max-width: 768px) {
+  .tour-list__price {
+    font-size: 18px;
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    padding: 0 10px;
+  }
+}
 
 .tour-list__buttons {
   grid-area: buttons;
+}
+@media (max-width: 768px) {
+  .tour-list__buttons {
+    flex-direction: column;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+    border-bottom: 1px solid #000;
+    padding: 5px 10px 26px;
+  }
 }
 
 .tour-list__labels {
@@ -2700,17 +2767,43 @@ button.swiper-pagination-bullet {
 .tour-list__date {
   grid-area: date;
 }
+@media (max-width: 768px) {
+  .tour-list__date {
+    border-left: 1px solid #000;
+    padding: 0 10px;
+    padding-bottom: 10px;
+  }
+}
 
 .tour-list__info {
   grid-area: info;
+}
+@media (max-width: 768px) {
+  .tour-list__info {
+    border-left: 1px solid #000;
+    border-right: 1px solid #000;
+    padding: 0 10px;
+    padding-bottom: 20px;
+  }
 }
 
 .tour-list__title {
   grid-area: title;
 }
+@media (max-width: 768px) {
+  .tour-list__title {
+    margin-bottom: 10px;
+  }
+}
 
 .tour-list__reviews {
   grid-area: reviews;
+}
+@media (max-width: 768px) {
+  .tour-list__reviews {
+    border-right: 1px solid #000;
+    padding: 10px 10px 10px 0;
+  }
 }
 
 .tour-labels {
@@ -2728,8 +2821,9 @@ button.swiper-pagination-bullet {
 }
 @media (max-width: 768px) {
   .tour-labels {
-    left: 5px;
-    font-size: 9px;
+    left: 10px;
+    font-size: 12px;
+    top: 38px;
   }
 }
 .tour-labels__item {
@@ -2793,7 +2887,7 @@ button.swiper-pagination-bullet {
 }
 @media (max-width: 992px) {
   .tour-info__duration {
-    font-size: 9px;
+    font-size: 12px;
   }
 }
 .tour-info__duration_value {
@@ -2801,7 +2895,12 @@ button.swiper-pagination-bullet {
 }
 @media (max-width: 992px) {
   .tour-info__duration_value {
-    font-size: 10px;
+    font-size: 12px;
+  }
+}
+@media (max-width: 768px) {
+  .tour-info__duration_value {
+    margin-bottom: 0;
   }
 }
 .tour-info__group {
@@ -2811,12 +2910,12 @@ button.swiper-pagination-bullet {
 }
 @media (max-width: 992px) {
   .tour-info__group {
-    font-size: 9px;
+    font-size: 12px;
   }
 }
 @media (max-width: 992px) {
   .tour-info__group_value {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 
@@ -2827,7 +2926,7 @@ button.swiper-pagination-bullet {
 }
 @media (max-width: 768px) {
   .tour-price {
-    flex-direction: column-reverse;
+    align-items: center;
   }
 }
 .tour-price__main {
@@ -2849,6 +2948,7 @@ button.swiper-pagination-bullet {
 @media (max-width: 768px) {
   .tour-price__main {
     font-size: 12px;
+    gap: 5px;
   }
 }
 .tour-price__currency {
@@ -2870,6 +2970,7 @@ button.swiper-pagination-bullet {
   .tour-price__description {
     margin-bottom: 5px;
     font-size: 7px;
+    display: none;
   }
 }
 .tour-price__description span {
@@ -2882,6 +2983,11 @@ button.swiper-pagination-bullet {
     align-items: center;
     justify-content: space-between;
     gap: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .tour-buttons a {
+    margin: 0px auto;
   }
 }
 .tour-buttons__reserve {
@@ -2908,6 +3014,13 @@ button.swiper-pagination-bullet {
     justify-content: flex-start;
   }
 }
+@media (max-width: 768px) {
+  .tour-reviews {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
 .tour-reviews i {
   font-size: 17px;
 }
@@ -2927,6 +3040,11 @@ button.swiper-pagination-bullet {
   line-height: 17px;
   margin-left: 17.5px;
 }
+@media (max-width: 768px) {
+  .tour-reviews__stars {
+    margin-left: 0;
+  }
+}
 
 .tour-date {
   display: flex;
@@ -2940,12 +3058,12 @@ button.swiper-pagination-bullet {
 }
 @media (max-width: 768px) {
   .tour-date__title {
-    font-size: 10px;
+    font-size: 12px;
   }
 }
 @media (max-width: 768px) {
   .tour-date__body {
-    font-size: 9px;
+    font-size: 12px;
   }
 }
 .tour-date__value {
@@ -2954,12 +3072,11 @@ button.swiper-pagination-bullet {
 .tour-date__viewall {
   font-size: 16px;
   font-weight: 700;
-  margin-bottom: 15px;
   color: rgba(0, 0, 0, 0.75);
 }
 @media (max-width: 768px) {
   .tour-date__viewall {
-    font-size: 9px;
+    font-size: 12px;
   }
 }
 
@@ -2975,10 +3092,20 @@ button.swiper-pagination-bullet {
     justify-content: flex-start;
   }
 }
+@media (max-width: 768px) {
+  .tour-icons {
+    align-items: flex-end;
+  }
+}
 .tour-icons a {
   padding: 5px;
   color: rgba(0, 0, 0, 0.8);
   font-size: 26px;
+}
+@media (max-width: 768px) {
+  .tour-icons a {
+    padding: 0;
+  }
 }
 
 .tour-list-block__bottom {
@@ -3204,14 +3331,6 @@ button.swiper-pagination-bullet {
   height: 300px;
   margin-bottom: 10px;
 }
-@media (max-width: 1230px) {
-  .hot-offer-block__header {
-    height: calc(
-        150px + 150 *
-          ((100vw - 320px) / 910)
-      );
-  }
-}
 @media (max-width: 768px) {
   .hot-offer-block__header {
     margin-bottom: 30px;
@@ -3321,7 +3440,7 @@ button.swiper-pagination-bullet {
   .item-hot__labels {
     left: 10px;
     top: 10px;
-    font-size: 9px;
+    font-size: 12px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -3685,6 +3804,14 @@ button.swiper-pagination-bullet {
 
 .tours-types-block {
   margin-bottom: 100px;
+}
+@media (max-width: 1230px) {
+  .tours-types-block {
+    margin-bottom: calc(
+        60px + 40 *
+          ((100vw - 320px) / 910)
+      );
+  }
 }
 .tours-types-block__list a {
   color: #000;
@@ -4372,7 +4499,7 @@ button.swiper-pagination-bullet {
 }
 @media (max-width: 768px) {
   .footer a {
-    font-size: 9px;
+    font-size: 12px;
   }
 }
 @media (max-width: 992px) {
@@ -4413,7 +4540,7 @@ button.swiper-pagination-bullet {
 @media (max-width: 768px) {
   .menu-footer__col ul {
     gap: 10px;
-    margin-bottom: 25px;
+    margin-bottom: 40px;
   }
 }
 @media (max-width: 768px) {
