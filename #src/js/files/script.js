@@ -1,12 +1,9 @@
 const preloader = document.querySelector('.preloader')
 const body = document.querySelector('body')
 document.addEventListener('DOMContentLoaded', () => {
-  console.log(555);
   body.classList.remove('_lock')
   preloader.remove()
 })
-
-
 
 const changeViewButton = document.querySelector('#changeViewButton')
 const itemTour = document.querySelectorAll('.item-tour')
@@ -57,10 +54,3 @@ scrollTopBtn.onclick = function () {
 }
 // When scrolling, we run the function
 window.onscroll = showBtn
-
-// flatpickr('#flatDate', {
-//   altInput: true,
-//   altFormat: 'F j, Y',
-//   dateFormat: 'Y-m-d',
-// })
-

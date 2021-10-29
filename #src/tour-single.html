@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="ru">
   @@include('_head.html',{ "title":"Главная" })
+  <style>
+    .swiper {
+      width: 100%;
+      height: 300px;
+      /* margin-left: auto; */
+      /* margin-right: auto; */
+    }
+
+    .swiper-slide img {
+      /* display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover; */
+    }
+  </style>
   <body class="_lock">
     <div class="wrapper">
       @@include('_header.html',{})
@@ -8,7 +23,138 @@
         <!-- @@include('_main-slider.html',{}) -->
         <!--  -->
 
+        <!-- single-main-block -->
+        <section class="single-main-block">
+          <div class="single-main-block__container _container">
+            <div class="single-main-block__gallery main-gallery">
+              <div class="main-gallery__slider">
+                <!--  -->
+                <!-- Slider main container -->
+                <div class="swiper single-block-slider">
+                  <div class="swiper-wrapper">
+                    <!-- Slides -->
+                    <div class="swiper-slide">
+                      <img
+                        data-fancybox="gallery"
+                        src="./img/image9.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        data-fancybox="gallery"
+                        src="./img/image01.jpg"
+                        alt=""
+                      />
+                    </div>
+                    <div class="swiper-slide">
+                      <img
+                        data-fancybox="gallery"
+                        src="./img/image02.jpg"
+                        alt=""
+                      />
+                    </div>
+                  </div>
+                  <div class="swiper-pagination"></div>
+                </div>
+                <div class="test">
+                  <div class="swiper single-block-slider-thumb">
+                    <div class="swiper-wrapper">
+                      <!-- Slides -->
+                      <div class="swiper-slide">
+                        <img src="./img/image9.jpg" alt="" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./img/image01.jpg" alt="" />
+                      </div>
+                      <div class="swiper-slide">
+                        <img src="./img/image02.jpg" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="single-block-slider-buttons">
+                    <div
+                      class="swiper-button-next single-block-button-next"
+                    ></div>
+                    <div
+                      class="swiper-button-prev single-block-button-prev"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+              <!--  -->
+              <div class="main-gallery__route main-route">
+                <div class="main-route__flags">flags</div>
+                <div class="main-route__cities">cities</div>
+              </div>
+            </div>
+            <div class="single-main-block__info main-info">
+              <h2 class="main-info__title">ПОД НЕБОМ ПАРИЖА</h2>
+              <div class="main-info__description">
+                5 дней / без ночных переездов
+              </div>
+              <div class="main-info__price price-main">
+                <h2 class="price-main__primary">от 22 494 UAH</h2>
+                <h3 class="price-main__secondary">690 EUR / 720 USD</h3>
+                <span class="price-main__info">i</span>
+              </div>
+              <div class="main-info__details main-details">
+                <div class="main-details__item item-details">
+                  <h4 class="item-details__title">Длительность:</h4>
+                  <div class="item-details__body">8 дней</div>
+                </div>
+                <div class="main-details__item item-details">
+                  <h4 class="item-details__title">Группа:</h4>
+                  <div class="item-details__body">От 12 человек</div>
+                </div>
+                <div class="main-details__item item-details">
+                  <h4 class="item-details__title">Даты тура::</h4>
+                  <div class="item-details__body">
+                    <span>01.01.2021—10.01.2021</span>
+                    <div class="view-all-date">
+                      <a href="#">Cмотреть все даты</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="main-info__reserv">
+                <button class="btn btn-green btn-lg">забронировать</button>
+              </div>
+              <div class="main-info__icons">
+                <a
+                  href="#"
+                  class="main-info__icon tooltip-link"
+                  data-tippy-content="Авиатуры"
+                >
+                  <img src="./img//icons/airplane.svg" alt="Авиатуры" />
+                </a>
+                <a
+                  href="#"
+                  class="main-info__icon tooltip-link"
+                  data-tippy-content="Автобусные туры"
+                >
+                  <img src="./img//icons/bus.svg" alt="Автобусные туры" />
+                </a>
+                <a
+                  href="#"
+                  class="main-info__icon tooltip-link"
+                  data-tippy-content="Теплые края"
+                >
+                  <img src="./img//icons/palm.svg" alt="Теплые края" />
+                </a>
+              </div>
+              <div class="main-info__places color-black70">
+                осталось мест: <span>3</span>
+              </div>
+              <div class="main-info__rating rating-main">
+                <div class="rating-main__likes"><span>104</span> отзыва</div>
+                <div class="rating-main__stars"><span>4,9</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
 
+        <!-- single-main-block -->
       </main>
       @@include('_footer.html',{})
     </div>

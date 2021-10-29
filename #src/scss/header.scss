@@ -1,6 +1,9 @@
 //====================================================================================================
 
 .header {
+  filter: drop-shadow(2px 2px 20px rgba(65, 26, 26, 0.1));
+
+  box-shadow: 2px 2px 20px rgba(65, 26, 26, 0.1);
   // .header__top
   &__top {
   }
@@ -370,26 +373,25 @@
 .menu-country-list {
   opacity: 0;
   overflow: hidden;
-  // z-index: 3;
+  visibility: hidden;
   width: 100%;
   padding: 100px 125px 0 280px;
+  height: 100vh;
   @include adaptiv-value('padding-left', 280, 20, 0);
   @include adaptiv-value('padding-right', 125, 20, 0);
-  // padding: 10px;
-  // position: absolute;
-  position: fixed;
-  z-index: 5;
-
+  z-index: 1;
   background-color: #fff;
   top: -100%;
+  position: fixed;
   left: 0;
-  height: 100vh;
   transition: all 0.8s ease 0s;
 
   // display: none;
   &._active {
+    visibility: visible;
     opacity: 1;
     top: 0;
+    // position: fixed;
   }
 
   .menu-country-close {

@@ -187,3 +187,31 @@ const reviewsSlider = new Swiper('.reviews-slider', {
     },
   },
 })
+
+const singleBlockSlider = new Swiper('.single-block-slider ', {
+  // Optional parameters
+  // direction: 'vertical',
+  // loop: true,
+  pagination: {
+    el: '.swiper-pagination',
+  },
+
+  // Navigation arrows
+})
+const singleBlockSliderThumb = new Swiper('.single-block-slider-thumb ', {
+  // loop: true,
+  spaceBetween: 10,
+  slidesPerView: 3,
+  slideToClickedSlide: true,
+  // slidesPerView: 'auto',
+  centeredSlides: true,
+  // freeMode: true,
+  watchSlidesProgress: true,
+  thumbs: {
+    swiper: singleBlockSlider,
+  },
+  navigation: {
+    nextEl: '.single-block-button-next',
+    prevEl: '.single-block-button-prev',
+  },
+})

@@ -4,6 +4,7 @@ $colorRed: #990000;
 $colorBlue: #0093dd;
 $colorGreen: #71ab1c;
 $colorBeige: #ece3db;
+$colorOrange: #faa619;
 
 $colorDarkGrey: #272727;
 
@@ -96,6 +97,7 @@ body {
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
 @import 'forms';
 @import 'ui';
+@import 'fancybox';
 // @import 'debug';
 
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
@@ -115,6 +117,9 @@ body {
 @import 'news-block';
 @import 'reviews-slider-block';
 @import 'tours-types-block';
+
+@import 'tour-single';
+
 @import 'seo-block';
 @import 'popup';
 @import 'header';
