@@ -1,14 +1,13 @@
 const preloader = document.querySelector('.preloader')
 const body = document.querySelector('body')
 document.addEventListener('DOMContentLoaded', () => {
-  body.classList.remove('_lock')
+  // body.classList.remove('_lock')
   preloader.remove()
 })
 
 const changeViewButton = document.querySelector('#changeViewButton')
 const itemTour = document.querySelectorAll('.item-tour')
 const itemList = document.querySelector('.tour-list')
-
 const changeViewHandler = e => {
   itemList.classList.toggle('tour-list_list')
   itemList.classList.toggle('tour-list_grid')
@@ -54,3 +53,23 @@ scrollTopBtn.onclick = function () {
 }
 // When scrolling, we run the function
 window.onscroll = showBtn
+
+/* **************************************** */
+
+const searchBtn = document.querySelector('.search-form__button button')
+console.log(`searchBtn`, searchBtn)
+
+const searchForm = function (params) {
+  const searchInput = document.querySelector('.search-form__direction select')
+  console.log(`searchInput`, searchInput.value, searchInput.innerText)
+}
+
+const searchFormDirection = document.querySelector(
+  '.search-form__direction select'
+)
+
+searchFormDirection.addEventListener('change', e => {
+  console.log(e.target.innerText)
+})
+
+// searchBtn.addEventListener('click', searchForm)

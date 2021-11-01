@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-  <title>Главная</title>
+  <title>Tour single</title>
   <meta charset="UTF-8" />
   <meta name="format-detection" content="telephone=no" />
   <link rel="stylesheet" href="css/style.min.css" />
@@ -23,15 +23,6 @@
     .swiper {
       width: 100%;
       height: 300px;
-      /* margin-left: auto; */
-      /* margin-right: auto; */
-    }
-
-    .swiper-slide img {
-      /* display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover; */
     }
   </style>
   <body class="_lock">
@@ -78,8 +69,8 @@
     <div class="header-center__container _container"></div>
   </div>
 
-  <div class="header__bottom botton-header">
-    <div class="botton-header__container _container">
+  <div class="header__bottom bottom-header">
+    <div class="bottom-header__container _container">
       <a
         data-da=".header-center__container, 768 , 1"
         href=""
@@ -87,14 +78,14 @@
         ><img src="img/logo.svg" alt=""
       /></a>
       <div class="bottom-header__center header__menu menu">
-        <button type="button" class="menu__icon icon-menu">
+        <!-- <button type="button" class="menu__icon icon-menu">
           <span></span>
           <span></span>
           <span></span>
-        </button>
-        <nav class="menu__body">
+        </button> -->
+        <nav data-da=".temp-block, 992 , " class="menu__body">
           <ul class="menu__list" data-da=".main-burger-top, 768 , 1">
-            <li class="menu__item">
+            <li class="menu__item has-submenu">
               <a href="#" class="menu__link menu-tour-link submenu-link"
                 >Туры</a
               >
@@ -108,12 +99,10 @@
             </li>
 
             <li class="menu__item">
-              <a href="#" class="menu__link menu__link_country submenu-link"
-                >Страны</a
-              >
+              <a href="#" class="menu__link menu__link_country">Страны</a>
             </li>
 
-            <li class="menu__item">
+            <li class="menu__item has-submenu">
               <a
                 href="#"
                 class="menu__link menu-services-link menu-sub-link submenu-link"
@@ -133,7 +122,7 @@
               <a href="#" class="menu__link">Отели</a>
             </li>
 
-            <li class="menu__item">
+            <li class="menu__item has-submenu">
               <a href="#" class="menu__link menu-agency-link submenu-link"
                 >Агентствам</a
               >
@@ -146,7 +135,7 @@
                 <li><a href="#">Регистрации</a></li>
               </ul>
             </li>
-            <li class="menu__item">
+            <li class="menu__item has-submenu">
               <a href="#" class="menu__link menu-tourists-link submenu-link"
                 >Туристам</a
               >
@@ -355,7 +344,9 @@
         <button
           data-da=".header-center__container, 768 , 3"
           class="main-burger"
-        ></button>
+        >
+          <span></span>
+        </button>
         <div class="main-burger-body">
           <div class="main-burger-top">
             <ul class="main-burger-list">
@@ -381,6 +372,7 @@
       </div>
     </div>
   </div>
+  <div class="temp-block"></div>
 </header>
 
 <script>
@@ -391,6 +383,7 @@
     mainMenuBtn.addEventListener('click', function (e) {
       e.stopPropagation()
       mainBurgerBody.classList.toggle('main-burger-active')
+      mainMenuBtn.classList.toggle('_active')
     })
 
     if (mainBurgerBody.classList.contains('main-burger-active')) {
@@ -408,15 +401,14 @@
     })
 
     document.addEventListener('click', function (e) {
-      if (
-        !e.target.classList.contains('main-burger-btn') &&
-        !e.target.classList.contains('main-burger-active')
-      ) {
+      if (!e.target.classList.contains('main-burger-active')) {
+        mainMenuBtn.classList.remove('_active')
         closeMenu()
       }
     })
     function closeMenu() {
       mainBurgerBody.classList.remove('main-burger-active')
+      mainMenuBtn.classList.remove('_active')
     }
   }
 
@@ -424,18 +416,20 @@
   const menuLinkCountry = document.querySelector('.menu__link_country')
   const menuCountryList = document.querySelector('.menu-country-list')
   const menuCountryClose = document.querySelector('.menu-country-close')
+
   menuLinkCountry.addEventListener('click', () => {
     menuCountryList.classList.add('_active')
+    body.classList.add('scroll-hidden')
   })
   menuCountryClose.addEventListener('click', function (e) {
     menuCountryList.classList.remove('_active')
   })
 
-  createSubmenu('.menu-tour-link', '.menu-tour-list')
-  createSubmenu('.menu-services-link', '.menu-services-body')
-  createSubmenu('.menu-agency-link', '.menu-agency-body')
-  createSubmenu('.menu-tourists-link', '.menu-tourists-body')
-  createSubmenu('.menu-info-link', '.menu-info-body')
+  // createSubmenu('.menu-tour-link', '.menu-tour-list')
+  // createSubmenu('.menu-services-link', '.menu-services-body')
+  // createSubmenu('.menu-agency-link', '.menu-agency-body')
+  // createSubmenu('.menu-tourists-link', '.menu-tourists-body')
+  // createSubmenu('.menu-info-link', '.menu-info-body')
 
   function createSubmenu(subMenuLink, subMenuBody) {
     const menuLink = document.querySelector(subMenuLink)
@@ -450,6 +444,7 @@
 
       document.addEventListener('keydown', function (e) {
         if (e.code === 'Escape') {
+          body.classList.remove('scroll-hidden')
           if (menuBody.classList.contains('_active-menu')) {
             closeMenu()
           }
@@ -474,9 +469,6 @@
 </script>
 
       <main class="page">
-        
-        <!--  -->
-
         <!-- single-main-block -->
         <section class="single-main-block">
           <div class="single-main-block__container _container">

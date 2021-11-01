@@ -118,7 +118,7 @@ body {
 @import 'reviews-slider-block';
 @import 'tours-types-block';
 
-@import 'tour-single';
+// @import 'tour-single';
 
 @import 'seo-block';
 @import 'popup';
@@ -141,3 +141,7 @@ body {
 // img[alt=''] {
 //   border: 3px dashed red;
 // }
+
+.scroll-hidden {
+  overflow: hidden;
+}

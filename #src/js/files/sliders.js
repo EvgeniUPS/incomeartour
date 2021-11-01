@@ -122,8 +122,10 @@ let slider_about = new Swiper('.about__slider', {
 })
 
 const swiper = new Swiper('.main-slider', {
-  // Optional parameters
-  // direction: 'vertical',
+  // autoplay: {
+  //   delay: 5000,
+  //   disableOnInteraction: false,
+  // },
   loop: true,
 
   // If we need pagination
@@ -198,20 +200,20 @@ const singleBlockSlider = new Swiper('.single-block-slider ', {
 
   // Navigation arrows
 })
-const singleBlockSliderThumb = new Swiper('.single-block-slider-thumb ', {
-  // loop: true,
-  spaceBetween: 10,
-  slidesPerView: 3,
-  slideToClickedSlide: true,
-  // slidesPerView: 'auto',
-  centeredSlides: true,
-  // freeMode: true,
-  watchSlidesProgress: true,
-  thumbs: {
-    swiper: singleBlockSlider,
-  },
-  navigation: {
-    nextEl: '.single-block-button-next',
-    prevEl: '.single-block-button-prev',
-  },
-})
+// const singleBlockSliderThumb = new Swiper('.single-block-slider-thumb ', {
+//   // loop: true,
+//   spaceBetween: 10,
+//   slidesPerView: 3,
+//   slideToClickedSlide: true,
+//   // slidesPerView: 'auto',
+//   centeredSlides: true,
+//   // freeMode: true,
+//   watchSlidesProgress: true,
+//   thumbs: {
+//     swiper: singleBlockSlider,
+//   },
+//   navigation: {
+//     nextEl: '.single-block-button-next',
+//     prevEl: '.single-block-button-prev',
+//   },
+// })
