@@ -27,7 +27,7 @@
   </style>
   <body class="_lock">
     <div class="wrapper">
-      <div class="preloader">
+      <!-- <div class="preloader">
   <div class="loading">
     <div class="dot"></div>
     <div class="dot"></div>
@@ -35,7 +35,7 @@
     <div class="dot"></div>
     <div class="dot"></div>
   </div>
-</div>
+</div> -->
 
 <header class="header">
   <div class="header__top top-header">
@@ -65,7 +65,8 @@
       </div>
     </div>
   </div>
-  <div class="header__center header-center">
+
+  <!-- <div class="header__center header-center">
     <div class="header-center__container _container"></div>
   </div>
 
@@ -78,11 +79,11 @@
         ><img src="img/logo.svg" alt=""
       /></a>
       <div class="bottom-header__center header__menu menu">
-        <!-- <button type="button" class="menu__icon icon-menu">
+        <button type="button" class="menu__icon icon-menu">
           <span></span>
           <span></span>
           <span></span>
-        </button> -->
+        </button>
         <nav data-da=".temp-block, 992 , " class="menu__body">
           <ul class="menu__list" data-da=".main-burger-top, 768 , 1">
             <li class="menu__item has-submenu">
@@ -372,58 +373,58 @@
       </div>
     </div>
   </div>
-  <div class="temp-block"></div>
+  <div class="temp-block"></div> -->
 </header>
 
 <script>
   // Main Burger Menu
-  const mainMenuBtn = document.querySelector('.main-burger')
-  const mainBurgerBody = document.querySelector('.main-burger-body')
-  if (mainMenuBtn) {
-    mainMenuBtn.addEventListener('click', function (e) {
-      e.stopPropagation()
-      mainBurgerBody.classList.toggle('main-burger-active')
-      mainMenuBtn.classList.toggle('_active')
-    })
+  // const mainMenuBtn = document.querySelector('.main-burger')
+  // const mainBurgerBody = document.querySelector('.main-burger-body')
+  // if (mainMenuBtn) {
+  //   mainMenuBtn.addEventListener('click', function (e) {
+  //     e.stopPropagation()
+  //     mainBurgerBody.classList.toggle('main-burger-active')
+  //     mainMenuBtn.classList.toggle('_active')
+  //   })
 
-    if (mainBurgerBody.classList.contains('main-burger-active')) {
-      console.log('active')
-    }
-    document.addEventListener('keydown', function (e) {
-      if (e.code === 'Escape') {
-        if (mainBurgerBody.classList.contains('main-burger-active')) {
-          closeMenu()
-        }
-        if (menuCountryList.classList.contains('_active')) {
-          menuCountryList.classList.remove('_active')
-        }
-      }
-    })
+  //   if (mainBurgerBody.classList.contains('main-burger-active')) {
+  //     console.log('active')
+  //   }
+  //   document.addEventListener('keydown', function (e) {
+  //     if (e.code === 'Escape') {
+  //       if (mainBurgerBody.classList.contains('main-burger-active')) {
+  //         closeMenu()
+  //       }
+  //       if (menuCountryList.classList.contains('_active')) {
+  //         menuCountryList.classList.remove('_active')
+  //       }
+  //     }
+  //   })
 
-    document.addEventListener('click', function (e) {
-      if (!e.target.classList.contains('main-burger-active')) {
-        mainMenuBtn.classList.remove('_active')
-        closeMenu()
-      }
-    })
-    function closeMenu() {
-      mainBurgerBody.classList.remove('main-burger-active')
-      mainMenuBtn.classList.remove('_active')
-    }
-  }
+  //   document.addEventListener('click', function (e) {
+  //     if (!e.target.classList.contains('main-burger-active')) {
+  //       mainMenuBtn.classList.remove('_active')
+  //       closeMenu()
+  //     }
+  //   })
+  //   function closeMenu() {
+  //     mainBurgerBody.classList.remove('main-burger-active')
+  //     mainMenuBtn.classList.remove('_active')
+  //   }
+  // }
 
-  //Country Menu
-  const menuLinkCountry = document.querySelector('.menu__link_country')
-  const menuCountryList = document.querySelector('.menu-country-list')
-  const menuCountryClose = document.querySelector('.menu-country-close')
+  // //Country Menu
+  // const menuLinkCountry = document.querySelector('.menu__link_country')
+  // const menuCountryList = document.querySelector('.menu-country-list')
+  // const menuCountryClose = document.querySelector('.menu-country-close')
 
-  menuLinkCountry.addEventListener('click', () => {
-    menuCountryList.classList.add('_active')
-    body.classList.add('scroll-hidden')
-  })
-  menuCountryClose.addEventListener('click', function (e) {
-    menuCountryList.classList.remove('_active')
-  })
+  // menuLinkCountry.addEventListener('click', () => {
+  //   menuCountryList.classList.add('_active')
+  //   body.classList.add('scroll-hidden')
+  // })
+  // menuCountryClose.addEventListener('click', function (e) {
+  //   menuCountryList.classList.remove('_active')
+  // })
 
   // createSubmenu('.menu-tour-link', '.menu-tour-list')
   // createSubmenu('.menu-services-link', '.menu-services-body')
