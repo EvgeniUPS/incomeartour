@@ -98,21 +98,57 @@ if (location.hash) {
 let iconMenu = document.querySelector('.icon-menu')
 if (iconMenu != null) {
   let delay = 500
-  let menuBody = document.querySelector('.menu__body')
+  let menuBody = document.querySelector('.menu-burger-body')
   iconMenu.addEventListener('click', function (e) {
+    e.stopPropagation()
     if (unlock) {
       body_lock(delay)
       iconMenu.classList.toggle('_active')
       menuBody.classList.toggle('_active')
     }
   })
+  document.addEventListener('keydown', function (e) {
+    if (e.code === 'Escape') {
+      menu_close()
+    }
+  })
+  document.addEventListener('click', function (e) {
+    e.stopPropagation()
+    console.log(e.target)
+    if (
+      !e.target.classList.contains('menu__link') &&
+      !e.target.classList.contains('icon-menu')
+    ) {
+      menu_close()
+    }
+  })
 }
 function menu_close() {
   let iconMenu = document.querySelector('.icon-menu')
-  let menuBody = document.querySelector('.menu__body')
+  let menuBody = document.querySelector('.menu-burger-body')
   iconMenu.classList.remove('_active')
   menuBody.classList.remove('_active')
 }
+// //=================
+// //Menu
+// let iconMenu = document.querySelector('.icon-menu')
+// if (iconMenu != null) {
+//   let delay = 500
+//   let menuBody = document.querySelector('.menu__body')
+//   iconMenu.addEventListener('click', function (e) {
+//     if (unlock) {
+//       body_lock(delay)
+//       iconMenu.classList.toggle('_active')
+//       menuBody.classList.toggle('_active')
+//     }
+//   })
+// }
+// function menu_close() {
+//   let iconMenu = document.querySelector('.icon-menu')
+//   let menuBody = document.querySelector('.menu__body')
+//   iconMenu.classList.remove('_active')
+//   menuBody.classList.remove('_active')
+// }
 //=================
 //BodyLock
 function body_lock(delay) {
@@ -480,7 +516,7 @@ function popup_open(item, video = '') {
         video +
         '?autoplay=1"  allow="autoplay; encrypted-media" allowfullscreen></iframe>'
     }
-    if (!document.querySelector('.menu__body._active')) {
+    if (!document.querySelector('.menu-burger-body._active')) {
       body_lock_add(500)
     }
     curent_popup.classList.add('_active')
@@ -505,7 +541,7 @@ function popup_close(item, bodyUnlock = true) {
       }
       item.classList.remove('_active')
     }
-    if (!document.querySelector('.menu__body._active') && bodyUnlock) {
+    if (!document.querySelector('.menu-burger-body._active') && bodyUnlock) {
       body_lock_remove(500)
     }
     history.pushState('', '', window.location.href.split('#')[0])

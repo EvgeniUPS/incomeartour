@@ -57,19 +57,36 @@ window.onscroll = showBtn
 /* **************************************** */
 
 const searchBtn = document.querySelector('.search-form__button button')
-console.log(`searchBtn`, searchBtn)
 
 const searchForm = function (params) {
   const searchInput = document.querySelector('.search-form__direction select')
-  console.log(`searchInput`, searchInput.value, searchInput.innerText)
 }
 
 const searchFormDirection = document.querySelector(
   '.search-form__direction select'
 )
 
-searchFormDirection.addEventListener('change', e => {
-  console.log(e.target.innerText)
-})
+searchFormDirection.addEventListener('change', e => {})
 
 // searchBtn.addEventListener('click', searchForm)
+
+const subMenuLink = document.querySelectorAll('.has-submenu')
+console.log(`subMenuLink`, subMenuLink)
+
+/* ******************** */
+// var acc = document.getElementsByClassName('accordion')
+const acc = document.querySelectorAll('.has-submenu .menu__link')
+var i
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener('click', function () {
+    this.classList.toggle('_active')
+    const panel = this.nextElementSibling
+
+    if (panel.style.display === 'block') {
+      panel.style.display = 'none'
+    } else {
+      panel.style.display = 'block'
+    }
+  })
+}
