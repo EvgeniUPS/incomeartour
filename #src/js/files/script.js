@@ -57,7 +57,6 @@ window.onscroll = showBtn
 /* **************************************** */
 
 const searchBtn = document.querySelector('.search-form__button button')
-
 const searchForm = function (params) {
   const searchInput = document.querySelector('.search-form__direction select')
 }
@@ -66,12 +65,11 @@ const searchFormDirection = document.querySelector(
   '.search-form__direction select'
 )
 
-searchFormDirection.addEventListener('change', e => {})
+// searchFormDirection.addEventListener('change', e => {})
 
 // searchBtn.addEventListener('click', searchForm)
 
 const subMenuLink = document.querySelectorAll('.has-submenu')
-console.log(`subMenuLink`, subMenuLink)
 
 /* ******************** */
 // var acc = document.getElementsByClassName('accordion')
@@ -90,3 +88,26 @@ for (i = 0; i < acc.length; i++) {
     }
   })
 }
+
+function inspectHtml() {
+  document.addEventListener('click', function (e) {
+    e.stopPropagation()
+
+    let classes = e.target.className
+
+    const textToCopy = classes
+    navigator.clipboard
+      .writeText(textToCopy)
+      .then(() => {
+        if (textToCopy) {
+          console.info(textToCopy)
+        } else {
+          console.warn('No className')
+        }
+      })
+      .catch(error => {
+        alert(`Copy failed! ${error}`)
+      })
+  })
+}
+// inspectHtml()

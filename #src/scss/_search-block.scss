@@ -224,5 +224,8 @@
   .choices__placeholder
   .choices__item--selectable
   .is-highlighted {
-  background-color: tomato;
+  // background-color: tomato;
+}
+.choices__list--dropdown .choices__item--selectable {
+  white-space: nowrap;
 }

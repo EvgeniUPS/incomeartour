@@ -102,7 +102,7 @@ if (iconMenu != null) {
   iconMenu.addEventListener('click', function (e) {
     e.stopPropagation()
     if (unlock) {
-      body_lock(delay)
+      // body_lock(delay)
       iconMenu.classList.toggle('_active')
       menuBody.classList.toggle('_active')
     }
@@ -114,7 +114,7 @@ if (iconMenu != null) {
   })
   document.addEventListener('click', function (e) {
     e.stopPropagation()
-    console.log(e.target)
+    // console.log(e.target)
     if (
       !e.target.classList.contains('menu__link') &&
       !e.target.classList.contains('icon-menu')
