@@ -189,13 +189,13 @@ function cb() {}
 function clean() {
   return del(path.clean)
 }
-// function watchFiles() {
-//   gulp.watch([path.watch.html], html)
-//   gulp.watch([path.watch.css], css)
-//   gulp.watch([path.watch.js], js)
-//   gulp.watch([path.watch.json], json)
-//   gulp.watch([path.watch.images], images)
-//   }
+function watchFiles() {
+  gulp.watch([path.watch.html], html)
+  gulp.watch([path.watch.css], css)
+  gulp.watch([path.watch.js], js)
+  gulp.watch([path.watch.json], json)
+  gulp.watch([path.watch.images], images)
+}
 function watchFiles() {
   gulp.watch([path.watch.html], { usePolling: true }, html)
   gulp.watch([path.watch.css], { usePolling: true }, css)
@@ -254,34 +254,32 @@ function jsBuild() {
     .pipe(browsersync.stream())
 }
 function imagesBuild() {
-  return (
-    src(path.src.images)
-      //.pipe(newer(path.build.images))
-      .pipe(
-        imagemin([
-          webp({
-            quality: 85,
-          }),
-        ])
-      )
-      .pipe(
-        rename({
-          extname: '.webp',
-        })
-      )
-      .pipe(dest(path.build.images))
-      .pipe(src(path.src.images))
-      //.pipe(newer(path.build.images))
-      .pipe(
-        imagemin({
-          progressive: true,
-          svgoPlugins: [{ removeViewBox: false }],
-          interlaced: true,
-          optimizationLevel: 3, // 0 to 7
-        })
-      )
-      .pipe(dest(path.build.images))
-  )
+  return src(path.src.images)
+    .pipe(newer(path.build.images))
+    .pipe(
+      imagemin([
+        webp({
+          quality: 85,
+        }),
+      ])
+    )
+    .pipe(
+      rename({
+        extname: '.webp',
+      })
+    )
+    .pipe(dest(path.build.images))
+    .pipe(src(path.src.images))
+    .pipe(newer(path.build.images))
+    .pipe(
+      imagemin({
+        progressive: true,
+        svgoPlugins: [{ removeViewBox: false }],
+        interlaced: true,
+        optimizationLevel: 3, // 0 to 7
+      })
+    )
+    .pipe(dest(path.build.images))
 }
 function htmlBuild() {
   return src(path.src.html, {})
