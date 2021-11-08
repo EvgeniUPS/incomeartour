@@ -1,0 +1,111 @@
+.single-main {
+  // .single-main__common
+  &__common {
+  }
+}
+.common-single {
+  // .common-single__title
+  &__title {
+    margin-bottom: 20px;
+  }
+  // .common-single__item
+  &__item {
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  // .common-single__body
+  &__body {
+  }
+}
+
+.single-common {
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 992px) {
+    flex-wrap: wrap;
+  }
+
+  // .single-common__column
+  &__column {
+    gap: 10px;
+    padding: 0 30px;
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #ccc;
+    @media (max-width: 992px) {
+      padding-bottom: 20px;
+      // margin-bottom: 20px;
+    }
+
+    @media (max-width: 992px) {
+      // background-color: #7a956d;
+      flex: 0 0 50%;
+      border-bottom: 1px solid #ccc;
+    }
+    @media (max-width: 768px) {
+      flex: 1 1 100%;
+    }
+
+    // &:not(:last-child) {
+    //   border-right: 1px solid #ccc;
+    //   @media (max-width: 992px) {
+    //     border-right: none;
+    //   }
+    // }
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+      justify-content: center;
+      // align-items: center;
+    }
+    p {
+      font-size: 15px;
+      span {
+        color: $colorOrange;
+      }
+    }
+  }
+  &__date {
+    @media (max-width: 992px) {
+      border-right: 1px solid #ccc;
+    }
+    @media (max-width: 768px) {
+      border-right: none;
+    }
+  }
+  &__price {
+    @media (max-width: 992px) {
+      border-right: none;
+    }
+    @media (max-width: 768px) {
+      padding: 10px 0;
+    }
+  }
+  &__info {
+    @media (max-width: 992px) {
+      border-right: 1px solid #ccc;
+      padding: 10px 0;
+      border-bottom: none;
+    }
+    @media (max-width: 768px) {
+      border-right: none;
+      border-bottom: 1px solid #ccc;
+    }
+  }
+  &__buttons {
+    border-right: none;
+    @media (max-width: 992px) {
+      border-bottom: none;
+    }
+    @media (max-width: 768px) {
+      padding: 10px 0;
+    }
+  }
+}
+.btn {
+}
+.btn-green {
+}
