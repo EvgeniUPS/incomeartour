@@ -1,0 +1,273 @@
+/* ************* */
+.single-details {
+  // .single-details__container
+  &__container {
+  }
+  // .single-details__item
+  &__item {
+    @include adaptiv-value('margin-bottom', 75, 40, 1);
+  }
+  // .single-details__nav
+  &__nav {
+  }
+  // .single-details__descr
+  &__descr {
+  }
+  // .single-details__route
+  &__route {
+  }
+  // .single-details__map
+  &__map {
+  }
+  // .single-details__inside
+  &__inside {
+  }
+  // .single-details__add-exc
+  &__add-exc {
+  }
+  // .single-details__important
+  &__important {
+  }
+  // .single-details__gallery
+  &__gallery {
+  }
+  // .single-details__add-info
+  &__add-info {
+  }
+}
+
+.nav-details {
+  // .nav-details__list
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px 0 35px;
+    background-color: $colorBeige;
+    height: 100%;
+  }
+  // .nav-details__item
+  &__item {
+    height: 100%;
+  }
+  // .nav-details__link
+  &__link {
+    height: 100%;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 50px 20px 35px;
+    color: inherit;
+    &:hover {
+    }
+  }
+}
+.descr-details {
+  img {
+    cursor: pointer;
+    max-width: 50%;
+    float: left;
+    margin-right: 40px;
+    margin-bottom: 40px;
+  }
+  // .descr-details__title
+  &__title {
+  }
+  // .descr-details__text
+  &__text {
+    p {
+      margin-bottom: 20px;
+    }
+  }
+}
+.route-details {
+  // .route-details__title
+  &__title {
+    margin-bottom: 20px;
+  }
+  // .route-details__tabs-block
+  &__tabs-block {
+  }
+  // .route-details__action
+  &__action {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  // .route-details__where-buy-btn
+  &__where-buy-btn {
+  }
+  // .route-details__print-btn
+  &__print-btn {
+    a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: inherit;
+    }
+  }
+}
+.details-tabs {
+  // .details-tabs__nav
+  &__nav {
+    display: flex;
+    border-bottom: 1px solid #000;
+    margin-bottom: 30px;
+  }
+  // .details-tabs__item
+  &__item {
+    transition: all 0.3s ease 0s;
+    padding: 20px 30px;
+    cursor: pointer;
+    border-top: 1px solid transparent;
+    border-right: 1px solid transparent;
+    border-left: 1px solid transparent;
+
+    &._active {
+      border-top: 1px solid #000;
+      border-right: 1px solid #000;
+      border-left: 1px solid #000;
+    }
+  }
+  // .details-tabs__body
+  &__body {
+  }
+  // .details-tabs__block
+  &__block {
+  }
+  // .details-tabs__descr
+  &__descr {
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+  // .details-tabs__gallery
+  &__gallery {
+  }
+}
+.gallery-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 60px;
+  // .gallery-tabs__item
+  &__item {
+    flex: 0 1 33.333%;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}
+.map-details {
+}
+.inside-details {
+  // .inside-details__item
+  &__item {
+    margin-bottom: 90px;
+  }
+  // .inside-details__title
+  &__title {
+    margin-bottom: 45px;
+    text-align: center;
+  }
+  // .inside-details__list
+  &__list {
+  }
+  // .inside-details__item-list
+  &__item-list {
+    padding-left: 65px;
+    font-size: 20px;
+    line-height: 26px;
+    margin-bottom: 45px;
+    position: relative;
+    &:before {
+      content: '';
+      background-color: teal;
+      border-radius: 50%;
+      width: 25px;
+      height: 100%;
+      top: 0;
+      left: 0;
+      position: absolute;
+    }
+  }
+}
+.inclusive-block {
+  .inside-details__item-list {
+  }
+}
+.exclusive-block {
+  .inside-details__item-list {
+  }
+}
+.add-exc-details {
+  // .add-exc-details__title
+  &__title {
+  }
+  // .add-exc-details__text
+  &__text {
+  }
+  // .add-exc-details__slider
+  &__slider {
+  }
+  // .add-exc-details__bottom
+  &__bottom {
+  }
+  // .add-exc-details__bottom-item
+  &__bottom-item {
+  }
+}
+.important-details {
+  // .important-details__image
+  &__image {
+  }
+  // .important-details__text-block
+  &__text-block {
+  }
+  // .important-details__title
+  &__title {
+  }
+  // .important-details__descr
+  &__descr {
+  }
+}
+.gallery-details {
+  // .gallery-details__title
+  &__title {
+  }
+  // .gallery-details__body
+  &__body {
+  }
+}
+.body-details-gallery {
+  // .body-details-gallery__img
+  &__img {
+  }
+}
+.add-info-details {
+  // .add-info-details__title
+  &__title {
+  }
+  // .add-info-details__list
+  &__list {
+  }
+  // .add-info-details__item
+  &__item {
+  }
+}
+
+/* *************** */
+.descr-details {
+}
+.route-details {
+  clear: both;
+}
+
+@media print {
+}
+
+.map-details {
+  filter: grayscale(1);
+  transition: all 0.8s ease 0s;
+  &:hover {
+    filter: grayscale(0);
+  }
+}

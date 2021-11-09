@@ -12,6 +12,7 @@ h2 {
   text-transform: uppercase;
   font-feature-settings: 'pnum' on, 'lnum' on;
   color: #000000;
+  opacity: 0.7;
   @media (max-width: 768px) {
     font-size: 18px;
   }
@@ -402,6 +403,11 @@ body.ie {
     to {
       transform: rotate(360deg);
     }
+  }
+}
+@media print {
+  .noPrint {
+    display: none;
   }
 }
 //</ГОТОВЫЕ КЛАССЫ>====================================================================================================
