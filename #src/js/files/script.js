@@ -2,7 +2,7 @@ const preloader = document.querySelector('.preloader')
 const body = document.querySelector('body')
 document.addEventListener('DOMContentLoaded', () => {
   // body.classList.remove('_lock')
-  preloader.remove()
+  // preloader.remove()
 })
 
 const changeViewButton = document.querySelector('#changeViewButton')
@@ -111,3 +111,14 @@ function inspectHtml() {
   })
 }
 // inspectHtml()
+
+Fancybox.bind('[data-fancybox]', {
+  // infinite: false,
+  // animated: false,
+  l10n: {
+    CLOSE: 'Закрыть',
+    NEXT: 'Вперед',
+    PREV: 'Назад',
+    IFRAME_ERROR: 'Error Loading Page',
+  },
+})

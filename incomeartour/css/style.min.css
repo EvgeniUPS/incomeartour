@@ -5055,28 +5055,54 @@ button.swiper-pagination-bullet {
 }
 
 .inside-details__item {
-  margin-bottom: 90px;
+  margin-bottom: 60px;
 }
 .inside-details__title {
-  margin-bottom: 45px;
+  margin-bottom: 30px;
   text-align: center;
 }
 .inside-details__item-list {
-  padding-left: 65px;
+  padding-left: 45px;
   font-size: 20px;
   line-height: 26px;
-  margin-bottom: 45px;
+  margin-bottom: 30px;
   position: relative;
 }
 .inside-details__item-list:before {
   content: "";
-  background-color: teal;
+  border: 1px solid #000;
+  background-repeat: no-repeat;
+  background-position: center center;
   border-radius: 50%;
   width: 25px;
-  height: 100%;
-  top: 0;
+  height: 25px;
+  top: 50%;
+  transform: translateY(-50%);
   left: 0;
   position: absolute;
+}
+
+.inclusive-block .inside-details__item-list:before {
+  background-image: url(../img/icons/icon-check.svg);
+}
+
+.exclusive-block .inside-details__item-list:before {
+  background-image: url(../img/icons/icon-close.svg);
+}
+
+.add-exc-details__text {
+  max-width: 50%;
+  margin-bottom: 30px;
+}
+.add-exc-details__slider {
+  margin-bottom: 35px;
+}
+.add-exc-details__bottom {
+  display: flex;
+  gap: 10px;
+}
+.add-exc-details__bottom-item {
+  flex: 0 0 50%;
 }
 
 /* *************** */
@@ -5090,6 +5116,51 @@ button.swiper-pagination-bullet {
 }
 .map-details:hover {
   filter: grayscale(0);
+}
+
+.slider-add-exc {
+  width: 100%;
+  height: 280px;
+}
+
+.slider-add-exc__slide {
+  position: relative;
+}
+.slider-add-exc__slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.slider-add-exc__label {
+  color: #fff;
+  font-size: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: absolute;
+  z-index: 5;
+  bottom: 50px;
+  left: 20px;
+  width: 100%;
+}
+.slider-add-exc__more {
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  transition: all 0.3s ease 0s;
+  width: calc(100% - 40px);
+  padding: 10px;
+}
+.slider-add-exc__descr {
+  position: absolute;
+  font-size: 50px;
+  top: 0;
+  left: 0;
+  font-weight: 700;
+  display: none;
 }
 
 .seo-block {
