@@ -2,7 +2,7 @@ const preloader = document.querySelector('.preloader')
 const body = document.querySelector('body')
 document.addEventListener('DOMContentLoaded', () => {
   // body.classList.remove('_lock')
-  // preloader.remove()
+  preloader.remove()
 })
 
 const changeViewButton = document.querySelector('#changeViewButton')
