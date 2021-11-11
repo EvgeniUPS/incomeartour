@@ -146,3 +146,13 @@ sliderAddExc.addEventListener('click', function (e) {
     parentContainer.childNodes[5].classList.remove('_active')
   }
 })
+
+const headerColorPicker = document.querySelector('.header-color-picker')
+const topHeader = document.querySelector('.top-header')
+if (headerColorPicker) {
+  headerColorPicker.addEventListener('change', function (e) {
+    console.log(e.target.value)
+    console.log(`topHeader`, topHeader)
+    topHeader.setAttribute('style', `background-color: ${e.target.value}`)
+  })
+}
