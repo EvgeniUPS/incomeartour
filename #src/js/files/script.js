@@ -122,3 +122,27 @@ Fancybox.bind('[data-fancybox]', {
     IFRAME_ERROR: 'Error Loading Page',
   },
 })
+
+const sliderAddExc = document.querySelector('.slider-add-exc')
+
+sliderAddExc.addEventListener('click', function (e) {
+  let targetItem = e.target
+
+  if (targetItem.closest('.slider-add-exc__more')) {
+    // console.log(targetItem.nextElementSibling)
+    targetItem.nextElementSibling.classList.add('_active')
+    targetItem.parentNode.childNodes[3].classList.add('_active')
+    targetItem.parentNode.childNodes[5].classList.add('_active')
+    // targetItem.closest('.slider-add-exc__descr').classList.toggle('_active')
+    // console.log(sliderAddExc.closest('.descr-add-exc'))
+  }
+  if (targetItem.closest('._close')) {
+    let parentContainer = targetItem.parentNode.parentNode
+    targetItem.parentNode.classList.remove('_active')
+
+    // console.log(parentContainer.childNodes['slider-add-exc__label'])
+
+    parentContainer.childNodes[3].classList.remove('_active')
+    parentContainer.childNodes[5].classList.remove('_active')
+  }
+})

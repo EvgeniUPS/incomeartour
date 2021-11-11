@@ -218,19 +218,16 @@ const singleBlockSlider = new Swiper('.single-block-slider ', {
 //   },
 // })
 
-const sliderAddExc = new Swiper('.slider-add-exc', {
+const sliderAddExcSlider = new Swiper('.slider-add-exc', {
   loop: true,
-  slidesPerView: 1,
-  spaceBetween: 10,
+  // slidesPerView: 1,
+  // spaceBetween: 10,
   breakpoints: {
-    768: {
-      slidesPerView: 1,
-    },
-    992: {
+    600: {
       slidesPerView: 2,
       spaceBetween: 10,
     },
-    1200: {
+    992: {
       slidesPerView: 3,
       spaceBetween: 10,
     },
