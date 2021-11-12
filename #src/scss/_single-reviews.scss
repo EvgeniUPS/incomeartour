@@ -1,0 +1,202 @@
+.single-reviews {
+  // .single-reviews__container
+  &__container {
+  }
+  // .single-reviews__list
+  &__list {
+  }
+  // .single-reviews__add-new
+  &__add-new {
+  }
+}
+
+.list-single-reviews {
+  margin-bottom: 30px;
+  // .list-single-reviews__title
+  &__title {
+  }
+  // .list-single-reviews__list
+  &__list {
+    margin-bottom: 30px;
+  }
+  // .list-single-reviews__item
+  &__item {
+  }
+  &__view-all {
+    text-align: center;
+  }
+}
+.item-single-reviews {
+  height: auto;
+  display: flex;
+  padding: 30px 0;
+
+  border-bottom: 1px solid #ccc;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  // .item-single-reviews__bio
+  &__bio {
+    flex: 0 0 40%;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    padding-right: 30px;
+    border-right: 1px solid #ccc;
+    @media (max-width: 768px) {
+      border-right: none;
+      padding: 0;
+    }
+    @media (max-width: 480px) {
+      flex-direction: column;
+      gap: 10px;
+      justify-content: center;
+    }
+  }
+  // .item-single-reviews__bio-img
+  &__bio-img {
+    max-width: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  // .item-single-reviews__bio-info
+  &__bio-info {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    @media (max-width: 768px) {
+      align-items: center;
+    }
+  }
+  // .item-single-reviews__stars
+  &__stars {
+    span {
+      font-weight: 700;
+      position: relative;
+      padding-right: 25px;
+      // background-color: teal;
+      line-height: 100%;
+      &:before {
+        content: '';
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        bottom: 2px;
+        right: 0px;
+        background-image: url(../img/icons/star.svg);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center center;
+      }
+    }
+  }
+  // .item-single-reviews__name
+  &__name {
+    color: $colorRed;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+  }
+  // .item-single-reviews__date
+  &__date {
+    font-size: 12px;
+  }
+  // .item-single-reviews__text-block
+  &__text-block {
+    padding-left: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+  }
+  // .item-single-reviews__text
+  &__text {
+    line-height: 20px;
+    margin-bottom: 20px;
+  }
+  // .item-single-reviews__read-more
+  &__read-more {
+    span {
+      position: relative;
+      padding: 5px 0;
+      padding-right: 25px;
+      font-weight: 700;
+      font-size: 13px;
+      text-transform: uppercase;
+
+      &:hover {
+        &::before {
+          background-color: tomato;
+          transform: translate(0, -50%) rotate(45deg);
+        }
+        &:after {
+          background-color: tomato;
+          transform: translate(0, -50%) rotate(-45deg);
+        }
+      }
+      &:before {
+        content: '';
+        width: 12px;
+        background-color: #000;
+        height: 2px;
+        transition: transform 0.3s ease 0s;
+        transform: translate(0, -50%) rotate(-45deg);
+        position: absolute;
+        right: 0px;
+        top: 50%;
+      }
+      &:after {
+        content: '';
+        width: 12px;
+        background-color: #000;
+        height: 2px;
+        transition: transform 0.3s ease 0s;
+        transform: translate(0, -50%) rotate(45deg);
+        position: absolute;
+        right: 7px;
+        top: 50%;
+      }
+    }
+  }
+}
+.add-new-single-reviews {
+}
+
+//<BLOCK>====================================================================================================
+
+.add-new-single-reviews {
+  max-width: 80%;
+  margin: 0px auto;
+  .form-single-review {
+    &__first-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+  label {
+    text-transform: uppercase;
+  }
+  input {
+    margin: 15px 0 30px;
+    border: 1px solid #000;
+    width: 100%;
+    padding: 10px;
+    border-radius: 2px;
+    &::placeholder {
+      text-transform: uppercase;
+      color: $colorRed;
+    }
+  }
+}

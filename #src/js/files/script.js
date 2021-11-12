@@ -156,3 +156,30 @@ if (headerColorPicker) {
     topHeader.setAttribute('style', `background-color: ${e.target.value}`)
   })
 }
+
+// const readMoreBtns = document.querySelectorAll('._read-more-btn')
+
+// if (readMoreBtns) {
+//   readMoreBtns.forEach(item => {
+//     const moreBtnText = 'Развернуть'
+//     const lessBtnText = 'Свернуть'
+//     item.innerHTML = moreBtnText
+//     item.addEventListener('click', e => {
+//       readMoreBtns.forEach(el => {
+//         el.classList.remove('_active')
+//       })
+//       const lineLimit = 2
+//       const targetItem = e.target
+//       const targetPrevious = targetItem.previousElementSibling
+//       const targetPreviousHeight = targetPrevious.offsetHeight
+//       targetItem.classList.toggle('_active')
+//       targetPrevious.classList.toggle('_active')
+
+//       if (targetItem.innerHTML == moreBtnText) {
+//         targetItem.innerHTML = lessBtnText
+//       } else if (targetItem.innerHTML == lessBtnText) {
+//         targetItem.innerHTML = moreBtnText
+//       }
+//     })
+//   })
+// }
