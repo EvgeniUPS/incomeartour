@@ -189,7 +189,87 @@
       <main class="page single-page">
         <section class="single-main">
           <div class="single-main__container _container">
-            <div class="single-main__main main-single">main-single</div>
+            <!--  -->
+            <div class="single-main__main main-single">
+  <div class="main-single__top top-main-single">
+    <div class="top-main-single__col">
+      <div class="swiper slider-main-single">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slider-main-single__slide">
+            <img src="./img/01.jpg" alt="" />
+          </div>
+
+          <div class="swiper-slide slider-main-single__slide">
+            <img src="./img/02.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+      <div class="swiper thumb-main-single">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide thumb-main-single__slide">
+            <img src="./img/01.jpg" alt="" />
+          </div>
+
+          <div class="swiper-slide thumb-main-single__slide">
+            <img src="./img/02.jpg" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="top-main-single__col info-main-single">
+      <div class="info-main-single__title">ПОД НЕБОМ ПАРИЖА</div>
+      <div class="info-main-single__duration">
+        5 дней / без ночных переездов
+      </div>
+      <div class="info-main-single__price">
+        <div class="info-main-single__uah">от <span>22 494 UAH</span></div>
+        <div class="info-main-single__currency">690 EUR / 720 USD</div>
+        <div class="info-main-single__price-info">i</div>
+      </div>
+      <div class="info-main-single__descr">
+        <div class="info-main-single__info">
+          <div class="info-single-label">Длительность:</div>
+          <div class="info-single-value">8 дней</div>
+        </div>
+        <div class="info-main-single__info">
+          <div class="info-single-label">Гпуппа:</div>
+          <div class="info-single-value">От 12 человек</div>
+        </div>
+        <div class="info-main-single__dates info-single-dates">
+          <div class="info-single-dates__title">Даты тура:</div>
+          <div class="info-single-dates__list">
+            <div class="info-single-dates__date">01.01.2021—10.01.2021</div>
+            <div class="info-single-dates__date">01.01.2021—10.01.2021</div>
+          </div>
+          <div class="info-single-dates__bottom">
+            <a href="#" class="">Cмотреть все даты </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="info-main-single__button">
+        <a href="#reserv" class="btn btn-green _popup-link">забронировать</a>
+      </div>
+      <div class="info-main-single__icons">
+        <a href="#." class="info-main-single__icon">
+          <img src="./img/icons/airplane.svg" alt="" />
+        </a>
+        <a href="#." class="info-main-single__icon">
+          <img src="./img/icons/palm.svg" alt="" />
+        </a>
+        <a href="#." class="info-main-single__icon">
+          <img src="./img/icons/bus.svg" alt="" />
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="main-single__bottom">bottom</div>
+</div>
+
+
+            <!--  -->
+
             <div class="single-main__common common-single">
               <div class="common-single__title _title2">Общая информация</div>
               <!--  -->
@@ -214,7 +294,9 @@
                   </div>
                   <div class="single-common__column single-common__buttons">
                     <p>Остаток мест: <span>2</span></p>
-                    <button class="btn btn-green">забронировать</button>
+                    <a href="#reserv" class="btn btn-green _popup-link"
+                      >забронировать</a
+                    >
                   </div>
                 </div>
               </div>
@@ -240,7 +322,9 @@
                   </div>
                   <div class="single-common__column single-common__buttons">
                     <p>Остаток мест: <span>2</span></p>
-                    <button class="btn btn-green">забронировать</button>
+                    <a href="#reserv" class="btn btn-green _popup-link"
+                      >забронировать</a
+                    >
                   </div>
                 </div>
               </div>
@@ -861,242 +945,390 @@
     </div>
     <!-- <Добавление Отзыва>======================================================================================== -->
     <div class="single-reviews__add-new add-new-single-reviews">
-      <div class="add-new-single-reviews__title">Добавить отзыв</div>
-      <form class="add-new-single-reviews__form form-single-review">
+      <div class="add-new-single-reviews__title _title2">Добавить отзыв</div>
+
+      <form
+        action=""
+        method="post"
+        class="add-new-single-reviews__form form-single-review"
+      >
+        <input type="hidden" name="productId" id="productId" value="12" />
         <div class="form-single-review__first-row">
-          <label for="reviewName">
-            Гид
-            <input id="reviewName" type="text" placeholder="Гид" />
-          </label>
-          <div class="star">54</div>
+          <!-- <label for="choiceGuide"> Гид </label> -->
+          <select class="choice-guide" id="choiceGuide">
+            <option value="">Выбрать гида</option>
+            <option value="11111111">Гид 01</option>
+            <option value="22222222">Гид 02</option>
+            <option value="33333333">Гид 03</option>
+            <option value="44444444">Гид 04</option>
+            <option value="55555555">Гид 05</option>
+          </select>
+          <div class="simple-rating">
+            <div class="simple-rating__items">
+              <input
+                id="simple-rating__5"
+                type="radio"
+                class="simple-rating__item"
+                name="guide-rating"
+                value="5"
+              />
+              <label
+                for="simple-rating__5"
+                class="simple-rating__label"
+              ></label>
+              <input
+                id="simple-rating__4"
+                type="radio"
+                class="simple-rating__item"
+                name="guide-rating"
+                value="4"
+              />
+              <label
+                for="simple-rating__4"
+                class="simple-rating__label"
+              ></label>
+              <input
+                id="simple-rating__3"
+                type="radio"
+                class="simple-rating__item"
+                name="guide-rating"
+                value="3"
+              />
+              <label
+                for="simple-rating__3"
+                class="simple-rating__label"
+              ></label>
+              <input
+                id="simple-rating__2"
+                type="radio"
+                class="simple-rating__item"
+                name="guide-rating"
+                value="2"
+              />
+              <label
+                for="simple-rating__2"
+                class="simple-rating__label"
+              ></label>
+              <input
+                id="simple-rating__1"
+                type="radio"
+                class="simple-rating__item"
+                name="guide-rating"
+                value="1"
+              />
+              <label
+                for="simple-rating__1"
+                class="simple-rating__label"
+              ></label>
+            </div>
+            <div class="simple-rating__bottom">Ваша оценка <span>5</span></div>
+          </div>
         </div>
 
         <label for="reviewName">
           Имя
-          <input id="reviewName" type="text" placeholder="Имя" />
+          <input
+            autocomplete="off"
+            type="text"
+            name="name"
+            data-error="Поле не должно быть пустым"
+            data-value="Имя"
+            class="input review-form-input _req"
+          />
         </label>
 
         <label for="reviewEmail">
           Эл. Почта
-          <input id="reviewEmail" type="text" placeholder=" Эл. Почта" />
+          <input
+            autocomplete="off"
+            type="text"
+            name="email"
+            data-error="Поле не должно быть пустым"
+            data-value="Эл. Почта"
+            class="input review-form-input _email"
+          />
         </label>
         <label for="reviewHeader">
           Заголовок
-          <input id="reviewHeader" type="text" placeholder="Заголовок" />
+          <input
+            autocomplete="off"
+            type="text"
+            name="form[]"
+            data-error="Поле не должно быть пустым"
+            data-value="Заголовок"
+            class="input review-form-input _req"
+          />
         </label>
+        <label for="reviewText">
+          Ваш отзыв
+          <textarea
+            name="form[]"
+            id="reviewText"
+            cols="30"
+            rows="10"
+            autocomplete="off"
+            name="text"
+            data-error="Поле не должно быть пустым"
+            data-value="Ваш отзыв"
+            class="reviewText review-form-input review-form-input"
+          ></textarea>
+        </label>
+        <div class="form-single-review__last-row">
+          <button type="submit" class="btn btn__blue btn-lg">Отправить</button>
+        </div>
       </form>
     </div>
   </div>
 </section>
 
 
+        <!-- similar-tours -->
+
+        <section class="similar-tours">
+          <div class="similar-tours__container _container">
+            <div class="similar-tours__title _title2">
+              Вас могут заинтересовать
+            </div>
+            <div class="similar-tours__list">
+              <!--  -->
+              <div class="card-list">
+  <!--  -->
+  <div class="card-list__item item-card-list">
+    <div class="item-card-list__title">ВСЕ ЖЕМЧУЖИНЫ АЛБАНИИ</div>
+    <div class="item-card-list__wrapper">
+      <div class="item-card-list__img">
+        <a href="##"><img src="./img/04.jpg" alt="" /></a>
+        <div class="item-card-list__labels">
+          <div class="item-card-list__label item-card-list__label_red">new</div>
+          <div class="item-card-list__label">ФРАНЦИЯ</div>
+          <div class="item-card-list__label">2021</div>
+        </div>
+      </div>
+
+      <div class="item-card-list__descr">
+        <div class="item-card-list__details">
+          <div class="item-card-list__column">
+            <div class="item-card-list__dates dates-card-item">
+              <div class="dates-card-item__title">Даты тура:</div>
+              <div class="dates-card-item__items">
+                <div class="dates-card-item__item">01.01.2021—10.01.2021</div>
+                <div class="dates-card-item__item">10.01.2021—20.01.2021</div>
+                <div class="dates-card-item__item">20.01.2021—30.01.2021</div>
+                <div class="dates-card-item__item">31.01.2021—30.01.2021</div>
+                <div class="dates-card-item__item">09.02.2021—30.01.2021</div>
+              </div>
+              <div class="dates-card-item__bottom">
+                <a href="#.">Cмотреть все даты</a>
+              </div>
+            </div>
+          </div>
+          <div class="item-card-list__column">
+            <!--  -->
+            <div class="item-card-list__price price-card-item">
+              <div class="price-card-item__uah">от <span>22 494 UAH</span></div>
+              <div class="price-card-item__currency">690 EUR / 720 USD</div>
+              <div class="price-card-item__info-list">
+                <div class="price-card-item__info-item">
+                  Минимальная цена за человека 15
+                </div>
+                <div class="price-card-item__info-item">
+                  Минимальная цена за человекас авиа
+                </div>
+                <div class="price-card-item__info-item">
+                  Минимальная цена за человека без авиа
+                </div>
+              </div>
+              <div class="price-card-item__info">
+                <div class="price-card-item__info-col">
+                  <div class="price-card-item__info-label">Длительность:</div>
+                  <div class="price-card-item__info-value">8 дней</div>
+                </div>
+                <div class="price-card-item__info-col">
+                  <div class="price-card-item__info-label">Группа:</div>
+                  <div class="price-card-item__info-value">От 12 человек</div>
+                </div>
+                <div class="price-card-item__info-col"></div>
+              </div>
+            </div>
+            <!--  -->
+          </div>
+        </div>
         <!--  -->
-        <section class="seo-block">
-  <div class="seo-block__container _container">
-    <h1 class="seo-block__header">
-      Туристический оператор «Инкомартур 93» — экскурсионные туры по самой
-      выгодной цене в Украине
-    </h1>
-    <div class="seo-block__body body-seo">
-      <p>
-        Жизнь современного человека сложно представить без путешествий. В
-        масштабном плане это головокружительные турне в другие страны на
-        отдаленные континенты, в более локальном это ежедневная дорога на работу
-        и поездки к друзьям и родственникам на выходные. Желание же отправиться
-        в путешествие в полной мере поможет Вам воплотить в реальность
-        туристический оператор «Инкомартур 93». Мы предлагаем экскурсионные туры
-        по самой выгодной цене в Украине, а самое главное — безопасность и
-        максимальный комфорт во время вояжа.
-      </p>
+        <div class="item-card-list__route route-item-card">
+          <div class="route-item-card__flags">
+            <a href="#" class="route-item-card__flag">
+              <img src="./img/countries/france.svg" alt="" />
+            </a>
+            <a href="#" class="route-item-card__flag">
+              <img src="./img/countries/germany.svg" alt="" />
+            </a>
+            <a href="#" class="route-item-card__flag">
+              <img src="./img/countries/france.svg" alt="" />
+            </a>
+            <a href="#" class="route-item-card__flag">
+              <img src="./img/countries/germany.svg" alt="" />
+            </a>
 
-      <p>
-        Важнейший приоритет в нашей работе — удовлетворенность клиента. Мы
-        воплотим в жизнь Ваши самые дерзкие мечты, поможем объехать мир при этом
-        сохранив семейный бюджет. В нашей компетенции организация различных
-        трансферов, в том числе и автобусные туры за границу.
-      </p>
-
-      <h2>Почему украинцы путешествуют с нами?</h2>
-
-      <p>
-        Пандемия коронавирусной инфекции COVID-19 значительно реформировала
-        человеческое мироустройство. Люди сперва не понимали всего масштаба, но
-        по прошествию времени адаптировались и приняли новые условия
-        жизнедеятельности. Так, со стабилизацией эпидемической ситуации, которая
-        стала возможна благодаря вакцинации и карантинным ограничениям,
-        открылись границы государств, и теперь украинцы имеют возможность
-        отправиться на отдых у моря.
-      </p>
-
-      <p>
-        Но подобрать тур самостоятельно — сложная задача, требующая расчета
-        факторов риска, о которых туристы могут даже и не знать. Ведь это не
-        просто поиск тура онлайн, выбор гостиницы и мест для посещения, это
-        минимизация возможности проблем с транспортом, нехваткой документов и
-        банальное грамотное распределение финансов. Поэтому подбор тура
-        рекомендуется доверить специалистам.
-      </p>
-
-      <p>
-        Компания «Инкомартур 93» уже больше двадцати лет организовывает поездки
-        за границу на любой вкус и цвет. Наши опытные специалисты взяли на себя
-        обязанность дарить украинцам незабываемый досуг независимо от финансовых
-        вложений. Мы с большим удовольствием поможем найти тур в Турцию,
-        Болгарию, Египет, Балканы, Кипр, а для опытных туристов — экзотические
-        туры из Киева в Азию, Африку или Океанию.
-      </p>
-
-      <h2>Отдых на море: куда поехать в теплое время года?</h2>
-
-      <p>
-        Несмотря на то, что территория Украины богата природными памятниками, в
-        том числе большим количеством водных угодий и различных ландшафтов,
-        украинцы — заядлые путешественники, которые стремятся всегда познавать
-        что-то новое. Черное море — уникальный водоем, который омывает границы
-        многих государств: Украину, Болгарию, Турцию, Грузию, Абхазию, Румынию и
-        Россию. Причерноморье манит отдыхающих своим умиротворением и уютом.
-        Важно отметить, что южное солнце прогревает не только тело, но и душу.
-        Поэтому морская сиеста так ценилась во все времена и не теряет своей
-        актуальности сегодня.
-      </p>
-
-      <p>
-        Существует множество обворожительных мест, куда организовывает маршруты
-        наша турфирма. Авиатур, путешествие на автобусе или поезде — мы
-        предоставим Вам необходимый транспорт для обеспечения максимального
-        уровня комфорта.
-      </p>
-
-      <h2>Отдых в Турции: преимущества и недостатки</h2>
-
-      <p>
-        Блистательная Порта — традиционное место для развлечений жителей нашей
-        страны. Сегодня сложно встретить украинца, который никогда не бывал
-        здесь. Несомненно всех влечет знаменитая система «все включено»,
-        рекреатив у бассейна и купание в чистейшем море. Но путевки в Турцию —
-        это еще и отличная возможность испытать настоящий «культурный шок» от
-        восточной сказки.
-      </p>
-
-      <p>
-        Хорошо известно, что османская империя долгие годы была лидером на
-        мировой политической арене. Не стоит упускать шанс стать гостем этой
-        дружелюбной страны и погрузиться в атмосферу настоящего величия и
-        богатства.
-      </p>
-
-      <p>
-        Первое, что приходит на ум — это посещение старого города, который
-        разделяет государство на европейскую и азиатские части. Специалисты
-        «Инкомартур 93» рекомендуют купить экскурсионный тур в Стамбул, так как
-        в авторскую программу входит обязательное посещение следующих
-        достопримечательностей:
-      </p>
-
-      <ul>
-        <li>
-          <p>
-            Айя-София — наверное каждый хоть раз в жизни слышал о неземной
-            красоте данного собора. Ни один экскурсовод не проведет Вас мимо
-            этого представителя архитектуры времен Византии. Храм следует
-            назвать символом могущества империи, на строительство которого ушло
-            более пяти лет и труд десятков тысяч людей. Даже самые привередливые
-            отдыхающие ахнут при виде мозаик и фресок, а также куполов огромных
-            размеров.
-          </p>
-        </li>
-        <li>
-          <p>
-            Сераль или дворец Топкапи — главный дворец османов на протяжение
-            четырех столетий. Построенный в пятнадцатом веке для султана Мехмеда
-            II, сегодня дворец является одним из крупнейших музеев мира, который
-            ежегодно посещают миллионы ценителей прекрасного.
-          </p>
-        </li>
-        <li>
-          <p>
-            Мечеть Султанахмет — святыня мусульман, которая восхищает своим
-            убранством и поистине является прекрасным образцом исламской и
-            мировой архитектуры. Эклектика стилей завораживает гостей города и
-            как бы демонстрирует разом всю роскошь и монументальность времен,
-            которые давно канули в лету.
-          </p>
-        </li>
-      </ul>
-
-      <p>
-        Несомненно, список мест для посещения в данной стране можно продолжать и
-        дальше, но лучше один раз увидеть своими глазами, чем читать о
-        достопримечательностях десятки раз. Начните путешествовать с нами уже
-        сегодня.
-      </p>
-
-      <h2>Куда поехать осенью и зимой?</h2>
-
-      <p>
-        Для тех, кому Черное море кажется чем-то обыденным, предлагаем посетить
-        «море посреди земли». Средиземноморье смело называют райским местом, в
-        котором сосредоточено все то, что так необходимо человеку для
-        комфортного существования. Средиземное море омывает берег двадцати двух
-        государств и именно здесь расположены самые знаменитые мировые курорты.
-      </p>
-
-      <p>
-        Лето здесь заканчивается только поздней осенью — в середине октября, а в
-        странах Балканского полуострова только официально закрывается пляжный
-        сезон 1 октября. С приходом осени туристическая жизнь не затихает, а
-        вовсе наоборот, путешественники знают, что это самое оптимальное время
-        для запоминающегося отдыха. Поэтому если Вы все еще не решили, куда
-        поедете в осенний уик-энд, то мы советуем купить тур по Балканам.
-      </p>
-
-      <h2>Балканский полуостров — возможность продлить себе летние каникулы</h2>
-
-      <p>
-        Жизнь современного человека протекает в ускоренном темпе, где иногда
-        сложно выкроить денек другой для разрядки. Поэтому если Вы не успели
-        наладиться летом, смело отправляйтесь на Балканы.
-      </p>
-
-      <p>
-        Купить тур в Черногорию — шанс получить загар еще в ноябре, а чистый
-        морской воздух вдалеке от шума и суеты наполнит Вас желанием покорять
-        новые вершины по приезду домой.
-      </p>
-
-      <p>
-        Тут Вы испытаете единение с природой и по-настоящему насладитесь
-        прогулками по достопримечательностям. Осенняя погода создает уникальные
-        условия для поездок в природные парки или знакомства с отдаленными от
-        цивилизации старинными монастырями и средневековыми замками.
-      </p>
-
-      <p>
-        Если Вы любитель пешеходных маршрутов по горам или хотите пополнить
-        галерею фотографиями живописных каньонов и рек, то в Черногории Вы
-        воплотите эти желания в реальность. Любители культурных мероприятий
-        особенно оценят такую поездку из-за огромного количества музыкальных
-        фестивалей, спортивных соревнований, выставок и театральных премьер.
-      </p>
-
-      <p>
-        Туристический оператор «Инкомартур 93» предлагает своим клиентам только
-        авторские маршруты по демократичной цене. Путешествовать с нами —
-        комфортно и безопасно, убедитесь в этом сами.
-      </p>
+            <a href="#" class="route-item-card__flag">
+              <img src="./img/countries/netherlands.svg" alt=""
+            /></a>
+          </div>
+          <div class="route-item-card__cities">
+            Дрезден – Люксембург – Люксембург - Париж (4 дня)
+          </div>
+        </div>
+        <!--  -->
+        <div class="item-card-list__info info-item-card">
+          <div class="info-item-card__icons">
+            <a href="#." class="info-item-card__icon">
+              <img src="./img/icons/airplane.svg" alt="" />
+            </a>
+            <a href="#." class="info-item-card__icon">
+              <img src="./img/icons/palm.svg" alt="" />
+            </a>
+            <a href="#." class="info-item-card__icon">
+              <img src="./img/icons/airplane.svg" alt="" />
+            </a>
+            <a href="#." class="info-item-card__icon">
+              <img src="./img/icons/palm.svg" alt="" />
+            </a>
+          </div>
+          <div class="info-item-card__ratings">
+            <div class="info-item-card__reviews"><span>104</span> отзыва</div>
+            <div class="info-item-card__stars">4,9</div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="item-card-list__buttons">
+          <a class="btn btn__green _popup-link" href="#reserv">забронировать</a>
+          <a href="#" class="btn btn-white">подробнее</a>
+        </div>
+      </div>
     </div>
   </div>
-</section>
-<p>
-  <!-- <iframe
-    src="https://center.cruises/widget/?uuid=3fb1053b-2110-41b9-94bb-03e5fecc7de0&amp;lang=ru"
-    style="width: 100%; height: 1100px; overflow: scroll; border: none"
-  ></iframe -->
-  <!-- new widget end -->
-</p>
+  <!--  -->
 
-<!-- *************** -->
+  <div class="card-list__item item-card-list">
+    <div class="item-card-list__title">ВСЕ ЖЕМЧУЖИНЫ АЛБАНИИ</div>
+    <div class="item-card-list__wrapper">
+      <div class="item-card-list__img">
+        <a href="##"><img src="./img/04.jpg" alt="" /></a>
+        <div class="item-card-list__labels">
+          <div class="item-card-list__label item-card-list__label_red">new</div>
+          <div class="item-card-list__label">ФРАНЦИЯ</div>
+          <div class="item-card-list__label">2021</div>
+        </div>
+      </div>
 
+      <div class="item-card-list__descr">
+        <div class="item-card-list__details">
+          <div class="item-card-list__column">
+            <div class="item-card-list__dates dates-card-item">
+              <div class="dates-card-item__title">Даты тура:</div>
+              <div class="dates-card-item__items">
+                <div class="dates-card-item__item">01.01.2021—10.01.2021</div>
+                <div class="dates-card-item__item">10.01.2021—20.01.2021</div>
+                <div class="dates-card-item__item">20.01.2021—30.01.2021</div>
+                <div class="dates-card-item__item">31.01.2021—30.01.2021</div>
+                <div class="dates-card-item__item">09.02.2021—30.01.2021</div>
+              </div>
+              <div class="dates-card-item__bottom">
+                <a href="#.">Cмотреть все даты</a>
+              </div>
+            </div>
+          </div>
+          <div class="item-card-list__column">
+            <!--  -->
+            <div class="item-card-list__price price-card-item">
+              <div class="price-card-item__uah">от <span>22 494 UAH</span></div>
+              <div class="price-card-item__currency">690 EUR / 720 USD</div>
+              <div class="price-card-item__info-list">
+                <div class="price-card-item__info-item">
+                  Минимальная цена за человека 15
+                </div>
+                <div class="price-card-item__info-item">
+                  Минимальная цена за человекас авиа
+                </div>
+                <div class="price-card-item__info-item">
+                  Минимальная цена за человека без авиа
+                </div>
+              </div>
+              <div class="price-card-item__info">
+                <div class="price-card-item__info-col">
+                  <div class="price-card-item__info-label">Длительность:</div>
+                  <div class="price-card-item__info-value">8 дней</div>
+                </div>
+                <div class="price-card-item__info-col">
+                  <div class="price-card-item__info-label">Группа:</div>
+                  <div class="price-card-item__info-value">От 12 человек</div>
+                </div>
+                <div class="price-card-item__info-col"></div>
+              </div>
+            </div>
+            <!--  -->
+          </div>
+        </div>
+        <!--  -->
+        <div class="item-card-list__route route-item-card">
+          <div class="route-item-card__flags">
+            <a href="#" class="route-item-card__flag">
+              <img src="./img/countries/france.svg" alt="" />
+            </a>
+            <a href="#" class="route-item-card__flag">
+              <img src="./img/countries/germany.svg" alt="" />
+            </a>
+            <a href="#" class="route-item-card__flag">
+              <img src="./img/countries/france.svg" alt="" />
+            </a>
+            <a href="#" class="route-item-card__flag">
+              <img src="./img/countries/germany.svg" alt="" />
+            </a>
+
+            <a href="#" class="route-item-card__flag">
+              <img src="./img/countries/netherlands.svg" alt=""
+            /></a>
+          </div>
+          <div class="route-item-card__cities">
+            Дрезден – Люксембург – Люксембург - Париж (4 дня)
+          </div>
+        </div>
+        <!--  -->
+        <div class="item-card-list__info info-item-card">
+          <div class="info-item-card__icons">
+            <a href="#." class="info-item-card__icon">
+              <img src="./img/icons/airplane.svg" alt="" />
+            </a>
+            <a href="#." class="info-item-card__icon">
+              <img src="./img/icons/palm.svg" alt="" />
+            </a>
+            <a href="#." class="info-item-card__icon">
+              <img src="./img/icons/airplane.svg" alt="" />
+            </a>
+            <a href="#." class="info-item-card__icon">
+              <img src="./img/icons/palm.svg" alt="" />
+            </a>
+          </div>
+          <div class="info-item-card__ratings">
+            <div class="info-item-card__reviews"><span>104</span> отзыва</div>
+            <div class="info-item-card__stars">4,9</div>
+          </div>
+        </div>
+        <!--  -->
+        <div class="item-card-list__buttons">
+          <a class="btn btn__green _popup-link" href="#reserv">забронировать</a>
+          <a href="#" class="btn btn-white">подробнее</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+            </div>
+          </div>
+        </section>
+
+        <!--  -->
+        
         <!--  -->
       </main>
       <footer class="footer">

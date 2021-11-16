@@ -60,7 +60,6 @@ h4 {
   font-size: 15px;
   text-transform: uppercase;
   border-radius: 2px;
-
   font-weight: 700;
   @media (max-width: 992px) {
     font-size: 13px;
@@ -75,6 +74,17 @@ h4 {
     transition: all 0.3s ease 0s;
     &:hover {
       background-color: $colorBlue;
+    }
+  }
+  &-white {
+    border: 2px solid #000;
+    background-color: #fff;
+    color: #000;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      background-color: $colorBlue;
+      border: 2px solid $colorBlue;
+      color: #fff;
     }
   }
 
@@ -307,6 +317,7 @@ body.ie {
     box-sizing: content-box;
     display: flex;
     position: relative;
+    // background-color: tomato;
   }
   &.swiper-container-vertical {
     .swiper-wrapper {

@@ -219,7 +219,7 @@ const singleBlockSlider = new Swiper('.single-block-slider ', {
 // })
 
 const sliderAddExcSlider = new Swiper('.slider-add-exc', {
-  loop: true,
+  // loop: true,
   // slidesPerView: 1,
   // spaceBetween: 10,
   breakpoints: {
@@ -235,5 +235,26 @@ const sliderAddExcSlider = new Swiper('.slider-add-exc', {
   navigation: {
     nextEl: '.add-exc-button-next',
     prevEl: '.add-exc-button-prev',
+  },
+})
+
+var thumbMainSingle = new Swiper('.thumb-main-single', {
+  // loop: true,
+  spaceBetween: 10,
+  slidesPerView: 4,
+  autoHeight: true,
+  watchSlidesProgress: true,
+})
+
+var sliderMainSingle = new Swiper('.slider-main-single', {
+  // loop: true,
+  spaceBetween: 10,
+  slidesPerView: 1,
+  autoHeight: true,
+  // watchSlidesProgress: true,
+
+  thumbs: {
+    swiper: thumbMainSingle,
+    slideThumbActiveClass: 'thumb-main-single_active',
   },
 })

@@ -9,7 +9,11 @@
       <main class="page single-page">
         <section class="single-main">
           <div class="single-main__container _container">
-            <div class="single-main__main main-single">main-single</div>
+            <!--  -->
+            @@include('_single-tour-card.html',{})
+
+            <!--  -->
+
             <div class="single-main__common common-single">
               <div class="common-single__title _title2">Общая информация</div>
               <!--  -->
@@ -34,7 +38,9 @@
                   </div>
                   <div class="single-common__column single-common__buttons">
                     <p>Остаток мест: <span>2</span></p>
-                    <button class="btn btn-green">забронировать</button>
+                    <a href="#reserv" class="btn btn-green _popup-link"
+                      >забронировать</a
+                    >
                   </div>
                 </div>
               </div>
@@ -60,7 +66,9 @@
                   </div>
                   <div class="single-common__column single-common__buttons">
                     <p>Остаток мест: <span>2</span></p>
-                    <button class="btn btn-green">забронировать</button>
+                    <a href="#reserv" class="btn btn-green _popup-link"
+                      >забронировать</a
+                    >
                   </div>
                 </div>
               </div>
@@ -181,8 +189,22 @@
         <!--  -->
         @@include('_single-reviews.html',{})
 
+        <!-- similar-tours -->
+
+        <section class="similar-tours">
+          <div class="similar-tours__container _container">
+            <div class="similar-tours__title _title2">
+              Вас могут заинтересовать
+            </div>
+            <div class="similar-tours__list">
+              <!--  -->
+              @@include('_card-list.html',{})
+            </div>
+          </div>
+        </section>
+
         <!--  -->
-        @@include('_seo-block.html',{})
+        <!-- @@include('_seo-block.html',{}) -->
         <!--  -->
       </main>
       @@include('_footer.html',{})

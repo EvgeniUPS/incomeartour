@@ -183,3 +183,11 @@ if (headerColorPicker) {
 //     })
 //   })
 // }
+
+const simpleRatingWrapper = document.querySelector('.simple-rating')
+const simpleRatingBottom = document.querySelector('.simple-rating__bottom')
+
+simpleRatingWrapper.addEventListener('click', function (e) {
+  simpleRatingBottom.querySelector('span').innerHTML = e.target.value
+  simpleRatingBottom.style.opacity = '1'
+})
