@@ -43,6 +43,7 @@
   // .thumb-main-single__slide
   &__slide {
     opacity: 0.7;
+    max-width: 120px !important;
     height: 60px !important;
     img {
       width: 100%;
@@ -56,5 +57,119 @@
   }
 }
 
+.top-main-single {
+  // .top-main-single__col
+  &__col {
+  }
+}
 .info-main-single {
+  // background-color: tomato;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-between;
+
+  // .info-main-single__title
+  &__title {
+    margin-bottom: 10px;
+  }
+  // .info-main-single__duration
+  &__duration {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 16px;
+    margin-bottom: 10px;
+  }
+  // .info-main-single__price
+  &__price {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+  }
+  // .info-main-single__uah
+  &__uah {
+    font-size: 25px;
+    font-weight: 700;
+  }
+  // .info-main-single__currency
+  &__currency {
+    font-size: 20px;
+  }
+  // .info-main-single__price-info
+  &__price-info {
+  }
+  // .info-main-single__descr
+  &__descr {
+    display: flex;
+    justify-content: space-between;
+  }
+  // .info-main-single__info
+  &__info {
+    // display: flex;
+  }
+  // .info-main-single__dates
+  &__dates {
+  }
+  // .info-main-single__button
+  &__button {
+    margin-bottom: 25px;
+  }
+  // .info-main-single__icons
+  &__icons {
+    display: flex;
+    gap: 15px;
+  }
+  // .info-main-single__icon
+  &__icon {
+    width: 25px;
+    height: 25px;
+
+    &:hover {
+      animation: rotate-scale 1s forwards;
+    }
+  }
+}
+.info-single-label {
+  font-weight: 700;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.info-single-value {
+}
+.info-single-dates {
+  // .info-single-dates__title
+  &__title {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  // .info-single-dates__list
+  &__list {
+    margin-bottom: 15px;
+  }
+  // .info-single-dates__date
+  &__date {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  // .info-single-dates__bottom
+  &__bottom {
+    margin-bottom: 25px;
+    a {
+      color: #000;
+      opacity: 0.7;
+      font-weight: 700;
+    }
+  }
+}
+.btn {
+}
+.btn-green {
+}
+
+@keyframes rotate360 {
+  100% {
+    transform: rotate(360deg);
+  }
 }
