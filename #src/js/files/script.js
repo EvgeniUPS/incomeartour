@@ -33,6 +33,12 @@ tippy('.tooltip-link', {
   duration: 0,
   animation: 'fade',
 })
+tippy('.tooltip-link-click', {
+  duration: 0,
+  animation: 'fade',
+  trigger: 'click',
+  theme: 'tippyBlue',
+})
 
 // Scroll to top
 let scrollTopBtn = document.querySelector('.scroll-top')
@@ -123,29 +129,31 @@ Fancybox.bind('[data-fancybox]', {
   },
 })
 
-const sliderAddExc = document.querySelector('.slider-add-exc')
+if (document.querySelector('.slider-add-exc')) {
+  const sliderAddExc = document.querySelector('.slider-add-exc')
 
-sliderAddExc.addEventListener('click', function (e) {
-  let targetItem = e.target
+  sliderAddExc.addEventListener('click', function (e) {
+    let targetItem = e.target
 
-  if (targetItem.closest('.slider-add-exc__more')) {
-    // console.log(targetItem.nextElementSibling)
-    targetItem.nextElementSibling.classList.add('_active')
-    targetItem.parentNode.childNodes[3].classList.add('_active')
-    targetItem.parentNode.childNodes[5].classList.add('_active')
-    // targetItem.closest('.slider-add-exc__descr').classList.toggle('_active')
-    // console.log(sliderAddExc.closest('.descr-add-exc'))
-  }
-  if (targetItem.closest('._close')) {
-    let parentContainer = targetItem.parentNode.parentNode
-    targetItem.parentNode.classList.remove('_active')
+    if (targetItem.closest('.slider-add-exc__more')) {
+      // console.log(targetItem.nextElementSibling)
+      targetItem.nextElementSibling.classList.add('_active')
+      targetItem.parentNode.childNodes[3].classList.add('_active')
+      targetItem.parentNode.childNodes[5].classList.add('_active')
+      // targetItem.closest('.slider-add-exc__descr').classList.toggle('_active')
+      // console.log(sliderAddExc.closest('.descr-add-exc'))
+    }
+    if (targetItem.closest('._close')) {
+      let parentContainer = targetItem.parentNode.parentNode
+      targetItem.parentNode.classList.remove('_active')
 
-    // console.log(parentContainer.childNodes['slider-add-exc__label'])
+      // console.log(parentContainer.childNodes['slider-add-exc__label'])
 
-    parentContainer.childNodes[3].classList.remove('_active')
-    parentContainer.childNodes[5].classList.remove('_active')
-  }
-})
+      parentContainer.childNodes[3].classList.remove('_active')
+      parentContainer.childNodes[5].classList.remove('_active')
+    }
+  })
+}
 
 const headerColorPicker = document.querySelector('.header-color-picker')
 const topHeader = document.querySelector('.top-header')
@@ -184,10 +192,12 @@ if (headerColorPicker) {
 //   })
 // }
 
-const simpleRatingWrapper = document.querySelector('.simple-rating')
-const simpleRatingBottom = document.querySelector('.simple-rating__bottom')
+if (document.querySelector('.simple-rating')) {
+  const simpleRatingWrapper = document.querySelector('.simple-rating')
+  const simpleRatingBottom = document.querySelector('.simple-rating__bottom')
 
-simpleRatingWrapper.addEventListener('click', function (e) {
-  simpleRatingBottom.querySelector('span').innerHTML = e.target.value
-  simpleRatingBottom.style.opacity = '1'
-})
+  simpleRatingWrapper.addEventListener('click', function (e) {
+    simpleRatingBottom.querySelector('span').innerHTML = e.target.value
+    simpleRatingBottom.style.opacity = '1'
+  })
+}

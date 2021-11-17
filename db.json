@@ -21,6 +21,36 @@
   "country": [
     {
       "id": 1,
+      "continent": "Европа",
+      "country_name": "Украина",
+      "country_code": "UA",
+      "flagUrl": "http://localhost:3000/img/countries/europe/ukraine.svg"
+    },
+    {
+      "id": 2,
+      "continent": "Европа",
+      "country_name": "Польша",
+      "country_code": "UA",
+      "flagUrl": "http://localhost:3000/img/countries/europe/andorra.svg"
+    },
+    {
+      "id": 3,
+      "continent": "Европа",
+      "country_name": "Украина",
+      "country_code": "UA",
+      "flagUrl": "http://localhost:3000/img/countries/europe/austria.svg"
+    },
+    {
+      "id": 1637148572103,
+      "country_name": "Украина",
+      "country_code": "UA",
+      "city": "Одесса",
+      "flagUrl": "http://localhost:3000/img/countries/europe/ukraine.svg"
+    }
+  ],
+  "country2": [
+    {
+      "id": 1,
       "country_name": "China",
       "country_code": "CN",
       "city": "Lab"
@@ -1218,12 +1248,6 @@
       "country_name": "Indonesia",
       "country_code": "ID",
       "city": "Wirodayan"
-    },
-    {
-      "id": 1637142181960,
-      "country_name": "Brazil",
-      "country_code": "BR",
-      "city": "Corrego Grande"
     }
   ],
   "profile": {

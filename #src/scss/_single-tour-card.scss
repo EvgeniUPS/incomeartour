@@ -39,7 +39,14 @@
     }
   }
 }
+.thumb-main-single-wrap {
+  display: flex;
+}
+.main-single-nav {
+  display: flex;
+}
 .thumb-main-single {
+  flex-grow: 1;
   // .thumb-main-single__slide
   &__slide {
     opacity: 0.7;
@@ -98,6 +105,16 @@
   }
   // .info-main-single__price-info
   &__price-info {
+    cursor: pointer;
+    border: 1px solid #ccc;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    color: #ccc;
+    font-size: 12px;
   }
   // .info-main-single__descr
   &__descr {
@@ -118,7 +135,7 @@
   // .info-main-single__icons
   &__icons {
     display: flex;
-    gap: 15px;
+    gap: 25px;
   }
   // .info-main-single__icon
   &__icon {

@@ -1128,6 +1128,52 @@ body.ie ._ibg img {
     transform: rotate(360deg) scale(1.5);
   }
 }
+.tippy-box[data-theme~=tippyBlue] {
+  background-color: #0093dd;
+  color: #fff;
+}
+
+.tippy-box[data-theme~=tippyBlue][data-placement^=top] > .tippy-arrow::before {
+  border-top-color: #0093dd;
+}
+
+.tippy-box[data-theme~=tippyBlue][data-placement^=bottom] > .tippy-arrow::before {
+  border-bottom-color: #0093dd;
+}
+
+.tippy-box[data-theme~=tippyBlue][data-placement^=left] > .tippy-arrow::before {
+  border-left-color: #0093dd;
+}
+
+.tippy-box[data-theme~=tippyBlue][data-placement^=right] > .tippy-arrow::before {
+  border-right-color: #0093dd;
+}
+
+.main-single-nav {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.main-single-nav > div {
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  color: #999;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 32px;
+  transition: all 0.3s ease 0s;
+}
+.main-single-nav > div:hover {
+  background-color: #ccc;
+}
+
 .not-selectable {
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -5057,6 +5103,17 @@ button.swiper-pagination-bullet {
   object-fit: cover;
 }
 
+.thumb-main-single-wrap {
+  display: flex;
+}
+
+.main-single-nav {
+  display: flex;
+}
+
+.thumb-main-single {
+  flex-grow: 1;
+}
 .thumb-main-single__slide {
   opacity: 0.7;
   max-width: 120px !important;
@@ -5099,6 +5156,18 @@ button.swiper-pagination-bullet {
 .info-main-single__currency {
   font-size: 20px;
 }
+.info-main-single__price-info {
+  cursor: pointer;
+  border: 1px solid #ccc;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #ccc;
+  font-size: 12px;
+}
 .info-main-single__descr {
   display: flex;
   justify-content: space-between;
@@ -5108,7 +5177,7 @@ button.swiper-pagination-bullet {
 }
 .info-main-single__icons {
   display: flex;
-  gap: 15px;
+  gap: 25px;
 }
 .info-main-single__icon {
   width: 25px;

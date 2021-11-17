@@ -121,7 +121,7 @@ let slider_about = new Swiper('.about__slider', {
   //},
 })
 
-const swiper = new Swiper('.main-slider', {
+const mainSlider = new Swiper('.main-slider', {
   autoplay: {
     delay: 2000,
     disableOnInteraction: false,
@@ -218,43 +218,46 @@ const singleBlockSlider = new Swiper('.single-block-slider ', {
 //   },
 // })
 
-const sliderAddExcSlider = new Swiper('.slider-add-exc', {
-  // loop: true,
-  // slidesPerView: 1,
-  // spaceBetween: 10,
-  breakpoints: {
-    600: {
-      slidesPerView: 2,
-      spaceBetween: 10,
+if (document.querySelector('.slider-add-exc')) {
+  const sliderAddExcSlider = new Swiper('.slider-add-exc', {
+    // loop: true,
+    // slidesPerView: 1,
+    // spaceBetween: 10,
+    breakpoints: {
+      600: {
+        slidesPerView: 2,
+        spaceBetween: 10,
+      },
+      992: {
+        slidesPerView: 3,
+        spaceBetween: 10,
+      },
     },
-    992: {
-      slidesPerView: 3,
-      spaceBetween: 10,
+    navigation: {
+      nextEl: '.add-exc-button-next',
+      prevEl: '.add-exc-button-prev',
     },
-  },
-  navigation: {
-    nextEl: '.add-exc-button-next',
-    prevEl: '.add-exc-button-prev',
-  },
-})
+  })
+}
+if (document.querySelector('.thumb-main-single')) {
+  const thumbMainSingle = new Swiper('.thumb-main-single', {
+    // loop: true,
+    spaceBetween: 10,
+    slidesPerView: 4,
+    autoHeight: true,
+    watchSlidesProgress: true,
+  })
 
-var thumbMainSingle = new Swiper('.thumb-main-single', {
-  // loop: true,
-  spaceBetween: 10,
-  slidesPerView: 4,
-  autoHeight: true,
-  watchSlidesProgress: true,
-})
+  const sliderMainSingle = new Swiper('.slider-main-single', {
+    // loop: true,
+    spaceBetween: 10,
+    slidesPerView: 1,
+    autoHeight: true,
+    // watchSlidesProgress: true,
 
-var sliderMainSingle = new Swiper('.slider-main-single', {
-  // loop: true,
-  spaceBetween: 10,
-  slidesPerView: 1,
-  autoHeight: true,
-  // watchSlidesProgress: true,
-
-  thumbs: {
-    swiper: thumbMainSingle,
-    slideThumbActiveClass: 'thumb-main-single_active',
-  },
-})
+    thumbs: {
+      swiper: thumbMainSingle,
+      slideThumbActiveClass: 'thumb-main-single_active',
+    },
+  })
+}
