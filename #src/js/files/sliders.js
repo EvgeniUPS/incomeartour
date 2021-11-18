@@ -249,10 +249,14 @@ if (document.querySelector('.thumb-main-single')) {
   })
 
   const sliderMainSingle = new Swiper('.slider-main-single', {
-    // loop: true,
+    loop: true,
     spaceBetween: 10,
     slidesPerView: 1,
     autoHeight: true,
+    navigation: {
+      nextEl: '.main-single-nav__next',
+      prevEl: '.main-single-nav__prev',
+    },
     // watchSlidesProgress: true,
 
     thumbs: {

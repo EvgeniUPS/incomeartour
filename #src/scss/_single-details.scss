@@ -139,17 +139,29 @@
   // .details-tabs__nav
   &__nav {
     display: flex;
+    flex-wrap: wrap;
     border-bottom: 1px solid #000;
     margin-bottom: 30px;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    @media (max-width: 768px) {
+      justify-content: space-between;
+    }
   }
   // .details-tabs__item
   &__item {
+    white-space: nowrap;
     transition: all 0.3s ease 0s;
     padding: 20px 30px;
     cursor: pointer;
     border-top: 1px solid transparent;
     border-right: 1px solid transparent;
     border-left: 1px solid transparent;
+    @media (max-width: 768px) {
+      padding: 10px 15px;
+    }
     &:hover {
       background-color: $colorRed;
       color: #fff;
@@ -183,6 +195,9 @@
   display: flex;
   gap: 10px;
   margin-bottom: 60px;
+  @media (max-width: 768px) {
+    margin-bottom: 30px;
+  }
   // .gallery-tabs__item
   &__item {
     flex: 0 1 33.333%;

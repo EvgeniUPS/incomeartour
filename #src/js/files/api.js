@@ -23,7 +23,7 @@ const getData = async (typeData = 'country', perPage = '', reqId) => {
     console.warn('Ошибка HTTP: ' + response.status)
   }
 }
-getData('country', 5)
+// getData('country', 5)
 
 function sendData(
   country_name = 'Украина',

@@ -5,13 +5,13 @@
         <input
           autocomplete="off"
           type="text"
-          name="form[]"
+          name="name"
           data-value="Название тура"
           class="input"
         />
       </div>
       <div class="search-form__direction">
-        <select class="search-direction" id="searchDirection">
+        <select class="search-direction" id="searchDirection" name="direction">
           <option value="">Направление</option>
           <option value="1">Австралия</option>
           <option value="2">Андорра</option>
@@ -28,32 +28,26 @@
         </select>
       </div>
       <div class="search-form__date">
-        <!-- <input type="text" class="form_date1 _date" id="searchDate" /> -->
-        <!-- <input type="text" name="" id="searchDate" /> -->
-        <!-- <input type="text" placeholder="Дата" id="flatDate2" /> -->
         <input
           autocomplete="off"
           type="text"
-          name="form[]"
+          name="date"
           data-error="Ошибка"
           data-value="Дата"
           class="input _date"
         />
       </div>
       <div class="search-form__transport">
-        <select class="search-transport" id="searchTransport">
+        <select class="search-transport" id="searchTransport" name="transport">
           <option value="">Транспорт</option>
-          <!-- <option value="">This is a placeholder</option> -->
           <option value="3">Все туры</option>
           <option value="2">Авиа тур</option>
           <option value="3">Автобусный тур</option>
         </select>
       </div>
       <div class="search-form__button">
-        <button type="button" class="btn1 btn__blue">Поиск</button>
+        <button type="submit" class="btn1 btn__blue">Поиск</button>
       </div>
     </form>
   </div>
 </section>
-
-<script></script>

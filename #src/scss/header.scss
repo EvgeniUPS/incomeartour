@@ -73,8 +73,10 @@
   }
   // .top-header__date
   &__date {
-    display: flex;
-    gap: 5px;
+    a {
+      display: flex;
+      gap: 5px;
+    }
   }
   // .top-header__lang
   &__lang {

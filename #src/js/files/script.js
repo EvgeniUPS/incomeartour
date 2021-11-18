@@ -201,3 +201,5 @@ if (document.querySelector('.simple-rating')) {
     simpleRatingBottom.style.opacity = '1'
   })
 }
+
+//

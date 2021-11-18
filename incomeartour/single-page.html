@@ -56,7 +56,9 @@
           >
         </div>
         <div class="top-header__date">
-          <i class="_icon-calendar"></i> <span>09-CЕН-2021</span>
+          <a href="./calendar-page.html"
+            ><i class="_icon-calendar"></i> <span>09-CЕН-2021</span></a
+          >
         </div>
       </div>
       <div class="top-header__right" data-da=".menu-burger-footer, 768 , 1">
@@ -83,9 +85,9 @@
           <nav class="menu__body" data-da=".menu-burger-main, 768 , 0">
             <ul class="menu__list">
               <li class="menu__item has-submenu">
-                <a href="#" class="menu__link">Туры</a>
+                <a href="#" class="menu__link disabled">Туры</a>
                 <ul class="submenu-list">
-                  <li><a href="#">Календарь</a></li>
+                  <li><a href="./calendar-page.html">Календарь</a></li>
                   <li><a href="#">Типы туров</a></li>
                 </ul>
               </li>
@@ -93,10 +95,12 @@
                 <a href="./filter-page.html" class="menu__link">Поиск туров</a>
               </li>
               <li class="menu__item">
-                <a href="#country" class="menu__link _popup-link">Страны</a>
+                <a href="#country" class="menu__link _popup-link disabled"
+                  >Страны</a
+                >
               </li>
               <li class="menu__item has-submenu">
-                <a href="#" class="menu__link">Услуги</a>
+                <a href="#" class="menu__link disabled">Услуги</a>
                 <ul class="submenu-list">
                   <li><a href="#">Авиатуры</a></li>
                   <li><a href="#">Автобусные туры</a></li>
@@ -110,7 +114,7 @@
                 <a href="./hotels-page.html" class="menu__link">Отели</a>
               </li>
               <li class="menu__item has-submenu">
-                <a href="#" class="menu__link">Агентствам</a>
+                <a href="#" class="menu__link disabled">Агентствам</a>
                 <ul class="submenu-list">
                   <li><a href="#">Сотрудничество</a></li>
                   <li><a href="#">Бонусная программа</a></li>
@@ -121,7 +125,7 @@
                 </ul>
               </li>
               <li class="menu__item has-submenu">
-                <a href="#" class="menu__link accordion">Туристам</a>
+                <a href="#" class="menu__link accordion disabled">Туристам</a>
                 <ul class="submenu-list panel">
                   <li><a href="#">Договор</a></li>
                   <li><a href="#">Подарочный сертификат</a></li>
@@ -153,7 +157,9 @@
               <li><a href="#">Новости</a></li>
               <li><a href="#">Контакты</a></li>
               <li class="has-submenu">
-                <a class="menu-info-link menu__link" href="#">Информация</a>
+                <a class="menu-info-link menu__link disabled" href="#"
+                  >Информация</a
+                >
                 <ul class="menu-info-body submenu-list panel">
                   <li><a href="./reviews-page.html">Отзывы</a></li>
                   <li><a href="#">Вакансии</a></li>
@@ -217,17 +223,15 @@
           </div>
         </div>
         <div class="main-single-nav">
-          <div class="main-single-nav__prev _slider-button_prev"><</div>
-          <div class="main-single-nav__next _slider-button_next">></div>
+          <div class="main-single-nav__prev _slider-button_prev"></div>
+          <div class="main-single-nav__next _slider-button_next"></div>
         </div>
       </div>
     </div>
 
     <div class="top-main-single__col info-main-single">
-      <h2 class="info-main-single__title">ПОД НЕБОМ ПАРИЖА</h2>
-      <div class="info-main-single__duration">
-        5 дней / без ночных переездов
-      </div>
+      <h2 data-da=".main-single, 768 , 0" class="info-main-single__title">ПОД НЕБОМ ПАРИЖА</h2>
+      <div class="info-main-single__duration">5 дней / без ночных переездов</div>
       <div class="info-main-single__price">
         <div class="info-main-single__uah">от <span>22 494 UAH</span></div>
         <div class="info-main-single__currency">690 EUR / 720 USD</div>
@@ -265,31 +269,44 @@
         <a href="#reserv" class="btn btn-green _popup-link">забронировать</a>
       </div>
       <div class="info-main-single__icons">
-        <a
-          href="#."
-          class="info-main-single__icon tooltip-link"
-          data-tippy-content="Авиатур"
-        >
+        <a href="#." class="info-main-single__icon tooltip-link" data-tippy-content="Авиатур">
           <img src="./img/icons/airplane.svg" alt="" />
         </a>
-        <a
-          href="#."
-          class="info-main-single__icon tooltip-link"
-          data-tippy-content="Пляжный отдых"
-        >
+        <a href="#." class="info-main-single__icon tooltip-link" data-tippy-content="Пляжный отдых">
           <img src="./img/icons/palm.svg" alt="" />
         </a>
-        <a
-          href="#."
-          class="info-main-single__icon tooltip-link"
-          data-tippy-content="Атобусный тур"
-        >
+        <a href="#." class="info-main-single__icon tooltip-link" data-tippy-content="Атобусный тур">
           <img src="./img/icons/bus.svg" alt="" />
         </a>
       </div>
     </div>
   </div>
-  <div class="main-single__bottom">bottom</div>
+
+  <!--  -->
+  <div class="main-single__bottom bottom-main-single">
+    <div class="bottom-main-single__route">
+      <div class="bottom-main-single__flags">
+        <a href="#" class="bottom-main-single__flag">
+          <img src="./img/flags/4x3/de.svg" alt="Германия" />
+        </a>
+        <a href="#" class="bottom-main-single__flag">
+          <img src="./img/flags/4x3/it.svg" alt="Италия" />
+        </a>
+        <a href="#" class="bottom-main-single__flag">
+          <img src="./img/flags/4x3/fr.svg" alt="Франция" />
+        </a>
+      </div>
+      <div class="bottom-main-single__cities">Дрезден – Люксембург – Париж (4 дня)</div>
+    </div>
+    <div class="bottom-main-single__info">
+      <div class="bottom-main-single__rest">осталось мест: <span>3</span></div>
+      <div class="bottom-main-single__rating">
+        <div class="bottom-main-single__reviews"><span>104</span> отзыва</div>
+        <div class="bottom-main-single__stars">4,9</div>
+      </div>
+    </div>
+  </div>
+  <!--  -->
 </div>
 
 

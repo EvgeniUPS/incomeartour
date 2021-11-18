@@ -4,10 +4,17 @@
   &__common {
   }
 }
+
+.common-single__title._title2 {
+  text-align: center;
+}
+
 .common-single {
   // .common-single__title
   &__title {
     margin-bottom: 20px;
+    // text-align: center;
+    // margin-bottom: 45px;
   }
   // .common-single__item
   &__item {
