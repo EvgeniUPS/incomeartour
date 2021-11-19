@@ -6,8 +6,8 @@
   }
   // .hot-offer-block__header
   &__header {
-    // @include adaptiv-value('height', 300, 30, 1);
-    height: 300px;
+    @include adaptiv-value('height', 300, 100, 1);
+    // height: 300px;
     margin-bottom: 10px;
 
     @media (max-width: 768px) {
@@ -53,7 +53,6 @@
   &__item {
     &:nth-child(even) {
       width: 60%;
-
       flex-direction: row-reverse;
       @media (max-width: 768px) {
         width: 50%;
@@ -74,10 +73,10 @@
   }
 }
 .item-hot {
-  height: 392px;
+  // height: 392px;
+  @include adaptiv-value('height', 392, 250, 1);
   position: relative;
   @media (max-width: 992px) {
-    height: 260px;
   }
   &:before {
     content: '';
@@ -102,18 +101,14 @@
   // .item-hot__labels
   &__labels {
     position: absolute;
-    top: 40px;
-    left: 40px;
+    @include adaptiv-value('top', 20, 10, 1);
+    @include adaptiv-value('left', 20, 10, 1);
     z-index: 3;
     font-size: 11px;
     max-width: 100px;
     @media (max-width: 992px) {
-      left: 20px;
-      top: 20px;
     }
     @media (max-width: 768px) {
-      left: 10px;
-      top: 10px;
       font-size: 12px;
       display: flex;
       flex-direction: column;

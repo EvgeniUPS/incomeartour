@@ -1,3 +1,5 @@
+const html = document.querySelector('html')
+
 const preloader = document.querySelector('.preloader')
 const body = document.querySelector('body')
 document.addEventListener('DOMContentLoaded', () => {
@@ -203,3 +205,25 @@ if (document.querySelector('.simple-rating')) {
 }
 
 //
+
+window.addEventListener('DOMContentLoaded', () => {
+  currentLanguage = html.getAttribute('lang')
+  langHandler()
+})
+
+function langHandler() {
+  const langSwitcherBtn = document.querySelector('.lang-switcher-btn')
+  const langTopList = document.querySelector('.lang-top__list')
+
+  console.log(currentLanguage)
+  langSwitcherBtn.addEventListener('click', function (e) {
+    langSwitcherBtn.classList.toggle('_active')
+    langTopList.classList.toggle('_active')
+  })
+  langTopList.addEventListener('click', e => {
+    langSwitcherBtn.innerHTML = e.target.innerHTML
+    html.setAttribute('lang', e.target.dataset.language)
+    langSwitcherBtn.classList.toggle('_active')
+    langTopList.classList.toggle('_active')
+  })
+}

@@ -40,6 +40,7 @@
     .popup__body {
       transition: all 0.3s ease 0.2s;
       transform: scale(1);
+      padding: 50px;
     }
   }
   // .popup__content
@@ -57,10 +58,10 @@
     transform: scale(0);
     transition: all 0.3s ease 0s;
     background-color: #fff;
-    padding: 50px;
     width: 100%;
     max-width: 800px;
   }
+
   // .popup__close
   &__close {
     width: 27px;
@@ -83,6 +84,8 @@
   }
   // .popup__body
   &__body {
+    width: 100%;
+    max-width: 95%;
     // max-width: 100%;
   }
   // .popup__close
@@ -90,20 +93,25 @@
   }
 }
 .popup-country {
+  &__wrapper {
+    max-width: 100%;
+    min-height: 600px;
+    // padding: 0;
+    border-radius: 2px;
+    display: flex;
+    position: relative;
+    padding: 40px 40px 0;
+
+    @media (max-width: 992px) {
+      flex-direction: column;
+    }
+  }
+
   .popup__close {
     top: 15px;
     right: 15px;
   }
   .popup__body {
-    max-width: 100%;
-    min-height: 600px;
-    padding: 0;
-    border-radius: 2px;
-    display: flex;
-
-    @media (max-width: 992px) {
-      flex-direction: column;
-    }
   }
 
   // .popup-country__column
@@ -115,6 +123,9 @@
     }
     &:not(:last-child) {
       border-right: 1px solid #ccc;
+      @media (max-width: 992px) {
+        border-right: none;
+      }
     }
   }
   // .popup-country__row
@@ -157,65 +168,24 @@
     }
   }
   &__view-all {
-    // background-color: tomato;
-    display: none;
-    @media (max-width: 992px) {
+    a {
       display: flex;
-      align-items: center;
-      a {
-        text-transform: uppercase;
-        font-weight: 700;
-        font-size: 15px;
-        color: inherit;
-        position: relative;
-        transition: all 0.3s ease 0s;
-        text-align: center;
-        padding: 20px;
-        width: 100%;
-        height: 100%;
-        span {
-          height: 100%;
-          path {
-            stroke: $colorRed;
-          }
-        }
-        &:hover {
-          background-color: $colorRed;
-          color: #fff;
-          // color: $colorRed;
-          // background-color: tomato;
-          &:before {
-            // background-color: #7a956d;
-            // transform: rotate(180deg);
-          }
-          span {
-            path {
-              stroke: #fff;
-            }
-          }
-          span {
-            path {
-              // stroke: $mainColor;
-            }
-          }
-        }
-      }
-    }
-    @media (max-width: 768px) {
       justify-content: center;
-      padding: 0;
-      a {
-        text-align: center;
-        padding: 20px;
-        width: 100%;
-        height: 100%;
-        &:hover {
-          background-color: $colorRed;
-          color: #fff;
-          span {
-            path {
-              stroke: #fff;
-            }
+      align-items: center;
+      background-color: $colorRed;
+      padding: 20px 0;
+      color: #fff;
+      border: 1px solid $colorRed;
+      text-transform: uppercase;
+      transition: all 0.3s ease 0s;
+      &:hover {
+        background-color: #fff;
+        color: $colorRed;
+      }
+      svg {
+        path {
+          stroke: #fff;
+          &:hover {
           }
         }
       }
