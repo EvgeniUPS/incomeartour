@@ -269,6 +269,82 @@
   <button class="scroll-top"><i class="_icon-arrow2-up"></i></button>
 </footer>
 
+<style>
+  .test-block {
+    margin-bottom: 80px;
+  }
+
+  .test-block {
+    padding: 20px;
+  }
+  .__more-block {
+  }
+  .__more-item {
+  }
+  .__more-content {
+    display: none;
+  }
+  .__more-link {
+    cursor: pointer;
+  }
+</style>
+<div class="test-block">
+  <div class="__more-block">
+    <div class="__more-item">
+      <div class="__more-content">
+        11111 Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime aspernatur sed quae reiciendis modi qui
+        perspiciatis, dicta tempore, omnis labore et! Doloremque adipisci architecto fugiat, ullam nihil eveniet placeat
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime aspernatur sed quae reiciendis modi qui
+        perspiciatis, dicta tempore, omnis labore et! Doloremque adipisci architecto fugiat, ullam nihil eveniet placeat
+        eos.
+      </div>
+      <div class="__more-link">link more1</div>
+    </div>
+    <div class="__more-item">
+      <div class="__more-content">
+        2222Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime aspernatur sed quae reiciendis modi qui
+        perspiciatis, dicta tempore, omnis labore et! Doloremque adipisci architecto fugiat, ullam nihil eveniet placeat
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime aspernatur sed quae reiciendis modi qui
+        perspiciatis, dicta tempore, omnis labore et! Doloremque adipisci architecto fugiat, ullam nihil eveniet placeat
+        eos.
+      </div>
+      <div class="__more-link">link more2</div>
+    </div>
+    <div class="__more-item">
+      <div class="__more-content">
+        3333Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime aspernatur sed quae reiciendis modi qui
+        perspiciatis, dicta tempore, omnis labore et! Doloremque adipisci architecto fugiat, ullam nihil eveniet placeat
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime aspernatur sed quae reiciendis modi qui
+        perspiciatis, dicta tempore, omnis labore et! Doloremque adipisci architecto fugiat, ullam nihil eveniet placeat
+        eos.
+      </div>
+      <div class="__more-link">link more3</div>
+    </div>
+  </div>
+</div>
+<script>
+  const testBlock = document.querySelector('.test-block')
+  const moreBlock = document.querySelector('.__more-block')
+  // const moreItem = document.querySelector('.__more-item')
+  const moreLink = document.querySelector('.__more-link')
+  const moreContent = document.querySelector('.__more-content')
+
+  const moreContentHeight = getStyle(moreContent, 'height')
+
+  moreBlock.addEventListener('click', function (e) {
+    if (e.target.classList.contains('__more-link')) {
+      const moreItem = e.target.parentNode
+    }
+  })
+
+  function getStyle(el, styleProp) {
+    if (moreContent.currentStyle) var y = moreContent.currentStyle[styleProp]
+    else if (window.getComputedStyle)
+      var y = document.defaultView.getComputedStyle(moreContent, null).getPropertyValue(styleProp)
+    return y
+  }
+</script>
+
     </div>
     <!-- MODAL RESERV -->
 <div class="popup popup_reserv">

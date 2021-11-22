@@ -14,17 +14,13 @@ const domain = 'https://new.eliteukrainerating.com'
 menuItemWithSubmenu.forEach(item => {
   item.classList.add('has-arrow')
   if (item.lastElementChild.className !== 'arrow') {
-    item.insertAdjacentHTML(
-      'beforeend',
-      '<button class="menu__btn arrow delete-btn-style" type="bytton"></button>'
-    )
+    item.insertAdjacentHTML('beforeend', '<button class="menu__btn arrow delete-btn-style" type="bytton"></button>')
   }
 })
 
 // кнопка назад
 function addButtonComeback() {
-  const comebackButton =
-    '<button type="button" class="menu__comeback delete-btn-style">Назад</button>'
+  const comebackButton = '<button type="button" class="menu__comeback delete-btn-style">Назад</button>'
   document.querySelectorAll('.menu__submenu').forEach(submenu => {
     submenu.insertAdjacentHTML('afterbegin', comebackButton)
   })
@@ -97,22 +93,13 @@ burger.addEventListener('click', () => {
 // фиксим проваливание блока идущего после fixed header
 function fixHeaderHeight() {
   const padding = window.matchMedia(`(max-width: 580px)`).matches ? 40 : 80
-  header.nextElementSibling.style.marginTop = `${
-    header.clientHeight + padding
-  }px`
+  header.nextElementSibling.style.marginTop = `${header.clientHeight + padding}px`
 }
 
 // is Apple
 function isApple() {
   return (
-    [
-      'iPad Simulator',
-      'iPhone Simulator',
-      'iPod Simulator',
-      'iPad',
-      'iPhone',
-      'iPod',
-    ].includes(navigator.platform) ||
+    ['iPad Simulator', 'iPhone Simulator', 'iPod Simulator', 'iPad', 'iPhone', 'iPod'].includes(navigator.platform) ||
     // iPad on iOS 13 detection
     (navigator.userAgent.includes('Mac') && 'ontouchend' in document)
   )
@@ -187,11 +174,7 @@ function SliderOnMobile(sliderName, prev, next) {
 }
 
 // last-rating
-const lastRating = SliderOnMobile(
-  '.last-rating__slider',
-  '.last-rating__prev',
-  '.last-rating__next'
-)
+const lastRating = SliderOnMobile('.last-rating__slider', '.last-rating__prev', '.last-rating__next')
 
 // news
 const news = SliderOnMobile('.news__slider', '.news__prev', '.news__next')
@@ -206,10 +189,7 @@ function initSeo() {
     const minHeight = Number.parseInt(e.style.getPropertyValue('--height'))
 
     if (e.scrollHeight > minHeight) {
-      e.parentElement.insertAdjacentHTML(
-        'beforeend',
-        '<button type="button" class="seo__btn btn btn--v3"></button>'
-      )
+      e.parentElement.insertAdjacentHTML('beforeend', '<button type="button" class="seo__btn btn btn--v3"></button>')
       const t = document.querySelector('.seo__btn')
 
       e.classList.add('less')
@@ -350,8 +330,7 @@ function getRating(id, perPage, sort, region, language) {
         const name = person.name
         const image = person.image ? person.image : ''
         const webp = person.webp ? person.webp : ''
-        const occupation =
-          person.nomination.name !== null ? person.nomination.name : ''
+        const occupation = person.nomination.name !== null ? person.nomination.name : ''
         const position = person.dolgnost !== null ? person.dolgnost : ''
 
         wrapper.insertAdjacentHTML(
@@ -447,9 +426,7 @@ if (activeYears) {
     if (id === 'archive__page') {
       url = language ? `${url}/${year}/?${language}` : `${url}/${year}/`
     } else {
-      url = language
-        ? `${url}/${year}/?${language}&per_page=${count}`
-        : `${url}/${year}/?per_page=${count}`
+      url = language ? `${url}/${year}/?${language}&per_page=${count}` : `${url}/${year}/?per_page=${count}`
     }
     renderArchive(url)
   }
@@ -460,9 +437,7 @@ if (activeYears) {
   activeYears.addEventListener('click', event => {
     const target = event.target
     if (target.hasAttribute('data-year')) {
-      activeYears
-        .querySelectorAll('.archive__years li')
-        .forEach(li => li.classList.remove('active'))
+      activeYears.querySelectorAll('.archive__years li').forEach(li => li.classList.remove('active'))
       target.classList.add('active')
 
       // update this variables
@@ -595,10 +570,7 @@ function initAutorization(massege) {
 
   wrapper.addEventListener('click', event => {
     const target = event.target
-    if (
-      target.classList.contains('popup') ||
-      target.classList.contains('popup__close')
-    ) {
+    if (target.classList.contains('popup') || target.classList.contains('popup__close')) {
       popup.classList.remove('open')
       setTimeout(() => {
         wrapper.classList.remove('open')
@@ -671,15 +643,9 @@ function initTimer() {
         line.style.width = `${lineWidth}%`
 
         parent.querySelector('.days').innerText = Math.floor(distance / day)
-        parent.querySelector('.hours').innerText = Math.floor(
-          (distance % day) / hour
-        )
-        parent.querySelector('.minutes').innerText = Math.floor(
-          (distance % hour) / minute
-        )
-        parent.querySelector('.seconds').innerText = Math.floor(
-          (distance % minute) / second
-        )
+        parent.querySelector('.hours').innerText = Math.floor((distance % day) / hour)
+        parent.querySelector('.minutes').innerText = Math.floor((distance % hour) / minute)
+        parent.querySelector('.seconds').innerText = Math.floor((distance % minute) / second)
 
         //do something later when date is reached
         if (distance < 0) {
@@ -744,10 +710,7 @@ function initRating() {
 
     const isActiveRating = Boolean(rating.getAttribute('active-rating'))
     const isHasSort = tail.includes('sort=')
-    const showPosition =
-      !isActiveRating || (isActiveRating && isHasSort && tail !== '/')
-        ? true
-        : false
+    const showPosition = !isActiveRating || (isActiveRating && isHasSort && tail !== '/') ? true : false
     console.log(showPosition)
 
     const config = {
@@ -763,16 +726,11 @@ function initRating() {
           const image = person.image ? person.image : ''
           const webp = person.webp ? person.webp : ''
           const position = startFrom + ++i
-          const absentLable =
-            currentLanguage === 'ru' ? 'Без категории' : 'Без категорії'
-          const lable = person.nomination.name
-            ? person.nomination.name
-            : absentLable
+          const absentLable = currentLanguage === 'ru' ? 'Без категории' : 'Без категорії'
+          const lable = person.nomination.name ? person.nomination.name : absentLable
           const text = person.dolgnost ? person.dolgnost : ''
           const voites = person.voites ? person.voites : ''
-          const negativeVoites = person.negative_voites
-            ? person.negative_voites
-            : ''
+          const negativeVoites = person.negative_voites ? person.negative_voites : ''
           const dislike = !hasDislike
             ? ''
             : `
@@ -796,11 +754,7 @@ function initRating() {
                                 </picture>
                             </a>
                 
-                            ${
-                              showPosition
-                                ? `<span class="content__position t2">${position}</span>`
-                                : ''
-                            }
+                            ${showPosition ? `<span class="content__position t2">${position}</span>` : ''}
                             <div class="content__label small">${lable}</div>
                             <div class="content__title t2">
                                 <a href="${url}">${name}</a>
@@ -924,11 +878,8 @@ function initAlphabet() {
           const name = person.name
           const image = person.image ? person.image : ''
           const webp = person.webp ? person.webp : ''
-          const noCategory =
-            currentLanguage === 'ru' ? 'Без категории' : 'Без категорії'
-          const lable = person.nomination.name
-            ? person.nomination.name
-            : noCategory
+          const noCategory = currentLanguage === 'ru' ? 'Без категории' : 'Без категорії'
+          const lable = person.nomination.name ? person.nomination.name : noCategory
           const position = person.dolgnost ? person.dolgnost : ''
 
           wrapper.insertAdjacentHTML(
@@ -958,8 +909,7 @@ function initAlphabet() {
       },
     }
     const type = participants.getAttribute('data-type')
-    const currentArray =
-      currentLanguage === 'ru' ? leters.letersRU : leters.letersUA
+    const currentArray = currentLanguage === 'ru' ? leters.letersRU : leters.letersUA
 
     const alphabet = document.createElement('ul')
     alphabet.className = 'alphabet'
@@ -985,10 +935,7 @@ function initAlphabet() {
       const target = event.target
       stopAjaxLoad()
 
-      if (
-        target.hasAttribute('data-leter') ||
-        target.hasAttribute('data-parametr')
-      ) {
+      if (target.hasAttribute('data-leter') || target.hasAttribute('data-parametr')) {
         const current = alphabet.querySelector('li.current')
         let currentLetter = ''
         if (current) {
@@ -1004,8 +951,7 @@ function initAlphabet() {
         }
 
         // язык
-        const language =
-          currentLanguage === 'ru' ? '' : `&lang=${currentLanguage}`
+        const language = currentLanguage === 'ru' ? '' : `&lang=${currentLanguage}`
 
         // select по региону
         const regionSelect = participants.querySelector('#region')
@@ -1021,9 +967,7 @@ function initAlphabet() {
         let nomination = ''
         if (nominationSelect) {
           if (nominationSelect.hasAttribute('data-sort')) {
-            nomination = `&nomination_id=${nominationSelect.getAttribute(
-              'data-sort'
-            )}`
+            nomination = `&nomination_id=${nominationSelect.getAttribute('data-sort')}`
           }
         }
 
@@ -1056,14 +1000,8 @@ function initInfoMassage(massage, type = 'info') {
   const wrapper = document.querySelector('.info-alert__wrapper')
   const card = document.createElement('div')
   card.className = `info-alert ${type} open`
-  card.insertAdjacentHTML(
-    'beforeend',
-    '<button class="info-alert__close" type="button"></button>'
-  )
-  card.insertAdjacentHTML(
-    'beforeend',
-    `<p class="info-alert__text small">${massage}</p>`
-  )
+  card.insertAdjacentHTML('beforeend', '<button class="info-alert__close" type="button"></button>')
+  card.insertAdjacentHTML('beforeend', `<p class="info-alert__text small">${massage}</p>`)
 
   wrapper.append(card)
   setTimeout(() => {
@@ -1087,10 +1025,7 @@ function initScrollToTop() {
   const positionY = 100
 
   function showButton() {
-    if (
-      document.body.scrollTop > positionY ||
-      document.documentElement.scrollTop > positionY
-    ) {
+    if (document.body.scrollTop > positionY || document.documentElement.scrollTop > positionY) {
       // btn.style.display = 'block';
       btn.classList.add('show')
     } else {
@@ -1113,9 +1048,7 @@ if (advantages) {
   const slides = advantages.querySelectorAll('.swiper-slide')
   const texts = []
   const icons = []
-  slides.forEach(slide =>
-    texts.push(slide.querySelector('.advantages__slide-title').textContent)
-  )
+  slides.forEach(slide => texts.push(slide.querySelector('.advantages__slide-title').textContent))
   slides.forEach(slide => {
     const img = slide.querySelector('.advantages__slide-icon')
     const url = img.getAttribute('src')
@@ -1177,12 +1110,8 @@ if (callback) {
 function noData(data, wrapper) {
   const childCount = wrapper.children.length
   if (!data && !childCount) {
-    const noDataText =
-      currentLanguage === 'ru' ? 'Ничего не найдено' : 'Нічого не знайдено'
-    wrapper.insertAdjacentHTML(
-      'beforeend',
-      `<div class="experts__card no-data t1">${noDataText}</div>`
-    )
+    const noDataText = currentLanguage === 'ru' ? 'Ничего не найдено' : 'Нічого не знайдено'
+    wrapper.insertAdjacentHTML('beforeend', `<div class="experts__card no-data t1">${noDataText}</div>`)
   }
 }
 
@@ -1222,3 +1151,5 @@ window.addEventListener('resize', () => {
   lastRating()
   news()
 })
+
+)

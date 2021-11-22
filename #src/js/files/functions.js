@@ -17,13 +17,7 @@ var isMobile = {
     return navigator.userAgent.match(/IEMobile/i)
   },
   any: function () {
-    return (
-      isMobile.Android() ||
-      isMobile.BlackBerry() ||
-      isMobile.iOS() ||
-      isMobile.Opera() ||
-      isMobile.Windows()
-    )
+    return isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows()
   },
 }
 function isIE() {
@@ -61,12 +55,8 @@ function ibg() {
   if (isIE()) {
     let ibg = document.querySelectorAll('._ibg')
     for (var i = 0; i < ibg.length; i++) {
-      if (
-        ibg[i].querySelector('img') &&
-        ibg[i].querySelector('img').getAttribute('src') != null
-      ) {
-        ibg[i].style.backgroundImage =
-          'url(' + ibg[i].querySelector('img').getAttribute('src') + ')'
+      if (ibg[i].querySelector('img') && ibg[i].querySelector('img').getAttribute('src') != null) {
+        ibg[i].style.backgroundImage = 'url(' + ibg[i].querySelector('img').getAttribute('src') + ')'
       }
     }
   }
@@ -185,13 +175,9 @@ function body_lock_add(delay) {
     let lock_padding = document.querySelectorAll('._lp')
     for (let index = 0; index < lock_padding.length; index++) {
       const el = lock_padding[index]
-      el.style.paddingRight =
-        window.innerWidth -
-        document.querySelector('.wrapper').offsetWidth +
-        'px'
+      el.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px'
     }
-    body.style.paddingRight =
-      window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px'
+    body.style.paddingRight = window.innerWidth - document.querySelector('.wrapper').offsetWidth + 'px'
     body.classList.add('_lock')
 
     unlock = false
@@ -263,11 +249,7 @@ data-spollers="768,min" - спойлеры будут работать толь�
 const spollersArray = document.querySelectorAll('[data-spollers]')
 if (spollersArray.length > 0) {
   // Получение обычных слойлеров
-  const spollersRegular = Array.from(spollersArray).filter(function (
-    item,
-    index,
-    self
-  ) {
+  const spollersRegular = Array.from(spollersArray).filter(function (item, index, self) {
     return !item.dataset.spollers.split(',')[0]
   })
   // Инициализация обычных слойлеров
@@ -276,11 +258,7 @@ if (spollersArray.length > 0) {
   }
 
   // Получение слойлеров с медиа запросами
-  const spollersMedia = Array.from(spollersArray).filter(function (
-    item,
-    index,
-    self
-  ) {
+  const spollersMedia = Array.from(spollersArray).filter(function (item, index, self) {
     return item.dataset.spollers.split(',')[0]
   })
 
@@ -299,16 +277,7 @@ if (spollersArray.length > 0) {
 
     // Получаем уникальные брейкпоинты
     let mediaQueries = breakpointsArray.map(function (item) {
-      return (
-        '(' +
-        item.type +
-        '-width: ' +
-        item.value +
-        'px),' +
-        item.value +
-        ',' +
-        item.type
-      )
+      return '(' + item.type + '-width: ' + item.value + 'px),' + item.value + ',' + item.type
     })
     mediaQueries = mediaQueries.filter(function (item, index, self) {
       return self.indexOf(item) === index
@@ -369,13 +338,9 @@ if (spollersArray.length > 0) {
   function setSpollerAction(e) {
     const el = e.target
     if (el.hasAttribute('data-spoller') || el.closest('[data-spoller]')) {
-      const spollerTitle = el.hasAttribute('data-spoller')
-        ? el
-        : el.closest('[data-spoller]')
+      const spollerTitle = el.hasAttribute('data-spoller') ? el : el.closest('[data-spoller]')
       const spollersBlock = spollerTitle.closest('[data-spollers]')
-      const oneSpoller = spollersBlock.hasAttribute('data-one-spoller')
-        ? true
-        : false
+      const oneSpoller = spollersBlock.hasAttribute('data-one-spoller') ? true : false
       if (!spollersBlock.querySelectorAll('._slide').length) {
         if (oneSpoller && !spollerTitle.classList.contains('_active')) {
           hideSpollersBody(spollersBlock)
@@ -387,9 +352,7 @@ if (spollersArray.length > 0) {
     }
   }
   function hideSpollersBody(spollersBlock) {
-    const spollerActiveTitle = spollersBlock.querySelector(
-      '[data-spoller]._active'
-    )
+    const spollerActiveTitle = spollersBlock.querySelector('[data-spoller]._active')
     if (spollerActiveTitle) {
       spollerActiveTitle.classList.remove('_active')
       _slideUp(spollerActiveTitle.nextElementSibling, 500)
@@ -658,11 +621,7 @@ if (moreBlocks.length > 0) {
       let itemsMore = moreBlock.querySelector('._more-link')
       let itemsContent = moreBlock.querySelector('._more-content')
       let itemsView = itemsContent.getAttribute('data-view')
-      if (
-        getComputedStyle(itemsContent).getPropertyValue(
-          'transition-duration'
-        ) === '0s'
-      ) {
+      if (getComputedStyle(itemsContent).getPropertyValue('transition-duration') === '0s') {
         itemsContent.style.cssText = 'transition-duration: 1ms'
       }
       itemsMore.addEventListener('click', function (e) {
@@ -688,9 +647,9 @@ if (moreBlocks.length > 0) {
           console.log(`items[index].offsetHeight`, items[index].offsetHeight)
           itemsContentStartHeight += items[index].offsetHeight
         }
-        resultHeight =
-          type === 'start' ? itemsContentStartHeight : itemsContentHeight
+        resultHeight = type === 'start' ? itemsContentStartHeight : itemsContentHeight
         isScrollStart = window.innerWidth - wrapper.offsetWidth
+        console.log(`resultHeight`, resultHeight)
         itemsContent.style.height = `${resultHeight}px`
       }
 
@@ -698,10 +657,7 @@ if (moreBlocks.length > 0) {
 
       function updateSize() {
         let isScrollEnd = window.innerWidth - wrapper.offsetWidth
-        if (
-          (isScrollStart === 0 && isScrollEnd > 0) ||
-          (isScrollStart > 0 && isScrollEnd === 0)
-        ) {
+        if ((isScrollStart === 0 && isScrollEnd > 0) || (isScrollStart > 0 && isScrollEnd === 0)) {
           if (itemsMore.classList.contains('_active')) {
             setSize('start')
           } else {
