@@ -32,6 +32,7 @@ h4 {
   line-height: 100%;
 }
 .section-title {
+  font-weight: 600;
   // font-size: 50px;
   @include adaptiv-value('font-size', 50, 25, 1);
   line-height: 100%;
@@ -536,20 +537,16 @@ body.ie {
   background-color: $colorBlue;
   color: #fff;
 }
-.tippy-box[data-theme~='tippyBlue'][data-placement^='top']
-  > .tippy-arrow::before {
+.tippy-box[data-theme~='tippyBlue'][data-placement^='top'] > .tippy-arrow::before {
   border-top-color: $colorBlue;
 }
-.tippy-box[data-theme~='tippyBlue'][data-placement^='bottom']
-  > .tippy-arrow::before {
+.tippy-box[data-theme~='tippyBlue'][data-placement^='bottom'] > .tippy-arrow::before {
   border-bottom-color: $colorBlue;
 }
-.tippy-box[data-theme~='tippyBlue'][data-placement^='left']
-  > .tippy-arrow::before {
+.tippy-box[data-theme~='tippyBlue'][data-placement^='left'] > .tippy-arrow::before {
   border-left-color: $colorBlue;
 }
-.tippy-box[data-theme~='tippyBlue'][data-placement^='right']
-  > .tippy-arrow::before {
+.tippy-box[data-theme~='tippyBlue'][data-placement^='right'] > .tippy-arrow::before {
   border-right-color: $colorBlue;
 }
 

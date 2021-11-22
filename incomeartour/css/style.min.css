@@ -323,6 +323,7 @@ html {
 
 body {
   color: #000;
+  line-height: 1.2;
 }
 body._lock {
   overflow: hidden;
@@ -701,6 +702,7 @@ h4 {
 }
 
 .section-title {
+  font-weight: 600;
   font-size: 50px;
   line-height: 100%;
   text-align: center;
@@ -3700,7 +3702,7 @@ button.swiper-pagination-bullet {
   }
 }
 .item-tour_list {
-  padding-bottom: 60px;
+  padding-bottom: 40px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   grid-template-columns: 2fr 1fr 1fr 1fr;
   grid-template-rows: 45px 50px min-content min-content min-content;
@@ -5616,8 +5618,6 @@ button.swiper-pagination-bullet {
   justify-content: space-evenly;
   background-color: #ece3db;
   height: 100%;
-  gap: 10px;
-  padding: 10px 0;
 }
 @media (max-width: 992px) {
   .nav-details__list {
@@ -5626,6 +5626,14 @@ button.swiper-pagination-bullet {
 }
 .nav-details__item {
   height: 100%;
+}
+.nav-details__item a {
+  padding: 15px;
+}
+@media (max-width: 992px) {
+  .nav-details__item a {
+    padding: 10px;
+  }
 }
 .nav-details__link {
   padding: 10px;

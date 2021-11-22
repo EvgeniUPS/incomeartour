@@ -43,8 +43,8 @@
     justify-content: space-evenly;
     background-color: $colorBeige;
     height: 100%;
-    gap: 10px;
-    padding: 10px 0;
+
+    // padding: 10px 0;
 
     @media (max-width: 992px) {
       flex-wrap: wrap;
@@ -53,6 +53,13 @@
   // .nav-details__item
   &__item {
     height: 100%;
+
+    a {
+      padding: 15px;
+      @media (max-width: 992px) {
+        padding: 10px;
+      }
+    }
   }
   // .nav-details__link
   &__link {
