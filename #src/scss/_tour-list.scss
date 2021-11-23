@@ -185,6 +185,7 @@
 }
 .tour-list__flags {
   grid-area: flags;
+  padding: 20px 0;
   @media (max-width: 768px) {
     border-left: 1px solid #000;
     border-right: 1px solid #000;
@@ -370,6 +371,7 @@
   // .tour-flags__countries
   &__countries {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -504,6 +506,11 @@
   &__reserve {
     margin-bottom: 15px;
     width: 100%;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
     @media (max-width: 992px) {
       margin-bottom: 0;
     }
@@ -513,6 +520,10 @@
   // .tour-buttons__details
   &__details {
     width: 100%;
+    transition: all 0.3s ease 0s;
+    &:hover {
+      transform: scale(1.05);
+    }
   }
 }
 .tour-labels {
@@ -535,14 +546,16 @@
     align-items: flex-start;
     gap: 10px;
   }
-  i {
-    font-size: 17px;
-  }
+
   // .tour-reviews__rev
   &__rev {
+    opacity: 0.7;
     position: relative;
     padding-left: 22px;
-
+    transition: all 0.3s ease 0s;
+    &:hover {
+      opacity: 1;
+    }
     &:before {
       position: absolute;
       width: 100%;
@@ -553,7 +566,6 @@
       background: url('../img/icons/like.svg') 0 0 no-repeat;
     }
     display: flex;
-    // align-items: center;
     gap: 5px;
     font-size: 15px;
     align-items: flex-end;
@@ -572,6 +584,10 @@
     margin-left: 17.5px;
     position: relative;
     padding-left: 22px;
+    opacity: 0.7;
+    &:hover {
+      opacity: 1;
+    }
 
     &:before {
       position: absolute;
@@ -640,7 +656,7 @@
       font-size: 14px;
     }
     @media (max-width: 480px) {
-      font-size: 12px;
+      font-size: 11px;
     }
   }
   // .tour-date__value
@@ -651,21 +667,23 @@
   &__viewall {
     font-size: 16px;
     font-weight: 700;
+    padding-bottom: 20px;
     // margin-bottom: 15px;
     a {
       white-space: nowrap;
-      color: rgba(0, 0, 0, 0.75);
+      color: rgba(0, 0, 0, 0.5);
       position: relative;
-      padding-right: 20px;
+      padding-right: 18px;
       &:before {
+        opacity: 0 9;
         content: '';
         position: absolute;
-        width: 20px;
-        height: 16px;
+        width: 12px;
+        height: 12px;
         top: 50%;
         transform: translateY(-50%);
         right: 0;
-        background-image: url(../img/icons/arrow2-right.svg);
+        background-image: url(../img/icons/arrow-right.svg);
         background-repeat: no-repeat;
         background-size: contain;
         @media (max-width: 768px) {
@@ -694,9 +712,11 @@
   a {
     width: 25px;
     height: 25px;
+    opacity: 0.7;
 
     &:hover {
       animation: rotate-scale 1s forwards;
+      opacity: 1;
     }
     img {
       width: 100%;
@@ -876,7 +896,6 @@
     }
     // .tour-buttons__details
     &__details {
-      // width: 100%;
     }
   }
   .tour-labels {
@@ -905,13 +924,10 @@
     &__rev {
       display: flex;
       align-items: center;
-      // margin: 0 5px;
-      // padding: 0 5px;
       gap: 5px;
     }
     // .tour-reviews__value
     &__value {
-      // margin-left: 5px;
       font-size: 15px;
       font-weight: 700;
     }

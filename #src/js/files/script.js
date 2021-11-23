@@ -69,9 +69,7 @@ const searchForm = function (params) {
   const searchInput = document.querySelector('.search-form__direction select')
 }
 
-const searchFormDirection = document.querySelector(
-  '.search-form__direction select'
-)
+const searchFormDirection = document.querySelector('.search-form__direction select')
 
 // searchFormDirection.addEventListener('change', e => {})
 
@@ -215,7 +213,6 @@ function langHandler() {
   const langSwitcherBtn = document.querySelector('.lang-switcher-btn')
   const langTopList = document.querySelector('.lang-top__list')
 
-  console.log(currentLanguage)
   langSwitcherBtn.addEventListener('click', function (e) {
     langSwitcherBtn.classList.toggle('_active')
     langTopList.classList.toggle('_active')

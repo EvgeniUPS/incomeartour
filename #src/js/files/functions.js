@@ -858,3 +858,50 @@ disabledLinks.forEach(el => {
     e.preventDefault()
   })
 })
+
+/* ***** ups-more-js ***** */
+
+function moreLess() {
+  const moreBlock = document.querySelector('._ups-more-block')
+  const allMoreLink = document.querySelectorAll('._ups-more-link')
+  allMoreLink.forEach(el => {
+    el.innerText = el.dataset.moreText
+  })
+  const allMoreContent = document.querySelectorAll('._ups-more-content')
+  allMoreContent.forEach(el => {
+    const startHeight = el.dataset.contentHight
+
+    if (startHeight < el.offsetHeight) {
+      el.setAttribute('style', `height: startHeightpx`)
+    }
+  })
+
+  moreBlock.addEventListener('click', function (e) {
+    e.preventDefault()
+    const currentLink = e.target
+    if (currentLink.classList.contains('_ups-more-link')) {
+      const textLess = currentLink.dataset.less
+      const textMore = currentLink.dataset.moreText
+
+      const moreItem = currentLink.parentNode
+      const currentCont = moreItem.querySelector('._ups-more-content')
+
+      if (!currentLink.classList.contains('_active')) {
+        currentCont.setAttribute('style', `height:100%`)
+        currentCont.setAttribute('style', `height: ${currentCont.offsetHeight}px`)
+        currentLink.classList.add('_active')
+        currentCont.classList.add('_active')
+        currentLink.innerText = textLess
+      } else if (currentLink.classList.contains('_active')) {
+        console.log('less click')
+        currentLink.innerText = textMore
+        currentCont.setAttribute('style', `height: ${currentCont.dataset.contentHight}px`)
+        currentLink.classList.remove('_active')
+        currentCont.classList.remove('_active')
+        currentLink.innerText = textMore
+      }
+    }
+  })
+}
+moreLess()
+/* ***** ups-more-js ***** */

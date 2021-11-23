@@ -96,7 +96,6 @@
   &__wrapper {
     max-width: 100%;
     min-height: 600px;
-    // padding: 0;
     border-radius: 2px;
     display: flex;
     position: relative;
@@ -106,12 +105,13 @@
       flex-direction: column;
     }
   }
+  &__body {
+    padding: 0 !important;
+  }
 
   .popup__close {
     top: 15px;
     right: 15px;
-  }
-  .popup__body {
   }
 
   // .popup-country__column
