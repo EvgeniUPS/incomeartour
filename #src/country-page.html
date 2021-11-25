@@ -8,9 +8,225 @@
       @@include('_header.html',Х)
       <main class="page">
         <!--  -->
-        @@include('_page-header.html', { "pageHeaderText" : "Страны", "imgPath"
-        : "./img/eiffel-tower-paris-europe.jpg"})
+        @@include('_page-header.html', { "pageHeader" : "Страны", "imgPath" : "./img/eiffel-tower-paris-europe.jpg",
+        "pageText" : "pageTexttttt", "flag" : "flag"})
         <!--  -->
+        <!-- <country-search>======================================================================================== -->
+        <section class="country-search">
+          <div class="country-search__container _container">
+            <form class="country-search__form search-form">
+              <div class="search-form__input"><input placeholder="Название страны" type="text" /></div>
+              <button type="submit" class="search-form__button">Поиск</button>
+            </form>
+          </div>
+        </section>
+        <!-- <country-all>======================================================================================== -->
+        <section class="country-all">
+          <div class="country-all__container _container">
+            <div class="country-all__title">Все страны</div>
+            <!--  -->
+            <div class="country-all__continent continent-country">
+              <div class="continent-country__title">Европа</div>
+              <div class="continent-country__list">
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/de.svg" alt="" /></div>
+                  <div class="continent-country__name">Германия</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/fr.svg" alt="" /></div>
+                  <div class="continent-country__name">Франция</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/it.svg" alt="" /></div>
+                  <div class="continent-country__name">Италия</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/de.svg" alt="" /></div>
+                  <div class="continent-country__name">Германия</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/fr.svg" alt="" /></div>
+                  <div class="continent-country__name">Франция</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/it.svg" alt="" /></div>
+                  <div class="continent-country__name">Италия</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/de.svg" alt="" /></div>
+                  <div class="continent-country__name">Германия</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/fr.svg" alt="" /></div>
+                  <div class="continent-country__name">Франция</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/it.svg" alt="" /></div>
+                  <div class="continent-country__name">Италия</div>
+                </a>
+              </div>
+            </div>
+            <!--  -->
+            <div class="country-all__continent continent-country">
+              <div class="continent-country__title">Азия</div>
+              <div class="continent-country__list">
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/de.svg" alt="" /></div>
+                  <div class="continent-country__name">Германия</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/fr.svg" alt="" /></div>
+                  <div class="continent-country__name">Франция</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/it.svg" alt="" /></div>
+                  <div class="continent-country__name">Италия</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/de.svg" alt="" /></div>
+                  <div class="continent-country__name">Германия</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/fr.svg" alt="" /></div>
+                  <div class="continent-country__name">Франция</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/it.svg" alt="" /></div>
+                  <div class="continent-country__name">Италия</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/de.svg" alt="" /></div>
+                  <div class="continent-country__name">Германия</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/fr.svg" alt="" /></div>
+                  <div class="continent-country__name">Франция</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/it.svg" alt="" /></div>
+                  <div class="continent-country__name">Италия</div>
+                </a>
+              </div>
+            </div>
+            <div class="country-all__continent continent-country">
+              <div class="continent-country__title">Америка</div>
+              <div class="continent-country__list">
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/de.svg" alt="" /></div>
+                  <div class="continent-country__name">Германия</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/fr.svg" alt="" /></div>
+                  <div class="continent-country__name">Франция</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/it.svg" alt="" /></div>
+                  <div class="continent-country__name">Италия</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/de.svg" alt="" /></div>
+                  <div class="continent-country__name">Германия</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/fr.svg" alt="" /></div>
+                  <div class="continent-country__name">Франция</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/it.svg" alt="" /></div>
+                  <div class="continent-country__name">Италия</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/de.svg" alt="" /></div>
+                  <div class="continent-country__name">Германия</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/fr.svg" alt="" /></div>
+                  <div class="continent-country__name">Франция</div>
+                </a>
+                <a href="#" class="continent-country__item">
+                  <div class="continent-country__flag"><img src="./img/flags/4x3/it.svg" alt="" /></div>
+                  <div class="continent-country__name">Италия</div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="name">
+          <div class="name__container add-exc-details _container">
+            <div class="add-exc-details__title _title2">Популярные направления</div>
+            <div class="add-exc-details__text">
+              Текст описание доп. экскурсии: текст описание доп. экскурсии: текст описание доп. экскурсии
+            </div>
+            <div class="add-exc-details__slider">
+              <!-- ************* -->
+              <div class="swiper slider-add-exc">
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                  <!-- Slides -->
+                  <div class="swiper-slide slider-add-exc__slide">
+                    <img class="slider-add-exc__img" src="./img/01.jpg" alt="" />
+                    <div class="slider-add-exc__label">Версаль</div>
+                    <div class="slider-add-exc__more">Равернуть<span></span></div>
+                    <div class="slider-add-exc__descr descr-add-exc">
+                      <div class="descr-add-exc__title">Версаль</div>
+                      <div class="descr-add-exc__price"><span>Цена:</span>95 €/80 €</div>
+                      <div class="descr-add-exc__descr">(включено входные билеты в два замка)</div>
+                      <a href="#" class="descr-add-exc__link">Детали</a>
+
+                      <div class="_close"></div>
+                    </div>
+                  </div>
+                  <!-- Slides -->
+                  <!-- Slides -->
+                  <div class="swiper-slide slider-add-exc__slide">
+                    <img class="slider-add-exc__img" src="./img/italy2.jpg" alt="" />
+                    <div class="slider-add-exc__label">Италия</div>
+                    <div class="slider-add-exc__more">Подробнее</div>
+                    <div class="slider-add-exc__descr descr-add-exc">Lorem ipsum dolor sit amet.</div>
+                  </div>
+                  <div class="swiper-slide slider-add-exc__slide">
+                    <img class="slider-add-exc__img" src="./img/mexiсa.jpg" alt="" />
+                    <div class="slider-add-exc__label">Мексика</div>
+                    <div class="slider-add-exc__more">Подробнее</div>
+                    <div class="slider-add-exc__descr descr-add-exc">Lorem ipsum dolor sit amet.</div>
+                  </div>
+                  <div class="swiper-slide slider-add-exc__slide">
+                    <img class="slider-add-exc__img" src="./img/france.jpg" alt="" />
+                    <div class="slider-add-exc__label">Франция</div>
+                    <div class="slider-add-exc__more">Подробнее</div>
+                    <div class="slider-add-exc__descr descr-add-exc">Lorem ipsum dolor sit amet.</div>
+                  </div>
+                  <div class="swiper-slide slider-add-exc__slide">
+                    <img class="slider-add-exc__img" src="./img/04.jpg" alt="" />
+                    <div class="slider-add-exc__label">Реймс</div>
+                    <div class="slider-add-exc__more">Подробнее</div>
+                    <div class="slider-add-exc__descr descr-add-exc">Lorem ipsum dolor sit amet.</div>
+                  </div>
+                  <div class="swiper-slide slider-add-exc__slide">
+                    <img class="slider-add-exc__img" src="./img/05.jpg" alt="" />
+                    <div class="slider-add-exc__label">Версаль</div>
+                    <div class="slider-add-exc__more">Подробнее</div>
+                    <div class="slider-add-exc__descr descr-add-exc">Lorem ipsum dolor sit amet.</div>
+                  </div>
+                  <!-- Slides -->
+                  <!-- Slides -->
+                </div>
+                <div class="swiper-button-prev add-exc-button-prev"></div>
+                <div class="swiper-button-next add-exc-button-next"></div>
+              </div>
+              <!-- ************* -->
+            </div>
+            <div class="add-exc-details__bottom">
+              <div class="add-exc-details__bottom-item">
+                Текст описание доп. экскурсии: текст описание доп. экскурсии: текст описание доп. экскурсии
+              </div>
+              <div class="add-exc-details__bottom-item">
+                Текст описание доп. экскурсии: текст описание доп. экскурсии: текст описание доп. экскурсии
+              </div>
+            </div>
+          </div>
+        </section>
 
         <!--  -->
         @@include('_seo-block.html',{})
