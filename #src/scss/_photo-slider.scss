@@ -27,22 +27,20 @@
 
 .photo-slider-button-prev,
 .photo-slider-button-next {
-  font-size: 20px;
-  // height: 100%;
-  width: 50px;
-  height: 50px;
-  background: #eaeaea;
-  opacity: 0.8;
-  border-radius: 50%;
-  color: rgba(0, 0, 0, 0.5);
-  @media (max-width: 768px) {
-    width: 30px;
-    height: 30px;
-    font-size: 12px;
-  }
-  &:after {
-    content: '';
-  }
+  // font-size: 20px;
+
+  // background: #eaeaea;
+  // opacity: 0.8;
+  // border-radius: 50%;
+  // color: rgba(0, 0, 0, 0.5);
+  // @media (max-width: 768px) {
+  //   width: 30px;
+  //   height: 30px;
+  //   font-size: 12px;
+  // }
+  // &:after {
+  //   content: '';
+  // }
 
   // border: 3px solid #141414;
 }

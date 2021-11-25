@@ -43,10 +43,7 @@ let path = {
     html: [src_folder + '/**/*.html', '!' + src_folder + '/_*.html'],
     js: [src_folder + '/js/app.js', src_folder + '/js/vendors.js'],
     css: src_folder + '/scss/style.scss',
-    images: [
-      src_folder + '/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}',
-      '!**/favicon.*',
-    ],
+    images: [src_folder + '/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}', '!**/favicon.*'],
     // fonts: src_folder + "/fonts/*.ttf",
     fonts: src_folder + '/fonts/*.*',
     json: src_folder + '/json/**/*.*',
@@ -101,9 +98,7 @@ function css() {
     .pipe(browsersync.stream())
 }
 function json() {
-  return src(path.src.json, {})
-    .pipe(dest(path.build.json))
-    .pipe(browsersync.stream())
+  return src(path.src.json, {}).pipe(dest(path.build.json)).pipe(browsersync.stream())
 }
 function js() {
   return src(path.src.js, {})
@@ -121,9 +116,7 @@ function js() {
     .pipe(browsersync.stream())
 }
 function images() {
-  return src(path.src.images)
-    .pipe(newer(path.build.images))
-    .pipe(dest(path.build.images))
+  return src(path.src.images).pipe(newer(path.build.images)).pipe(dest(path.build.images))
 }
 function favicon() {
   return src(path.src.favicon)
@@ -146,14 +139,8 @@ function fonts_otf() {
     .pipe(gulp.dest('./' + src_folder + '/fonts/'))
 }
 function fonts() {
-  src(path.src.fonts)
-    .pipe(plumber())
-    .pipe(ttf2woff())
-    .pipe(dest(path.build.fonts))
-  return src(path.src.fonts)
-    .pipe(ttf2woff2())
-    .pipe(dest(path.build.fonts))
-    .pipe(browsersync.stream())
+  src(path.src.fonts).pipe(plumber()).pipe(ttf2woff()).pipe(dest(path.build.fonts))
+  return src(path.src.fonts).pipe(ttf2woff2()).pipe(dest(path.build.fonts)).pipe(browsersync.stream())
 }
 function fontstyle() {
   let file_content = fs.readFileSync(src_folder + '/scss/fonts.scss')
@@ -168,11 +155,7 @@ function fontstyle() {
           if (c_fontname != fontname) {
             fs.appendFile(
               src_folder + '/scss/fonts.scss',
-              '@include font("' +
-                fontname +
-                '", "' +
-                fontname +
-                '", "400", "normal");\r\n',
+              '@include font("' + fontname + '", "' + fontname + '", "400", "normal");\r\n',
               cb
             )
           }
@@ -189,13 +172,13 @@ function cb() {}
 function clean() {
   return del(path.clean)
 }
-function watchFiles() {
+/* function watchFiles() {
   gulp.watch([path.watch.html], html)
   gulp.watch([path.watch.css], css)
   gulp.watch([path.watch.js], js)
   gulp.watch([path.watch.json], json)
   gulp.watch([path.watch.images], images)
-}
+} */
 function watchFiles() {
   gulp.watch([path.watch.html], { usePolling: true }, html)
   gulp.watch([path.watch.css], { usePolling: true }, css)
@@ -315,10 +298,7 @@ function htmlBuild() {
     .pipe(browsersync.stream())
 }
 let fontsBuild = gulp.series(fonts_otf, fonts, fontstyle)
-let buildDev = gulp.series(
-  clean,
-  gulp.parallel(fontsBuild, copyFolders, json, html, css, js, favicon, images)
-)
+let buildDev = gulp.series(clean, gulp.parallel(fontsBuild, copyFolders, json, html, css, js, favicon, images))
 let watch = gulp.series(buildDev, gulp.parallel(watchFiles, browserSync))
 let build = gulp.parallel(htmlBuild, cssBuild, jsBuild, imagesBuild)
 

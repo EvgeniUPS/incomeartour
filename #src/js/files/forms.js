@@ -11,12 +11,8 @@ async function form_submit(e) {
   let form = btn.closest('form')
   let error = form_validate(form)
   if (error == 0) {
-    let formAction = form.getAttribute('action')
-      ? form.getAttribute('action').trim()
-      : '#'
-    let formMethod = form.getAttribute('method')
-      ? form.getAttribute('method').trim()
-      : 'GET'
+    let formAction = form.getAttribute('action') ? form.getAttribute('action').trim() : '#'
+    let formMethod = form.getAttribute('method') ? form.getAttribute('method').trim() : 'GET'
     const message = form.getAttribute('data-message')
     const ajax = form.getAttribute('data-ajax')
 
@@ -57,6 +53,7 @@ async function form_submit(e) {
     e.preventDefault()
   }
 }
+
 function form_validate(form) {
   let error = 0
   let form_req = form.querySelectorAll('._req')
@@ -74,10 +71,7 @@ function form_validate_input(input) {
   let error = 0
   let input_g_value = input.getAttribute('data-value')
 
-  if (
-    input.getAttribute('name') == 'email' ||
-    input.classList.contains('_email')
-  ) {
+  if (input.getAttribute('name') == 'email' || input.classList.contains('_email')) {
     if (input.value != input_g_value) {
       let em = input.value.replace(' ', '')
       input.value = em
@@ -88,10 +82,7 @@ function form_validate_input(input) {
     } else {
       form_remove_error(input)
     }
-  } else if (
-    input.getAttribute('type') == 'checkbox' &&
-    input.checked == false
-  ) {
+  } else if (input.getAttribute('type') == 'checkbox' && input.checked == false) {
     form_add_error(input)
     error++
   } else {
@@ -114,10 +105,7 @@ function form_add_error(input) {
   }
   let input_error_text = input.getAttribute('data-error')
   if (input_error_text && input_error_text != '') {
-    input.parentElement.insertAdjacentHTML(
-      'beforeend',
-      '<div class="form__error">' + input_error_text + '</div>'
-    )
+    input.parentElement.insertAdjacentHTML('beforeend', '<div class="form__error">' + input_error_text + '</div>')
   }
 }
 function form_remove_error(input) {
@@ -161,9 +149,7 @@ for (let index = 0; index < viewPass.length; index++) {
   const element = viewPass[index]
   element.addEventListener('click', function (e) {
     if (element.classList.contains('_active')) {
-      element.parentElement
-        .querySelector('input')
-        .setAttribute('type', 'password')
+      element.parentElement.querySelector('input').setAttribute('type', 'password')
     } else {
       element.parentElement.querySelector('input').setAttribute('type', 'text')
     }
@@ -413,11 +399,7 @@ function inputs_init(inputs) {
         }
         if (input.getAttribute('data-type') === 'pass') {
           if (input.parentElement.querySelector('._viewpass')) {
-            if (
-              !input.parentElement
-                .querySelector('._viewpass')
-                .classList.contains('_active')
-            ) {
+            if (!input.parentElement.querySelector('._viewpass').classList.contains('_active')) {
               input.setAttribute('type', 'password')
             }
           } else {
@@ -482,29 +464,14 @@ function inputs_init(inputs) {
 
         const calendarItem = datepicker(input, {
           customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-          customMonths: [
-            'Янв',
-            'Фев',
-            'Мар',
-            'Апр',
-            'Май',
-            'Июн',
-            'Июл',
-            'Авг',
-            'Сен',
-            'Окт',
-            'Ноя',
-            'Дек',
-          ],
+          customMonths: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
           overlayButton: 'Применить',
           overlayPlaceholder: 'Год (4 цифры)',
           startDay: 1,
           formatter: (input, date, instance) => {
             const value = date.toLocaleDateString()
             // const value = date.toDateString()
-            const val = `${date.getFullYear()}-${
-              date.getMonth() + 1
-            }-${date.getDate()}`
+            const val = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
             input.value = val
           },
           onSelect: function (input, instance, date) {
@@ -550,9 +517,7 @@ if (quantityButtons.length > 0) {
   for (let index = 0; index < quantityButtons.length; index++) {
     const quantityButton = quantityButtons[index]
     quantityButton.addEventListener('click', function (e) {
-      let value = parseInt(
-        quantityButton.closest('.quantity').querySelector('input').value
-      )
+      let value = parseInt(quantityButton.closest('.quantity').querySelector('input').value)
       if (quantityButton.classList.contains('quantity__button_plus')) {
         value++
       } else {
@@ -575,10 +540,7 @@ if (priceSlider) {
   noUiSlider.create(priceSlider, {
     start: [0, 200000],
     connect: true,
-    tooltips: [
-      wNumb({ decimals: 0, prefix: textFrom + ' ' }),
-      wNumb({ decimals: 0, prefix: textTo + ' ' }),
-    ],
+    tooltips: [wNumb({ decimals: 0, prefix: textFrom + ' ' }), wNumb({ decimals: 0, prefix: textTo + ' ' })],
     range: {
       min: [0],
       max: [200000],

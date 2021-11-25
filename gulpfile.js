@@ -171,13 +171,21 @@ function cb() {}
 function clean() {
   return del(path.clean)
 }
-function watchFiles() {
+/* function watchFiles() {
   gulp.watch([path.watch.html], html)
   gulp.watch([path.watch.css], css)
   gulp.watch([path.watch.js], js)
   gulp.watch([path.watch.json], json)
   gulp.watch([path.watch.images], images)
+} */
+
+function watchFiles() {
+  gulp.watch([path.watch.html], { usePolling: true }, html)
+  gulp.watch([path.watch.css], { usePolling: true }, css)
+  gulp.watch([path.watch.js], { usePolling: true }, js)
+  gulp.watch([path.watch.images], { usePolling: true }, images)
 }
+
 function cssBuild() {
   return (
     src(path.src.css, {})

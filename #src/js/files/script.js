@@ -27,9 +27,9 @@ const changeViewHandler = e => {
     changeViewButton.classList.add('icon-grid-handler')
   }
 }
-if (changeViewButton) {
-  changeViewButton.addEventListener('click', changeViewHandler)
-}
+// if (changeViewButton) {
+//   changeViewButton.addEventListener('click', changeViewHandler)
+// }
 
 tippy('.tooltip-link', {
   duration: 0,
@@ -165,33 +165,6 @@ if (headerColorPicker) {
   })
 }
 
-// const readMoreBtns = document.querySelectorAll('._read-more-btn')
-
-// if (readMoreBtns) {
-//   readMoreBtns.forEach(item => {
-//     const moreBtnText = 'Развернуть'
-//     const lessBtnText = 'Свернуть'
-//     item.innerHTML = moreBtnText
-//     item.addEventListener('click', e => {
-//       readMoreBtns.forEach(el => {
-//         el.classList.remove('_active')
-//       })
-//       const lineLimit = 2
-//       const targetItem = e.target
-//       const targetPrevious = targetItem.previousElementSibling
-//       const targetPreviousHeight = targetPrevious.offsetHeight
-//       targetItem.classList.toggle('_active')
-//       targetPrevious.classList.toggle('_active')
-
-//       if (targetItem.innerHTML == moreBtnText) {
-//         targetItem.innerHTML = lessBtnText
-//       } else if (targetItem.innerHTML == lessBtnText) {
-//         targetItem.innerHTML = moreBtnText
-//       }
-//     })
-//   })
-// }
-
 if (document.querySelector('.simple-rating')) {
   const simpleRatingWrapper = document.querySelector('.simple-rating')
   const simpleRatingBottom = document.querySelector('.simple-rating__bottom')
@@ -204,11 +177,7 @@ if (document.querySelector('.simple-rating')) {
 
 //
 
-window.addEventListener('DOMContentLoaded', () => {
-  currentLanguage = html.getAttribute('lang')
-  langHandler()
-})
-
+// Переключатель языка
 function langHandler() {
   const langSwitcherBtn = document.querySelector('.lang-switcher-btn')
   const langTopList = document.querySelector('.lang-top__list')
@@ -224,3 +193,8 @@ function langHandler() {
     langTopList.classList.toggle('_active')
   })
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+  currentLanguage = html.getAttribute('lang')
+  langHandler()
+})
