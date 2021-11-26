@@ -2502,7 +2502,7 @@ function renderMap() {
   })
 
   var myIcon = L.icon({
-    iconUrl: './../img/icons/map-point.png',
+    iconUrl: './img/icons/map-point.png',
     iconSize: [25, 40],
     iconAnchor: [12, 48],
     popupAnchor: [0, -50],
