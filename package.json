@@ -3,12 +3,14 @@
 	"version": "1.0.0",
 	"description": "Start template with Gulp",
 	"author": "FLS",
+	"repository":"https://github.com/EvgeniUPS/incomeartour",
 	"private": true,
 	"license": "GNU General Public License (GPL)",
 	"homepage":"https://evgeniups.github.io/incomeartour",
 	"scripts":{
 		"start":"gulp",
-		"predeploy":"gulp build",
+		"test":"gulp fonts && gulp build",
+		"predeploy":"gulp fonts && gulp build",
 		"deploy":"gh-pages -d incomeartour"
 	},
 	"devDependencies": {

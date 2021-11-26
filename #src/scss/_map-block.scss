@@ -1,0 +1,23 @@
+#customMap {
+  height: 400px;
+}
+
+.map {
+  margin-bottom: 100px;
+}
+
+.map {
+  // .map__container
+  &__container {
+  }
+  // .map__wrapper
+  &__wrapper {
+  }
+  // .map__points
+  &__points {
+  }
+  // .map__point
+  &__point {
+    display: none;
+  }
+}

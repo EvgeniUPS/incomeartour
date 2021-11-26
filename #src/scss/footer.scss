@@ -108,6 +108,7 @@
   outline: none;
   border-radius: 50%;
   position: fixed;
+  z-index: 9999;
   border: 1px solid #ccc;
   @include adaptiv-value('right', 50, 10, 1);
   @include adaptiv-value('bottom', 50, 10, 1);

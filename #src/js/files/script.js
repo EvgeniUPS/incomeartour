@@ -78,7 +78,7 @@ const searchFormDirection = document.querySelector('.search-form__direction sele
 const subMenuLink = document.querySelectorAll('.has-submenu')
 
 /* ******************** */
-// var acc = document.getElementsByClassName('accordion')
+// const  acc = document.getElementsByClassName('accordion')
 const acc = document.querySelectorAll('.has-submenu .menu__link')
 var i
 
@@ -198,3 +198,45 @@ window.addEventListener('DOMContentLoaded', () => {
   currentLanguage = html.getAttribute('lang')
   langHandler()
 })
+
+function renderMap() {
+  const points = document.querySelectorAll('.map__point')
+  const pointsArr = []
+  points.forEach(el => {
+    let item = { label: el.innerHTML, coord: el.dataset.coordinates }
+    pointsArr.push(item)
+  })
+
+  var myIcon = L.icon({
+    iconUrl: './../img/icons/map-point.png',
+    iconSize: [25, 40],
+    iconAnchor: [12, 48],
+    popupAnchor: [0, -50],
+    // shadowUrl: 'my-icon-shadow.png',
+    shadowSize: [68, 95],
+    shadowAnchor: [22, 94],
+  })
+
+  const customMap = L.map('customMap').setView([48.4775, 30.7326], 6)
+
+  L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+    attribution: '<a href="#!">IncTour</a>',
+    maxZoom: 18,
+    id: 'mapbox/streets-v11',
+    tileSize: 512,
+    zoomOffset: -1,
+    accessToken: 'pk.eyJ1IjoiZXZlZ2VuaXVwcyIsImEiOiJja3dnODd6MnYwbTExMm9xdm4wMm9lNWhlIn0.8OWrlQuBVEd3qzfDwv99Uw',
+  }).addTo(customMap)
+
+  pointsArr.forEach(({ label, coord }, index) => {
+    let newCoord = coord.split(',')
+    L.marker([newCoord[0], newCoord[1]], { icon: myIcon }).addTo(customMap).bindPopup(label).openPopup()
+  })
+
+  // let nicolaev = L.marker([46.9659, 31.9974]).addTo(customMap)
+  // nicolaev.bindPopup('Nico').openPopup()
+}
+//
+if (document.querySelector('#customMap')) {
+  renderMap()
+}
