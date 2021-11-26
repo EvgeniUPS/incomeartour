@@ -6685,6 +6685,14 @@ button.swiper-pagination-bullet {
   object-fit: cover;
 }
 
+.country-add {
+  margin-bottom: 60px;
+}
+
+.country-add .add-exc-details__slider {
+  margin-bottom: 0;
+}
+
 .footer {
   min-height: 465px;
   background: #000;
