@@ -18,6 +18,7 @@
   &__header {
     padding: 0 0 30px 0;
     font-weight: 700;
+    line-height: 120%;
     h1 {
     }
   }
@@ -28,6 +29,11 @@
 }
 
 .body-seo {
+  img {
+    max-width: 100%;
+    // height: 100%;
+    // object-fit: cover;
+  }
   h2 {
     padding: 20px 0;
     margin-bottom: 10px;

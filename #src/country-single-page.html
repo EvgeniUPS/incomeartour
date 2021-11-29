@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('_head.html',{ "title":"Страны" })
+  <body>
+    <div class="wrapper">
+      <!-- @@include('_header.html',{}) -->
+      <!--  -->
+      @@include('_header.html',Х)
+      <main class="page">
+        <!--  -->
+        @@include('_page-header.html', { "pageHeader" : "Италия", "imgPath" : "./img/eiffel-tower-paris-europe.jpg",
+        "pageText" : "pageTexttttt", "flag" : "./img/flags/4x3/it.svg"})
+        <!--  -->
+        <section class="single-country">
+          <div class="single-country__container _container">
+            <div class="single-country__tabs tabs-single-country _tabs">
+              <nav class="tabs-single-country__nav">
+                <div class="tabs-single-country__item _tabs-item">Туры</div>
+                <div class="tabs-single-country__item _tabs-item _active">города</div>
+                <div class="tabs-single-country__item _tabs-item">достопримечательности</div>
+                <div class="tabs-single-country__item _tabs-item">Правила въезда, документы, виза</div>
+                <div class="tabs-single-country__item _tabs-item">Дополнительная информация</div>
+              </nav>
+              <div class="tabs-single-country__body">
+                <div class="tabs-single-country__block _tabs-block">
+                  @@include('_card-list.html',{})
+                  <!--  -->
+                  @@include('_hot-offer-block.html',{})
+                  <!--  -->
+                </div>
+
+                <div class="tabs-single-country__block country-tab-city _tabs-block _active">
+                  <div class="country-tab-city__list">
+                    @@include('_item-card.html',{"name" : "Мексика", "img" : "./img/mexiсa.jpg"})
+                    <!--  -->
+                    @@include('_item-card.html',{"name" : "Италия", "img" : "./img/italy2.jpg"})
+                    <!--  -->
+                    @@include('_item-card.html',{"name" : "Мексика", "img" : "./img/mexiсa.jpg"})
+                    <!--  -->
+                    @@include('_item-card.html',{"name" : "Италия", "img" : "./img/italy2.jpg"})
+                    <!--  -->
+                  </div>
+                </div>
+                <div class="tabs-single-country__block _tabs-block">33333333333333333333333333333</div>
+                <div class="tabs-single-country__block _tabs-block">
+                  44444444444444444444444444444444444444444444444444
+                </div>
+                <div class="tabs-single-country__block _tabs-block">
+                  5555555555555555555555555555555555555555555555555555555
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--  -->
+        @@include('_seo-block.html',{})
+        <!--  -->
+      </main>
+      @@include('_footer.html',{})
+    </div>
+    @@include('_popup.html',{})
+    <!--  -->
+    @@include('_js.html',{})
+  </body>
+</html>

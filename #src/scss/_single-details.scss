@@ -154,7 +154,7 @@
       display: none;
     }
     @media (max-width: 768px) {
-      justify-content: space-between;
+      // justify-content: space-between;
     }
   }
   // .details-tabs__item
@@ -170,16 +170,14 @@
       padding: 10px 15px;
     }
     &:hover {
-      background-color: $colorRed;
-      color: #fff;
+      color: $colorRed;
     }
 
     &._active {
       border-top: 1px solid #000;
       border-right: 1px solid #000;
       border-left: 1px solid #000;
-      background-color: $colorRed;
-      color: #fff;
+      color: $colorRed;
     }
   }
   // .details-tabs__body
