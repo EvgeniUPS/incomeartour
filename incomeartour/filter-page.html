@@ -765,15 +765,15 @@
           <div class="filter-popup__close popup__close"></div>
           <div class="filter-popup__header popup__header">header</div>
           <div class="filter-popup__form form-filter">
-            <form action="" class="form-filter__form">
+            <form action="#" method="get" class="form-filter__form">
               <div class="form-filter__column form-filter__column_left">
                 <div class="form-filter__item filter-form-country">
                   <div class="filter-form-country__header form-filter__item_header">Страны</div>
                   <div class="filter-form-country__body country-filter">
                     <ul class="country-filter__list">
-                      <label for="country">
+                      <label for="it">
                         <li>Италия <span>12</span></li>
-                        <input name="country" type="radio" value="Италия" />
+                        <input id="it" name="country" type="radio" hidden value="Италия" />
                       </label>
                     </ul>
 
@@ -817,6 +817,7 @@
               <div class="form-filter__item filter-form-transport">transport</div>
               <div class="form-filter__item filter-form-date">date</div>
               <div class="form-filter__item filter-form-branded">branded</div> -->
+              <input type="submit" value="654" />
             </form>
           </div>
         </div>
@@ -871,9 +872,13 @@
       }
 
       function renderOption() {
-        const countrySelect = document.querySelector('.filter-form-country__select')
+        const countrySelect = document.querySelector('.country-filter__list')
         state.forEach(el => {
-          let optionHtml = `<option value="2">${el.name}</option>`
+          let optionHtml = `
+          <label for="it">
+            <li>${el.name} <span>${el.count}</span></li>
+            <input id="it" name="country" type="radio" hidden value="Италия" />
+          </label>`
           countrySelect.insertAdjacentHTML('afterBegin', optionHtml)
         })
       }
