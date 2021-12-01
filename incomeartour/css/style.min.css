@@ -1232,6 +1232,36 @@ body.ie ._ibg img {
   background-image: url("../img/icons/arrow-left.svg");
 }
 
+.arrow-detail {
+  position: relative;
+  line-height: 1;
+  background-color: inherit;
+  margin-left: 0.3rem;
+  top: 0;
+  bottom: 0;
+}
+.arrow-detail:before, .arrow-detail:after {
+  content: "";
+  width: 0.4rem;
+  height: 1px;
+  background-color: inherit;
+  position: absolute;
+}
+.arrow-detail:before {
+  top: 0.5rem;
+  left: 0;
+  transform: rotate(225deg);
+  transition: all 0.3s ease 0s;
+}
+.arrow-detail:before:hover {
+  transform: rotate(-45deg);
+}
+.arrow-detail:after {
+  bottom: 0.38rem;
+  left: 0;
+  transform: rotate(-45deg);
+}
+
 .not-selectable {
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -6753,6 +6783,9 @@ button.swiper-pagination-bullet {
   position: relative;
   cursor: pointer;
 }
+.item-card-one a {
+  color: inherit;
+}
 .item-card-one:hover .descr-card-item {
   position: absolute;
   height: 40%;
@@ -6776,6 +6809,9 @@ button.swiper-pagination-bullet {
   height: 100%;
   object-fit: cover;
 }
+.item-card-one__img:hover {
+  transform: scale(1.1);
+}
 .item-card-one__label {
   position: absolute;
   bottom: 50px;
@@ -6784,14 +6820,49 @@ button.swiper-pagination-bullet {
   color: #fff;
   font-size: 30px;
 }
+@media (max-width: 1230px) {
+  .item-card-one__label {
+    bottom: calc(
+        30px + 20 *
+          ((100vw - 320px) / 910)
+      );
+  }
+}
+@media (max-width: 1230px) {
+  .item-card-one__label {
+    left: calc(
+        10px + 10 *
+          ((100vw - 320px) / 910)
+      );
+  }
+}
 .item-card-one__more {
   position: absolute;
-  transition: all 0.8s ease 0s;
+  transition: opacity 0.3s ease 0s;
   color: #fff;
   bottom: 20px;
   left: 20px;
   cursor: pointer;
   padding-right: 20px;
+}
+@media (max-width: 1230px) {
+  .item-card-one__more {
+    bottom: calc(
+        10px + 10 *
+          ((100vw - 320px) / 910)
+      );
+  }
+}
+@media (max-width: 1230px) {
+  .item-card-one__more {
+    left: calc(
+        10px + 10 *
+          ((100vw - 320px) / 910)
+      );
+  }
+}
+.item-card-one__more i {
+  background-color: #fff;
 }
 .descr-card-item {
   transition: all 0.8s ease 0s;
@@ -6810,6 +6881,9 @@ button.swiper-pagination-bullet {
 }
 .descr-card-item__link {
   color: inherit;
+}
+.descr-card-item__link i {
+  background-color: #000;
 }
 
 #customMap {
@@ -7006,6 +7080,7 @@ button.swiper-pagination-bullet {
 .popup-country__continent {
   font-size: 15px;
   margin-bottom: 25px;
+  font-weight: 700;
 }
 .popup-country__list {
   display: flex;
@@ -7049,6 +7124,55 @@ button.swiper-pagination-bullet {
 .popup-country__view-all a svg path {
   stroke: #fff;
 }
+.filter-popup__body {
+  min-height: 600px;
+  height: 100%;
+  border-radius: 10px;
+  padding: 10px !important;
+}
+.filter-popup__header {
+  padding-top: 10px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e8e8e8;
+  margin-bottom: 15px;
+}
+.filter-popup__form form {
+  display: flex;
+  flex-direction: column;
+}
+.filter-popup__form input {
+  border: 1px solid #000;
+}
+
+.form-filter__form {
+  display: flex;
+  flex-direction: row !important;
+  justify-content: space-between;
+  gap: 10px;
+}
+.form-filter__column {
+  height: 100%;
+  min-height: 100%;
+  flex: 0 1 32%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.form-filter__item {
+  padding: 10px;
+  border: 1px solid #e8e8e8;
+  border-radius: 2px;
+}
+.form-filter__item_header {
+  font-weight: 700;
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+
+.filter-form-branded {
+  border: none;
+}
+
 .header {
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   font-size: 13px;
@@ -7824,6 +7948,22 @@ button.swiper-pagination-bullet {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 10px;
+}
+
+.country-tab-showplace {
+  margin-bottom: 60px;
+}
+.country-tab-showplace__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
+
+.item-showplace-country__link {
+  color: inherit;
+}
+.item-showplace-country__link i {
+  background-color: #000;
 }
 
 .footer {

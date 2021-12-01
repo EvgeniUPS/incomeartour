@@ -63,3 +63,58 @@
     gap: 10px;
   }
 }
+.country-tab-showplace {
+  margin-bottom: 60px;
+  // .country-tab-city__list
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 10px;
+  }
+}
+
+.tabs-single-country {
+  // .tabs-single-country__block
+  &__block {
+  }
+}
+.country-showplace {
+  // .country-showplace__block
+  &__block {
+  }
+}
+
+.block-showplace-country {
+  // .block-showplace-country__item
+  &__item {
+  }
+  // .block-showplace-country__header
+  &__header {
+  }
+  // .block-showplace-country__subheader
+  &__subheader {
+  }
+  // .block-showplace-country__list
+  &__list {
+  }
+}
+.item-showplace-country {
+  // .item-showplace-country__img
+  &__img {
+  }
+  // .item-showplace-country__title
+  &__title {
+  }
+  // .item-showplace-country__text
+  &__text {
+  }
+  // .item-showplace-country__link
+  &__link {
+    color: inherit;
+    i {
+      background-color: #000;
+    }
+  }
+}
+.arrow-detail {
+}

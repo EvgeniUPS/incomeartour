@@ -9,17 +9,135 @@
       <main class="page">
         @@include('_page-header.html', { "pageHeader" : "Поиск туров", "imgPath" :
         "./img/eiffel-tower-paris-europe.jpg", "pageText" : "pageTexttttt", "flag" : "./img/flags/4x3/fr.svg"})
-        <!-- @@include('_page-header.html', { "pageHeader" : "Поиск туров", "imgPath" :
-        "./img/hot-list/hot-list-header.jpg"}) -->
-
         <!--  -->
-
+        <section class="filter-page">
+          <div class="filter-page__container _container">
+            <div class="filter-page__filter">
+              <a href="#filter" class="_popup-link">Filter</a>
+            </div>
+            <div class="filter-page__list">@@include('_card-list.html',{})</div>
+          </div>
+        </section>
         <!--  -->
       </main>
       @@include('_footer.html',{})
     </div>
-    @@include('_popup.html',{})
+    <!--  -->
+    <div class="popup popup_filter filter-popup">
+      <div class="filter-popup__content popup__content">
+        <div class="filter-popup__body popup__body">
+          <div class="filter-popup__close popup__close"></div>
+          <div class="filter-popup__header popup__header">header</div>
+          <div class="filter-popup__form form-filter">
+            <form action="" class="form-filter__form">
+              <div class="form-filter__column form-filter__column_left">
+                <div class="form-filter__item filter-form-country">
+                  <div class="filter-form-country__header form-filter__item_header">Страны</div>
+                  <div class="filter-form-country__body country-filter">
+                    <ul class="country-filter__list">
+                      <label for="country">
+                        <li>Италия <span>12</span></li>
+                        <input name="country" type="radio" value="Италия" />
+                      </label>
+                    </ul>
+
+                    <!-- <select name="form[]" class="form filter-form-country__select">
+                      <option value="4">Пункт №4</option>
+                    </select> -->
+                  </div>
+                </div>
+              </div>
+              <div class="form-filter__column form-filter__column_center">
+                <div class="form-filter__item filter-form-type">
+                  <div class="filter-form-type__header form-filter__item_header">header</div>
+                  <div class="filter-form-type__body">body</div>
+                </div>
+                <div class="form-filter__item filter-form-duration">
+                  <div class="filter-form-duration__header form-filter__item_header">header</div>
+                  <div class="filter-form-duration__body">body</div>
+                </div>
+              </div>
+              <div class="form-filter__column form-filter__column_right">
+                <div class="form-filter__item filter-form-price">
+                  <div class="filter-form-price__header form-filter__item_header">price</div>
+                  <div class="filter-form-price__body">body</div>
+                </div>
+                <div class="form-filter__item filter-form-transport">
+                  <div class="filter-form-transport__header form-filter__item_header">transport</div>
+                  <div class="filter-form-transport__body">body</div>
+                </div>
+                <div class="form-filter__item filter-form-date">
+                  <div class="filter-form-date__header form-filter__item_header">date</div>
+                  <div class="filter-form-date__body">body</div>
+                </div>
+
+                <div class="form-filter__item filter-form-branded">branded</div>
+              </div>
+
+              <!-- <div class="form-filter__item filter-form-country">country</div>
+              <div class="form-filter__item filter-form-type">type</div>
+              <div class="form-filter__item filter-form-duration">duration</div>
+              <div class="form-filter__item filter-form-price">price</div>
+              <div class="form-filter__item filter-form-transport">transport</div>
+              <div class="form-filter__item filter-form-date">date</div>
+              <div class="form-filter__item filter-form-branded">branded</div> -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+
     <!--  -->
     @@include('_js.html',{})
+    <script>
+      let state = [
+        {
+          id: 1,
+          name: 'Италия',
+          count: 52,
+        },
+        {
+          id: 2,
+          name: 'Франция',
+          count: 45,
+        },
+        {
+          id: 3,
+          name: 'Египет',
+          count: 22,
+        },
+        {
+          id: 4,
+          name: 'Турция',
+          count: 5,
+        },
+        {
+          id: 5,
+          name: 'Испания',
+          count: 11,
+        },
+        {
+          id: 6,
+          name: 'Чехия',
+          count: 10,
+        },
+      ]
+      function getOption() {
+        fetch('')
+      }
+
+      function renderOption() {
+        const countrySelect = document.querySelector('.filter-form-country__select')
+        state.forEach(el => {
+          let optionHtml = `<option value="2">${el.name}</option>`
+          countrySelect.insertAdjacentHTML('afterBegin', optionHtml)
+        })
+      }
+      renderOption()
+    </script>
+    <ul>
+      <li>123</li>
+    </ul>
   </body>
 </html>
