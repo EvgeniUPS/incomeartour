@@ -197,6 +197,7 @@ function langHandler() {
 window.addEventListener('DOMContentLoaded', () => {
   currentLanguage = html.getAttribute('lang')
   langHandler()
+   AOS.init({duration: 1200, offset: 120});
 })
 
 function renderMap() {
@@ -240,3 +241,7 @@ function renderMap() {
 if (document.querySelector('#customMap')) {
   renderMap()
 }
+// **********************
+
+
+
