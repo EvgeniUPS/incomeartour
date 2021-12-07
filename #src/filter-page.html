@@ -30,50 +30,53 @@
           <div class="filter-popup__header popup__header">header</div>
           <div class="filter-popup__form form-filter">
             <form action="#" method="get" class="form-filter__form">
-              <div class="form-filter__column form-filter__column_left">
-                <div class="form-filter__item filter-form-country">
-                  <div class="filter-form-country__header form-filter__item_header">Страны</div>
-                  <div class="filter-form-country__body country-filter">
-                    <ul class="country-filter__list">
-                      <label for="it">
-                        <li>Италия <span>12</span></li>
-                        <input id="it" name="country" type="radio" hidden value="Италия" />
-                      </label>
-                    </ul>
+              <div class="form-filter__main">
+                <div class="form-filter__column form-filter__column_left">
+                  <div class="form-filter__item filter-form-country">
+                    <div class="filter-form-country__header form-filter__item_header">Страны</div>
+                    <div class="filter-form-country__body country-filter">
+                      <ul class="country-filter__list">
+                        <label for="it">
+                          <li>Италия <span>12</span></li>
+                          <input id="it" name="country" type="radio" hidden value="Италия" />
+                        </label>
+                      </ul>
 
-                    <!-- <select name="form[]" class="form filter-form-country__select">
+                      <!-- <select name="form[]" class="form filter-form-country__select">
                       <option value="4">Пункт №4</option>
                     </select> -->
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="form-filter__column form-filter__column_center">
-                <div class="form-filter__item filter-form-type">
-                  <div class="filter-form-type__header form-filter__item_header">header</div>
-                  <div class="filter-form-type__body">body</div>
+                <div class="form-filter__column form-filter__column_center">
+                  <div class="form-filter__item filter-form-type">
+                    <div class="filter-form-type__header form-filter__item_header">header</div>
+                    <div class="filter-form-type__body">body</div>
+                  </div>
+                  <div class="form-filter__item filter-form-duration">
+                    <div class="filter-form-duration__header form-filter__item_header">header</div>
+                    <div class="filter-form-duration__body">body</div>
+                  </div>
                 </div>
-                <div class="form-filter__item filter-form-duration">
-                  <div class="filter-form-duration__header form-filter__item_header">header</div>
-                  <div class="filter-form-duration__body">body</div>
-                </div>
-              </div>
-              <div class="form-filter__column form-filter__column_right">
-                <div class="form-filter__item filter-form-price">
-                  <div class="filter-form-price__header form-filter__item_header">price</div>
-                  <div class="filter-form-price__body">body</div>
-                </div>
-                <div class="form-filter__item filter-form-transport">
-                  <div class="filter-form-transport__header form-filter__item_header">transport</div>
-                  <div class="filter-form-transport__body">body</div>
-                </div>
-                <div class="form-filter__item filter-form-date">
-                  <div class="filter-form-date__header form-filter__item_header">date</div>
-                  <div class="filter-form-date__body">body</div>
-                </div>
+                <div class="form-filter__column form-filter__column_right">
+                  <div class="form-filter__item filter-form-price">
+                    <div class="filter-form-price__header form-filter__item_header">price</div>
+                    <div class="filter-form-price__body">body</div>
+                  </div>
+                  <div class="form-filter__item filter-form-transport">
+                    <div class="filter-form-transport__header form-filter__item_header">transport</div>
+                    <div class="filter-form-transport__body">body</div>
+                  </div>
+                  <div class="form-filter__item filter-form-date">
+                    <div class="filter-form-date__header form-filter__item_header">date</div>
+                    <div class="filter-form-date__body">body</div>
+                  </div>
 
-                <div class="form-filter__item filter-form-branded">branded</div>
+                  <div class="form-filter__item filter-form-branded">branded</div>
+                </div>
               </div>
 
+              <input type="submit" class="btn btn__blue" value="654" />
               <!-- <div class="form-filter__item filter-form-country">country</div>
               <div class="form-filter__item filter-form-type">type</div>
               <div class="form-filter__item filter-form-duration">duration</div>
@@ -81,12 +84,14 @@
               <div class="form-filter__item filter-form-transport">transport</div>
               <div class="form-filter__item filter-form-date">date</div>
               <div class="form-filter__item filter-form-branded">branded</div> -->
-              <input type="submit" value="654" />
             </form>
           </div>
         </div>
       </div>
     </div>
+    <!--  -->
+
+    @@include('_popup.html',{})
     <!--  -->
 
     <!--  -->
@@ -146,5 +151,3 @@
     </ul>
   </body>
 </html>
-
-

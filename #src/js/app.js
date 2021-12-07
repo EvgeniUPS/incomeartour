@@ -1,4 +1,5 @@
 @@include('files/regular.js', {})
+@@include('files/test.js', {})
 // @@include('files/api.js', {})
 @@include('files/dynamic_adapt.js', {})
 @@include('files/functions.js', {})

@@ -675,3 +675,16 @@ body.ie {
     transform: rotate(-45deg);
   }
 }
+
+.rotate-hover {
+  filter: grayscale(1);
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  &:hover {
+    filter: grayscale(0);
+    animation: rotate-scale 1s forwards;
+  }
+}
