@@ -1,4 +1,5 @@
 const html = document.querySelector('html')
+const $ = document.querySelector.bind(document)
 
 const preloader = document.querySelector('.preloader')
 const body = document.querySelector('body')
@@ -197,7 +198,7 @@ function langHandler() {
 window.addEventListener('DOMContentLoaded', () => {
   currentLanguage = html.getAttribute('lang')
   langHandler()
-   AOS.init({duration: 1200, offset: 120});
+  AOS.init({ duration: 1200, offset: 120 })
 })
 
 function renderMap() {
@@ -241,7 +242,21 @@ function renderMap() {
 if (document.querySelector('#customMap')) {
   renderMap()
 }
+
+if (document.querySelector('.country-filter__list')) {
+  const countryListWrapper = document.querySelector('.country-filter__list')
+
+  const countryList = document.querySelectorAll('.country-filter__country')
+
+  function selectCountry(e) {
+    e.stopPropagation()
+    // countryList.forEach(e => e.classList.remove('selected'))
+    console.log(e.target)
+    e.target.classList.toggle('selected')
+  }
+  countryListWrapper.addEventListener('click', selectCountry)
+
+  const filterCountry = document.querySelector('.filterCountry')
+  filterCountry.addEventListener('input', e => console.log(e.target.value))
+}
 // **********************
-
-
-

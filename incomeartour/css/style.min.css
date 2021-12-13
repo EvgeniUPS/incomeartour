@@ -5238,7 +5238,7 @@ button.swiper-pagination-bullet {
 }
 .single-common__column {
   gap: 10px;
-  padding: 0 30px;
+  padding: 0 25px;
   display: flex;
   flex-direction: column;
   border-right: 1px solid #ccc;
@@ -5271,6 +5271,7 @@ button.swiper-pagination-bullet {
 }
 .single-common__column p span {
   color: #faa619;
+  font-weight: 700;
 }
 @media (max-width: 992px) {
   .single-common__date {
@@ -5294,15 +5295,15 @@ button.swiper-pagination-bullet {
 }
 @media (max-width: 992px) {
   .single-common__info {
-    border-right: 1px solid #ccc;
-    padding: 10px 0;
+    padding-top: 10px;
     border-bottom: none;
+    padding-left: 0;
   }
 }
 @media (max-width: 768px) {
   .single-common__info {
     border-right: none;
-    border-bottom: 1px solid #ccc;
+    padding: 10px 0;
   }
 }
 .single-common__buttons {
@@ -5317,6 +5318,19 @@ button.swiper-pagination-bullet {
   .single-common__buttons {
     padding: 10px 0;
   }
+}
+.single-common .info-common-item {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  align-items: center;
+}
+.single-common .info-common-item__label {
+  font-weight: 700;
+  flex-grow: 1;
+}
+.single-common .info-common-item__price {
+  white-space: nowrap;
 }
 
 /* STAFF BLOCK */
@@ -5497,13 +5511,14 @@ button.swiper-pagination-bullet {
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 .info-main-single__title {
   margin-bottom: 10px;
 }
 .info-main-single__duration {
   font-weight: 400;
-  font-size: 11px;
+  font-size: 12px;
   line-height: 16px;
   margin-bottom: 10px;
 }
@@ -5538,10 +5553,18 @@ button.swiper-pagination-bullet {
   color: #ccc;
   font-size: 12px;
 }
+.info-main-single__min-price {
+  margin-bottom: 15px;
+  font-size: 12px;
+}
+.info-main-single .min-price__item {
+  line-height: 1.5;
+}
 .info-main-single__descr {
   display: flex;
   justify-content: space-between;
   gap: 30px;
+  margin-bottom: 15px;
 }
 @media (max-width: 992px) {
   .info-main-single__descr {
@@ -8082,8 +8105,6 @@ button.swiper-pagination-bullet {
   stroke: #fff;
 }
 .filter-popup__body {
-  min-height: 600px;
-  height: 100%;
   border-radius: 10px;
   padding: 10px !important;
 }
@@ -8134,6 +8155,10 @@ button.swiper-pagination-bullet {
 }
 .filter-form-branded {
   border: none;
+}
+
+.selected {
+  background-color: tomato;
 }
 
 .header {

@@ -34,10 +34,19 @@
                 <div class="form-filter__column form-filter__column_left">
                   <div class="form-filter__item filter-form-country">
                     <div class="filter-form-country__header form-filter__item_header">Страны</div>
+                    <input class="filterCountry" type="text" placeholder="Поиск стран" />
                     <div class="filter-form-country__body country-filter">
                       <ul class="country-filter__list">
                         <label for="it">
-                          <li>Италия <span>12</span></li>
+                          <li class="country-filter__country">Италия <span>12</span></li>
+                          <input id="it" name="country" type="radio" hidden value="Италия" />
+                        </label>
+                        <label for="fr">
+                          <li class="country-filter__country">Франция <span>12</span></li>
+                          <input id="fr" name="country" type="radio" hidden value="Франция" />
+                        </label>
+                        <label for="de">
+                          <li class="country-filter__country">Италия <span>12</span></li>
                           <input id="it" name="country" type="radio" hidden value="Италия" />
                         </label>
                       </ul>
@@ -76,7 +85,7 @@
                 </div>
               </div>
 
-              <input type="submit" class="btn btn__blue" value="654" />
+              <input type="submit" class="btn btn__blue" value="Поиск" />
               <!-- <div class="form-filter__item filter-form-country">country</div>
               <div class="form-filter__item filter-form-type">type</div>
               <div class="form-filter__item filter-form-duration">duration</div>
@@ -96,56 +105,7 @@
 
     <!--  -->
     @@include('_js.html',{})
-    <script>
-      let state = [
-        {
-          id: 1,
-          name: 'Италия',
-          count: 52,
-        },
-        {
-          id: 2,
-          name: 'Франция',
-          count: 45,
-        },
-        {
-          id: 3,
-          name: 'Египет',
-          count: 22,
-        },
-        {
-          id: 4,
-          name: 'Турция',
-          count: 5,
-        },
-        {
-          id: 5,
-          name: 'Испания',
-          count: 11,
-        },
-        {
-          id: 6,
-          name: 'Чехия',
-          count: 10,
-        },
-      ]
-      function getOption() {
-        fetch('')
-      }
 
-      function renderOption() {
-        const countrySelect = document.querySelector('.country-filter__list')
-        state.forEach(el => {
-          let optionHtml = `
-          <label for="it">
-            <li>${el.name} <span>${el.count}</span></li>
-            <input id="it" name="country" type="radio" hidden value="Италия" />
-          </label>`
-          countrySelect.insertAdjacentHTML('afterBegin', optionHtml)
-        })
-      }
-      renderOption()
-    </script>
     <ul>
       <li>123</li>
     </ul>

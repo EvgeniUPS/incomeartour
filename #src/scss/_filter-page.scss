@@ -5,8 +5,8 @@
   // .filter-popup__body
   &__body {
     // background-color: #006f6f;
-    min-height: 600px;
-    height: 100%;
+    // min-height: 600px;
+    // height: 100%;
     border-radius: 10px;
     padding: 10px !important;
   }
@@ -115,4 +115,8 @@
 }
 .filter-form-branded {
   border: none;
+}
+
+.selected {
+  background-color: tomato;
 }
