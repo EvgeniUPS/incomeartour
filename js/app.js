@@ -1,6 +1,7 @@
 function email_test(input) {
 	return !/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,8})+$/.test(input.value);
 }
+
 // const url = ''
 const reqId = ''
 
@@ -1933,40 +1934,40 @@ if (quantityButtons.length > 0) {
 }
 
 //RANGE
-const priceSlider = document.querySelector('.price-filter__slider')
-if (priceSlider) {
-  let textFrom = priceSlider.getAttribute('data-from')
-  let textTo = priceSlider.getAttribute('data-to')
+// const priceSlider = document.querySelector('.price-filter__slider1')
+// if (priceSlider) {
+//   let textFrom = priceSlider.getAttribute('data-from')
+//   let textTo = priceSlider.getAttribute('data-to')
 
-  noUiSlider.create(priceSlider, {
-    start: [0, 200000],
-    connect: true,
-    tooltips: [wNumb({ decimals: 0, prefix: textFrom + ' ' }), wNumb({ decimals: 0, prefix: textTo + ' ' })],
-    range: {
-      min: [0],
-      max: [200000],
-    },
-  })
+//   noUiSlider.create(priceSlider, {
+//     start: [0, 200000],
+//     connect: true,
+//     tooltips: [wNumb({ decimals: 0, prefix: textFrom + ' ' }), wNumb({ decimals: 0, prefix: textTo + ' ' })],
+//     range: {
+//       min: [0],
+//       max: [200000],
+//     },
+//   })
 
-  /*
-	const priceStart = document.getElementById('price-start');
-	const priceEnd = document.getElementById('price-end');
-	priceStart.addEventListener('change', setPriceValues);
-	priceEnd.addEventListener('change', setPriceValues);
-	*/
+/*
+  const priceStart = document.getElementById('price-start');
+  const priceEnd = document.getElementById('price-end');
+  priceStart.addEventListener('change', setPriceValues);
+  priceEnd.addEventListener('change', setPriceValues);
+  */
 
-  function setPriceValues() {
-    let priceStartValue
-    let priceEndValue
-    if (priceStart.value != '') {
-      priceStartValue = priceStart.value
-    }
-    if (priceEnd.value != '') {
-      priceEndValue = priceEnd.value
-    }
-    priceSlider.noUiSlider.set([priceStartValue, priceEndValue])
-  }
-}
+//   function setPriceValues() {
+//     let priceStartValue
+//     let priceEndValue
+//     if (priceStart.value != '') {
+//       priceStartValue = priceStart.value
+//     }
+//     if (priceEnd.value != '') {
+//       priceEndValue = priceEnd.value
+//     }
+//     priceSlider.noUiSlider.set([priceStartValue, priceEndValue])
+//   }
+// }
 
 const searchDirection = document.querySelector('#searchDirection')
 if (searchDirection) {
@@ -2293,6 +2294,7 @@ if (choiceGuide) {
 // })
 
 const html = document.querySelector('html')
+const $ = document.querySelector.bind(document)
 
 const preloader = document.querySelector('.preloader')
 const body = document.querySelector('body')
@@ -2491,6 +2493,7 @@ function langHandler() {
 window.addEventListener('DOMContentLoaded', () => {
   currentLanguage = html.getAttribute('lang')
   langHandler()
+  AOS.init({ duration: 1200, offset: 120 })
 })
 
 function renderMap() {
@@ -2533,6 +2536,87 @@ function renderMap() {
 //
 if (document.querySelector('#customMap')) {
   renderMap()
+}
+
+if (document.querySelector('.country-filter__list')) {
+  const countryListWrapper = document.querySelector('.country-filter__list')
+
+  const countryList = document.querySelectorAll('.country-filter__country')
+
+  function selectCountry(e) {
+    e.stopPropagation()
+    // countryList.forEach(e => e.classList.remove('selected'))
+    console.log(e.target)
+    e.target.classList.toggle('selected')
+  }
+  countryListWrapper.addEventListener('click', selectCountry)
+
+  const filterCountry = document.querySelector('.filterCountry')
+  filterCountry.addEventListener('input', e => console.log(e.target.value))
+}
+// **********************
+
+// <div id="slider"></div>
+// var slider = document.que('price-filter__range')
+
+if (document.querySelector('.price-filter__range')) {
+  const priceRange = document.querySelector('.price-filter__range')
+  const reset = document.querySelector('.price-filter__reset')
+  const priceFilterMin = document.querySelector('.price-filter__min')
+  const priceFilterMax = document.querySelector('.price-filter__max')
+
+  noUiSlider.create(priceRange, {
+    start: [20, 80],
+    tooltips: [true, true],
+    suffix: 'UAH',
+    connect: true,
+    range: {
+      min: 0,
+      max: 100,
+    },
+  })
+
+  // reset.addEventListener('click', function () {
+  //   priceRange.noUiSlider.set([0, 100])
+  //   // priceRange.noUiSlider.set(100)
+  // })
+
+  priceRange.noUiSlider.on('update', function (values, handle) {
+    let value = values[handle]
+
+    if (handle) {
+      // inputNumber.value = value
+    } else {
+      // select.value = Math.round(value)
+    }
+  })
+
+  priceFilterMin.addEventListener('change', function () {
+    priceRange.noUiSlider.set([this.value, null])
+  })
+  priceFilterMax.addEventListener('change', function () {
+    priceRange.noUiSlider.set([null, this.value])
+  })
+
+  const observer = new MutationObserver(e => {
+    priceFilterMin.value = document.querySelector('.noUi-handle-lower').getAttribute('aria-valuenow')
+    priceFilterMax.value = document.querySelector('.noUi-handle-upper').getAttribute('aria-valuenow')
+  })
+  observer.observe(priceRange, { attributes: true })
+}
+
+if (document.querySelector('.item-tour_list')) {
+  const itemsTourEven = document.querySelectorAll('.item-tour_list:nth-child(even)')
+  const itemsTourOdd = document.querySelectorAll('.item-tour_list:nth-child(odd)')
+
+  itemsTourEven.forEach(el => {
+    el.setAttribute('data-aos', 'fade-right')
+    el.setAttribute('data-aos-once', 'true')
+  })
+  itemsTourOdd.forEach(el => {
+    el.setAttribute('data-aos', 'fade-left')
+    el.setAttribute('data-aos-once', 'true')
+  })
 }
 
 let scr_body = document.querySelector('body');
