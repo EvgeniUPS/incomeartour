@@ -5,6 +5,7 @@ $colorBlue: #0093dd;
 $colorGreen: #71ab1c;
 $colorBeige: #ece3db;
 $colorOrange: #faa619;
+$secondTextColor: #737373;
 
 $colorDarkGrey: #272727;
 
@@ -109,6 +110,8 @@ body {
 @import 'preloader';
 @import 'datepicker';
 //@import "lightgallery";
+@import 'nouisliderr';
+
 //@import "pagging";
 
 @import 'main-slider';
@@ -311,4 +314,31 @@ body {
 
 .single-page {
   font-weight: 400;
+}
+
+.has-scroll {
+  &::-webkit-scrollbar {
+    /* 1 - скроллбар */
+    width: 3px;
+  }
+  &::-webkit-scrollbar-button {
+    /* 2 - кнопка */
+  }
+  &::-webkit-scrollbar-track {
+    /* 3 - трек */
+  }
+  &::-webkit-scrollbar-track-piece {
+    /* 4 - видимая часть трека */
+  }
+  &::-webkit-scrollbar-thumb {
+    /* 5 - ползунок */
+    background-color: $colorBlue;
+  }
+  &::-webkit-scrollbar-corner {
+    /* 6 - уголок */
+  }
+  &::-webkit-resizer {
+    /* 7 - изменение размеров */
+    width: 10px;
+  }
 }

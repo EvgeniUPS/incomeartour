@@ -7,3 +7,5 @@
 @@include('libs/inputmask.min.js', {})
 @@include('libs/swiper.js', {})
 @@include('libs/smoothScroll.js', {})
+@@include('libs/wNumb.min.js', {})
+@@include('libs/nouisliderr.js', {})

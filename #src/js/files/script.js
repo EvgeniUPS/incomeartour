@@ -260,3 +260,66 @@ if (document.querySelector('.country-filter__list')) {
   filterCountry.addEventListener('input', e => console.log(e.target.value))
 }
 // **********************
+
+// <div id="slider"></div>
+// var slider = document.que('price-filter__range')
+
+if (document.querySelector('.price-filter__range')) {
+  const priceRange = document.querySelector('.price-filter__range')
+  const reset = document.querySelector('.price-filter__reset')
+  const priceFilterMin = document.querySelector('.price-filter__min')
+  const priceFilterMax = document.querySelector('.price-filter__max')
+
+  noUiSlider.create(priceRange, {
+    start: [20, 80],
+    tooltips: [true, true],
+    suffix: 'UAH',
+    connect: true,
+    range: {
+      min: 0,
+      max: 100,
+    },
+  })
+
+  // reset.addEventListener('click', function () {
+  //   priceRange.noUiSlider.set([0, 100])
+  //   // priceRange.noUiSlider.set(100)
+  // })
+
+  priceRange.noUiSlider.on('update', function (values, handle) {
+    let value = values[handle]
+
+    if (handle) {
+      // inputNumber.value = value
+    } else {
+      // select.value = Math.round(value)
+    }
+  })
+
+  priceFilterMin.addEventListener('change', function () {
+    priceRange.noUiSlider.set([this.value, null])
+  })
+  priceFilterMax.addEventListener('change', function () {
+    priceRange.noUiSlider.set([null, this.value])
+  })
+
+  const observer = new MutationObserver(e => {
+    priceFilterMin.value = document.querySelector('.noUi-handle-lower').getAttribute('aria-valuenow')
+    priceFilterMax.value = document.querySelector('.noUi-handle-upper').getAttribute('aria-valuenow')
+  })
+  observer.observe(priceRange, { attributes: true })
+}
+
+if (document.querySelector('.item-tour_list')) {
+  const itemsTourEven = document.querySelectorAll('.item-tour_list:nth-child(even)')
+  const itemsTourOdd = document.querySelectorAll('.item-tour_list:nth-child(odd)')
+
+  itemsTourEven.forEach(el => {
+    el.setAttribute('data-aos', 'fade-right')
+    el.setAttribute('data-aos-once', 'true')
+  })
+  itemsTourOdd.forEach(el => {
+    el.setAttribute('data-aos', 'fade-left')
+    el.setAttribute('data-aos-once', 'true')
+  })
+}

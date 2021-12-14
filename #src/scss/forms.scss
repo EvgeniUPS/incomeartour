@@ -159,7 +159,7 @@ textarea.input {
     opacity: 0;
     visibility: hidden;
     &:checked + .checkbox__text:before {
-      background: #fff url('../img/icons/check.svg') center no-repeat;
+      // background: #fff url('../img/icons/check.svg') center no-repeat;
     }
   }
   // .checkbox__text
@@ -388,3 +388,155 @@ textarea.input {
 //<RANGE>====================================================================================================
 
 //</RANGE>====================================================================================================
+
+//<CUSTOM-CHECKBOX>====================================================================================================
+.custom-checkbox {
+  position: relative;
+  &__input {
+    position: absolute;
+    opacity: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    &:checked + .custom-checkbox__label::after {
+      opacity: 1;
+    }
+  }
+  &__label {
+    font-weight: 700;
+    color: $secondTextColor;
+    padding-left: 30px;
+    position: relative;
+    cursor: pointer;
+    &:before {
+      content: '';
+      display: block;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      border: 2px solid #dcdcdc;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      z-index: 1;
+      background-color: #fff;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      border: 5px solid $colorBlue;
+      position: absolute;
+      opacity: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      background-color: #fff;
+      transition: opacity 0.3s ease 0s;
+    }
+  }
+}
+
+//<CUSTOM-RADIO>====================================================================================================
+.custom-radio {
+  position: relative;
+  &__input {
+    position: absolute;
+    opacity: 0;
+    -webkit-appearance: none;
+    appearance: none;
+
+    &:checked + .custom-radio__label {
+      color: #000;
+      span {
+        font-weight: 700;
+      }
+    }
+
+    &:checked + .custom-radio__label::after {
+      opacity: 1;
+    }
+
+    // &:checked + ._active
+  }
+  &__label {
+    font-weight: 700;
+    color: $secondTextColor;
+    padding-left: 30px;
+    position: relative;
+    cursor: pointer;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      border: 2px solid #dcdcdc;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 0;
+      z-index: 1;
+      background-color: #fff;
+    }
+
+    &:after {
+      content: '';
+      display: block;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      border: 5px solid $colorBlue;
+      position: absolute;
+      opacity: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 2;
+      background-color: #fff;
+      transition: opacity 0.1s ease 0s;
+    }
+  }
+}
+//<RANGE>====================================================================================================
+.price-filter {
+  .noUi-base {
+  }
+  .noUi-horizontal {
+    height: 10px;
+  }
+  .noUi-horizontal .noUi-handle {
+    width: 22px;
+    height: 22px;
+  }
+  .noUi-handle:before {
+    left: 7px;
+    top: 5px;
+    height: 10px;
+  }
+  .noUi-handle:after {
+    top: 5px;
+    left: 12px;
+    height: 10px;
+  }
+
+  .noUi-connect {
+    background-color: $colorBlue;
+  }
+  .noUi-handle {
+    background-color: $colorBlue;
+    border-radius: 50%;
+    box-shadow: none;
+  }
+  .noUi-tooltip {
+    background-color: $colorOrange;
+    font-weight: 700;
+    color: #fff;
+  }
+}
+//<TEMP>====================================================================================================
+.item-filter-type {
+}

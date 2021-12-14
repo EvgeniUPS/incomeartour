@@ -470,9 +470,6 @@ textarea.input {
   opacity: 0;
   visibility: hidden;
 }
-.checkbox__input:checked + .checkbox__text:before {
-  background: #fff url("../img/icons/check.svg") center no-repeat;
-}
 .checkbox__text {
   display: inline-flex;
   align-items: center;
@@ -671,6 +668,141 @@ textarea.input {
   text-align: center;
 }
 
+.custom-checkbox {
+  position: relative;
+}
+.custom-checkbox__input {
+  position: absolute;
+  opacity: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.custom-checkbox__input:checked + .custom-checkbox__label::after {
+  opacity: 1;
+}
+.custom-checkbox__label {
+  font-weight: 700;
+  color: #737373;
+  padding-left: 30px;
+  position: relative;
+  cursor: pointer;
+}
+.custom-checkbox__label:before {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #dcdcdc;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  z-index: 1;
+  background-color: #fff;
+}
+.custom-checkbox__label:after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 5px solid #0093dd;
+  position: absolute;
+  opacity: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background-color: #fff;
+  transition: opacity 0.3s ease 0s;
+}
+
+.custom-radio {
+  position: relative;
+}
+.custom-radio__input {
+  position: absolute;
+  opacity: 0;
+  -webkit-appearance: none;
+  appearance: none;
+}
+.custom-radio__input:checked + .custom-radio__label {
+  color: #000;
+}
+.custom-radio__input:checked + .custom-radio__label span {
+  font-weight: 700;
+}
+.custom-radio__input:checked + .custom-radio__label::after {
+  opacity: 1;
+}
+.custom-radio__label {
+  font-weight: 700;
+  color: #737373;
+  padding-left: 30px;
+  position: relative;
+  cursor: pointer;
+}
+.custom-radio__label:before {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 2px solid #dcdcdc;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  z-index: 1;
+  background-color: #fff;
+}
+.custom-radio__label:after {
+  content: "";
+  display: block;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 5px solid #0093dd;
+  position: absolute;
+  opacity: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background-color: #fff;
+  transition: opacity 0.1s ease 0s;
+}
+
+.price-filter .noUi-horizontal {
+  height: 10px;
+}
+.price-filter .noUi-horizontal .noUi-handle {
+  width: 22px;
+  height: 22px;
+}
+.price-filter .noUi-handle:before {
+  left: 7px;
+  top: 5px;
+  height: 10px;
+}
+.price-filter .noUi-handle:after {
+  top: 5px;
+  left: 12px;
+  height: 10px;
+}
+.price-filter .noUi-connect {
+  background-color: #0093dd;
+}
+.price-filter .noUi-handle {
+  background-color: #0093dd;
+  border-radius: 50%;
+  box-shadow: none;
+}
+.price-filter .noUi-tooltip {
+  background-color: #faa619;
+  font-weight: 700;
+  color: #fff;
+}
+
 h1 {
   padding: 30px 0;
   font-size: 30px;
@@ -808,6 +940,15 @@ h4 {
 
 .rub:after {
   content: "₽";
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 ol.counter {
@@ -2536,6 +2677,364 @@ body:not(.is-using-mouse) .fancybox__container :focus {
 .qs-datepicker .qs-event.qs-disabled:after,
 .qs-datepicker .qs-event.qs-empty:after {
   background: #cce4ff;
+}
+
+/* Functional styling;
+ * These styles are required for noUiSlider to function.
+ * You don't need to change these rules to apply your design.
+ */
+.noUi-target,
+.noUi-target * {
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-user-select: none;
+  -ms-touch-action: none;
+  touch-action: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.noUi-target {
+  position: relative;
+}
+
+.noUi-base,
+.noUi-connects {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+/* Wrapper for all connect elements.
+	*/
+.noUi-connects {
+  overflow: hidden;
+  z-index: 0;
+}
+
+.noUi-connect,
+.noUi-origin {
+  will-change: transform;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  -ms-transform-origin: 0 0;
+  -webkit-transform-origin: 0 0;
+  -webkit-transform-style: preserve-3d;
+  transform-origin: 0 0;
+  transform-style: flat;
+}
+
+/* Offset direction
+	*/
+.noUi-txt-dir-rtl.noUi-horizontal .noUi-origin {
+  left: 0;
+  right: auto;
+}
+
+/* Give origins 0 height/width so they don't interfere with clicking the
+	* connect elements.
+	*/
+.noUi-vertical .noUi-origin {
+  top: -100%;
+  width: 0;
+}
+
+.noUi-horizontal .noUi-origin {
+  height: 0;
+}
+
+.noUi-handle {
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.noUi-touch-area {
+  height: 100%;
+  width: 100%;
+}
+
+.noUi-state-tap .noUi-connect,
+.noUi-state-tap .noUi-origin {
+  -webkit-transition: transform 0.3s;
+  transition: transform 0.3s;
+}
+
+.noUi-state-drag * {
+  cursor: inherit !important;
+}
+
+/* Slider size and handle placement;
+	*/
+.noUi-horizontal {
+  height: 18px;
+}
+
+.noUi-horizontal .noUi-handle {
+  width: 34px;
+  height: 28px;
+  right: -17px;
+  top: -6px;
+}
+
+.noUi-vertical {
+  width: 18px;
+}
+
+.noUi-vertical .noUi-handle {
+  width: 28px;
+  height: 34px;
+  right: -6px;
+  bottom: -17px;
+}
+
+.noUi-txt-dir-rtl.noUi-horizontal .noUi-handle {
+  left: -17px;
+  right: auto;
+}
+
+/* Styling;
+	* Giving the connect element a border radius causes issues with using transform: scale
+	*/
+.noUi-target {
+  background: #fafafa;
+  border-radius: 4px;
+  border: 1px solid #d3d3d3;
+  box-shadow: inset 0 1px 1px #f0f0f0, 0 3px 6px -5px #bbb;
+}
+
+.noUi-connects {
+  border-radius: 3px;
+}
+
+.noUi-connect {
+  background: #3fb8af;
+}
+
+/* Handles and cursors;
+	*/
+.noUi-draggable {
+  cursor: ew-resize;
+}
+
+.noUi-vertical .noUi-draggable {
+  cursor: ns-resize;
+}
+
+.noUi-handle {
+  border: 1px solid #d9d9d9;
+  border-radius: 3px;
+  background: #fff;
+  cursor: default;
+  box-shadow: inset 0 0 1px #fff, inset 0 1px 7px #ebebeb, 0 3px 6px -3px #bbb;
+}
+
+.noUi-active {
+  box-shadow: inset 0 0 1px #fff, inset 0 1px 7px #ddd, 0 3px 6px -3px #bbb;
+}
+
+/* Handle stripes;
+	*/
+.noUi-handle:before,
+.noUi-handle:after {
+  content: "";
+  display: block;
+  position: absolute;
+  height: 14px;
+  width: 1px;
+  background: #e8e7e6;
+  left: 14px;
+  top: 6px;
+}
+
+.noUi-handle:after {
+  left: 17px;
+}
+
+.noUi-vertical .noUi-handle:before,
+.noUi-vertical .noUi-handle:after {
+  width: 14px;
+  height: 1px;
+  left: 6px;
+  top: 14px;
+}
+
+.noUi-vertical .noUi-handle:after {
+  top: 17px;
+}
+
+/* Disabled state;
+	*/
+[disabled] .noUi-connect {
+  background: #b8b8b8;
+}
+
+[disabled].noUi-target,
+[disabled].noUi-handle,
+[disabled] .noUi-handle {
+  cursor: not-allowed;
+}
+
+/* Base;
+	*
+	*/
+.noUi-pips,
+.noUi-pips * {
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.noUi-pips {
+  position: absolute;
+  color: #999;
+}
+
+/* Values;
+	*
+	*/
+.noUi-value {
+  position: absolute;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.noUi-value-sub {
+  color: #ccc;
+  font-size: 10px;
+}
+
+/* Markings;
+	*
+	*/
+.noUi-marker {
+  position: absolute;
+  background: #ccc;
+}
+
+.noUi-marker-sub {
+  background: #aaa;
+}
+
+.noUi-marker-large {
+  background: #aaa;
+}
+
+/* Horizontal layout;
+	*
+	*/
+.noUi-pips-horizontal {
+  padding: 10px 0;
+  height: 80px;
+  top: 100%;
+  left: 0;
+  width: 100%;
+}
+
+.noUi-value-horizontal {
+  -webkit-transform: translate(-50%, 50%);
+  transform: translate(-50%, 50%);
+}
+
+.noUi-rtl .noUi-value-horizontal {
+  -webkit-transform: translate(50%, 50%);
+  transform: translate(50%, 50%);
+}
+
+.noUi-marker-horizontal.noUi-marker {
+  margin-left: -1px;
+  width: 2px;
+  height: 5px;
+}
+
+.noUi-marker-horizontal.noUi-marker-sub {
+  height: 10px;
+}
+
+.noUi-marker-horizontal.noUi-marker-large {
+  height: 15px;
+}
+
+/* Vertical layout;
+	*
+	*/
+.noUi-pips-vertical {
+  padding: 0 10px;
+  height: 100%;
+  top: 0;
+  left: 100%;
+}
+
+.noUi-value-vertical {
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  padding-left: 25px;
+}
+
+.noUi-rtl .noUi-value-vertical {
+  -webkit-transform: translate(0, 50%);
+  transform: translate(0, 50%);
+}
+
+.noUi-marker-vertical.noUi-marker {
+  width: 5px;
+  height: 2px;
+  margin-top: -1px;
+}
+
+.noUi-marker-vertical.noUi-marker-sub {
+  width: 10px;
+}
+
+.noUi-marker-vertical.noUi-marker-large {
+  width: 15px;
+}
+
+.noUi-tooltip {
+  display: block;
+  position: absolute;
+  border: 1px solid #d9d9d9;
+  border-radius: 3px;
+  background: #fff;
+  color: #000;
+  padding: 5px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.noUi-horizontal .noUi-tooltip {
+  -webkit-transform: translate(-50%, 0);
+  transform: translate(-50%, 0);
+  left: 50%;
+  bottom: 120%;
+}
+
+.noUi-vertical .noUi-tooltip {
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  top: 50%;
+  right: 120%;
+}
+
+.noUi-horizontal .noUi-origin > .noUi-tooltip {
+  -webkit-transform: translate(50%, 0);
+  transform: translate(50%, 0);
+  left: auto;
+  bottom: 10px;
+}
+
+.noUi-vertical .noUi-origin > .noUi-tooltip {
+  -webkit-transform: translate(0, -18px);
+  transform: translate(0, -18px);
+  top: auto;
+  right: 28px;
 }
 
 /**
@@ -8105,6 +8604,8 @@ button.swiper-pagination-bullet {
   stroke: #fff;
 }
 .filter-popup__body {
+  position: relative;
+  z-index: 99999 !important;
   border-radius: 10px;
   padding: 10px !important;
 }
@@ -8125,18 +8626,28 @@ button.swiper-pagination-bullet {
 .form-filter__form {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
 }
 .form-filter__main {
+  gap: 10px;
   display: flex;
   width: 100%;
   height: 100%;
 }
 .form-filter__column {
+  height: 100%;
   flex: 0 1 32%;
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.form-filter__column_left {
+  flex: 1 0 170px;
+}
+.form-filter__column_center {
+  flex: 1 0 250px;
+}
+.form-filter__column_right {
+  flex: 1 0 250px;
 }
 .form-filter__item {
   padding: 10px;
@@ -8149,16 +8660,64 @@ button.swiper-pagination-bullet {
   opacity: 0.9;
 }
 
-.filter-form-country {
-  max-height: 50%;
-  overflow-y: scroll;
+.filter-form-type__body {
+  max-height: 250px;
+  overflow-y: auto;
 }
+
+.filter-form-duration__body {
+  max-height: 250px;
+  overflow-y: auto;
+}
+
+.filter-form-transport__item {
+  margin-bottom: 10px;
+}
+.filter-form-transport__item .custom-radio__label span {
+  float: right;
+}
+
 .filter-form-branded {
   border: none;
 }
 
-.selected {
-  background-color: tomato;
+.item-filter-type {
+  margin-top: 10px;
+  position: relative;
+}
+.item-filter-type span {
+  padding-right: 10px;
+  font-weight: 400;
+  float: right;
+}
+
+.filter-form-duration__item {
+  margin-bottom: 10px;
+}
+
+.filter-form-price__header {
+  margin-bottom: 50px;
+}
+.price-filter__range {
+  margin-bottom: 20px;
+}
+.price-filter__reset {
+  margin: 0px auto;
+  background-color: #0093dd;
+  width: 35px;
+  height: 35px;
+  position: relative;
+  border-radius: 50%;
+}
+.price-filter__actions {
+  display: flex;
+  gap: 5px;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.price-filter__actions input {
+  width: 100px;
+  padding: 5px;
 }
 
 .header {
@@ -9216,4 +9775,29 @@ button.swiper-pagination-bullet {
 
 .single-page {
   font-weight: 400;
+}
+
+.has-scroll::-webkit-scrollbar {
+  /* 1 - скроллбар */
+  width: 3px;
+}
+.has-scroll::-webkit-scrollbar-button {
+  /* 2 - кнопка */
+}
+.has-scroll::-webkit-scrollbar-track {
+  /* 3 - трек */
+}
+.has-scroll::-webkit-scrollbar-track-piece {
+  /* 4 - видимая часть трека */
+}
+.has-scroll::-webkit-scrollbar-thumb {
+  /* 5 - ползунок */
+  background-color: #0093dd;
+}
+.has-scroll::-webkit-scrollbar-corner {
+  /* 6 - уголок */
+}
+.has-scroll::-webkit-resizer {
+  /* 7 - изменение размеров */
+  width: 10px;
 }

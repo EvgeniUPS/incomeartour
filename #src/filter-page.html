@@ -59,40 +59,126 @@
                 </div>
                 <div class="form-filter__column form-filter__column_center">
                   <div class="form-filter__item filter-form-type">
-                    <div class="filter-form-type__header form-filter__item_header">header</div>
-                    <div class="filter-form-type__body">body</div>
+                    <div class="filter-form-type__header form-filter__item_header">Тип тура</div>
+                    <div class="filter-form-type__body has-scroll">
+                      <div class="filter-form-type__list">
+                        <!--  -->
+                        <div class="filter-form-type__item item-filter-type custom-radio _active">
+                          <input class="custom-radio__input" type="radio" name="type" id="all" />
+                          <label class="custom-radio__label noselect _active" for="all">Все туры <span>23</span></label>
+                        </div>
+                        <!--  -->
+                        <div class="filter-form-type__item item-filter-type custom-radio">
+                          <input class="custom-radio__input" type="radio" name="type" id="type1" />
+                          <label class="custom-radio__label noselect" for="type1">Осенние туры<span>12</span></label>
+                        </div>
+                        <div class="filter-form-type__item item-filter-type custom-radio">
+                          <input class="custom-radio__input" type="radio" name="type" id="type2" />
+                          <label class="custom-radio__label noselect" for="type2">Отдых в декабре<span>14</span></label>
+                        </div>
+                        <div class="filter-form-type__item item-filter-type custom-radio">
+                          <input class="custom-radio__input" type="radio" name="type" id="type3" />
+                          <label class="custom-radio__label noselect" for="type3"
+                            >Горнолыжные туры<span>63</span></label
+                          >
+                        </div>
+
+                        <div class="filter-form-type__item item-filter-type custom-radio">
+                          <input class="custom-radio__input" type="radio" name="type" id="type4" />
+                          <label class="custom-radio__label noselect" for="type4">Экзотика<span>14</span></label>
+                        </div>
+                        <div class="filter-form-type__item item-filter-type custom-radio">
+                          <input class="custom-radio__input" type="radio" name="type" id="type5" />
+                          <label class="custom-radio__label noselect" for="type5">Пляжный отдых<span>14</span></label>
+                        </div>
+                        <div class="filter-form-type__item item-filter-type custom-radio">
+                          <input class="custom-radio__input" type="radio" name="type" id="type6" />
+                          <label class="custom-radio__label noselect" for="type6">Отдых в декабре<span>14</span></label>
+                        </div>
+                        <div class="filter-form-type__item item-filter-type custom-radio">
+                          <input class="custom-radio__input" type="radio" name="type" id="type7" />
+                          <label class="custom-radio__label noselect" for="type7">Отдых в декабре<span>14</span></label>
+                        </div>
+                        <div class="filter-form-type__item item-filter-type custom-radio">
+                          <input class="custom-radio__input" type="radio" name="type" id="type8" />
+                          <label class="custom-radio__label noselect" for="type8">Отдых в декабре<span>14</span></label>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="form-filter__item filter-form-duration">
-                    <div class="filter-form-duration__header form-filter__item_header">header</div>
-                    <div class="filter-form-duration__body">body</div>
+                    <div class="filter-form-duration__header form-filter__item_header">Количество дней</div>
+                    <div class="filter-form-duration__body has-scroll">
+                      <div class="filter-form-duration__list">
+                        <div class="filter-form-duration__item item-filter-duration custom-radio">
+                          <input class="custom-radio__input" type="radio" name="duration" id="duration3" />
+                          <label class="custom-radio__label noselect" for="duration3">3 дня</label>
+                        </div>
+                        <div class="filter-form-duration__item item-filter-duration custom-radio">
+                          <input class="custom-radio__input" type="radio" name="duration" id="duration4" />
+                          <label class="custom-radio__label noselect" for="duration4">4 дня</label>
+                        </div>
+                        <div class="filter-form-duration__item item-filter-duration custom-radio">
+                          <input class="custom-radio__input" type="radio" name="duration" id="duration5" />
+                          <label class="custom-radio__label noselect" for="duration5">5 дней</label>
+                        </div>
+                        <div class="filter-form-duration__item item-filter-duration custom-radio">
+                          <input class="custom-radio__input" type="radio" name="duration" id="duration6" />
+                          <label class="custom-radio__label noselect" for="duration6">6 дней</label>
+                        </div>
+                        <div class="filter-form-duration__item item-filter-duration custom-radio">
+                          <input class="custom-radio__input" type="radio" name="duration" id="duration7" />
+                          <label class="custom-radio__label noselect" for="duration7">7 дней</label>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div class="form-filter__column form-filter__column_right">
                   <div class="form-filter__item filter-form-price">
-                    <div class="filter-form-price__header form-filter__item_header">price</div>
-                    <div class="filter-form-price__body">body</div>
+                    <div class="filter-form-price__header form-filter__item_header">Диапазон цен (грн)</div>
+                    <div class="filter-form-price__body price-filter">
+                      <div class="price-filter__range" data-from="100" data-to="300"></div>
+
+                      <div class="price-filter__actions">
+                        <input type="number" class="price-filter__min" placeholder="min" />
+                        <input type="number" class="price-filter__max" placeholder="max" />
+                        <!-- <button class="price-filter__reset"></button> -->
+                      </div>
+                    </div>
                   </div>
+
                   <div class="form-filter__item filter-form-transport">
-                    <div class="filter-form-transport__header form-filter__item_header">transport</div>
-                    <div class="filter-form-transport__body">body</div>
+                    <div class="filter-form-transport__header form-filter__item_header">Транспорт</div>
+                    <div class="filter-form-transport__body">
+                      <div class="filter-form-transport__list">
+                        <div class="filter-form-transport__item item-filter-transport custom-radio">
+                          <input class="custom-radio__input" type="radio" name="transport" id="transport1" />
+                          <label class="custom-radio__label noselect" for="transport1">Авиа тур<span>48</span></label>
+                        </div>
+
+                        <div class="filter-form-transport__item item-filter-transport custom-radio">
+                          <input class="custom-radio__input" type="radio" name="transport" id="transport2" />
+                          <label class="custom-radio__label noselect" for="transport2"
+                            >Автобусный тур<span>48</span></label
+                          >
+                        </div>
+
+                        <div class="filter-form-transport__item item-filter-transport custom-radio">
+                          <input class="custom-radio__input" type="radio" name="transport" id="transport4" />
+                          <label class="custom-radio__label noselect" for="transport4">Все туры<span>122</span></label>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="form-filter__item filter-form-date">
                     <div class="filter-form-date__header form-filter__item_header">date</div>
                     <div class="filter-form-date__body">body</div>
                   </div>
-
                   <div class="form-filter__item filter-form-branded">branded</div>
                 </div>
               </div>
-
               <input type="submit" class="btn btn__blue" value="Поиск" />
-              <!-- <div class="form-filter__item filter-form-country">country</div>
-              <div class="form-filter__item filter-form-type">type</div>
-              <div class="form-filter__item filter-form-duration">duration</div>
-              <div class="form-filter__item filter-form-price">price</div>
-              <div class="form-filter__item filter-form-transport">transport</div>
-              <div class="form-filter__item filter-form-date">date</div>
-              <div class="form-filter__item filter-form-branded">branded</div> -->
             </form>
           </div>
         </div>
