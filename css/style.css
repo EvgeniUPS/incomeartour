@@ -738,6 +738,7 @@ textarea.input {
 
 .custom-radio {
   position: relative;
+  margin: 10px 0;
 }
 
 .custom-radio__input {
@@ -7980,6 +7981,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 }
 
 .filter-popup__body {
+  width: 95%;
   position: relative;
   z-index: 99999 !important;
   border-radius: 10px;
@@ -8010,6 +8012,7 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 .form-filter__main {
   gap: 10px;
   display: flex;
+  flex-wrap: wrap;
   width: 100%;
   height: 100%;
 }
@@ -8024,6 +8027,8 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 
 .form-filter__column_left {
   flex: 1 0 170px;
+  height: auto;
+  align-self: stretch;
 }
 
 .form-filter__column_center {
@@ -8042,8 +8047,27 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 
 .form-filter__item_header {
   font-weight: 700;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   opacity: 0.9;
+}
+
+.form-filter__button {
+  margin: 0px auto;
+  margin-top: 20px;
+  min-height: 60px;
+  width: 30%;
+  cursor: pointer;
+}
+
+.filter-form-country {
+  max-height: 100%;
+}
+
+.filter-form-country .filterCountry {
+  height: 30px;
+  padding: 0 15px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 .filter-form-type__body {
@@ -8064,12 +8088,45 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
   float: right;
 }
 
+.filter-form-date__item {
+  flex: 1 0 150px;
+  min-width: 150px;
+}
+
+.filter-form-date__body {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.filter-form-date__body input {
+  height: 30px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.filter-form-date__body .qs-controls {
+  background-color: #0093dd !important;
+}
+
+.filter-form-date__body .qs-datepicker-container .qs-square:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active):hover {
+  background-color: #0093dd;
+}
+
+.filter-form-date__body .qs-datepicker-container {
+  border: 1px solid #0093dd;
+}
+
+.filter-form-date__body .qs-datepicker-container .qs-current span {
+  background-color: #0093dd;
+  color: #fff;
+}
+
 .filter-form-branded {
   border: none;
 }
 
 .item-filter-type {
-  margin-top: 10px;
   position: relative;
 }
 
@@ -8085,6 +8142,10 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 
 .filter-form-price__header {
   margin-bottom: 50px;
+}
+
+.filter-form-price__body {
+  padding: 0 30px;
 }
 
 .price-filter__range {
@@ -8108,6 +8169,10 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 }
 
 .price-filter__actions input {
+  text-align: center;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #000;
   width: 100px;
   padding: 5px;
 }

@@ -1870,6 +1870,7 @@ function inputs_init(inputs) {
           overlayButton: 'Применить',
           overlayPlaceholder: 'Год (4 цифры)',
           startDay: 1,
+          position: 'br',
           formatter: (input, date, instance) => {
             const value = date.toLocaleDateString()
             // const value = date.toDateString()
@@ -2564,22 +2565,37 @@ if (document.querySelector('.price-filter__range')) {
   const reset = document.querySelector('.price-filter__reset')
   const priceFilterMin = document.querySelector('.price-filter__min')
   const priceFilterMax = document.querySelector('.price-filter__max')
+  const rangeFrom = +document.querySelector('.price-filter__range').dataset.from
+  const rangeTo = +document.querySelector('.price-filter__range').dataset.to
 
-  noUiSlider.create(priceRange, {
-    start: [20, 80],
-    tooltips: [true, true],
-    suffix: 'UAH',
-    connect: true,
-    range: {
-      min: 0,
-      max: 100,
-    },
+  const moneyFormat = wNumb({
+    // mark: '.',
+    thousand: ' ',
+    decimals: 0,
+    // prefix: '',
+    suffix: ' грн.',
   })
 
-  // reset.addEventListener('click', function () {
-  //   priceRange.noUiSlider.set([0, 100])
-  //   // priceRange.noUiSlider.set(100)
-  // })
+  noUiSlider.create(priceRange, {
+    start: [rangeFrom, rangeTo],
+    ariaFormat: wNumb({
+      thousand: ' ',
+      decimals: 0,
+    }),
+
+    tooltips: [true, true],
+    format: wNumb({
+      decimals: 0,
+      thousand: ' ',
+      suffix: ' грн.',
+    }),
+
+    connect: true,
+    range: {
+      min: rangeFrom,
+      max: rangeTo,
+    },
+  })
 
   priceRange.noUiSlider.on('update', function (values, handle) {
     let value = values[handle]
@@ -2594,17 +2610,19 @@ if (document.querySelector('.price-filter__range')) {
   priceFilterMin.addEventListener('change', function () {
     priceRange.noUiSlider.set([this.value, null])
   })
+
   priceFilterMax.addEventListener('change', function () {
     priceRange.noUiSlider.set([null, this.value])
   })
 
   const observer = new MutationObserver(e => {
-    priceFilterMin.value = document.querySelector('.noUi-handle-lower').getAttribute('aria-valuenow')
-    priceFilterMax.value = document.querySelector('.noUi-handle-upper').getAttribute('aria-valuenow')
+    priceFilterMin.value = Math.round(document.querySelector('.noUi-handle-lower').getAttribute('aria-valuenow'))
+    priceFilterMax.value = Math.round(document.querySelector('.noUi-handle-upper').getAttribute('aria-valuenow'))
   })
   observer.observe(priceRange, { attributes: true })
 }
 
+// Добавление анимаций карточкам тура на главной
 if (document.querySelector('.item-tour_list')) {
   const itemsTourEven = document.querySelectorAll('.item-tour_list:nth-child(even)')
   const itemsTourOdd = document.querySelectorAll('.item-tour_list:nth-child(odd)')
@@ -2616,6 +2634,58 @@ if (document.querySelector('.item-tour_list')) {
   itemsTourOdd.forEach(el => {
     el.setAttribute('data-aos', 'fade-left')
     el.setAttribute('data-aos-once', 'true')
+  })
+}
+//Календарь на странице Поиск тура
+if (document.querySelector('.filter-form-date__start') || document.querySelector('.filter-form-date__end')) {
+  console.log('date')
+
+  const dateOption = {
+    id: 1,
+    customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+    customMonths: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+    overlayButton: 'Применить',
+    overlayPlaceholder: 'Год (4 цифры)',
+    dateSelected: new Date(),
+    // startDate: new Date(),
+    minDate: new Date(),
+    // alwaysShow: true,
+    startDay: 1,
+    formatter: (input, date, instance) => {
+      const value = date.toLocaleDateString()
+      // const value = date.toDateString()
+      // const val = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+      input.value = value
+    },
+    onSelect: function (input, instance, date) {
+      input_focus_add(input.el)
+    },
+  }
+
+  document.querySelector('.filter-input-end').value = new Date().toLocaleDateString()
+  const start = datepicker('.filter-input-start', dateOption)
+  const date = new Date()
+  console.log(`date`, date)
+  const end = datepicker('.filter-input-end', {
+    id: 1,
+    customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+    customMonths: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+    overlayButton: 'Применить',
+    overlayPlaceholder: 'Год (4 цифры)',
+    // dateSelected: new Date(),
+    // startDate: new Date(),
+    minDate: new Date(),
+    // alwaysShow: true,
+    startDay: 1,
+    formatter: (input, date, instance) => {
+      const value = date.toLocaleDateString()
+      // const value = date.toDateString()
+      // const val = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
+      input.value = value
+    },
+    onSelect: function (input, instance, date) {
+      input_focus_add(input.el)
+    },
   })
 }
 
