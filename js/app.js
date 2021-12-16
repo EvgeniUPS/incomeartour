@@ -2541,19 +2541,33 @@ if (document.querySelector('#customMap')) {
 
 if (document.querySelector('.country-filter__list')) {
   const countryListWrapper = document.querySelector('.country-filter__list')
+  const countryList = Array.from(document.querySelectorAll('.item-filter-country'))
+  const filterCountryInput = document.querySelector('.filter-form-country__search')
 
-  const countryList = document.querySelectorAll('.country-filter__country')
+  filterCountryInput.addEventListener('input', filterCountry)
 
-  function selectCountry(e) {
-    e.stopPropagation()
-    // countryList.forEach(e => e.classList.remove('selected'))
-    console.log(e.target)
-    e.target.classList.toggle('selected')
+  function filterCountry(e) {
+    const inpValue = e.target.value.toLowerCase()
+    const filteredCountry = countryList.filter(el => {
+      const textAll = el.querySelector('.custom-radio__label').innerHTML
+      const index = textAll.indexOf('<span>')
+      const text = textAll.slice(0, index).toLowerCase()
+      return text.includes(inpValue)
+    })
+    renderCountryList(filteredCountry)
   }
-  countryListWrapper.addEventListener('click', selectCountry)
 
-  const filterCountry = document.querySelector('.filterCountry')
-  filterCountry.addEventListener('input', e => console.log(e.target.value))
+  function renderCountryList(countryList) {
+    if (countryList.length === 0) {
+      countryListWrapper.innerHTML = 'Не найдено'
+    } else {
+      countryListWrapper.innerHTML = ''
+    }
+
+    countryList.map(country => {
+      countryListWrapper.appendChild(country)
+    })
+  }
 }
 // **********************
 
@@ -2638,8 +2652,6 @@ if (document.querySelector('.item-tour_list')) {
 }
 //Календарь на странице Поиск тура
 if (document.querySelector('.filter-form-date__start') || document.querySelector('.filter-form-date__end')) {
-  console.log('date')
-
   const dateOption = {
     id: 1,
     customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
@@ -2664,8 +2676,6 @@ if (document.querySelector('.filter-form-date__start') || document.querySelector
 
   document.querySelector('.filter-input-end').value = new Date().toLocaleDateString()
   const start = datepicker('.filter-input-start', dateOption)
-  const date = new Date()
-  console.log(`date`, date)
   const end = datepicker('.filter-input-end', {
     id: 1,
     customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
