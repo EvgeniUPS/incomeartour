@@ -468,6 +468,7 @@ function inputs_init(inputs) {
           overlayButton: 'Применить',
           overlayPlaceholder: 'Год (4 цифры)',
           startDay: 1,
+          position: 'br',
           formatter: (input, date, instance) => {
             const value = date.toLocaleDateString()
             // const value = date.toDateString()

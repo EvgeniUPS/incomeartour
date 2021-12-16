@@ -443,6 +443,7 @@ textarea.input {
 //<CUSTOM-RADIO>====================================================================================================
 .custom-radio {
   position: relative;
+  margin: 10px 0;
   &__input {
     position: absolute;
     opacity: 0;
@@ -464,6 +465,7 @@ textarea.input {
   }
   &__label {
     font-weight: 700;
+
     color: $secondTextColor;
     padding-left: 30px;
     position: relative;
@@ -538,5 +540,3 @@ textarea.input {
   }
 }
 //<TEMP>====================================================================================================
-.item-filter-type {
-}
