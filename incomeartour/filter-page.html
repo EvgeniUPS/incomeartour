@@ -795,7 +795,7 @@
               <div class="filter-popup__header header-filter popup__header">
                 <div class="header-filter__search">
                   <div class="header-filter__search-wrapper">
-                    <input type="text" />
+                    <input type="text" data-value="поиск по названию туров" />
                   </div>
                 </div>
                 <div class="header-filter__button">button</div>
@@ -805,7 +805,7 @@
                   <div class="form-filter__item filter-form-country has-scroll">
                     <div class="filter-form-country__header form-filter__item_header">Страны</div>
                     <div class="filterCountry filter-form-country__search" type="text">
-                      <input type="text" placeholder="Поиск стран" />
+                      <input type="text" data-value="Поиск стран" />
                     </div>
                     <div class="filter-form-country__body country-filter">
                       <div class="country-filter__list">
@@ -1007,8 +1007,20 @@
                     <div class="filter-form-price__body price-filter">
                       <div class="price-filter__range" data-from="500" data-to="20000"></div>
                       <div class="price-filter__actions">
-                        <input type="number" class="price-filter__min" placeholder="min" />
-                        <input type="number" class="price-filter__max" placeholder="max" />
+                        <input
+                          onClick="this.select();"
+                          name="minprice"
+                          type="number"
+                          class="price-filter__min"
+                          value="500"
+                        />
+                        <input
+                          onClick="this.select();"
+                          name="maxprice"
+                          type="number"
+                          class="price-filter__max"
+                          value="20000"
+                        />
                         <!-- <button class="price-filter__reset"></button> -->
                       </div>
                     </div>
@@ -1067,7 +1079,23 @@
                       </div>
                     </div>
                   </div>
-                  <div class="form-filter__item filter-form-branded">branded</div>
+                  <div class="form-filter__item filter-form-branded">
+                    <div class="filter-form-branded__body">
+                      <div class="custom-checkbox">
+                        <input class="custom-checkbox__input" type="checkbox" name="brand" id="brand" value="2" />
+                        <label class="custom-checkbox__label noselect" for="brand">Только фирменные фильтры</label>
+                      </div>
+                    </div>
+                    <div class="filter-form-branded__info custom-checkbox__info">
+                      <a
+                        href="#"
+                        class="tooltip-link-click disabled"
+                        data-tippy-content="Собственные туры туроператоров “Incomearture 93” в сопровождении гидов"
+                        data-tippy-placement="bottom"
+                        ><span></span
+                      ></a>
+                    </div>
+                  </div>
                 </div>
               </div>
               <input type="submit" class="form-filter__button btn btn__blue" value="Подобрать тур" />

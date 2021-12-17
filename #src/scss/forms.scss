@@ -412,7 +412,7 @@ textarea.input {
       display: block;
       width: 25px;
       height: 25px;
-      border-radius: 50%;
+      border-radius: 5px;
       border: 2px solid #dcdcdc;
       position: absolute;
       top: 50%;
@@ -427,14 +427,15 @@ textarea.input {
       display: block;
       width: 25px;
       height: 25px;
-      border-radius: 50%;
+      border-radius: 5px;
       border: 5px solid $colorBlue;
       position: absolute;
       opacity: 0;
       top: 50%;
       transform: translateY(-50%);
       z-index: 2;
-      background-color: #fff;
+      background: url(../img/icons/checkbox-icon.svg) center no-repeat $colorBlue;
+      background-size: contain;
       transition: opacity 0.3s ease 0s;
     }
   }
@@ -535,8 +536,25 @@ textarea.input {
   }
   .noUi-tooltip {
     background-color: $colorOrange;
+    // border: none;
+    border-radius: 1px;
     font-weight: 700;
     color: #fff;
+    border: 1px solid #fff;
+    font-size: 14px;
+    @media (max-width: 768px) {
+    }
   }
+  // .noUi-handle-lower {
+  //   .noUi-tooltip {
+  //     transform: translate(-30%, 0);
+  //   }
+  // }
+  // .noUi-handle-upper {
+  //   .noUi-tooltip {
+  //     transform: translate(-70%, 0);
+  //   }
+  // }
 }
+
 //<TEMP>====================================================================================================

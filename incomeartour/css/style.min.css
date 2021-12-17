@@ -692,7 +692,7 @@ textarea.input {
   display: block;
   width: 25px;
   height: 25px;
-  border-radius: 50%;
+  border-radius: 5px;
   border: 2px solid #dcdcdc;
   position: absolute;
   top: 50%;
@@ -706,14 +706,15 @@ textarea.input {
   display: block;
   width: 25px;
   height: 25px;
-  border-radius: 50%;
+  border-radius: 5px;
   border: 5px solid #0093dd;
   position: absolute;
   opacity: 0;
   top: 50%;
   transform: translateY(-50%);
   z-index: 2;
-  background-color: #fff;
+  background: url(../img/icons/checkbox-icon.svg) center no-repeat #0093dd;
+  background-size: contain;
   transition: opacity 0.3s ease 0s;
 }
 
@@ -800,10 +801,12 @@ textarea.input {
 }
 .price-filter .noUi-tooltip {
   background-color: #faa619;
+  border-radius: 1px;
   font-weight: 700;
   color: #fff;
+  border: 1px solid #fff;
+  font-size: 14px;
 }
-
 h1 {
   padding: 30px 0;
   font-size: 30px;
@@ -8609,15 +8612,24 @@ button.swiper-pagination-bullet {
 .popup-country__view-all a svg path {
   stroke: #fff;
 }
+@media (max-width: 768px) {
+  .filter-popup {
+    padding: 10px 0;
+  }
+}
 .filter-popup__body {
-  width: 95%;
   position: relative;
   z-index: 99999 !important;
   border-radius: 10px;
   padding: 10px !important;
 }
+@media (max-width: 768px) {
+  .filter-popup__body {
+    max-width: 100%;
+  }
+}
 .filter-popup__close {
-  top: 20px;
+  top: 30px;
   right: 20px;
 }
 .filter-popup__header {
@@ -8626,9 +8638,18 @@ button.swiper-pagination-bullet {
   border-bottom: 1px solid #e8e8e8;
   margin-bottom: 30px;
 }
+@media (max-width: 768px) {
+  .filter-popup__header {
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+}
 .filter-popup__form form {
   display: flex;
   flex-direction: column;
+}
+.filter-popup__form input {
+  color: #737373;
 }
 .filter-popup .header-filter {
   display: flex;
@@ -8656,6 +8677,12 @@ button.swiper-pagination-bullet {
   height: 58px;
   line-height: 28px;
   padding: 15px 24px 15px 50px;
+}
+@media (max-width: 425px) {
+  .filter-popup .header-filter__search-wrapper input {
+    width: 250px;
+    height: 42px;
+  }
 }
 .filter-popup .header-filter__button {
   display: none;
@@ -8707,6 +8734,7 @@ button.swiper-pagination-bullet {
   min-height: 60px;
   width: 30%;
   cursor: pointer;
+  color: #fff !important;
 }
 
 .filter-form-country {
@@ -8721,6 +8749,9 @@ button.swiper-pagination-bullet {
   display: flex;
   justify-content: space-between;
   position: relative;
+}
+.filter-form-country__search input {
+  color: #737373;
 }
 .filter-form-country__search:before {
   content: "";
@@ -8829,6 +8860,27 @@ button.swiper-pagination-bullet {
   background-color: #0093dd;
   color: #fff;
 }
+.filter-form-date .filter-form-date__start,
+.filter-form-date .filter-form-date__end {
+  position: relative;
+}
+.filter-form-date .filter-form-date__start:before,
+.filter-form-date .filter-form-date__end:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10%;
+  background: url(../img/icons/calendar-icon.svg) center no-repeat;
+  background-size: contain;
+}
+.filter-form-date .filter-input-start,
+.filter-form-date .filter-input-end {
+  border: 1px solid #e8e8e8;
+  height: 36px;
+}
 
 .filter-form-branded {
   border: none;
@@ -8851,7 +8903,12 @@ button.swiper-pagination-bullet {
   margin-bottom: 50px;
 }
 .filter-form-price__body {
-  padding: 0 30px;
+  padding: 0 20px;
+}
+@media (max-width: 425px) {
+  .filter-form-price__body {
+    padding: 0 10px;
+  }
 }
 
 .price-filter__range {
@@ -8873,11 +8930,40 @@ button.swiper-pagination-bullet {
 }
 .price-filter__actions input {
   text-align: center;
-  border: none;
+  height: 36px;
   outline: none;
-  border-bottom: 1px solid #000;
+  border: 1px solid #e8e8e8;
   width: 100px;
   padding: 5px;
+}
+
+.filter-form-branded {
+  display: flex;
+  gap: 20px;
+  padding-left: 0;
+  align-items: center;
+}
+.filter-form-branded__body {
+  white-space: nowrap;
+}
+.filter-form-branded__info a span {
+  display: block;
+  width: 20px;
+  height: 20px;
+  background: url("../img/icons/info-icon.svg") center no-repeat;
+  background-size: contain;
+  position: relative;
+}
+.filter-form-branded__info a span:before {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #b7b7b7;
 }
 
 .header {
@@ -9772,7 +9858,7 @@ button.swiper-pagination-bullet {
   outline: none;
   border-radius: 50%;
   position: fixed;
-  z-index: 9999;
+  z-index: 100;
   border: 1px solid #ccc;
   right: 50px;
   bottom: 50px;
