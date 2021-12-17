@@ -2583,10 +2583,8 @@ if (document.querySelector('.price-filter__range')) {
   const rangeTo = +document.querySelector('.price-filter__range').dataset.to
 
   const moneyFormat = wNumb({
-    // mark: '.',
     thousand: ' ',
     decimals: 0,
-    // prefix: '',
     suffix: ' грн.',
   })
 
