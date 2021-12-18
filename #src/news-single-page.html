@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('_head.html',{ "title":"Новость" })
+  <body>
+    <div class="wrapper">
+      <!-- @@include('_header.html',{}) -->
+      <!--  -->
+      @@include('_header.html',{})
+      <main class="page news-page">
+        <!-- @@include('_page-header.html', { "pageHeader" : "Новости", "imgPath" : "./img/eiffel-tower-paris-europe.jpg",
+        "pageText" : "pageTexttttt", "flag" : "./img/flags/4x3/fr.svg"}) -->
+
+        <section class="news-page__header page-header">
+          <div class="page-header__container _container">
+            <div class="page-header__breadcrumbs breadcrumbs">
+              <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item"><a href="./" class="breadcrumbs__link">Главная</a></li>
+                <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link disabled">Новость</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="news-page__main-news news-page-main">
+          <div class="news-page-main__container _container">
+            <div class="news-page-main__image">
+              <img src="./img/main-news.jpg" alt="Главная новость" />
+            </div>
+            <div class="news-page-main__descr">
+              <div class="news-page-main__info">
+                <div class="news-page-main__date">08.09.2021</div>
+                <div class="news-page-main__tags"><span>Отдых</span><span>Швейцария</span></div>
+              </div>
+              <div class="news-page-main__button">
+                <a href="#1" class="disabled">ПОДРОБНЕЕ</a>
+              </div>
+            </div>
+            <div class="news-page-main__title">Новость</div>
+            <div class="news-page-main__text">
+              <p>
+                Швейцария обрела известность благодаря своим горнолыжным курортам и термальным источникам. Но, это
+                далеко не все, что стоит посетить. Предлагаем вашему вниманию ТОП 7 легендарных мест.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!--  -->
+      </main>
+      @@include('_footer.html',{})
+    </div>
+    @@include('_popup.html',{})
+    <!--  -->
+    @@include('_js.html',{})
+  </body>
+</html>

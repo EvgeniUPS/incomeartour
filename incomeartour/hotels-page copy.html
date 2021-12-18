@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ru">
   <head>
-  <title>Отзывы</title>
+  <title>Отели</title>
   <meta charset="UTF-8" />
 
   <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
@@ -157,10 +157,10 @@
         <div class="menu-burger-body">
           <div class="menu-burger-main">
             <ul class="main-burger-list">
-              <li><a href="./promo-page.html">Акции</a></li>
+              <li><a href="#">Акции</a></li>
               <li><a href="#">Услуги</a></li>
               <li><a href="#">Где купить</a></li>
-              <li><a href="./news-page.html">Новости</a></li>
+              <li><a href="#">Новости</a></li>
               <li><a href="#">Контакты</a></li>
               <li class="has-submenu">
                 <a class="menu-info-link menu__link disabled" href="#">Информация</a>
@@ -200,21 +200,21 @@
     <div class="page-header__breadcrumbs breadcrumbs">
       <ul class="breadcrumbs__list">
         <li class="breadcrumbs__item"><a href="./" class="breadcrumbs__link">Главная</a></li>
-        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link disabled">Отзывы</a></li>
+        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link disabled">Отели</a></li>
       </ul>
     </div>
 
     <div class="page-header__block block-page-header">
       <div class="block-page-header__top">
         <div class="block-page-header__img">
-          <img src="./img/eiffel-tower-paris-europe.jpg" alt="ОтзывыText" />
+          <img src="./img/eiffel-tower-paris-europe.jpg" alt="ОтелиText" />
         </div>
       </div>
 
       <div class="block-page-header__center">
         <!-- <div class="block-page-header__icon"><img src="./img/flags/4x3/fr.svg" alt="" /></div> -->
         <div class="block-page-header__icon"><img src="./img/flags/4x3/fr.svg" alt="" /></div>
-        <div class="block-page-header__title">Отзывы</div>
+        <div class="block-page-header__title">Отели</div>
       </div>
 
       <div class="block-page-header__bottom">
@@ -236,93 +236,12 @@
     <div class="page-header__img"></div>
     <div class="page-header__top">
       <div class="page-header__icon">./img/flags/4x3/fr.svg</div>
-      <div class="page-header__header">Отзывы</div>
+      <div class="page-header__header">Отели</div>
     </div>
     <div class="page-header__text">pageTexttttt</div> -->
   </div>
 </section>
 
-        <!--  -->
-
-        <div class="test _container">
-          <!-- <form class="test-form" style="" example-form>
-            <input
-              name="label"
-              type="text"
-              placeholder="14"
-              value="label"
-              style="border: 1px solid #ccc; display: block; margin-bottom: 5px"
-            />
-            <input
-              name="link"
-              type="text"
-              placeholder="14"
-              value="link1"
-              style="border: 1px solid #ccc; display: block; margin-bottom: 5px"
-            />
-            <input name="example" />
-
-            <input type="button" class="send-data" value="submit" />
-          </form> -->
-
-          <form id="formElem">
-            <input style="border: 1px solid #ccc" type="text" name="label" value="John" />
-            <input style="border: 1px solid #ccc" type="text" name="link" value="Smith" />
-            <input type="submit" />
-          </form>
-          <br />
-          <script>
-            formElem.onsubmit = async e => {
-              e.preventDefault()
-
-              let response = await fetch('http://evgeniups-server.herokuapp.com/testMenu', {
-                method: 'POST',
-                body: new FormData(formElem),
-              })
-
-              let result = await response.json()
-
-              alert(result.message)
-            }
-          </script>
-        </div>
-
-        <script>
-          // const testForm = document.querySelector('.test-form')
-          // testForm.addEventListener('click', async e => {
-          // 	e.preventDefault()
-
-          //   let response = await fetch('http://evgeniups-server.herokuapp.com/testMenu', {
-          //     method: 'POST',
-          //     body: new FormData(testForm),
-          //   })
-          //   let res = await response.json()
-
-          //   console.log(e)
-          // })
-
-          // const form = document.forms['example-form']
-          // const exampleInput = document.querySelector('[name="example"]')
-          // exampleInput.addEventListener('input', changeHandler)
-          // function changeHandler(e) {
-          //   console.log(e.target)
-          //   const formData = new FormData()
-          //   formData.append('label', 'sdfsdf sdf')
-          //   formData.set('label', 'sdfsdf sdfqwq')
-
-          //   console.log(formData)
-          //   for (key of formData.keys()) {
-          //     console.log(`${key}: ${formData.get(key)}`)
-          //   }
-          // }
-          // const sendData1 = document.querySelector('.send-data')
-          // sendData1.addEventListener('click', function (e) {
-          //   console.log('click')
-          //   data = new FormData(document.querySelector('.test-form'))
-          //   console.log(data.has(link))
-          //   console.log(data.has(label))
-          // })
-        </script>
 
         <!--  -->
       </main>

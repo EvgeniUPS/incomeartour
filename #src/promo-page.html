@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('_head.html',{ "title":"Акции" })
+  <body>
+    <div class="wrapper">
+      <!-- @@include('_header.html',{}) -->
+      <!--  -->
+      @@include('_header.html',{})
+      <main class="page promo-page">
+        <section class="promo-page__header page-header">
+          <div class="page-header__container _container">
+            <div class="page-header__breadcrumbs breadcrumbs">
+              <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item"><a href="./" class="breadcrumbs__link">Главная</a></li>
+                <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link disabled">Акции</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <section class="promo-page__main main-promo-page">
+          <div class="main-promo-page__container _container">
+            <div class="main-promo-page__image">
+              <img src="./img/main-promo.jpg" alt="" />
+              <div class="main-promo-page__label">АКЦИЯ</div>
+            </div>
+            <div class="main-promo-page__descr">
+              <div class="main-promo-page__info1">
+                <div class="main-promo-page__date">08.09.2021</div>
+                <div class="main-promo-page__title">Главная акция</div>
+                <div class="main-promo-page__text">
+                  <p>Выберите тур и отправляйтесь в путешествие как только страна откроется!</p>
+                </div>
+              </div>
+              <div class="main-promo-page__info2">
+                <div class="main-promo-page__count">До окончания акции осталось 51 дней 7 часов!</div>
+                <div class="main-promo-page__button">
+                  <a href="#" class="btn btn-green">ПОДРОБНЕЕ</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!--  -->
+      </main>
+      @@include('_footer.html',{})
+    </div>
+    @@include('_popup.html',{})
+    <!--  -->
+    @@include('_js.html',{})
+  </body>
+</html>

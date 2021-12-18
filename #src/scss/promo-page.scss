@@ -1,0 +1,80 @@
+.promo-page {
+  // .promo-page__main
+  &__main {
+  }
+}
+.main-promo-page {
+  // .main-promo-page__container
+  &__container {
+  }
+  // .main-promo-page__image
+  &__image {
+    position: relative;
+    max-height: 400px;
+    margin-bottom: 40px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__label {
+    position: absolute;
+    background-color: $colorBlue;
+    color: #fff;
+    padding: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    @include adaptiv-value('top', 30, 10, 1);
+    @include adaptiv-value('left', 30, 10, 1);
+  }
+  // .main-promo-page__descr
+  &__descr {
+    display: flex;
+    gap: 10px;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+  // .main-promo-page__info1
+  &__info1 {
+    flex: 0 0 50%;
+  }
+  // .main-promo-page__date
+  &__date {
+    font-size: 12px;
+    line-height: 140%;
+    color: #000000;
+    opacity: 0.9;
+    margin-bottom: 10px;
+  }
+  // .main-promo-page__title
+  &__title {
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 700;
+    @media (max-width: 768px) {
+      margin-bottom: 15px;
+    }
+  }
+  // .main-promo-page__text
+  &__text {
+    margin-bottom: 15px;
+  }
+  // .main-promo-page__info2
+  &__info2 {
+  }
+  // .main-promo-page__count
+  &__count {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 110%;
+    text-transform: uppercase;
+    color: $colorRed;
+    margin-bottom: 40px;
+  }
+  // .main-promo-page__button
+  &__button {
+    margin-bottom: 15px;
+  }
+}
