@@ -2,8 +2,12 @@
   // .promo-page__main
   &__main {
   }
+  // .promo-page__list
+  &__list {
+  }
 }
 .main-promo-page {
+  margin-bottom: 50px;
   // .main-promo-page__container
   &__container {
   }
@@ -11,7 +15,7 @@
   &__image {
     position: relative;
     max-height: 400px;
-    margin-bottom: 40px;
+    @include adaptiv-value('margin-bottom', 40, 15, 1);
     img {
       width: 100%;
       height: 100%;
@@ -76,5 +80,106 @@
   // .main-promo-page__button
   &__button {
     margin-bottom: 15px;
+  }
+}
+
+.list-promo-page {
+  // .list-promo-page__container
+  &__container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  // .list-promo-page__item
+  &__item {
+    flex: 1 0 500px;
+    @media (max-width: 500px) {
+      flex: 1 0 300px;
+    }
+  }
+}
+
+.item-list-promo {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  display: flex;
+  margin-bottom: 10px;
+  min-height: 300px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+  // .item-list-promo__image
+  &__image {
+    max-height: 320px;
+    position: relative;
+    overflow: hidden;
+    a {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    img {
+      transition: all 1s ease 0s;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+  &__label {
+    position: absolute;
+    @include adaptiv-value('top', 20, 10, 1);
+    @include adaptiv-value('left', 20, 10, 1);
+    background-color: $colorBlue;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 5px;
+  }
+  // .item-list-promo__descr
+  &__descr {
+    flex: 1 1 50%;
+    border: 1px solid #000;
+
+    padding: 40px 30px 40px 50px;
+    @include adaptiv-value('padding', 40, 15, 1);
+    display: flex;
+    flex-direction: column;
+  }
+  // .item-list-promo__date
+  &__date {
+    font-size: 12px;
+    line-height: 140%;
+    color: #000000;
+    opacity: 0.9;
+    margin-bottom: 5px;
+  }
+  // .item-list-promo__title
+  &__title {
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    @include adaptiv-value('margin-bottom', 15, 10, 1);
+  }
+  // .item-list-promo__text
+  &__text {
+    margin-bottom: 15px;
+    span {
+      font-weight: 700;
+    }
+  }
+  // .item-list-promo__count
+  &__count {
+    flex-grow: 1;
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: $colorRed;
+    margin-bottom: 15px;
+  }
+  // .item-list-promo__button
+  &__button {
   }
 }
