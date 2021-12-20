@@ -265,3 +265,21 @@ if (document.querySelector('.thumb-main-single')) {
     },
   })
 }
+
+const promoSingleSlider = new Swiper('.promo-single-slider', {
+  loop: true,
+  navigation: {
+    nextEl: '.promo-single-slider__next',
+    prevEl: '.promo-single-slider__prev',
+  },
+  scrollbar: {
+    el: '.swiper-scrollbar',
+  },
+  slidesPerView: 1,
+  breakpoints: {
+    992: {
+      slidesPerView: 2,
+      spaceBetween: 5,
+    },
+  },
+})

@@ -1,0 +1,230 @@
+.promo-single-page {
+  // .promo-single-page__main
+  &__main {
+  }
+}
+.main-promo-single-page {
+  // .main-promo-single-page__container
+  &__container {
+  }
+  // .main-promo-single-page__image
+  &__image {
+    width: 100%;
+    @include adaptiv-value('margin-bottom', 40, 20, 1);
+    height: 400px;
+    @media (max-width: 768px) {
+      height: 300px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  // .main-promo-single-page__descr
+  &__descr {
+  }
+  // .main-promo-single-page__top
+  &__top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  // .main-promo-single-page__first
+  &__first {
+    flex: 0 0 50%;
+    @media (max-width: 768px) {
+      flex: 1 1 100%;
+    }
+  }
+  // .main-promo-single-page__date
+  &__date {
+    font-size: 12px;
+    line-height: 140%;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #000000;
+    opacity: 0.9;
+    margin-bottom: 10px;
+  }
+  // .main-promo-single-page__title
+  &__title {
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+  }
+  // .main-promo-single-page__second
+  &__second {
+  }
+  // .main-promo-single-page__count
+  &__count {
+    font-size: 20px;
+    font-weight: 700;
+    color: $colorRed;
+    @media (max-width: 768px) {
+      margin-bottom: 10px;
+    }
+  }
+  // .main-promo-single-page__text
+  &__text {
+    p {
+      padding-bottom: 20px;
+    }
+  }
+  // .main-promo-single-page__bottom
+  &__bottom {
+    margin-bottom: 40px;
+    a {
+      height: 55px;
+      max-width: 320px;
+      @media (max-width: 500px) {
+        max-width: 100%;
+      }
+    }
+  }
+}
+
+//<SLIDER>====================================================================================================
+.any-promo-single-page__list {
+  height: 100%;
+}
+.promo-single-slider__wrapper {
+  height: 100%;
+}
+.promo-single-slider__item {
+  min-height: 320px;
+
+  height: 100%;
+}
+
+.promo-single-page {
+  // .promo-single-page__any
+  &__any {
+  }
+}
+.any-promo-single-page {
+  position: relative;
+  // .any-promo-single-page__
+  &__container {
+    position: relative;
+  }
+  // .any-promo-single-page__title
+  &__title {
+    font-weight: 700;
+    margin-bottom: 40px;
+    font-size: 30px;
+  }
+  &__wrapper {
+    // position: relative;
+  }
+  // .any-promo-single-page__list
+  &__list {
+  }
+}
+
+.promo-single-slider {
+  margin-bottom: 40px;
+  // .promo-single-slider__wrapper
+  &__wrapper {
+  }
+  // .promo-single-slider__item
+  &__item {
+  }
+  // .promo-single-slider__prev
+  &__prev {
+    opacity: 0.5;
+    // transform: translateX(-30px);
+    transition: all 0.3s ease 0s;
+    right: 100%;
+    left: 0;
+    transform: translateY(0);
+    &:hover {
+      opacity: 1;
+    }
+  }
+  // .promo-single-slider__next
+  &__next {
+    opacity: 0.5;
+    // transform: translateX(30px);
+    transition: all 0.3s ease 0s;
+    transform: translateY(0);
+    right: 0;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+.swiper {
+}
+.swiper-wrapper {
+}
+.any-promo-single-item {
+}
+.swiper-slide {
+  display: flex;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  // .swiper-slide__image
+  &__image {
+    flex: 0 0 50%;
+    overflow: hidden;
+    img {
+      max-height: 320px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: all 2s ease 0s;
+      &:hover {
+        transform: scale(1.05);
+      }
+      @media (max-width: 768px) {
+        max-height: 300px;
+      }
+    }
+  }
+  // .swiper-slide__descr
+  &__descr {
+    flex: 0 0 50%;
+    border: 1px solid #000;
+    @include adaptiv-value('padding', 40, 10, 1);
+  }
+  // .swiper-slide__date
+  &__date {
+    font-size: 12px;
+    line-height: 140%;
+    font-feature-settings: 'pnum' on, 'lnum' on;
+    color: #000000;
+    opacity: 0.9;
+    margin-bottom: 5px;
+  }
+  // .swiper-slide__title
+  &__title {
+    font-size: 20px;
+    line-height: 110%;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    @include adaptiv-value('margin-bottom', 15, 10, 1);
+  }
+  // .swiper-slide__text
+  &__text {
+    @include adaptiv-value('margin-bottom', 15, 10, 1);
+    font-size: 13px;
+  }
+  // .swiper-slide__count
+  &__count {
+    margin-bottom: 20px;
+    color: $colorRed;
+    font-weight: 700;
+    font-size: 13px;
+  }
+  // .swiper-slide__button
+  &__button {
+    a {
+      width: 150px;
+      min-width: 150px;
+      font-size: 13px;
+    }
+  }
+}

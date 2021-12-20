@@ -697,3 +697,34 @@ body.ie {
     animation: rotate-scale 1s forwards;
   }
 }
+
+.view-more {
+  text-align: center;
+  @include adaptiv-value('margin-bottom', 100, 60, 1);
+
+  a {
+    color: #000000;
+    opacity: 0.9;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding-right: 20px;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+
+      right: -5px;
+      background-repeat: no-repeat;
+      background-image: url(../img/icons/arrow-red.svg);
+      background-size: contain;
+      width: 20px;
+      height: 15px;
+    }
+  }
+}
+
+.fw700 {
+  font-weight: 700;
+}

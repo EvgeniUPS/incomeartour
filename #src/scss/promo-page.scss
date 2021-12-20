@@ -84,8 +84,10 @@
 }
 
 .list-promo-page {
+
   // .list-promo-page__container
   &__container {
+    margin-bottom: 50px;
     display: flex;
     gap: 10px;
     flex-wrap: wrap;
