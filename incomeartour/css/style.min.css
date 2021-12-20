@@ -9965,6 +9965,65 @@ button.swiper-pagination-bullet {
   display: block;
   color: inherit;
 }
+.article-single-news {
+  margin-bottom: 100px;
+}
+@media (max-width: 1230px) {
+  .article-single-news {
+    margin-bottom: calc(
+        60px + 40 *
+          ((100vw - 320px) / 910)
+      );
+  }
+}
+.article-single-news__image {
+  margin-bottom: 40px;
+}
+@media (max-width: 1230px) {
+  .article-single-news__image {
+    margin-bottom: calc(
+        20px + 20 *
+          ((100vw - 320px) / 910)
+      );
+  }
+}
+.article-single-news__image img {
+  max-height: 400px;
+  width: 100%;
+  object-fit: cover;
+}
+.article-single-news__date {
+  font-size: 12px;
+  line-height: 140%;
+  color: #000000;
+  opacity: 0.9;
+  margin-bottom: 10px;
+}
+.article-single-news__tags {
+  display: flex;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+.article-single-news__tags a {
+  font-weight: bold;
+  font-size: 11px;
+  line-height: 100%;
+  padding: 5px;
+  display: block;
+  border: 1px solid #000;
+  color: inherit;
+}
+.article-single-news__title {
+  margin-bottom: 80px;
+}
+@media (max-width: 1230px) {
+  .article-single-news__title {
+    margin-bottom: calc(
+        20px + 60 *
+          ((100vw - 320px) / 910)
+      );
+  }
+}
 .main-promo-page {
   margin-bottom: 50px;
 }
@@ -10279,10 +10338,18 @@ button.swiper-pagination-bullet {
   font-size: 30px;
 }
 .promo-single-slider {
-  margin-bottom: 40px;
+  margin-bottom: 100px;
+}
+@media (max-width: 1230px) {
+  .promo-single-slider {
+    margin-bottom: calc(
+        60px + 40 *
+          ((100vw - 320px) / 910)
+      );
+  }
 }
 .promo-single-slider__prev {
-  opacity: 0.5;
+  opacity: 0.8;
   transition: all 0.3s ease 0s;
   right: 100%;
   left: 0;
@@ -10292,7 +10359,7 @@ button.swiper-pagination-bullet {
   opacity: 1;
 }
 .promo-single-slider__next {
-  opacity: 0.5;
+  opacity: 0.8;
   transition: all 0.3s ease 0s;
   transform: translateY(0);
   right: 0;
@@ -10391,7 +10458,15 @@ button.swiper-pagination-bullet {
 .footer {
   min-height: 465px;
   background: #000;
-  padding: 80px 0;
+  padding-top: 80px;
+}
+@media (max-width: 1230px) {
+  .footer {
+    padding-top: calc(
+        20px + 60 *
+          ((100vw - 320px) / 910)
+      );
+  }
 }
 .footer a {
   font-size: 15px;
