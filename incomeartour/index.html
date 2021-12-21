@@ -1,1665 +1,1 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-  <title>Главная</title>
-  <meta charset="UTF-8" />
-
-  <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
-  <meta name="format-detection" content="telephone=no" />
-  <link rel="stylesheet" href="css/style.min.css" />
-  <link rel="shortcut icon" href="favicon.ico" />
-  <link rel="stylesheet" href="https://npmcdn.com/flatpickr@4.6.9/dist/themes/dark.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
-  <!-- TODO: перенести на локал -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""
-  />
-  <script
-    src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""
-  ></script>
-  <!-- <meta name="robots" content="noindex, nofollow"> -->
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
-
-  <body>
-    <div class="wrapper">
-      
-      <!--  -->
-      <div class="preloader">
-  <div class="loading">
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-  </div>
-</div>
-<!-- <input class="header-color-picker" type="color" name="" id="" /> -->
-<header class="header">
-  <!-- TOP-HEADER -->
-  <div class="header__top top-header">
-    <div class="top-header__container _container">
-      <div class="top-header__left" data-da=".menu-burger-footer, 768 , 0">
-        <span><a href="mailto:dev.evgeniups@gmail.com">dev.evgeniups@gmail.com</a></span>
-        <span><a href="tel:+00000000000">+00 (000) 00-00-00</a></span>
-      </div>
-      <div class="top-header__center">
-        <div class="top-header__currency">
-          <span class="top-header__usd"><a href="./exchange-archive.html"> USD 26.70</a></span>
-          |
-          <span class="top-header__eur"><a href="./exchange-archive.html"> EUR 31.60</a></span>
-        </div>
-        <div class="top-header__date">
-          <a href="./calendar-page.html"><i class="_icon-calendar"></i> <span>09-CЕН-2021</span></a>
-        </div>
-      </div>
-      <div class="top-header__right" data-da=".menu-burger-footer, 768 , 1">
-        <div class="top-header__lang lang-top">
-          <div class="lang-top__active">
-            <a href="/" class="lang-switcher-btn disabled">РУССКИЙ</a>
-          </div>
-          <div class="lang-top__list">
-            <div class="lang-top__item">
-              <a href="/?lang=ua" data-language="ua" class="">Українська</a>
-            </div>
-            <div class="lang-top__item">
-              <a href="/?lang=en" data-language="en" class="">English</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- TOP-HEADER -->
-
-  <!-- MAIN-HEADER -->
-  <div class="header__main main-header">
-    <div class="main-header__container _container">
-      <!--  -->
-      <div class="main-header__logo">
-        <a href="./index.html" class="header__logo">
-          <img src="img/logo.svg" alt="" />
-        </a>
-      </div>
-      <!--  -->
-      <div class="main-header__menu">
-        <div class="header__menu menu">
-          <nav class="menu__body" data-da=".menu-burger-main, 768 , 0">
-            <ul class="menu__list">
-              <li class="menu__item has-submenu">
-                <a href="#" class="menu__link disabled">Туры</a>
-                <ul class="submenu-list">
-                  <li><a href="./calendar-page.html">Календарь</a></li>
-                  <li><a href="#">Типы туров</a></li>
-                </ul>
-              </li>
-              <li class="menu__item">
-                <a href="./filter-page.html" class="menu__link">Поиск туров</a>
-              </li>
-              <li class="menu__item">
-                <a href="#country" class="menu__link _popup-link 1">Страны</a>
-              </li>
-              <li class="menu__item has-submenu">
-                <a href="#" class="menu__link disabled">Услуги</a>
-                <ul class="submenu-list">
-                  <li><a href="#">Авиатуры</a></li>
-                  <li><a href="#">Автобусные туры</a></li>
-                  <li><a href="#">Круизы</a></li>
-                  <li><a href="#">Корпоративный туризм</a></li>
-                  <li><a href="#">Авиабилеты</a></li>
-                  <li><a href="#">ПЦР тестирование</a></li>
-                </ul>
-              </li>
-              <li class="menu__item">
-                <a href="./hotels-page.html" class="menu__link">Отели</a>
-              </li>
-              <li class="menu__item has-submenu">
-                <a href="#" class="menu__link disabled">Агентствам</a>
-                <ul class="submenu-list">
-                  <li><a href="#">Сотрудничество</a></li>
-                  <li><a href="#">Бонусная программа</a></li>
-                  <li><a href="#">Рекламные туры</a></li>
-                  <li><a href="#">Семинары и презентации</a></li>
-                  <li><a href="#">Оплата</a></li>
-                  <li><a href="#">Регистрации</a></li>
-                </ul>
-              </li>
-              <li class="menu__item has-submenu">
-                <a href="#" class="menu__link accordion disabled">Туристам</a>
-                <ul class="submenu-list panel">
-                  <li><a href="#">Договор</a></li>
-                  <li><a href="#">Подарочный сертификат</a></li>
-                  <li><a href="#">Оплата</a></li>
-                  <li><a href="#">Регистрация</a></li>
-                  <li><a href="#">Проверка статуса заявки</a></li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      <div class="main-header__user">
-        <a href="#login" class="_popup-link"><span></span> вход</a>
-      </div>
-      <!--  -->
-      <div class="main-header__burger">
-        <button type="button" class="menu__icon icon-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <div class="menu-burger-body">
-          <div class="menu-burger-main">
-            <ul class="main-burger-list">
-              <li><a href="./promo-page.html">Акции</a></li>
-              <li><a href="#">Услуги</a></li>
-              <li><a href="#">Где купить</a></li>
-              <li><a href="./news-page.html">Новости</a></li>
-              <li><a href="#">Контакты</a></li>
-              <li class="has-submenu">
-                <a class="menu-info-link menu__link disabled" href="#">Информация</a>
-                <ul class="menu-info-body submenu-list panel">
-                  <li><a href="./reviews-page.html">Отзывы</a></li>
-                  <li><a href="#">Вакансии</a></li>
-                  <li><a href="#">Использование ваучера</a></li>
-                  <li><a href="#">Безвизовые страны</a></li>
-                  <li><a href="#">Аудиокомплекты</a></li>
-                  <li><a href="#">Страхование</a></li>
-                  <li><a href="#">Правила проведения тура</a></li>
-                  <li><a href="#">Бронирование экскурсий</a></li>
-                  <li><a href="#">Бронирование тура</a></li>
-                  <li><a href="#">О #Безвизе</a></li>
-                  <li><a href="#">Автобусы компании</a></li>
-                  <li>
-                    <a href="#">Серии вебинаров от Мастера экскурсионных туров</a>
-                  </li>
-                  <li>
-                    <a href="#">Перелік укладених агентських договорів</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <div class="menu-burger-footer"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- MAIN-HEADER -->
-</header>
-
-      <main class="page">
-        <section class="home-slider">
-  <div class="home-slider__container">
-    <div class="swiper main-slider">
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide" data-swiper-autoplay="20000">
-          <img src="./img/image9.jpg" alt="" />
-        </div>
-        <div class="swiper-slide" data-swiper-autoplay="10000">
-          <img src="./img/slide03.jpg" alt="" />
-        </div>
-        <div class="swiper-slide" data-swiper-autoplay="10000">
-          <img src="./img/slider.jpg" alt="" />
-        </div>
-      </div>
-      <!-- If we need pagination -->
-      <div class="swiper-pagination"></div>
-
-      <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev main-slider-btn-prev">
-        <i class="_icon-arrow-left"></i>
-      </div>
-      <div class="swiper-button-next main-slider-btn-next">
-        <i class="_icon-arrow-right"></i>
-      </div>
-
-      <!-- If we need scrollbar -->
-      <div class="swiper-scrollbar"></div>
-      <div class="home-slider__socials">
-        <a href="#"><i class="_icon-facebook"></i></a>
-        <a href="#"><i class="_icon-instagram"></i></a>
-        <a href="#"><i class="_icon-youtube"></i></a>
-        <a href="#"><i class="_icon-tiktok"></i></a>
-        <a href="#"><i class="_icon-telegram-round"></i></a>
-      </div>
-      <div class="home-slider__contacts">
-        <a href="#"><i class="_icon-email"></i></a>
-        <a href="#"><i class="_icon-telegram"></i></a>
-      </div>
-    </div>
-
-    <div class="home-slider__bottom">
-      <a href="#.">
-        <div class="slider-bottom-item">
-          <div class="slider-bottom-item__img">
-            <img src="./img/icons/guard.svg" alt="Надежность" />
-          </div>
-          <div class="slider-bottom-item__text">Надежность</div>
-        </div>
-      </a>
-      <a href="#.">
-        <div class="slider-bottom-item">
-          <div class="slider-bottom-item__img">
-            <img src="./img/icons/page.svg" alt="Профессионализм" />
-          </div>
-          <div class="slider-bottom-item__text">Профессионализм</div>
-        </div>
-      </a>
-      <a href="#.">
-        <div class="slider-bottom-item">
-          <div class="slider-bottom-item__img">
-            <img src="./img/icons/diamond.svg" alt="Забота" />
-          </div>
-          <div class="slider-bottom-item__text">Забота</div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-        <!--  -->
-
-        <section class="search-block">
-  <div class="search-block__container _container">
-    <form action="#" class="search-form">
-      <div class="search-form__search">
-        <input
-          autocomplete="off"
-          type="text"
-          name="name"
-          data-value="Название тура"
-          class="input"
-        />
-      </div>
-      <div class="search-form__direction">
-        <select class="search-direction" id="searchDirection" name="direction">
-          <option value="">Направление</option>
-          <option value="1">Австралия</option>
-          <option value="2">Андорра</option>
-          <option value="4">Намибия</option>
-          <option value="5">Великобритания</option>
-          <option value="6">Намибия</option>
-          <option value="7">Намибия</option>
-          <option value="8">Намибия</option>
-          <option value="9">Намибия</option>
-          <option value="10">Намибия</option>
-          <option value="11">Намибия</option>
-          <option value="12">Намибия</option>
-          <option value="13">Шри-Ланка</option>
-        </select>
-      </div>
-      <div class="search-form__date">
-        <input
-          autocomplete="off"
-          type="text"
-          name="date"
-          data-error="Ошибка"
-          data-value="Дата"
-          class="input _date"
-        />
-      </div>
-      <div class="search-form__transport">
-        <select class="search-transport" id="searchTransport" name="transport">
-          <option value="">Транспорт</option>
-          <option value="3">Все туры</option>
-          <option value="2">Авиа тур</option>
-          <option value="3">Автобусный тур</option>
-        </select>
-      </div>
-      <div class="search-form__button">
-        <button type="submit" class="btn1 btn__blue">Поиск</button>
-      </div>
-    </form>
-  </div>
-</section>
-
-        <!--  -->
-
-        <section class="tour-list-block">
-  <div class="tour-list-block__container _container">
-    <div class="tour-list-block__top top-tour-list">
-      <div class="top-tour-list__item">
-        <a href="#">
-          <img src="./img/image01.jpg" alt="" />
-        </a>
-      </div>
-      <div class="top-tour-list__item">
-        <a href="#">
-          <img src="./img/image02.jpg" alt="" />
-        </a>
-      </div>
-    </div>
-
-    <div class="main-page-filter">
-      <div class="main-page-filter__list">
-        <a href="#" class="disabled">Новинки</a>
-        <a href="#" class="disabled">Фирменные туры</a>
-        <a href="#" class="disabled">Гарантированные туры</a>
-      </div>
-      <button id="changeViewButton" class="icon-grid-handler"></button>
-    </div>
-
-    <div class="tour-list-block__main list-tour">
-      <div class="news-block__title section-title">
-        <span>Путешествуй с нами</span>
-      </div>
-      <!-- <div class="list-tour__filter"></div> -->
-
-      <div class="list-tour__list tour-list tour-list_list">
-        <!-- *** -->
-        <!-- *** -->
-        <!-- *** -->
-        <div class="tour-list__item item-tour item-tour_list">
-          <h2 class="tour-list__title"><a href="#">ПОД НЕБОМ ПАРИЖА</a></h2>
-          <div class="tour-list__image">
-            <a href="./single-page.html">
-              <img src="./img/paris.jpg" alt="Париж" />
-            </a>
-          </div>
-          <div class="tour-list__flags tour-flags">
-            <div class="tour-flags__countries">
-              <div class="tour-flags__flag">
-                <a href="#">
-                  <img src="./img/flags/4x3/de.svg" alt="Германия" />
-                </a>
-              </div>
-              <div class="tour-flags__flag">
-                <a href="#">
-                  <img src="./img/flags/4x3/fr.svg" alt="Нидерланды" />
-                </a>
-              </div>
-              <div class="tour-flags__flag">
-                <a href="#">
-                  <img src="./img/flags/4x3/ar.svg" alt="Франция" />
-                </a>
-              </div>
-            </div>
-            <div class="tour-flags__cities">Дрезден – Люксембург – Париж (4 дня)</div>
-          </div>
-          <div class="tour-list__icons tour-icons">
-            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Авиатур">
-              <img src="./img/icons/air2.png" alt="Авиатур" />
-            </a>
-
-            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Отдых в горах">
-              <img src="./img/icons/palm2.png" alt="" />
-            </a>
-
-            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Автобусный тур">
-              <img src="./img/icons/bus2.png" alt="" />
-            </a>
-          </div>
-          <div class="tour-list__info tour-info">
-            <div class="tour-info__item">
-              <div class="tour-info__duration">Длительность</div>
-              <div class="tour-info__duration_value">8 дней</div>
-            </div>
-            <div class="tour-info__item">
-              <div class="tour-info__group">Группа</div>
-              <div class="tour-info__group_value">От 12 человек</div>
-            </div>
-          </div>
-          <div class="tour-list__price tour-price">
-            <div class="tour-price-price">
-              <div class="tour-price__main">
-                от
-                <span>22 494 UAH</span>
-              </div>
-              <div class="tour-price__currency">690 EUR / 720 USD</div>
-            </div>
-
-            <div class="tour-price__description">
-              <span> Минимальная цена за человека 15</span>
-              <span> Минимальная цена за человекас авиа</span>
-              <span> Минимальная цена за человека без авиа </span>
-            </div>
-          </div>
-          <div class="tour-list__buttons tour-buttons">
-            <div class="tour-buttons__reserve">
-              <a class="btn btn__green _popup-link" href="#reserv">забронировать</a>
-            </div>
-            <div class="tour-buttons__details">
-              <a class="btn btn__white" href="./single-page.html">подробнее</a>
-            </div>
-          </div>
-          <div class="tour-list__labels tour-labels">
-            <div class="tour-labels__item color-red">NEW</div>
-            <div class="tour-labels__item">ФРАНЦИЯ</div>
-            <div class="tour-labels__item">2021</div>
-          </div>
-
-          <div class="tour-list__reviews tour-reviews">
-            <div class="tour-reviews__rev"><span class="tour-reviews__value">104 </span> отзыва</div>
-            <div class="tour-reviews__stars">
-              <span class="tour-reviews__value">4,9</span>
-            </div>
-          </div>
-          <div class="tour-list__date tour-date">
-            <div class="tour-date__title">Даты тура:</div>
-            <div class="tour-date__body">
-              <div class="tour-date__value">01.01.2021—10.01.2021</div>
-              <div class="tour-date__value">10.01.2021—20.01.2021</div>
-              <div class="tour-date__value">20.01.2021—30.01.2021</div>
-            </div>
-            <div class="tour-date__viewall">
-              <a href="#" class="disabled">Cмотреть все даты</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- *** -->
-        <!-- *** -->
-        <!-- *** -->
-
-        <div class="tour-list__item item-tour item-tour_list">
-          <h2 class="tour-list__title"><a href="#">ПОД НЕБОМ ПАРИЖА</a></h2>
-          <div class="tour-list__image">
-            <a href="./single-page.html">
-              <img src="./img/paris.jpg" alt="Париж" />
-            </a>
-          </div>
-          <div class="tour-list__flags tour-flags">
-            <div class="tour-flags__countries">
-              <div class="tour-flags__flag">
-                <a href="#">
-                  <img src="./img/flags/4x3/de.svg" alt="Германия" />
-                </a>
-              </div>
-              <div class="tour-flags__flag">
-                <a href="#">
-                  <img src="./img/flags/4x3/fr.svg" alt="Нидерланды" />
-                </a>
-              </div>
-              <div class="tour-flags__flag">
-                <a href="#">
-                  <img src="./img/flags/4x3/ar.svg" alt="Франция" />
-                </a>
-              </div>
-            </div>
-            <div class="tour-flags__cities">Дрезден – Люксембург – Париж (4 дня)</div>
-          </div>
-          <div class="tour-list__icons tour-icons">
-            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Авиатур">
-              <img src="./img/icons/air2.png" alt="Авиатур" />
-            </a>
-
-            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Отдых в горах">
-              <img src="./img/icons/palm2.png" alt="" />
-            </a>
-
-            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Автобусный тур">
-              <img src="./img/icons/bus2.png" alt="" />
-            </a>
-          </div>
-          <div class="tour-list__info tour-info">
-            <div class="tour-info__item">
-              <div class="tour-info__duration">Длительность</div>
-              <div class="tour-info__duration_value">8 дней</div>
-            </div>
-            <div class="tour-info__item">
-              <div class="tour-info__group">Группа</div>
-              <div class="tour-info__group_value">От 12 человек</div>
-            </div>
-          </div>
-          <div class="tour-list__price tour-price">
-            <div class="tour-price-price">
-              <div class="tour-price__main">
-                от
-                <span>22 494 UAH</span>
-              </div>
-              <div class="tour-price__currency">690 EUR / 720 USD</div>
-            </div>
-
-            <div class="tour-price__description">
-              <span> Минимальная цена за человека 15</span>
-              <span> Минимальная цена за человекас авиа</span>
-              <span> Минимальная цена за человека без авиа </span>
-            </div>
-          </div>
-          <div class="tour-list__buttons tour-buttons">
-            <div class="tour-buttons__reserve">
-              <a class="btn btn__green _popup-link" href="#reserv">забронировать</a>
-            </div>
-            <div class="tour-buttons__details">
-              <a class="btn btn__white" href="./single-page.html">подробнее</a>
-            </div>
-          </div>
-          <div class="tour-list__labels tour-labels">
-            <div class="tour-labels__item color-red">NEW</div>
-            <div class="tour-labels__item">ФРАНЦИЯ</div>
-            <div class="tour-labels__item">2021</div>
-          </div>
-
-          <div class="tour-list__reviews tour-reviews">
-            <div class="tour-reviews__rev"><span class="tour-reviews__value">104 </span> отзыва</div>
-            <div class="tour-reviews__stars">
-              <span class="tour-reviews__value">4,9</span>
-            </div>
-          </div>
-          <div class="tour-list__date tour-date">
-            <div class="tour-date__title">Даты тура:</div>
-            <div class="tour-date__body">
-              <div class="tour-date__value">01.01.2021—10.01.2021</div>
-              <div class="tour-date__value">10.01.2021—20.01.2021</div>
-              <div class="tour-date__value">20.01.2021—30.01.2021</div>
-            </div>
-            <div class="tour-date__viewall">
-              <a href="#" class="disabled">Cмотреть все даты</a>
-            </div>
-          </div>
-        </div>
-        <div class="tour-list__item item-tour item-tour_list">
-          <h2 class="tour-list__title"><a href="#">ПОД НЕБОМ ПАРИЖА</a></h2>
-          <div class="tour-list__image">
-            <a href="./single-page.html">
-              <img src="./img/paris.jpg" alt="Париж" />
-            </a>
-          </div>
-          <div class="tour-list__flags tour-flags">
-            <div class="tour-flags__countries">
-              <div class="tour-flags__flag">
-                <a href="#">
-                  <img src="./img/flags/4x3/de.svg" alt="Германия" />
-                </a>
-              </div>
-              <div class="tour-flags__flag">
-                <a href="#">
-                  <img src="./img/flags/4x3/fr.svg" alt="Нидерланды" />
-                </a>
-              </div>
-              <div class="tour-flags__flag">
-                <a href="#">
-                  <img src="./img/flags/4x3/ar.svg" alt="Франция" />
-                </a>
-              </div>
-            </div>
-            <div class="tour-flags__cities">Дрезден – Люксембург – Париж (4 дня)</div>
-          </div>
-          <div class="tour-list__icons tour-icons">
-            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Авиатур">
-              <img src="./img/icons/air2.png" alt="Авиатур" />
-            </a>
-
-            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Отдых в горах">
-              <img src="./img/icons/palm2.png" alt="" />
-            </a>
-
-            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Автобусный тур">
-              <img src="./img/icons/bus2.png" alt="" />
-            </a>
-          </div>
-          <div class="tour-list__info tour-info">
-            <div class="tour-info__item">
-              <div class="tour-info__duration">Длительность</div>
-              <div class="tour-info__duration_value">8 дней</div>
-            </div>
-            <div class="tour-info__item">
-              <div class="tour-info__group">Группа</div>
-              <div class="tour-info__group_value">От 12 человек</div>
-            </div>
-          </div>
-          <div class="tour-list__price tour-price">
-            <div class="tour-price-price">
-              <div class="tour-price__main">
-                от
-                <span>22 494 UAH</span>
-              </div>
-              <div class="tour-price__currency">690 EUR / 720 USD</div>
-            </div>
-
-            <div class="tour-price__description">
-              <span> Минимальная цена за человека 15</span>
-              <span> Минимальная цена за человекас авиа</span>
-              <span> Минимальная цена за человека без авиа </span>
-            </div>
-          </div>
-          <div class="tour-list__buttons tour-buttons">
-            <div class="tour-buttons__reserve">
-              <a class="btn btn__green _popup-link" href="#reserv">забронировать</a>
-            </div>
-            <div class="tour-buttons__details">
-              <a class="btn btn__white" href="./single-page.html">подробнее</a>
-            </div>
-          </div>
-          <div class="tour-list__labels tour-labels">
-            <div class="tour-labels__item color-red">NEW</div>
-            <div class="tour-labels__item">ФРАНЦИЯ</div>
-            <div class="tour-labels__item">2021</div>
-          </div>
-
-          <div class="tour-list__reviews tour-reviews">
-            <div class="tour-reviews__rev"><span class="tour-reviews__value">104 </span> отзыва</div>
-            <div class="tour-reviews__stars">
-              <span class="tour-reviews__value">4,9</span>
-            </div>
-          </div>
-          <div class="tour-list__date tour-date">
-            <div class="tour-date__title">Даты тура:</div>
-            <div class="tour-date__body">
-              <div class="tour-date__value">01.01.2021—10.01.2021</div>
-              <div class="tour-date__value">10.01.2021—20.01.2021</div>
-              <div class="tour-date__value">20.01.2021—30.01.2021</div>
-            </div>
-            <div class="tour-date__viewall">
-              <a href="#" class="disabled">Cмотреть все даты</a>
-            </div>
-          </div>
-        </div>
-        <div class="tour-list__item item-tour item-tour_list">
-          <h2 class="tour-list__title"><a href="#">ПОД НЕБОМ ПАРИЖА</a></h2>
-          <div class="tour-list__image">
-            <a href="./single-page.html">
-              <img src="./img/paris.jpg" alt="Париж" />
-            </a>
-          </div>
-          <div class="tour-list__flags tour-flags">
-            <div class="tour-flags__countries">
-              <div class="tour-flags__flag">
-                <a href="#">
-                  <img src="./img/flags/4x3/de.svg" alt="Германия" />
-                </a>
-              </div>
-              <div class="tour-flags__flag">
-                <a href="#">
-                  <img src="./img/flags/4x3/fr.svg" alt="Нидерланды" />
-                </a>
-              </div>
-              <div class="tour-flags__flag">
-                <a href="#">
-                  <img src="./img/flags/4x3/ar.svg" alt="Франция" />
-                </a>
-              </div>
-            </div>
-            <div class="tour-flags__cities">Дрезден – Люксембург – Париж (4 дня)</div>
-          </div>
-          <div class="tour-list__icons tour-icons">
-            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Авиатур">
-              <img src="./img/icons/air2.png" alt="Авиатур" />
-            </a>
-
-            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Отдых в горах">
-              <img src="./img/icons/palm2.png" alt="" />
-            </a>
-
-            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Автобусный тур">
-              <img src="./img/icons/bus2.png" alt="" />
-            </a>
-          </div>
-          <div class="tour-list__info tour-info">
-            <div class="tour-info__item">
-              <div class="tour-info__duration">Длительность</div>
-              <div class="tour-info__duration_value">8 дней</div>
-            </div>
-            <div class="tour-info__item">
-              <div class="tour-info__group">Группа</div>
-              <div class="tour-info__group_value">От 12 человек</div>
-            </div>
-          </div>
-          <div class="tour-list__price tour-price">
-            <div class="tour-price-price">
-              <div class="tour-price__main">
-                от
-                <span>22 494 UAH</span>
-              </div>
-              <div class="tour-price__currency">690 EUR / 720 USD</div>
-            </div>
-
-            <div class="tour-price__description">
-              <span> Минимальная цена за человека 15</span>
-              <span> Минимальная цена за человекас авиа</span>
-              <span> Минимальная цена за человека без авиа </span>
-            </div>
-          </div>
-          <div class="tour-list__buttons tour-buttons">
-            <div class="tour-buttons__reserve">
-              <a class="btn btn__green _popup-link" href="#reserv">забронировать</a>
-            </div>
-            <div class="tour-buttons__details">
-              <a class="btn btn__white" href="./single-page.html">подробнее</a>
-            </div>
-          </div>
-          <div class="tour-list__labels tour-labels">
-            <div class="tour-labels__item color-red">NEW</div>
-            <div class="tour-labels__item">ФРАНЦИЯ</div>
-            <div class="tour-labels__item">2021</div>
-          </div>
-
-          <div class="tour-list__reviews tour-reviews">
-            <div class="tour-reviews__rev"><span class="tour-reviews__value">104 </span> отзыва</div>
-            <div class="tour-reviews__stars">
-              <span class="tour-reviews__value">4,9</span>
-            </div>
-          </div>
-          <div class="tour-list__date tour-date">
-            <div class="tour-date__title">Даты тура:</div>
-            <div class="tour-date__body">
-              <div class="tour-date__value">01.01.2021—10.01.2021</div>
-              <div class="tour-date__value">10.01.2021—20.01.2021</div>
-              <div class="tour-date__value">20.01.2021—30.01.2021</div>
-            </div>
-            <div class="tour-date__viewall">
-              <a href="#" class="disabled">Cмотреть все даты</a>
-            </div>
-          </div>
-        </div>
-        <div class="tour-list__item item-tour item-tour_list">
-          <h2 class="tour-list__title"><a href="#">ПОД НЕБОМ ПАРИЖА</a></h2>
-          <div class="tour-list__image">
-            <a href="./single-page.html">
-              <img src="./img/paris.jpg" alt="Париж" />
-            </a>
-          </div>
-          <div class="tour-list__flags tour-flags">
-            <div class="tour-flags__countries">
-              <div class="tour-flags__flag">
-                <a href="#">
-                  <img src="./img/flags/4x3/de.svg" alt="Германия" />
-                </a>
-              </div>
-              <div class="tour-flags__flag">
-                <a href="#">
-                  <img src="./img/flags/4x3/fr.svg" alt="Нидерланды" />
-                </a>
-              </div>
-              <div class="tour-flags__flag">
-                <a href="#">
-                  <img src="./img/flags/4x3/ar.svg" alt="Франция" />
-                </a>
-              </div>
-            </div>
-            <div class="tour-flags__cities">Дрезден – Люксембург – Париж (4 дня)</div>
-          </div>
-          <div class="tour-list__icons tour-icons">
-            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Авиатур">
-              <img src="./img/icons/air2.png" alt="Авиатур" />
-            </a>
-
-            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Отдых в горах">
-              <img src="./img/icons/palm2.png" alt="" />
-            </a>
-
-            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Автобусный тур">
-              <img src="./img/icons/bus2.png" alt="" />
-            </a>
-          </div>
-          <div class="tour-list__info tour-info">
-            <div class="tour-info__item">
-              <div class="tour-info__duration">Длительность</div>
-              <div class="tour-info__duration_value">8 дней</div>
-            </div>
-            <div class="tour-info__item">
-              <div class="tour-info__group">Группа</div>
-              <div class="tour-info__group_value">От 12 человек</div>
-            </div>
-          </div>
-          <div class="tour-list__price tour-price">
-            <div class="tour-price-price">
-              <div class="tour-price__main">
-                от
-                <span>22 494 UAH</span>
-              </div>
-              <div class="tour-price__currency">690 EUR / 720 USD</div>
-            </div>
-
-            <div class="tour-price__description">
-              <span> Минимальная цена за человека 15</span>
-              <span> Минимальная цена за человекас авиа</span>
-              <span> Минимальная цена за человека без авиа </span>
-            </div>
-          </div>
-          <div class="tour-list__buttons tour-buttons">
-            <div class="tour-buttons__reserve">
-              <a class="btn btn__green _popup-link" href="#reserv">забронировать</a>
-            </div>
-            <div class="tour-buttons__details">
-              <a class="btn btn__white" href="./single-page.html">подробнее</a>
-            </div>
-          </div>
-          <div class="tour-list__labels tour-labels">
-            <div class="tour-labels__item color-red">NEW</div>
-            <div class="tour-labels__item">ФРАНЦИЯ</div>
-            <div class="tour-labels__item">2021</div>
-          </div>
-
-          <div class="tour-list__reviews tour-reviews">
-            <div class="tour-reviews__rev"><span class="tour-reviews__value">104 </span> отзыва</div>
-            <div class="tour-reviews__stars">
-              <span class="tour-reviews__value">4,9</span>
-            </div>
-          </div>
-          <div class="tour-list__date tour-date">
-            <div class="tour-date__title">Даты тура:</div>
-            <div class="tour-date__body">
-              <div class="tour-date__value">01.01.2021—10.01.2021</div>
-              <div class="tour-date__value">10.01.2021—20.01.2021</div>
-              <div class="tour-date__value">20.01.2021—30.01.2021</div>
-            </div>
-            <div class="tour-date__viewall">
-              <a href="#" class="disabled">Cмотреть все даты</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="tour-list-block__bottom">
-      <a href="#" class="spiner">смотреть больше</a>
-      <!-- <button class="spiner">смотреть больше</button> -->
-    </div>
-  </div>
-</section>
-
-        <!--  -->
-
-        <section class="hot-offer-block">
-  <div class="hot-offer-block__container _container">
-    <div class="section-title">Горящие туры</div>
-    <div class="hot-offer-block__header">
-      <img src="./img/hot-list/hot-list-header.jpg" alt="" />
-    </div>
-    <div class="hot-offer-block__list hot-list">
-      <div class="hot-list__row">
-        <div class="hot-list__item item-hot">
-          <img src="./img/hot-list/hot-list-item01.jpg" alt="hot offer" />
-          <div class="item-hot__labels">
-            <div class="item-hot__label color-red">ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ</div>
-            <div class="item-hot__label">ЭСТОНИЯ1</div>
-            <div class="item-hot__label">2021</div>
-          </div>
-          <div class="item-hot__details">
-            <h2 class="item-hot__name">название предложения</h2>
-            <div class="item-hot__link">
-              <a href="#" class="disabled"> Подробнее <i class="_icon-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="hot-list__item item-hot">
-          <img src="./img/hot-list/hot-list-item02.jpg" alt="hot offer" />
-
-          <div class="item-hot__labels">
-            <div class="item-hot__label color-red">ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ</div>
-            <div class="item-hot__label">ЭСТОНИЯ2</div>
-            <div class="item-hot__label">2021</div>
-          </div>
-          <div class="item-hot__details">
-            <h2 class="item-hot__name">название предложения</h2>
-            <div class="item-hot__link">
-              <a href="#" class="disabled"> Подробнее <i class="_icon-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="hot-list__row">
-        <div class="hot-list__item item-hot">
-          <img src="./img/hot-list/hot-list-item03.jpg" alt="hot offer" />
-
-          <div class="item-hot__labels">
-            <div class="item-hot__label color-red">ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ</div>
-            <div class="item-hot__label">ЭСТОНИЯ3</div>
-            <div class="item-hot__label">2021</div>
-          </div>
-          <div class="item-hot__details">
-            <h2 class="item-hot__name">название предложения</h2>
-            <div class="item-hot__link">
-              <a href="#" class="disabled"> Подробнее <i class="_icon-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-        <div class="hot-list__item item-hot">
-          <img src="./img/hot-list/hot-list-item04.jpg" alt="hot offer" />
-
-          <div class="item-hot__labels">
-            <div class="item-hot__label color-red">ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ</div>
-            <div class="item-hot__label">ЭСТОНИЯ4</div>
-            <div class="item-hot__label">2021</div>
-          </div>
-          <div class="item-hot__details">
-            <h2 class="item-hot__name">название предложения</h2>
-            <div class="item-hot__link">
-              <a href="#" class="disabled"> Подробнее <i class="_icon-arrow-right"></i></a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-        <!--  -->
-
-        <section class="photo-slider-block">
-  <div class="photo-slider-block__container _container">
-    <div class="news-block__title section-title">Рекомендуем посетить</div>
-    <!-- Slider main container -->
-    <div class="swiper photo-slider">
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper photo-slider-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide photo-slider-slide">
-          <img src="./img/hot-list/hot-list-header.jpg" alt="lorem" />
-        </div>
-        <div class="swiper-slide photo-slider-slide">
-          <img src="./img/hot-list/hot-list-header.jpg" alt="lorem" />
-        </div>
-        <div class="swiper-slide photo-slider-slide">
-          <img src="./img/hot-list/hot-list-header.jpg" alt="lorem" />
-        </div>
-      </div>
-
-      <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev1 photo-slider-button-prev _slider-button_prev"></div>
-      <div class="swiper-button-next1 photo-slider-button-next _slider-button_next"></div>
-    </div>
-  </div>
-</section>
-
-        <!--  -->
-
-        <section class="news-block">
-  <div class="news-block__container _container">
-    <div class="news-block__title section-title">НОВОСТИ</div>
-    <div class="news-block__list">
-      <!--  -->
-      <div class="news-block__item item-news">
-        <div class="item-news__image">
-          <img src="./img/news/news01.jpg" alt="" />
-        </div>
-        <div class="item-news__bottom">
-          <a href="#" class="disabled"><span>Заголовок новости в две строки</span></a>
-        </div>
-      </div>
-      <!--  -->
-      <div class="news-block__item item-news">
-        <div class="item-news__image">
-          <img src="./img/news/news02.jpg" alt="" />
-        </div>
-        <div class="item-news__bottom">
-          <a href="#" class="disabled"><span>Заголовок новости в две строки</span></a>
-        </div>
-      </div>
-      <div class="news-block__item item-news">
-        <div class="item-news__image">
-          <img src="./img/news/news03.jpg" alt="" />
-        </div>
-        <div class="item-news__bottom">
-          <a href="#" class="disabled"><span>Заголовок новости в две строки</span></a>
-        </div>
-      </div>
-    </div>
-    <div class="news-block__bottom">
-      <button class="spiner">Смотреть больше</button>
-      <!-- <a href="#">Смотреть больше<i class="_icon-arrow2-right"></i></a> -->
-    </div>
-  </div>
-</section>
-
-        <!--  -->
-
-        <section class="reviews-slider-block">
-  <div class="reviews-slider-block__container">
-    <div class="section-title">Отзывы</div>
-    <!-- Slider main container -->
-    <div class="swiper reviews-slider">
-      <!-- Additional required wrapper -->
-      <div class="swiper-wrapper reviews-slider-wrapper">
-        <!-- Slides -->
-        <div class="swiper-slide reviews-slider-slide slide-review">
-          <div class="slide-review__img">
-            <img src="./img/reviews-slide01.jpg" alt="" />
-          </div>
-          <div class="slide-review__raiting">4,9 <i class="_icon-star"></i></div>
-          <div class="slide-review__name">ИМЯ туриста</div>
-          <div class="slide-review__text">
-            Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах,
-            интересные и познавательные рассказы. До новых встреч!
-          </div>
-        </div>
-        <!-- Slides -->
-        <div class="swiper-slide reviews-slider-slide slide-review">
-          <div class="slide-review__img">
-            <img src="./img/reviews-slide01.jpg" alt="" />
-          </div>
-          <div class="slide-review__raiting">4,9 <i class="_icon-star"></i></div>
-          <div class="slide-review__name">ИМЯ туриста</div>
-          <div class="slide-review__text">
-            Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах,
-            интересные и познавательные рассказы. До новых встреч!
-          </div>
-        </div>
-        <div class="swiper-slide reviews-slider-slide slide-review">
-          <div class="slide-review__img">
-            <img src="./img/reviews-slide01.jpg" alt="" />
-          </div>
-          <div class="slide-review__raiting">4,9 <i class="_icon-star"></i></div>
-          <div class="slide-review__name">ИМЯ туриста</div>
-          <div class="slide-review__text">
-            Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах,
-            интересные и познавательные рассказы. До новых встреч!
-          </div>
-        </div>
-        <div class="swiper-slide reviews-slider-slide slide-review">
-          <div class="slide-review__img">
-            <img src="./img/reviews-slide01.jpg" alt="" />
-          </div>
-          <div class="slide-review__raiting">4,9 <i class="_icon-star"></i></div>
-          <div class="slide-review__name">ИМЯ туриста</div>
-          <div class="slide-review__text">
-            Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах,
-            интересные и познавательные рассказы. До новых встреч!
-          </div>
-        </div>
-        <div class="swiper-slide reviews-slider-slide slide-review">
-          <div class="slide-review__img">
-            <img src="./img/reviews-slide01.jpg" alt="" />
-          </div>
-          <div class="slide-review__raiting">4,9 <i class="_icon-star"></i></div>
-          <div class="slide-review__name">ИМЯ туриста</div>
-          <div class="slide-review__text">
-            Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах,
-            интересные и познавательные рассказы. До новых встреч!
-          </div>
-        </div>
-        <div class="swiper-slide reviews-slider-slide slide-review">
-          <div class="slide-review__img">
-            <img src="./img/reviews-slide01.jpg" alt="" />
-          </div>
-          <div class="slide-review__raiting">4,9 <i class="_icon-star"></i></div>
-          <div class="slide-review__name">ИМЯ туриста</div>
-          <div class="slide-review__text">
-            Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах,
-            интересные и познавательные рассказы. До новых встреч!
-          </div>
-        </div>
-        <div class="swiper-slide reviews-slider-slide slide-review">
-          <div class="slide-review__img">
-            <img src="./img/reviews-slide01.jpg" alt="" />
-          </div>
-          <div class="slide-review__raiting">4,9 <i class="_icon-star"></i></div>
-          <div class="slide-review__name">ИМЯ туриста</div>
-          <div class="slide-review__text">
-            Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах,
-            интересные и познавательные рассказы. До новых встреч!
-          </div>
-        </div>
-        <div class="swiper-slide reviews-slider-slide slide-review">
-          <div class="slide-review__img">
-            <img src="./img/reviews-slide01.jpg" alt="" />
-          </div>
-          <div class="slide-review__raiting">4,9 <i class="_icon-star"></i></div>
-          <div class="slide-review__name">ИМЯ туриста</div>
-          <div class="slide-review__text">
-            Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах,
-            интересные и познавательные рассказы. До новых встреч!
-          </div>
-        </div>
-      </div>
-
-      <!-- If we need navigation buttons -->
-      <div class="swiper-button-prev1 reviews-slider-button-prev _slider-button_prev"></div>
-      <div class="swiper-button-next1 reviews-slider-button-next _slider-button_next"></div>
-    </div>
-    <div class="reviews-slider-block__bottom"></div>
-  </div>
-</section>
-
-        <!--  -->
-        <section class="tours-types-block" id="tours-types-block">
-  <div class="tours-types-block__container _container">
-    <div class="section-title">Виды отдыха</div>
-    <div class="tours-types-block__list list-types">
-      <!--  -->
-      <div class="list-types__item item-types">
-        <a href="./filter-page.html">
-          <img src="./img/icons/airplane.svg" alt="Авиатуры" />
-          <span>Авиатуры</span>
-        </a>
-      </div>
-      <!--  -->
-      <div class="list-types__item item-types">
-        <a href="./filter-page.html">
-          <img src="./img/icons/bus.svg" alt="Автобусные" />
-          <span>Автобусные</span>
-        </a>
-      </div>
-
-      <div class="list-types__item item-types">
-        <a href="./filter-page.html">
-          <img src="./img/icons/new.svg" alt="" />
-          <span>Новинки</span>
-        </a>
-      </div>
-
-      <div class="list-types__item item-types">
-        <a href="./filter-page.html">
-          <img src="./img/icons/user-flag.svg" alt="" />
-          <span>Экскурсионные туры</span>
-        </a>
-      </div>
-
-      <div class="list-types__item item-types">
-        <a href="./filter-page.html">
-          <img src="./img/icons/palm.svg" alt="" />
-          <span>Пляжный отдых</span>
-        </a>
-      </div>
-      <div class="list-types__item item-types">
-        <a href="./filter-page.html">
-          <img src="./img/icons/user-king.svg" alt="" />
-          <span>Индивидуальный</span>
-        </a>
-      </div>
-
-      <div class="list-types__item item-types">
-        <a href="./filter-page.html">
-          <img src="./img/icons/user-group.svg" alt="" />
-          <span>Групповой</span>
-        </a>
-      </div>
-
-      <div class="list-types__item item-types">
-        <a href="./filter-page.html">
-          <img src="./img/icons/hearth-two.svg" alt="" />
-          <span>Туры на день св. Валентина</span>
-        </a>
-      </div>
-
-      <!--  -->
-      <!--  -->
-      <div class="list-types__item item-types">
-        <a href="./filter-page.html">
-          <img src="./img/icons/airplane.svg" alt="" />
-          <span>Авиатуры</span>
-        </a>
-      </div>
-      <!--  -->
-      <div class="list-types__item item-types">
-        <a href="./filter-page.html">
-          <img src="./img/icons/bus.svg" alt="" />
-          <span>Автобусные</span>
-        </a>
-      </div>
-
-      <div class="list-types__item item-types">
-        <a href="./filter-page.html">
-          <img src="./img/icons/new.svg" alt="" />
-          <span>Новинки</span>
-        </a>
-      </div>
-
-      <div class="list-types__item item-types">
-        <a href="./filter-page.html">
-          <img src="./img/icons/user-flag.svg" alt="" />
-          <span>Экскурсионные туры</span>
-        </a>
-      </div>
-
-      <div class="list-types__item item-types">
-        <a href="./filter-page.html">
-          <img src="./img/icons/palm.svg" alt="" />
-          <span>Пляжный отдых</span>
-        </a>
-      </div>
-      <div class="list-types__item item-types">
-        <a href="./filter-page.html">
-          <img src="./img/icons/user-king.svg" alt="" />
-          <span>Индивидуальный</span>
-        </a>
-      </div>
-
-      <div class="list-types__item item-types">
-        <a href="./filter-page.html">
-          <img src="./img/icons/user-group.svg" alt="" />
-          <span>Групповой</span>
-        </a>
-      </div>
-
-      <div class="list-types__item item-types">
-        <a href="./filter-page.html">
-          <img src="./img/icons/hearth-two.svg" alt="" />
-          <span>Туры на день св. Валентина</span>
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-        <!--  -->
-        <section class="seo-block">
-  <div class="seo-block__container _container">
-    <h1 class="seo-block__header">
-      Туристический оператор «Инкомартур 93» — экскурсионные туры по самой выгодной цене в Украине
-    </h1>
-    <div class="seo-block__body body-seo">
-      <img src="./img/05.jpg" class="body-seo__img alignleft" alt="" />
-      <p>
-        Жизнь современного человека сложно представить без путешествий. В масштабном плане это головокружительные турне
-        в другие страны на отдаленные континенты, в более локальном это ежедневная дорога на работу и поездки к друзьям
-        и родственникам на выходные. Желание же отправиться в путешествие в полной мере поможет Вам воплотить в
-        реальность туристический оператор «Инкомартур 93». Мы предлагаем экскурсионные туры по самой выгодной цене в
-        Украине, а самое главное — безопасность и максимальный комфорт во время вояжа.
-      </p>
-
-      <p>
-        Важнейший приоритет в нашей работе — удовлетворенность клиента. Мы воплотим в жизнь Ваши самые дерзкие мечты,
-        поможем объехать мир при этом сохранив семейный бюджет. В нашей компетенции организация различных трансферов, в
-        том числе и автобусные туры за границу.
-      </p>
-
-      <h2>Почему украинцы путешествуют с нами?</h2>
-
-      <p>
-        Пандемия коронавирусной инфекции COVID-19 значительно реформировала человеческое мироустройство. Люди сперва не
-        понимали всего масштаба, но по прошествию времени адаптировались и приняли новые условия жизнедеятельности. Так,
-        со стабилизацией эпидемической ситуации, которая стала возможна благодаря вакцинации и карантинным ограничениям,
-        открылись границы государств, и теперь украинцы имеют возможность отправиться на отдых у моря.
-      </p>
-
-      <p>
-        Но подобрать тур самостоятельно — сложная задача, требующая расчета факторов риска, о которых туристы могут даже
-        и не знать. Ведь это не просто поиск тура онлайн, выбор гостиницы и мест для посещения, это минимизация
-        возможности проблем с транспортом, нехваткой документов и банальное грамотное распределение финансов. Поэтому
-        подбор тура рекомендуется доверить специалистам.
-      </p>
-
-      <p>
-        Компания «Инкомартур 93» уже больше двадцати лет организовывает поездки за границу на любой вкус и цвет. Наши
-        опытные специалисты взяли на себя обязанность дарить украинцам незабываемый досуг независимо от финансовых
-        вложений. Мы с большим удовольствием поможем найти тур в Турцию, Болгарию, Египет, Балканы, Кипр, а для опытных
-        туристов — экзотические туры из Киева в Азию, Африку или Океанию.
-      </p>
-
-      <h2>Отдых на море: куда поехать в теплое время года?</h2>
-
-      <p>
-        Несмотря на то, что территория Украины богата природными памятниками, в том числе большим количеством водных
-        угодий и различных ландшафтов, украинцы — заядлые путешественники, которые стремятся всегда познавать что-то
-        новое. Черное море — уникальный водоем, который омывает границы многих государств: Украину, Болгарию, Турцию,
-        Грузию, Абхазию, Румынию и Россию. Причерноморье манит отдыхающих своим умиротворением и уютом. Важно отметить,
-        что южное солнце прогревает не только тело, но и душу. Поэтому морская сиеста так ценилась во все времена и не
-        теряет своей актуальности сегодня.
-      </p>
-
-      <p>
-        Существует множество обворожительных мест, куда организовывает маршруты наша турфирма. Авиатур, путешествие на
-        автобусе или поезде — мы предоставим Вам необходимый транспорт для обеспечения максимального уровня комфорта.
-      </p>
-
-      <h2>Отдых в Турции: преимущества и недостатки</h2>
-
-      <p>
-        Блистательная Порта — традиционное место для развлечений жителей нашей страны. Сегодня сложно встретить
-        украинца, который никогда не бывал здесь. Несомненно всех влечет знаменитая система «все включено», рекреатив у
-        бассейна и купание в чистейшем море. Но путевки в Турцию — это еще и отличная возможность испытать настоящий
-        «культурный шок» от восточной сказки.
-      </p>
-
-      <p>
-        Хорошо известно, что османская империя долгие годы была лидером на мировой политической арене. Не стоит упускать
-        шанс стать гостем этой дружелюбной страны и погрузиться в атмосферу настоящего величия и богатства.
-      </p>
-
-      <p>
-        Первое, что приходит на ум — это посещение старого города, который разделяет государство на европейскую и
-        азиатские части. Специалисты «Инкомартур 93» рекомендуют купить экскурсионный тур в Стамбул, так как в авторскую
-        программу входит обязательное посещение следующих достопримечательностей:
-      </p>
-
-      <ul>
-        <li>
-          <p>
-            Айя-София — наверное каждый хоть раз в жизни слышал о неземной красоте данного собора. Ни один экскурсовод
-            не проведет Вас мимо этого представителя архитектуры времен Византии. Храм следует назвать символом
-            могущества империи, на строительство которого ушло более пяти лет и труд десятков тысяч людей. Даже самые
-            привередливые отдыхающие ахнут при виде мозаик и фресок, а также куполов огромных размеров.
-          </p>
-        </li>
-        <li>
-          <p>
-            Сераль или дворец Топкапи — главный дворец османов на протяжение четырех столетий. Построенный в пятнадцатом
-            веке для султана Мехмеда II, сегодня дворец является одним из крупнейших музеев мира, который ежегодно
-            посещают миллионы ценителей прекрасного.
-          </p>
-        </li>
-        <li>
-          <p>
-            Мечеть Султанахмет — святыня мусульман, которая восхищает своим убранством и поистине является прекрасным
-            образцом исламской и мировой архитектуры. Эклектика стилей завораживает гостей города и как бы демонстрирует
-            разом всю роскошь и монументальность времен, которые давно канули в лету.
-          </p>
-        </li>
-      </ul>
-
-      <p>
-        Несомненно, список мест для посещения в данной стране можно продолжать и дальше, но лучше один раз увидеть
-        своими глазами, чем читать о достопримечательностях десятки раз. Начните путешествовать с нами уже сегодня.
-      </p>
-
-      <h2>Куда поехать осенью и зимой?</h2>
-
-      <p>
-        Для тех, кому Черное море кажется чем-то обыденным, предлагаем посетить «море посреди земли». Средиземноморье
-        смело называют райским местом, в котором сосредоточено все то, что так необходимо человеку для комфортного
-        существования. Средиземное море омывает берег двадцати двух государств и именно здесь расположены самые
-        знаменитые мировые курорты.
-      </p>
-
-      <p>
-        Лето здесь заканчивается только поздней осенью — в середине октября, а в странах Балканского полуострова только
-        официально закрывается пляжный сезон 1 октября. С приходом осени туристическая жизнь не затихает, а вовсе
-        наоборот, путешественники знают, что это самое оптимальное время для запоминающегося отдыха. Поэтому если Вы все
-        еще не решили, куда поедете в осенний уик-энд, то мы советуем купить тур по Балканам.
-      </p>
-
-      <h2>Балканский полуостров — возможность продлить себе летние каникулы</h2>
-
-      <p>
-        Жизнь современного человека протекает в ускоренном темпе, где иногда сложно выкроить денек другой для разрядки.
-        Поэтому если Вы не успели наладиться летом, смело отправляйтесь на Балканы.
-      </p>
-
-      <p>
-        Купить тур в Черногорию — шанс получить загар еще в ноябре, а чистый морской воздух вдалеке от шума и суеты
-        наполнит Вас желанием покорять новые вершины по приезду домой.
-      </p>
-
-      <p>
-        Тут Вы испытаете единение с природой и по-настоящему насладитесь прогулками по достопримечательностям. Осенняя
-        погода создает уникальные условия для поездок в природные парки или знакомства с отдаленными от цивилизации
-        старинными монастырями и средневековыми замками.
-      </p>
-
-      <p>
-        Если Вы любитель пешеходных маршрутов по горам или хотите пополнить галерею фотографиями живописных каньонов и
-        рек, то в Черногории Вы воплотите эти желания в реальность. Любители культурных мероприятий особенно оценят
-        такую поездку из-за огромного количества музыкальных фестивалей, спортивных соревнований, выставок и театральных
-        премьер.
-      </p>
-
-      <p>
-        Туристический оператор «Инкомартур 93» предлагает своим клиентам только авторские маршруты по демократичной
-        цене. Путешествовать с нами — комфортно и безопасно, убедитесь в этом сами.
-      </p>
-    </div>
-  </div>
-</section>
-<p>
-  <!-- <iframe
-    src="https://center.cruises/widget/?uuid=3fb1053b-2110-41b9-94bb-03e5fecc7de0&amp;lang=ru"
-    style="width: 100%; height: 1100px; overflow: scroll; border: none"
-  ></iframe -->
-  <!-- new widget end -->
-</p>
-
-<!-- *************** -->
-
-        <!--  -->
-      </main>
-      <footer class="footer">
-  <div class="footer__container _container">
-    <div class="footer__logo" data-da=".menu-footer,768,0">
-      <a href="#">
-        <img src="./img/logo-footer.svg" alt="Logo" />
-      </a>
-    </div>
-
-    <div class="footer__menu menu-footer">
-      <div class="menu-footer__col">
-        <ul>
-          <li><a href="#">Отзывы</a></li>
-          <li><a href="#">Акции</a></li>
-          <li><a href="#">Где купить</a></li>
-          <li><a href="#">Новости </a></li>
-        </ul>
-      </div>
-
-      <div class="menu-footer__col">
-        <ul>
-          <li><a href="#">Контакты</a></li>
-          <li><a href="#">О компании</a></li>
-          <li><a href="#">Срахование</a></li>
-          <li><a href="#">Безвизовые страны</a></li>
-        </ul>
-      </div>
-      <div class="menu-footer__col">
-        <ul>
-          <li><a href="#">Ваучеры</a></li>
-          <li><a href="#">Аудиокомплекты</a></li>
-          <li><a href="#">Правила проведения тура</a></li>
-          <li><a href="#">Бронирование экскурсий</a></li>
-        </ul>
-      </div>
-      <div class="menu-footer__col">
-        <ul>
-          <li><a href="#">Правила бронирования тура</a></li>
-          <li><a href="#">О #БЕЗВИЗЕ</a></li>
-          <li><a href="#">Автобусы компании</a></li>
-          <li><a href="#">Вебинаров от мастера туров</a></li>
-        </ul>
-      </div>
-      <div class="menu-footer__col">
-        <ul>
-          <li><a href="#">Уставные документы</a></li>
-          <li><a href="#">О компании</a></li>
-          <li><a href="#">Срахование</a></li>
-          <li><a href="#">Перелік укладених договорів</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <button class="scroll-top"><i class="_icon-arrow2-up"></i></button>
-</footer>
-
-    </div>
-    <!-- MODAL RESERV -->
-<div class="popup popup_reserv">
-  <div class="popup__content">
-    <div class="popup__body">
-      <div class="popup__close"></div>
-      <div class="popup__header">Быстрая бронь</div>
-    </div>
-  </div>
-</div>
-<!-- MODAL RESERV -->
-
-<!-- MODAL LOGIN -->
-<div class="popup popup_login">
-  <div class="popup__content">
-    <div class="popup__body">
-      <div class="popup__close"></div>
-      <div class="popup__header">Авторизация</div>
-    </div>
-  </div>
-</div>
-<!-- MODAL LOGIN -->
-
-<!-- MODAL COUNTRY -->
-<div class="popup popup_country popup-country">
-  <div class="popup__content">
-    <div class="popup__body popup-country__body bbb">
-      <div class="popup__close"></div>
-      <!-- <div class="popup__header">Страны</div> -->
-
-      <div class="popup-country__wrapper">
-        <div class="popup-country__column">
-          <div class="popup-country__row">
-            <div class="popup-country__continent">Европа</div>
-            <ul class="popup-country__list">
-              <li>
-                <a href="./country-single-page.html"
-                  ><img src="./img/countries/europe/austria.svg" alt="" /> <span>Австрия</span></a
-                >
-              </li>
-              <li>
-                <a href="./country-single-page.html"
-                  ><img src="./img/countries/europe/andorra.svg" alt="" /> <span>Андорра</span></a
-                >
-              </li>
-
-              <li>
-                <a href="./country-single-page.html"
-                  ><img src="./img/countries/europe/belgium.svg" alt="" /> <span>Бельгия</span></a
-                >
-              </li>
-              <li>
-                <a href="./country-single-page.html"
-                  ><img src="./img/countries/europe/austria.svg" alt="" /> <span>Австрия</span></a
-                >
-              </li>
-              <li>
-                <a href="./country-single-page.html"
-                  ><img src="./img/countries/europe/andorra.svg" alt="" /> <span>Андорра</span></a
-                >
-              </li>
-              <li>
-                <a href="./country-single-page.html"
-                  ><img src="./img/countries/europe/bulgaria.svg" alt="" /> <span>Болгария</span></a
-                >
-              </li>
-              <li>
-                <a href="./country-single-page.html"
-                  ><img src="./img/countries/europe/belgium.svg" alt="" /> <span>Бельгия</span></a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="popup-country__column">
-          <div class="popup-country__row">
-            <div class="popup-country__continent">Азия</div>
-            <ul class="popup-country__list">
-              <li>
-                <a href="./country-single-page.html">
-                  <img src="./img/countries/europe/andorra.svg" alt="" />
-                  <span>Уругвай</span>
-                </a>
-              </li>
-              <li>
-                <a href="./country-single-page.html">
-                  <img src="./img/countries/europe/andorra.svg" alt="" />
-                  <span>Уругвай</span>
-                </a>
-              </li>
-              <li>
-                <a href="./country-single-page.html">
-                  <img src="./img/countries/europe/andorra.svg" alt="" />
-                  <span>Уругвай</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="popup-country__row">
-            <div class="popup-country__continent">Океания</div>
-            <ul class="popup-country__list">
-              <li>
-                <a href="./country-single-page.html">
-                  <img src="./img/countries/europe/andorra.svg" alt="" />
-                  <span>Уругвай1</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="popup-country__row">
-            <!-- <div class="popup-country__continent">Америка</div> -->
-            <ul class="popup-country__list">
-              <li>
-                <a href="./country-single-page.html">
-                  <img src="./img/countries/europe/andorra.svg" alt="" />
-                  <span>Уругвай2</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="popup-country__column">
-          <div class="popup-country__row">
-            <div class="popup-country__continent">Америка</div>
-            <ul class="popup-country__list">
-              <li>
-                <a href="./country-single-page.html">
-                  <img src="./img/countries/europe/andorra.svg" alt="" />
-                  <span>Уругвай</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="popup-country__row">
-            <div class="popup-country__continent">Африка</div>
-            <ul class="popup-country__list">
-              <li>
-                <a href="./country-single-page.html">
-                  <img src="./img/countries/europe/andorra.svg" alt="" />
-                  <span>Уругвай</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="popup-country__view-all">
-        <a href="./country-page.html"
-          >Все страны
-          <span>
-            <svg width="20" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M8.28247 9.83496L13.8579 5.66829L8.28247 1.50163"
-                stroke="#272727"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path d="M12.8358 5.66808L1.84839 5.66797" stroke="#272727" stroke-width="2" stroke-linecap="round" />
-            </svg>
-          </span>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- MODAL COUNTRY -->
-
-<!--  -->
-<div class="popup popup_popup">
-  <div class="popup__content">
-    <div class="popup__body">
-      <div class="popup__close"></div>
-    </div>
-  </div>
-</div>
-<div class="popup popup_massagename-message">
-  <div class="popup__content">
-    <div class="popup__body">
-      <div class="popup__close"></div>
-    </div>
-  </div>
-</div>
-<div class="popup popup_video">
-  <div class="popup__content">
-    <div class="popup__body">
-      <div class="popup__close popup__close_video"></div>
-      <div class="popup__video _video"></div>
-    </div>
-  </div>
-</div>
-
-    <!--  -->
-    <!-- Swiper -->
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
-<script src="https://unpkg.com/@popperjs/core@2"></script>
-<script src="https://unpkg.com/tippy.js@6"></script>
-<script src="js/vendors.min.js"></script>
-<script src="js/app.min.js"></script>
-
-  </body>
-</html>
+<!DOCTYPE html><html lang="ru">  <head>  <title>Главная</title>  <meta charset="UTF-8" />  <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />  <meta name="format-detection" content="telephone=no" />  <link rel="stylesheet" href="css/style.min.css?_v=20211221165800" />  <link rel="shortcut icon" href="favicon.ico" />  <link rel="stylesheet" href="https://npmcdn.com/flatpickr@4.6.9/dist/themes/dark.css?_v=20211221165800" />  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css?_v=20211221165800" />  <!-- TODO: перенести на локал -->  <link    rel="stylesheet"    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css?_v=20211221165800"    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="    crossorigin=""  />  <script    src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="    crossorigin=""  ></script>  <!-- <meta name="robots" content="noindex, nofollow"> -->  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->  <meta name="viewport" content="width=device-width, initial-scale=1.0" /></head>  <body>    <div class="wrapper">            <!--  -->      <div class="preloader">  <div class="loading">    <div class="dot"></div>    <div class="dot"></div>    <div class="dot"></div>    <div class="dot"></div>    <div class="dot"></div>  </div></div><!-- <input class="header-color-picker" type="color" name="" id="" /> --><header class="header">  <!-- TOP-HEADER -->  <div class="header__top top-header">    <div class="top-header__container _container">      <div class="top-header__left" data-da=".menu-burger-footer, 768 , 0">        <span><a href="mailto:dev.evgeniups@gmail.com">dev.evgeniups@gmail.com</a></span>        <span><a href="tel:+00000000000">+00 (000) 00-00-00</a></span>      </div>      <div class="top-header__center">        <div class="top-header__currency">          <span class="top-header__usd"><a href="./exchange-archive.html"> USD 26.70</a></span>          |          <span class="top-header__eur"><a href="./exchange-archive.html"> EUR 31.60</a></span>        </div>        <div class="top-header__date">          <a href="./calendar-page.html"><i class="_icon-calendar"></i> <span>09-CЕН-2021</span></a>        </div>      </div>      <div class="top-header__right" data-da=".menu-burger-footer, 768 , 1">        <div class="top-header__lang lang-top">          <div class="lang-top__active">            <a href="/" class="lang-switcher-btn disabled">РУССКИЙ</a>          </div>          <div class="lang-top__list">            <div class="lang-top__item">              <a href="/?lang=ua" data-language="ua" class="">Українська</a>            </div>            <div class="lang-top__item">              <a href="/?lang=en" data-language="en" class="">English</a>            </div>          </div>        </div>      </div>    </div>  </div>  <!-- TOP-HEADER -->  <!-- MAIN-HEADER -->  <div class="header__main main-header">    <div class="main-header__container _container">      <!--  -->      <div class="main-header__logo">        <a href="./index.html" class="header__logo">          <picture><source srcset="img/logo.svg" type="image/webp"><img src="img/logo.svg?_v=1640098680940" alt="" /></picture>        </a>      </div>      <!--  -->      <div class="main-header__menu">        <div class="header__menu menu">          <nav class="menu__body" data-da=".menu-burger-main, 768 , 0">            <ul class="menu__list">              <li class="menu__item has-submenu">                <a href="#" class="menu__link disabled">Туры</a>                <ul class="submenu-list">                  <li><a href="./calendar-page.html">Календарь</a></li>                  <li><a href="#">Типы туров</a></li>                </ul>              </li>              <li class="menu__item">                <a href="./filter-page.html" class="menu__link">Поиск туров</a>              </li>              <li class="menu__item">                <a href="#country" class="menu__link _popup-link 1">Страны</a>              </li>              <li class="menu__item has-submenu">                <a href="#" class="menu__link disabled">Услуги</a>                <ul class="submenu-list">                  <li><a href="#">Авиатуры</a></li>                  <li><a href="#">Автобусные туры</a></li>                  <li><a href="#">Круизы</a></li>                  <li><a href="#">Корпоративный туризм</a></li>                  <li><a href="#">Авиабилеты</a></li>                  <li><a href="#">ПЦР тестирование</a></li>                </ul>              </li>              <li class="menu__item">                <a href="./hotels-page.html" class="menu__link">Отели</a>              </li>              <li class="menu__item has-submenu">                <a href="#" class="menu__link disabled">Агентствам</a>                <ul class="submenu-list">                  <li><a href="#">Сотрудничество</a></li>                  <li><a href="#">Бонусная программа</a></li>                  <li><a href="#">Рекламные туры</a></li>                  <li><a href="#">Семинары и презентации</a></li>                  <li><a href="#">Оплата</a></li>                  <li><a href="#">Регистрации</a></li>                </ul>              </li>              <li class="menu__item has-submenu">                <a href="#" class="menu__link accordion disabled">Туристам</a>                <ul class="submenu-list panel">                  <li><a href="#">Договор</a></li>                  <li><a href="#">Подарочный сертификат</a></li>                  <li><a href="#">Оплата</a></li>                  <li><a href="#">Регистрация</a></li>                  <li><a href="#">Проверка статуса заявки</a></li>                </ul>              </li>            </ul>          </nav>        </div>      </div>      <div class="main-header__user">        <a href="#login" class="_popup-link"><span></span> вход</a>      </div>      <!--  -->      <div class="main-header__burger">        <button type="button" class="menu__icon icon-menu">          <span></span>          <span></span>          <span></span>        </button>        <div class="menu-burger-body">          <div class="menu-burger-main">            <ul class="main-burger-list">              <li><a href="./promo-page.html">Акции</a></li>              <li><a href="#">Услуги</a></li>              <li><a href="#">Где купить</a></li>              <li><a href="./news-page.html">Новости</a></li>              <li><a href="#">Контакты</a></li>              <li class="has-submenu">                <a class="menu-info-link menu__link disabled" href="#">Информация</a>                <ul class="menu-info-body submenu-list panel">                  <li><a href="./reviews-page.html">Отзывы</a></li>                  <li><a href="#">Вакансии</a></li>                  <li><a href="#">Использование ваучера</a></li>                  <li><a href="#">Безвизовые страны</a></li>                  <li><a href="#">Аудиокомплекты</a></li>                  <li><a href="#">Страхование</a></li>                  <li><a href="#">Правила проведения тура</a></li>                  <li><a href="#">Бронирование экскурсий</a></li>                  <li><a href="#">Бронирование тура</a></li>                  <li><a href="#">О #Безвизе</a></li>                  <li><a href="#">Автобусы компании</a></li>                  <li>                    <a href="#">Серии вебинаров от Мастера экскурсионных туров</a>                  </li>                  <li>                    <a href="#">Перелік укладених агентських договорів</a>                  </li>                </ul>              </li>            </ul>          </div>          <div class="menu-burger-footer"></div>        </div>      </div>    </div>  </div>  <!-- MAIN-HEADER --></header>      <main class="page">        <section class="home-slider">  <div class="home-slider__container">    <div class="swiper main-slider">      <!-- Additional required wrapper -->      <div class="swiper-wrapper">        <!-- Slides -->        <div class="swiper-slide" data-swiper-autoplay="20000">          <picture><source srcset="./img/image9.webp" type="image/webp"><img src="./img/image9.jpg?_v=1640098680940" alt="" /></picture>        </div>        <div class="swiper-slide" data-swiper-autoplay="10000">          <picture><source srcset="./img/slide03.webp" type="image/webp"><img src="./img/slide03.jpg?_v=1640098680940" alt="" /></picture>        </div>        <div class="swiper-slide" data-swiper-autoplay="10000">          <picture><source srcset="./img/slider.webp" type="image/webp"><img src="./img/slider.jpg?_v=1640098680940" alt="" /></picture>        </div>      </div>      <!-- If we need pagination -->      <div class="swiper-pagination"></div>      <!-- If we need navigation buttons -->      <div class="swiper-button-prev main-slider-btn-prev">        <i class="_icon-arrow-left"></i>      </div>      <div class="swiper-button-next main-slider-btn-next">        <i class="_icon-arrow-right"></i>      </div>      <!-- If we need scrollbar -->      <div class="swiper-scrollbar"></div>      <div class="home-slider__socials">        <a href="#"><i class="_icon-facebook"></i></a>        <a href="#"><i class="_icon-instagram"></i></a>        <a href="#"><i class="_icon-youtube"></i></a>        <a href="#"><i class="_icon-tiktok"></i></a>        <a href="#"><i class="_icon-telegram-round"></i></a>      </div>      <div class="home-slider__contacts">        <a href="#"><i class="_icon-email"></i></a>        <a href="#"><i class="_icon-telegram"></i></a>      </div>    </div>    <div class="home-slider__bottom">      <a href="#.">        <div class="slider-bottom-item">          <div class="slider-bottom-item__img">            <picture><source srcset="./img/icons/guard.svg" type="image/webp"><img src="./img/icons/guard.svg?_v=1640098680940" alt="Надежность" /></picture>          </div>          <div class="slider-bottom-item__text">Надежность</div>        </div>      </a>      <a href="#.">        <div class="slider-bottom-item">          <div class="slider-bottom-item__img">            <picture><source srcset="./img/icons/page.svg" type="image/webp"><img src="./img/icons/page.svg?_v=1640098680940" alt="Профессионализм" /></picture>          </div>          <div class="slider-bottom-item__text">Профессионализм</div>        </div>      </a>      <a href="#.">        <div class="slider-bottom-item">          <div class="slider-bottom-item__img">            <picture><source srcset="./img/icons/diamond.svg" type="image/webp"><img src="./img/icons/diamond.svg?_v=1640098680940" alt="Забота" /></picture>          </div>          <div class="slider-bottom-item__text">Забота</div>        </div>      </a>    </div>  </div></section>        <!--  -->        <section class="search-block">  <div class="search-block__container _container">    <form action="#" class="search-form">      <div class="search-form__search">        <input          autocomplete="off"          type="text"          name="name"          data-value="Название тура"          class="input"        />      </div>      <div class="search-form__direction">        <select class="search-direction" id="searchDirection" name="direction">          <option value="">Направление</option>          <option value="1">Австралия</option>          <option value="2">Андорра</option>          <option value="4">Намибия</option>          <option value="5">Великобритания</option>          <option value="6">Намибия</option>          <option value="7">Намибия</option>          <option value="8">Намибия</option>          <option value="9">Намибия</option>          <option value="10">Намибия</option>          <option value="11">Намибия</option>          <option value="12">Намибия</option>          <option value="13">Шри-Ланка</option>        </select>      </div>      <div class="search-form__date">        <input          autocomplete="off"          type="text"          name="date"          data-error="Ошибка"          data-value="Дата"          class="input _date"        />      </div>      <div class="search-form__transport">        <select class="search-transport" id="searchTransport" name="transport">          <option value="">Транспорт</option>          <option value="3">Все туры</option>          <option value="2">Авиа тур</option>          <option value="3">Автобусный тур</option>        </select>      </div>      <div class="search-form__button">        <button type="submit" class="btn1 btn__blue">Поиск</button>      </div>    </form>  </div></section>        <!--  -->        <section class="tour-list-block">  <div class="tour-list-block__container _container">    <div class="tour-list-block__top top-tour-list">      <div class="top-tour-list__item">        <a href="#">          <picture><source srcset="./img/image01.webp" type="image/webp"><img src="./img/image01.jpg?_v=1640098680940" alt="" /></picture>        </a>      </div>      <div class="top-tour-list__item">        <a href="#">          <picture><source srcset="./img/image02.webp" type="image/webp"><img src="./img/image02.jpg?_v=1640098680940" alt="" /></picture>        </a>      </div>    </div>    <div class="main-page-filter">      <div class="main-page-filter__list">        <a href="#" class="disabled">Новинки</a>        <a href="#" class="disabled">Фирменные туры</a>        <a href="#" class="disabled">Гарантированные туры</a>      </div>      <button id="changeViewButton" class="icon-grid-handler"></button>    </div>    <div class="tour-list-block__main list-tour">      <div class="news-block__title section-title">        <span>Путешествуй с нами</span>      </div>      <!-- <div class="list-tour__filter"></div> -->      <div class="list-tour__list tour-list tour-list_list">        <!-- *** -->        <!-- *** -->        <!-- *** -->        <div class="tour-list__item item-tour item-tour_list">          <h2 class="tour-list__title"><a href="#">ПОД НЕБОМ ПАРИЖА</a></h2>          <div class="tour-list__image">            <a href="./single-page.html">              <picture><source srcset="./img/paris.webp" type="image/webp"><img src="./img/paris.jpg?_v=1640098680940" alt="Париж" /></picture>            </a>          </div>          <div class="tour-list__flags tour-flags">            <div class="tour-flags__countries">              <div class="tour-flags__flag">                <a href="#">                  <picture><source srcset="./img/flags/4x3/de.svg" type="image/webp"><img src="./img/flags/4x3/de.svg?_v=1640098680940" alt="Германия" /></picture>                </a>              </div>              <div class="tour-flags__flag">                <a href="#">                  <picture><source srcset="./img/flags/4x3/fr.svg" type="image/webp"><img src="./img/flags/4x3/fr.svg?_v=1640098680940" alt="Нидерланды" /></picture>                </a>              </div>              <div class="tour-flags__flag">                <a href="#">                  <picture><source srcset="./img/flags/4x3/ar.svg" type="image/webp"><img src="./img/flags/4x3/ar.svg?_v=1640098680940" alt="Франция" /></picture>                </a>              </div>            </div>            <div class="tour-flags__cities">Дрезден – Люксембург – Париж (4 дня)</div>          </div>          <div class="tour-list__icons tour-icons">            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Авиатур">              <picture><source srcset="./img/icons/air2.webp" type="image/webp"><img src="./img/icons/air2.png?_v=1640098680940" alt="Авиатур" /></picture>            </a>            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Отдых в горах">              <picture><source srcset="./img/icons/palm2.webp" type="image/webp"><img src="./img/icons/palm2.png?_v=1640098680940" alt="" /></picture>            </a>            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Автобусный тур">              <picture><source srcset="./img/icons/bus2.webp" type="image/webp"><img src="./img/icons/bus2.png?_v=1640098680940" alt="" /></picture>            </a>          </div>          <div class="tour-list__info tour-info">            <div class="tour-info__item">              <div class="tour-info__duration">Длительность</div>              <div class="tour-info__duration_value">8 дней</div>            </div>            <div class="tour-info__item">              <div class="tour-info__group">Группа</div>              <div class="tour-info__group_value">От 12 человек</div>            </div>          </div>          <div class="tour-list__price tour-price">            <div class="tour-price-price">              <div class="tour-price__main">                от                <span>22 494 UAH</span>              </div>              <div class="tour-price__currency">690 EUR / 720 USD</div>            </div>            <div class="tour-price__description">              <span> Минимальная цена за человека 15</span>              <span> Минимальная цена за человекас авиа</span>              <span> Минимальная цена за человека без авиа </span>            </div>          </div>          <div class="tour-list__buttons tour-buttons">            <div class="tour-buttons__reserve">              <a class="btn btn__green _popup-link" href="#reserv">забронировать</a>            </div>            <div class="tour-buttons__details">              <a class="btn btn__white" href="./single-page.html">подробнее</a>            </div>          </div>          <div class="tour-list__labels tour-labels">            <div class="tour-labels__item color-red">NEW</div>            <div class="tour-labels__item">ФРАНЦИЯ</div>            <div class="tour-labels__item">2021</div>          </div>          <div class="tour-list__reviews tour-reviews">            <div class="tour-reviews__rev"><span class="tour-reviews__value">104 </span> отзыва</div>            <div class="tour-reviews__stars">              <span class="tour-reviews__value">4,9</span>            </div>          </div>          <div class="tour-list__date tour-date">            <div class="tour-date__title">Даты тура:</div>            <div class="tour-date__body">              <div class="tour-date__value">01.01.2021—10.01.2021</div>              <div class="tour-date__value">10.01.2021—20.01.2021</div>              <div class="tour-date__value">20.01.2021—30.01.2021</div>            </div>            <div class="tour-date__viewall">              <a href="#" class="disabled">Cмотреть все даты</a>            </div>          </div>        </div>        <!-- *** -->        <!-- *** -->        <!-- *** -->        <div class="tour-list__item item-tour item-tour_list">          <h2 class="tour-list__title"><a href="#">ПОД НЕБОМ ПАРИЖА</a></h2>          <div class="tour-list__image">            <a href="./single-page.html">              <picture><source srcset="./img/paris.webp" type="image/webp"><img src="./img/paris.jpg?_v=1640098680940" alt="Париж" /></picture>            </a>          </div>          <div class="tour-list__flags tour-flags">            <div class="tour-flags__countries">              <div class="tour-flags__flag">                <a href="#">                  <picture><source srcset="./img/flags/4x3/de.svg" type="image/webp"><img src="./img/flags/4x3/de.svg?_v=1640098680940" alt="Германия" /></picture>                </a>              </div>              <div class="tour-flags__flag">                <a href="#">                  <picture><source srcset="./img/flags/4x3/fr.svg" type="image/webp"><img src="./img/flags/4x3/fr.svg?_v=1640098680940" alt="Нидерланды" /></picture>                </a>              </div>              <div class="tour-flags__flag">                <a href="#">                  <picture><source srcset="./img/flags/4x3/ar.svg" type="image/webp"><img src="./img/flags/4x3/ar.svg?_v=1640098680940" alt="Франция" /></picture>                </a>              </div>            </div>            <div class="tour-flags__cities">Дрезден – Люксембург – Париж (4 дня)</div>          </div>          <div class="tour-list__icons tour-icons">            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Авиатур">              <picture><source srcset="./img/icons/air2.webp" type="image/webp"><img src="./img/icons/air2.png?_v=1640098680940" alt="Авиатур" /></picture>            </a>            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Отдых в горах">              <picture><source srcset="./img/icons/palm2.webp" type="image/webp"><img src="./img/icons/palm2.png?_v=1640098680940" alt="" /></picture>            </a>            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Автобусный тур">              <picture><source srcset="./img/icons/bus2.webp" type="image/webp"><img src="./img/icons/bus2.png?_v=1640098680940" alt="" /></picture>            </a>          </div>          <div class="tour-list__info tour-info">            <div class="tour-info__item">              <div class="tour-info__duration">Длительность</div>              <div class="tour-info__duration_value">8 дней</div>            </div>            <div class="tour-info__item">              <div class="tour-info__group">Группа</div>              <div class="tour-info__group_value">От 12 человек</div>            </div>          </div>          <div class="tour-list__price tour-price">            <div class="tour-price-price">              <div class="tour-price__main">                от                <span>22 494 UAH</span>              </div>              <div class="tour-price__currency">690 EUR / 720 USD</div>            </div>            <div class="tour-price__description">              <span> Минимальная цена за человека 15</span>              <span> Минимальная цена за человекас авиа</span>              <span> Минимальная цена за человека без авиа </span>            </div>          </div>          <div class="tour-list__buttons tour-buttons">            <div class="tour-buttons__reserve">              <a class="btn btn__green _popup-link" href="#reserv">забронировать</a>            </div>            <div class="tour-buttons__details">              <a class="btn btn__white" href="./single-page.html">подробнее</a>            </div>          </div>          <div class="tour-list__labels tour-labels">            <div class="tour-labels__item color-red">NEW</div>            <div class="tour-labels__item">ФРАНЦИЯ</div>            <div class="tour-labels__item">2021</div>          </div>          <div class="tour-list__reviews tour-reviews">            <div class="tour-reviews__rev"><span class="tour-reviews__value">104 </span> отзыва</div>            <div class="tour-reviews__stars">              <span class="tour-reviews__value">4,9</span>            </div>          </div>          <div class="tour-list__date tour-date">            <div class="tour-date__title">Даты тура:</div>            <div class="tour-date__body">              <div class="tour-date__value">01.01.2021—10.01.2021</div>              <div class="tour-date__value">10.01.2021—20.01.2021</div>              <div class="tour-date__value">20.01.2021—30.01.2021</div>            </div>            <div class="tour-date__viewall">              <a href="#" class="disabled">Cмотреть все даты</a>            </div>          </div>        </div>        <div class="tour-list__item item-tour item-tour_list">          <h2 class="tour-list__title"><a href="#">ПОД НЕБОМ ПАРИЖА</a></h2>          <div class="tour-list__image">            <a href="./single-page.html">              <picture><source srcset="./img/paris.webp" type="image/webp"><img src="./img/paris.jpg?_v=1640098680940" alt="Париж" /></picture>            </a>          </div>          <div class="tour-list__flags tour-flags">            <div class="tour-flags__countries">              <div class="tour-flags__flag">                <a href="#">                  <picture><source srcset="./img/flags/4x3/de.svg" type="image/webp"><img src="./img/flags/4x3/de.svg?_v=1640098680940" alt="Германия" /></picture>                </a>              </div>              <div class="tour-flags__flag">                <a href="#">                  <picture><source srcset="./img/flags/4x3/fr.svg" type="image/webp"><img src="./img/flags/4x3/fr.svg?_v=1640098680940" alt="Нидерланды" /></picture>                </a>              </div>              <div class="tour-flags__flag">                <a href="#">                  <picture><source srcset="./img/flags/4x3/ar.svg" type="image/webp"><img src="./img/flags/4x3/ar.svg?_v=1640098680940" alt="Франция" /></picture>                </a>              </div>            </div>            <div class="tour-flags__cities">Дрезден – Люксембург – Париж (4 дня)</div>          </div>          <div class="tour-list__icons tour-icons">            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Авиатур">              <picture><source srcset="./img/icons/air2.webp" type="image/webp"><img src="./img/icons/air2.png?_v=1640098680940" alt="Авиатур" /></picture>            </a>            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Отдых в горах">              <picture><source srcset="./img/icons/palm2.webp" type="image/webp"><img src="./img/icons/palm2.png?_v=1640098680940" alt="" /></picture>            </a>            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Автобусный тур">              <picture><source srcset="./img/icons/bus2.webp" type="image/webp"><img src="./img/icons/bus2.png?_v=1640098680940" alt="" /></picture>            </a>          </div>          <div class="tour-list__info tour-info">            <div class="tour-info__item">              <div class="tour-info__duration">Длительность</div>              <div class="tour-info__duration_value">8 дней</div>            </div>            <div class="tour-info__item">              <div class="tour-info__group">Группа</div>              <div class="tour-info__group_value">От 12 человек</div>            </div>          </div>          <div class="tour-list__price tour-price">            <div class="tour-price-price">              <div class="tour-price__main">                от                <span>22 494 UAH</span>              </div>              <div class="tour-price__currency">690 EUR / 720 USD</div>            </div>            <div class="tour-price__description">              <span> Минимальная цена за человека 15</span>              <span> Минимальная цена за человекас авиа</span>              <span> Минимальная цена за человека без авиа </span>            </div>          </div>          <div class="tour-list__buttons tour-buttons">            <div class="tour-buttons__reserve">              <a class="btn btn__green _popup-link" href="#reserv">забронировать</a>            </div>            <div class="tour-buttons__details">              <a class="btn btn__white" href="./single-page.html">подробнее</a>            </div>          </div>          <div class="tour-list__labels tour-labels">            <div class="tour-labels__item color-red">NEW</div>            <div class="tour-labels__item">ФРАНЦИЯ</div>            <div class="tour-labels__item">2021</div>          </div>          <div class="tour-list__reviews tour-reviews">            <div class="tour-reviews__rev"><span class="tour-reviews__value">104 </span> отзыва</div>            <div class="tour-reviews__stars">              <span class="tour-reviews__value">4,9</span>            </div>          </div>          <div class="tour-list__date tour-date">            <div class="tour-date__title">Даты тура:</div>            <div class="tour-date__body">              <div class="tour-date__value">01.01.2021—10.01.2021</div>              <div class="tour-date__value">10.01.2021—20.01.2021</div>              <div class="tour-date__value">20.01.2021—30.01.2021</div>            </div>            <div class="tour-date__viewall">              <a href="#" class="disabled">Cмотреть все даты</a>            </div>          </div>        </div>        <div class="tour-list__item item-tour item-tour_list">          <h2 class="tour-list__title"><a href="#">ПОД НЕБОМ ПАРИЖА</a></h2>          <div class="tour-list__image">            <a href="./single-page.html">              <picture><source srcset="./img/paris.webp" type="image/webp"><img src="./img/paris.jpg?_v=1640098680940" alt="Париж" /></picture>            </a>          </div>          <div class="tour-list__flags tour-flags">            <div class="tour-flags__countries">              <div class="tour-flags__flag">                <a href="#">                  <picture><source srcset="./img/flags/4x3/de.svg" type="image/webp"><img src="./img/flags/4x3/de.svg?_v=1640098680940" alt="Германия" /></picture>                </a>              </div>              <div class="tour-flags__flag">                <a href="#">                  <picture><source srcset="./img/flags/4x3/fr.svg" type="image/webp"><img src="./img/flags/4x3/fr.svg?_v=1640098680940" alt="Нидерланды" /></picture>                </a>              </div>              <div class="tour-flags__flag">                <a href="#">                  <picture><source srcset="./img/flags/4x3/ar.svg" type="image/webp"><img src="./img/flags/4x3/ar.svg?_v=1640098680940" alt="Франция" /></picture>                </a>              </div>            </div>            <div class="tour-flags__cities">Дрезден – Люксембург – Париж (4 дня)</div>          </div>          <div class="tour-list__icons tour-icons">            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Авиатур">              <picture><source srcset="./img/icons/air2.webp" type="image/webp"><img src="./img/icons/air2.png?_v=1640098680940" alt="Авиатур" /></picture>            </a>            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Отдых в горах">              <picture><source srcset="./img/icons/palm2.webp" type="image/webp"><img src="./img/icons/palm2.png?_v=1640098680940" alt="" /></picture>            </a>            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Автобусный тур">              <picture><source srcset="./img/icons/bus2.webp" type="image/webp"><img src="./img/icons/bus2.png?_v=1640098680940" alt="" /></picture>            </a>          </div>          <div class="tour-list__info tour-info">            <div class="tour-info__item">              <div class="tour-info__duration">Длительность</div>              <div class="tour-info__duration_value">8 дней</div>            </div>            <div class="tour-info__item">              <div class="tour-info__group">Группа</div>              <div class="tour-info__group_value">От 12 человек</div>            </div>          </div>          <div class="tour-list__price tour-price">            <div class="tour-price-price">              <div class="tour-price__main">                от                <span>22 494 UAH</span>              </div>              <div class="tour-price__currency">690 EUR / 720 USD</div>            </div>            <div class="tour-price__description">              <span> Минимальная цена за человека 15</span>              <span> Минимальная цена за человекас авиа</span>              <span> Минимальная цена за человека без авиа </span>            </div>          </div>          <div class="tour-list__buttons tour-buttons">            <div class="tour-buttons__reserve">              <a class="btn btn__green _popup-link" href="#reserv">забронировать</a>            </div>            <div class="tour-buttons__details">              <a class="btn btn__white" href="./single-page.html">подробнее</a>            </div>          </div>          <div class="tour-list__labels tour-labels">            <div class="tour-labels__item color-red">NEW</div>            <div class="tour-labels__item">ФРАНЦИЯ</div>            <div class="tour-labels__item">2021</div>          </div>          <div class="tour-list__reviews tour-reviews">            <div class="tour-reviews__rev"><span class="tour-reviews__value">104 </span> отзыва</div>            <div class="tour-reviews__stars">              <span class="tour-reviews__value">4,9</span>            </div>          </div>          <div class="tour-list__date tour-date">            <div class="tour-date__title">Даты тура:</div>            <div class="tour-date__body">              <div class="tour-date__value">01.01.2021—10.01.2021</div>              <div class="tour-date__value">10.01.2021—20.01.2021</div>              <div class="tour-date__value">20.01.2021—30.01.2021</div>            </div>            <div class="tour-date__viewall">              <a href="#" class="disabled">Cмотреть все даты</a>            </div>          </div>        </div>        <div class="tour-list__item item-tour item-tour_list">          <h2 class="tour-list__title"><a href="#">ПОД НЕБОМ ПАРИЖА</a></h2>          <div class="tour-list__image">            <a href="./single-page.html">              <picture><source srcset="./img/paris.webp" type="image/webp"><img src="./img/paris.jpg?_v=1640098680940" alt="Париж" /></picture>            </a>          </div>          <div class="tour-list__flags tour-flags">            <div class="tour-flags__countries">              <div class="tour-flags__flag">                <a href="#">                  <picture><source srcset="./img/flags/4x3/de.svg" type="image/webp"><img src="./img/flags/4x3/de.svg?_v=1640098680940" alt="Германия" /></picture>                </a>              </div>              <div class="tour-flags__flag">                <a href="#">                  <picture><source srcset="./img/flags/4x3/fr.svg" type="image/webp"><img src="./img/flags/4x3/fr.svg?_v=1640098680940" alt="Нидерланды" /></picture>                </a>              </div>              <div class="tour-flags__flag">                <a href="#">                  <picture><source srcset="./img/flags/4x3/ar.svg" type="image/webp"><img src="./img/flags/4x3/ar.svg?_v=1640098680940" alt="Франция" /></picture>                </a>              </div>            </div>            <div class="tour-flags__cities">Дрезден – Люксембург – Париж (4 дня)</div>          </div>          <div class="tour-list__icons tour-icons">            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Авиатур">              <picture><source srcset="./img/icons/air2.webp" type="image/webp"><img src="./img/icons/air2.png?_v=1640098680940" alt="Авиатур" /></picture>            </a>            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Отдых в горах">              <picture><source srcset="./img/icons/palm2.webp" type="image/webp"><img src="./img/icons/palm2.png?_v=1640098680940" alt="" /></picture>            </a>            <a href="#" class="tooltip-link rotate-hover" data-tippy-content="Автобусный тур">              <picture><source srcset="./img/icons/bus2.webp" type="image/webp"><img src="./img/icons/bus2.png?_v=1640098680940" alt="" /></picture>            </a>          </div>          <div class="tour-list__info tour-info">            <div class="tour-info__item">              <div class="tour-info__duration">Длительность</div>              <div class="tour-info__duration_value">8 дней</div>            </div>            <div class="tour-info__item">              <div class="tour-info__group">Группа</div>              <div class="tour-info__group_value">От 12 человек</div>            </div>          </div>          <div class="tour-list__price tour-price">            <div class="tour-price-price">              <div class="tour-price__main">                от                <span>22 494 UAH</span>              </div>              <div class="tour-price__currency">690 EUR / 720 USD</div>            </div>            <div class="tour-price__description">              <span> Минимальная цена за человека 15</span>              <span> Минимальная цена за человекас авиа</span>              <span> Минимальная цена за человека без авиа </span>            </div>          </div>          <div class="tour-list__buttons tour-buttons">            <div class="tour-buttons__reserve">              <a class="btn btn__green _popup-link" href="#reserv">забронировать</a>            </div>            <div class="tour-buttons__details">              <a class="btn btn__white" href="./single-page.html">подробнее</a>            </div>          </div>          <div class="tour-list__labels tour-labels">            <div class="tour-labels__item color-red">NEW</div>            <div class="tour-labels__item">ФРАНЦИЯ</div>            <div class="tour-labels__item">2021</div>          </div>          <div class="tour-list__reviews tour-reviews">            <div class="tour-reviews__rev"><span class="tour-reviews__value">104 </span> отзыва</div>            <div class="tour-reviews__stars">              <span class="tour-reviews__value">4,9</span>            </div>          </div>          <div class="tour-list__date tour-date">            <div class="tour-date__title">Даты тура:</div>            <div class="tour-date__body">              <div class="tour-date__value">01.01.2021—10.01.2021</div>              <div class="tour-date__value">10.01.2021—20.01.2021</div>              <div class="tour-date__value">20.01.2021—30.01.2021</div>            </div>            <div class="tour-date__viewall">              <a href="#" class="disabled">Cмотреть все даты</a>            </div>          </div>        </div>      </div>    </div>    <div class="tour-list-block__bottom">      <a href="#" class="spiner">смотреть больше</a>      <!-- <button class="spiner">смотреть больше</button> -->    </div>  </div></section>        <!--  -->        <section class="hot-offer-block">  <div class="hot-offer-block__container _container">    <div class="section-title">Горящие туры</div>    <div class="hot-offer-block__header">      <picture><source srcset="./img/hot-list/hot-list-header.webp" type="image/webp"><img src="./img/hot-list/hot-list-header.jpg?_v=1640098680940" alt="" /></picture>    </div>    <div class="hot-offer-block__list hot-list">      <div class="hot-list__row">        <div class="hot-list__item item-hot">          <picture><source srcset="./img/hot-list/hot-list-item01.webp" type="image/webp"><img src="./img/hot-list/hot-list-item01.jpg?_v=1640098680940" alt="hot offer" /></picture>          <div class="item-hot__labels">            <div class="item-hot__label color-red">ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ</div>            <div class="item-hot__label">ЭСТОНИЯ1</div>            <div class="item-hot__label">2021</div>          </div>          <div class="item-hot__details">            <h2 class="item-hot__name">название предложения</h2>            <div class="item-hot__link">              <a href="#" class="disabled"> Подробнее <i class="_icon-arrow-right"></i></a>            </div>          </div>        </div>        <div class="hot-list__item item-hot">          <picture><source srcset="./img/hot-list/hot-list-item02.webp" type="image/webp"><img src="./img/hot-list/hot-list-item02.jpg?_v=1640098680940" alt="hot offer" /></picture>          <div class="item-hot__labels">            <div class="item-hot__label color-red">ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ</div>            <div class="item-hot__label">ЭСТОНИЯ2</div>            <div class="item-hot__label">2021</div>          </div>          <div class="item-hot__details">            <h2 class="item-hot__name">название предложения</h2>            <div class="item-hot__link">              <a href="#" class="disabled"> Подробнее <i class="_icon-arrow-right"></i></a>            </div>          </div>        </div>      </div>      <div class="hot-list__row">        <div class="hot-list__item item-hot">          <picture><source srcset="./img/hot-list/hot-list-item03.webp" type="image/webp"><img src="./img/hot-list/hot-list-item03.jpg?_v=1640098680940" alt="hot offer" /></picture>          <div class="item-hot__labels">            <div class="item-hot__label color-red">ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ</div>            <div class="item-hot__label">ЭСТОНИЯ3</div>            <div class="item-hot__label">2021</div>          </div>          <div class="item-hot__details">            <h2 class="item-hot__name">название предложения</h2>            <div class="item-hot__link">              <a href="#" class="disabled"> Подробнее <i class="_icon-arrow-right"></i></a>            </div>          </div>        </div>        <div class="hot-list__item item-hot">          <picture><source srcset="./img/hot-list/hot-list-item04.webp" type="image/webp"><img src="./img/hot-list/hot-list-item04.jpg?_v=1640098680940" alt="hot offer" /></picture>          <div class="item-hot__labels">            <div class="item-hot__label color-red">ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ</div>            <div class="item-hot__label">ЭСТОНИЯ4</div>            <div class="item-hot__label">2021</div>          </div>          <div class="item-hot__details">            <h2 class="item-hot__name">название предложения</h2>            <div class="item-hot__link">              <a href="#" class="disabled"> Подробнее <i class="_icon-arrow-right"></i></a>            </div>          </div>        </div>      </div>    </div>  </div></section>        <!--  -->        <section class="photo-slider-block">  <div class="photo-slider-block__container _container">    <div class="news-block__title section-title">Рекомендуем посетить</div>    <!-- Slider main container -->    <div class="swiper photo-slider">      <!-- Additional required wrapper -->      <div class="swiper-wrapper photo-slider-wrapper">        <!-- Slides -->        <div class="swiper-slide photo-slider-slide">          <picture><source srcset="./img/hot-list/hot-list-header.webp" type="image/webp"><img src="./img/hot-list/hot-list-header.jpg?_v=1640098680940" alt="lorem" /></picture>        </div>        <div class="swiper-slide photo-slider-slide">          <picture><source srcset="./img/hot-list/hot-list-header.webp" type="image/webp"><img src="./img/hot-list/hot-list-header.jpg?_v=1640098680940" alt="lorem" /></picture>        </div>        <div class="swiper-slide photo-slider-slide">          <picture><source srcset="./img/hot-list/hot-list-header.webp" type="image/webp"><img src="./img/hot-list/hot-list-header.jpg?_v=1640098680940" alt="lorem" /></picture>        </div>      </div>      <!-- If we need navigation buttons -->      <div class="swiper-button-prev1 photo-slider-button-prev _slider-button_prev"></div>      <div class="swiper-button-next1 photo-slider-button-next _slider-button_next"></div>    </div>  </div></section>        <!--  -->        <section class="news-block">  <div class="news-block__container _container">    <div class="news-block__title section-title">НОВОСТИ</div>    <div class="news-block__list">      <!--  -->      <div class="news-block__item item-news">        <div class="item-news__image">          <picture><source srcset="./img/news/news01.webp" type="image/webp"><img src="./img/news/news01.jpg?_v=1640098680940" alt="" /></picture>        </div>        <div class="item-news__bottom">          <a href="#" class="disabled"><span>Заголовок новости в две строки</span></a>        </div>      </div>      <!--  -->      <div class="news-block__item item-news">        <div class="item-news__image">          <picture><source srcset="./img/news/news02.webp" type="image/webp"><img src="./img/news/news02.jpg?_v=1640098680940" alt="" /></picture>        </div>        <div class="item-news__bottom">          <a href="#" class="disabled"><span>Заголовок новости в две строки</span></a>        </div>      </div>      <div class="news-block__item item-news">        <div class="item-news__image">          <picture><source srcset="./img/news/news03.webp" type="image/webp"><img src="./img/news/news03.jpg?_v=1640098680940" alt="" /></picture>        </div>        <div class="item-news__bottom">          <a href="#" class="disabled"><span>Заголовок новости в две строки</span></a>        </div>      </div>    </div>    <div class="news-block__bottom">      <button class="spiner">Смотреть больше</button>      <!-- <a href="#">Смотреть больше<i class="_icon-arrow2-right"></i></a> -->    </div>  </div></section>        <!--  -->        <section class="reviews-slider-block">  <div class="reviews-slider-block__container">    <div class="section-title">Отзывы</div>    <!-- Slider main container -->    <div class="swiper reviews-slider">      <!-- Additional required wrapper -->      <div class="swiper-wrapper reviews-slider-wrapper">        <!-- Slides -->        <div class="swiper-slide reviews-slider-slide slide-review">          <div class="slide-review__img">            <picture><source srcset="./img/reviews-slide01.webp" type="image/webp"><img src="./img/reviews-slide01.jpg?_v=1640098680940" alt="" /></picture>          </div>          <div class="slide-review__raiting">4,9 <i class="_icon-star"></i></div>          <div class="slide-review__name">ИМЯ туриста</div>          <div class="slide-review__text">            Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах,            интересные и познавательные рассказы. До новых встреч!          </div>        </div>        <!-- Slides -->        <div class="swiper-slide reviews-slider-slide slide-review">          <div class="slide-review__img">            <picture><source srcset="./img/reviews-slide01.webp" type="image/webp"><img src="./img/reviews-slide01.jpg?_v=1640098680940" alt="" /></picture>          </div>          <div class="slide-review__raiting">4,9 <i class="_icon-star"></i></div>          <div class="slide-review__name">ИМЯ туриста</div>          <div class="slide-review__text">            Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах,            интересные и познавательные рассказы. До новых встреч!          </div>        </div>        <div class="swiper-slide reviews-slider-slide slide-review">          <div class="slide-review__img">            <picture><source srcset="./img/reviews-slide01.webp" type="image/webp"><img src="./img/reviews-slide01.jpg?_v=1640098680940" alt="" /></picture>          </div>          <div class="slide-review__raiting">4,9 <i class="_icon-star"></i></div>          <div class="slide-review__name">ИМЯ туриста</div>          <div class="slide-review__text">            Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах,            интересные и познавательные рассказы. До новых встреч!          </div>        </div>        <div class="swiper-slide reviews-slider-slide slide-review">          <div class="slide-review__img">            <picture><source srcset="./img/reviews-slide01.webp" type="image/webp"><img src="./img/reviews-slide01.jpg?_v=1640098680940" alt="" /></picture>          </div>          <div class="slide-review__raiting">4,9 <i class="_icon-star"></i></div>          <div class="slide-review__name">ИМЯ туриста</div>          <div class="slide-review__text">            Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах,            интересные и познавательные рассказы. До новых встреч!          </div>        </div>        <div class="swiper-slide reviews-slider-slide slide-review">          <div class="slide-review__img">            <picture><source srcset="./img/reviews-slide01.webp" type="image/webp"><img src="./img/reviews-slide01.jpg?_v=1640098680940" alt="" /></picture>          </div>          <div class="slide-review__raiting">4,9 <i class="_icon-star"></i></div>          <div class="slide-review__name">ИМЯ туриста</div>          <div class="slide-review__text">            Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах,            интересные и познавательные рассказы. До новых встреч!          </div>        </div>        <div class="swiper-slide reviews-slider-slide slide-review">          <div class="slide-review__img">            <picture><source srcset="./img/reviews-slide01.webp" type="image/webp"><img src="./img/reviews-slide01.jpg?_v=1640098680940" alt="" /></picture>          </div>          <div class="slide-review__raiting">4,9 <i class="_icon-star"></i></div>          <div class="slide-review__name">ИМЯ туриста</div>          <div class="slide-review__text">            Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах,            интересные и познавательные рассказы. До новых встреч!          </div>        </div>        <div class="swiper-slide reviews-slider-slide slide-review">          <div class="slide-review__img">            <picture><source srcset="./img/reviews-slide01.webp" type="image/webp"><img src="./img/reviews-slide01.jpg?_v=1640098680940" alt="" /></picture>          </div>          <div class="slide-review__raiting">4,9 <i class="_icon-star"></i></div>          <div class="slide-review__name">ИМЯ туриста</div>          <div class="slide-review__text">            Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах,            интересные и познавательные рассказы. До новых встреч!          </div>        </div>        <div class="swiper-slide reviews-slider-slide slide-review">          <div class="slide-review__img">            <picture><source srcset="./img/reviews-slide01.webp" type="image/webp"><img src="./img/reviews-slide01.jpg?_v=1640098680940" alt="" /></picture>          </div>          <div class="slide-review__raiting">4,9 <i class="_icon-star"></i></div>          <div class="slide-review__name">ИМЯ туриста</div>          <div class="slide-review__text">            Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах,            интересные и познавательные рассказы. До новых встреч!          </div>        </div>      </div>      <!-- If we need navigation buttons -->      <div class="swiper-button-prev1 reviews-slider-button-prev _slider-button_prev"></div>      <div class="swiper-button-next1 reviews-slider-button-next _slider-button_next"></div>    </div>    <div class="reviews-slider-block__bottom"></div>  </div></section>        <!--  -->        <section class="tours-types-block" id="tours-types-block">  <div class="tours-types-block__container _container">    <div class="section-title">Виды отдыха</div>    <div class="tours-types-block__list list-types">      <!--  -->      <div class="list-types__item item-types">        <a href="./filter-page.html">          <picture><source srcset="./img/icons/airplane.svg" type="image/webp"><img src="./img/icons/airplane.svg?_v=1640098680940" alt="Авиатуры" /></picture>          <span>Авиатуры</span>        </a>      </div>      <!--  -->      <div class="list-types__item item-types">        <a href="./filter-page.html">          <picture><source srcset="./img/icons/bus.svg" type="image/webp"><img src="./img/icons/bus.svg?_v=1640098680940" alt="Автобусные" /></picture>          <span>Автобусные</span>        </a>      </div>      <div class="list-types__item item-types">        <a href="./filter-page.html">          <picture><source srcset="./img/icons/new.svg" type="image/webp"><img src="./img/icons/new.svg?_v=1640098680940" alt="" /></picture>          <span>Новинки</span>        </a>      </div>      <div class="list-types__item item-types">        <a href="./filter-page.html">          <picture><source srcset="./img/icons/user-flag.svg" type="image/webp"><img src="./img/icons/user-flag.svg?_v=1640098680940" alt="" /></picture>          <span>Экскурсионные туры</span>        </a>      </div>      <div class="list-types__item item-types">        <a href="./filter-page.html">          <picture><source srcset="./img/icons/palm.svg" type="image/webp"><img src="./img/icons/palm.svg?_v=1640098680940" alt="" /></picture>          <span>Пляжный отдых</span>        </a>      </div>      <div class="list-types__item item-types">        <a href="./filter-page.html">          <picture><source srcset="./img/icons/user-king.svg" type="image/webp"><img src="./img/icons/user-king.svg?_v=1640098680940" alt="" /></picture>          <span>Индивидуальный</span>        </a>      </div>      <div class="list-types__item item-types">        <a href="./filter-page.html">          <picture><source srcset="./img/icons/user-group.svg" type="image/webp"><img src="./img/icons/user-group.svg?_v=1640098680940" alt="" /></picture>          <span>Групповой</span>        </a>      </div>      <div class="list-types__item item-types">        <a href="./filter-page.html">          <picture><source srcset="./img/icons/hearth-two.svg" type="image/webp"><img src="./img/icons/hearth-two.svg?_v=1640098680940" alt="" /></picture>          <span>Туры на день св. Валентина</span>        </a>      </div>      <!--  -->      <!--  -->      <div class="list-types__item item-types">        <a href="./filter-page.html">          <picture><source srcset="./img/icons/airplane.svg" type="image/webp"><img src="./img/icons/airplane.svg?_v=1640098680940" alt="" /></picture>          <span>Авиатуры</span>        </a>      </div>      <!--  -->      <div class="list-types__item item-types">        <a href="./filter-page.html">          <picture><source srcset="./img/icons/bus.svg" type="image/webp"><img src="./img/icons/bus.svg?_v=1640098680940" alt="" /></picture>          <span>Автобусные</span>        </a>      </div>      <div class="list-types__item item-types">        <a href="./filter-page.html">          <picture><source srcset="./img/icons/new.svg" type="image/webp"><img src="./img/icons/new.svg?_v=1640098680940" alt="" /></picture>          <span>Новинки</span>        </a>      </div>      <div class="list-types__item item-types">        <a href="./filter-page.html">          <picture><source srcset="./img/icons/user-flag.svg" type="image/webp"><img src="./img/icons/user-flag.svg?_v=1640098680940" alt="" /></picture>          <span>Экскурсионные туры</span>        </a>      </div>      <div class="list-types__item item-types">        <a href="./filter-page.html">          <picture><source srcset="./img/icons/palm.svg" type="image/webp"><img src="./img/icons/palm.svg?_v=1640098680940" alt="" /></picture>          <span>Пляжный отдых</span>        </a>      </div>      <div class="list-types__item item-types">        <a href="./filter-page.html">          <picture><source srcset="./img/icons/user-king.svg" type="image/webp"><img src="./img/icons/user-king.svg?_v=1640098680940" alt="" /></picture>          <span>Индивидуальный</span>        </a>      </div>      <div class="list-types__item item-types">        <a href="./filter-page.html">          <picture><source srcset="./img/icons/user-group.svg" type="image/webp"><img src="./img/icons/user-group.svg?_v=1640098680940" alt="" /></picture>          <span>Групповой</span>        </a>      </div>      <div class="list-types__item item-types">        <a href="./filter-page.html">          <picture><source srcset="./img/icons/hearth-two.svg" type="image/webp"><img src="./img/icons/hearth-two.svg?_v=1640098680940" alt="" /></picture>          <span>Туры на день св. Валентина</span>        </a>      </div>    </div>  </div></section>        <!--  -->        <section class="seo-block">  <div class="seo-block__container _container">    <h1 class="seo-block__header">      Туристический оператор «Инкомартур 93» — экскурсионные туры по самой выгодной цене в Украине    </h1>    <div class="seo-block__body body-seo">      <picture><source srcset="./img/05.webp" type="image/webp"><img src="./img/05.jpg?_v=1640098680940" class="body-seo__img alignleft" alt="" /></picture>      <p>        Жизнь современного человека сложно представить без путешествий. В масштабном плане это головокружительные турне        в другие страны на отдаленные континенты, в более локальном это ежедневная дорога на работу и поездки к друзьям        и родственникам на выходные. Желание же отправиться в путешествие в полной мере поможет Вам воплотить в        реальность туристический оператор «Инкомартур 93». Мы предлагаем экскурсионные туры по самой выгодной цене в        Украине, а самое главное — безопасность и максимальный комфорт во время вояжа.      </p>      <p>        Важнейший приоритет в нашей работе — удовлетворенность клиента. Мы воплотим в жизнь Ваши самые дерзкие мечты,        поможем объехать мир при этом сохранив семейный бюджет. В нашей компетенции организация различных трансферов, в        том числе и автобусные туры за границу.      </p>      <h2>Почему украинцы путешествуют с нами?</h2>      <p>        Пандемия коронавирусной инфекции COVID-19 значительно реформировала человеческое мироустройство. Люди сперва не        понимали всего масштаба, но по прошествию времени адаптировались и приняли новые условия жизнедеятельности. Так,        со стабилизацией эпидемической ситуации, которая стала возможна благодаря вакцинации и карантинным ограничениям,        открылись границы государств, и теперь украинцы имеют возможность отправиться на отдых у моря.      </p>      <p>        Но подобрать тур самостоятельно — сложная задача, требующая расчета факторов риска, о которых туристы могут даже        и не знать. Ведь это не просто поиск тура онлайн, выбор гостиницы и мест для посещения, это минимизация        возможности проблем с транспортом, нехваткой документов и банальное грамотное распределение финансов. Поэтому        подбор тура рекомендуется доверить специалистам.      </p>      <p>        Компания «Инкомартур 93» уже больше двадцати лет организовывает поездки за границу на любой вкус и цвет. Наши        опытные специалисты взяли на себя обязанность дарить украинцам незабываемый досуг независимо от финансовых        вложений. Мы с большим удовольствием поможем найти тур в Турцию, Болгарию, Египет, Балканы, Кипр, а для опытных        туристов — экзотические туры из Киева в Азию, Африку или Океанию.      </p>      <h2>Отдых на море: куда поехать в теплое время года?</h2>      <p>        Несмотря на то, что территория Украины богата природными памятниками, в том числе большим количеством водных        угодий и различных ландшафтов, украинцы — заядлые путешественники, которые стремятся всегда познавать что-то        новое. Черное море — уникальный водоем, который омывает границы многих государств: Украину, Болгарию, Турцию,        Грузию, Абхазию, Румынию и Россию. Причерноморье манит отдыхающих своим умиротворением и уютом. Важно отметить,        что южное солнце прогревает не только тело, но и душу. Поэтому морская сиеста так ценилась во все времена и не        теряет своей актуальности сегодня.      </p>      <p>        Существует множество обворожительных мест, куда организовывает маршруты наша турфирма. Авиатур, путешествие на        автобусе или поезде — мы предоставим Вам необходимый транспорт для обеспечения максимального уровня комфорта.      </p>      <h2>Отдых в Турции: преимущества и недостатки</h2>      <p>        Блистательная Порта — традиционное место для развлечений жителей нашей страны. Сегодня сложно встретить        украинца, который никогда не бывал здесь. Несомненно всех влечет знаменитая система «все включено», рекреатив у        бассейна и купание в чистейшем море. Но путевки в Турцию — это еще и отличная возможность испытать настоящий        «культурный шок» от восточной сказки.      </p>      <p>        Хорошо известно, что османская империя долгие годы была лидером на мировой политической арене. Не стоит упускать        шанс стать гостем этой дружелюбной страны и погрузиться в атмосферу настоящего величия и богатства.      </p>      <p>        Первое, что приходит на ум — это посещение старого города, который разделяет государство на европейскую и        азиатские части. Специалисты «Инкомартур 93» рекомендуют купить экскурсионный тур в Стамбул, так как в авторскую        программу входит обязательное посещение следующих достопримечательностей:      </p>      <ul>        <li>          <p>            Айя-София — наверное каждый хоть раз в жизни слышал о неземной красоте данного собора. Ни один экскурсовод            не проведет Вас мимо этого представителя архитектуры времен Византии. Храм следует назвать символом            могущества империи, на строительство которого ушло более пяти лет и труд десятков тысяч людей. Даже самые            привередливые отдыхающие ахнут при виде мозаик и фресок, а также куполов огромных размеров.          </p>        </li>        <li>          <p>            Сераль или дворец Топкапи — главный дворец османов на протяжение четырех столетий. Построенный в пятнадцатом            веке для султана Мехмеда II, сегодня дворец является одним из крупнейших музеев мира, который ежегодно            посещают миллионы ценителей прекрасного.          </p>        </li>        <li>          <p>            Мечеть Султанахмет — святыня мусульман, которая восхищает своим убранством и поистине является прекрасным            образцом исламской и мировой архитектуры. Эклектика стилей завораживает гостей города и как бы демонстрирует            разом всю роскошь и монументальность времен, которые давно канули в лету.          </p>        </li>      </ul>      <p>        Несомненно, список мест для посещения в данной стране можно продолжать и дальше, но лучше один раз увидеть        своими глазами, чем читать о достопримечательностях десятки раз. Начните путешествовать с нами уже сегодня.      </p>      <h2>Куда поехать осенью и зимой?</h2>      <p>        Для тех, кому Черное море кажется чем-то обыденным, предлагаем посетить «море посреди земли». Средиземноморье        смело называют райским местом, в котором сосредоточено все то, что так необходимо человеку для комфортного        существования. Средиземное море омывает берег двадцати двух государств и именно здесь расположены самые        знаменитые мировые курорты.      </p>      <p>        Лето здесь заканчивается только поздней осенью — в середине октября, а в странах Балканского полуострова только        официально закрывается пляжный сезон 1 октября. С приходом осени туристическая жизнь не затихает, а вовсе        наоборот, путешественники знают, что это самое оптимальное время для запоминающегося отдыха. Поэтому если Вы все        еще не решили, куда поедете в осенний уик-энд, то мы советуем купить тур по Балканам.      </p>      <h2>Балканский полуостров — возможность продлить себе летние каникулы</h2>      <p>        Жизнь современного человека протекает в ускоренном темпе, где иногда сложно выкроить денек другой для разрядки.        Поэтому если Вы не успели наладиться летом, смело отправляйтесь на Балканы.      </p>      <p>        Купить тур в Черногорию — шанс получить загар еще в ноябре, а чистый морской воздух вдалеке от шума и суеты        наполнит Вас желанием покорять новые вершины по приезду домой.      </p>      <p>        Тут Вы испытаете единение с природой и по-настоящему насладитесь прогулками по достопримечательностям. Осенняя        погода создает уникальные условия для поездок в природные парки или знакомства с отдаленными от цивилизации        старинными монастырями и средневековыми замками.      </p>      <p>        Если Вы любитель пешеходных маршрутов по горам или хотите пополнить галерею фотографиями живописных каньонов и        рек, то в Черногории Вы воплотите эти желания в реальность. Любители культурных мероприятий особенно оценят        такую поездку из-за огромного количества музыкальных фестивалей, спортивных соревнований, выставок и театральных        премьер.      </p>      <p>        Туристический оператор «Инкомартур 93» предлагает своим клиентам только авторские маршруты по демократичной        цене. Путешествовать с нами — комфортно и безопасно, убедитесь в этом сами.      </p>    </div>  </div></section><p>  <!-- <iframe    src="https://center.cruises/widget/?uuid=3fb1053b-2110-41b9-94bb-03e5fecc7de0&amp;lang=ru"    style="width: 100%; height: 1100px; overflow: scroll; border: none"  ></iframe -->  <!-- new widget end --></p><!-- *************** -->        <!--  -->      </main>      <footer class="footer">  <div class="footer__container _container">    <div class="footer__logo" data-da=".menu-footer,768,0">      <a href="#">        <picture><source srcset="./img/logo-footer.svg" type="image/webp"><img src="./img/logo-footer.svg?_v=1640098680940" alt="Logo" /></picture>      </a>    </div>    <div class="footer__menu menu-footer">      <div class="menu-footer__col">        <ul>          <li><a href="#">Отзывы</a></li>          <li><a href="#">Акции</a></li>          <li><a href="#">Где купить</a></li>          <li><a href="#">Новости </a></li>        </ul>      </div>      <div class="menu-footer__col">        <ul>          <li><a href="#">Контакты</a></li>          <li><a href="#">О компании</a></li>          <li><a href="#">Срахование</a></li>          <li><a href="#">Безвизовые страны</a></li>        </ul>      </div>      <div class="menu-footer__col">        <ul>          <li><a href="#">Ваучеры</a></li>          <li><a href="#">Аудиокомплекты</a></li>          <li><a href="#">Правила проведения тура</a></li>          <li><a href="#">Бронирование экскурсий</a></li>        </ul>      </div>      <div class="menu-footer__col">        <ul>          <li><a href="#">Правила бронирования тура</a></li>          <li><a href="#">О #БЕЗВИЗЕ</a></li>          <li><a href="#">Автобусы компании</a></li>          <li><a href="#">Вебинаров от мастера туров</a></li>        </ul>      </div>      <div class="menu-footer__col">        <ul>          <li><a href="#">Уставные документы</a></li>          <li><a href="#">О компании</a></li>          <li><a href="#">Срахование</a></li>          <li><a href="#">Перелік укладених договорів</a></li>        </ul>      </div>    </div>  </div>  <button class="scroll-top"><i class="_icon-arrow2-up"></i></button></footer>    </div>    <!-- MODAL RESERV --><div class="popup popup_reserv">  <div class="popup__content">    <div class="popup__body">      <div class="popup__close"></div>      <div class="popup__header">Быстрая бронь</div>    </div>  </div></div><!-- MODAL RESERV --><!-- MODAL LOGIN --><div class="popup popup_login">  <div class="popup__content">    <div class="popup__body">      <div class="popup__close"></div>      <div class="popup__header">Авторизация</div>    </div>  </div></div><!-- MODAL LOGIN --><!-- MODAL COUNTRY --><div class="popup popup_country popup-country">  <div class="popup__content">    <div class="popup__body popup-country__body bbb">      <div class="popup__close"></div>      <!-- <div class="popup__header">Страны</div> -->      <div class="popup-country__wrapper">        <div class="popup-country__column">          <div class="popup-country__row">            <div class="popup-country__continent">Европа</div>            <ul class="popup-country__list">              <li>                <a href="./country-single-page.html"                  ><picture><source srcset="./img/countries/europe/austria.svg" type="image/webp"><img src="./img/countries/europe/austria.svg?_v=1640098680940" alt="" /></picture> <span>Австрия</span></a                >              </li>              <li>                <a href="./country-single-page.html"                  ><picture><source srcset="./img/countries/europe/andorra.svg" type="image/webp"><img src="./img/countries/europe/andorra.svg?_v=1640098680940" alt="" /></picture> <span>Андорра</span></a                >              </li>              <li>                <a href="./country-single-page.html"                  ><picture><source srcset="./img/countries/europe/belgium.svg" type="image/webp"><img src="./img/countries/europe/belgium.svg?_v=1640098680940" alt="" /></picture> <span>Бельгия</span></a                >              </li>              <li>                <a href="./country-single-page.html"                  ><picture><source srcset="./img/countries/europe/austria.svg" type="image/webp"><img src="./img/countries/europe/austria.svg?_v=1640098680940" alt="" /></picture> <span>Австрия</span></a                >              </li>              <li>                <a href="./country-single-page.html"                  ><picture><source srcset="./img/countries/europe/andorra.svg" type="image/webp"><img src="./img/countries/europe/andorra.svg?_v=1640098680940" alt="" /></picture> <span>Андорра</span></a                >              </li>              <li>                <a href="./country-single-page.html"                  ><picture><source srcset="./img/countries/europe/bulgaria.svg" type="image/webp"><img src="./img/countries/europe/bulgaria.svg?_v=1640098680940" alt="" /></picture> <span>Болгария</span></a                >              </li>              <li>                <a href="./country-single-page.html"                  ><picture><source srcset="./img/countries/europe/belgium.svg" type="image/webp"><img src="./img/countries/europe/belgium.svg?_v=1640098680940" alt="" /></picture> <span>Бельгия</span></a                >              </li>            </ul>          </div>        </div>        <div class="popup-country__column">          <div class="popup-country__row">            <div class="popup-country__continent">Азия</div>            <ul class="popup-country__list">              <li>                <a href="./country-single-page.html">                  <picture><source srcset="./img/countries/europe/andorra.svg" type="image/webp"><img src="./img/countries/europe/andorra.svg?_v=1640098680940" alt="" /></picture>                  <span>Уругвай</span>                </a>              </li>              <li>                <a href="./country-single-page.html">                  <picture><source srcset="./img/countries/europe/andorra.svg" type="image/webp"><img src="./img/countries/europe/andorra.svg?_v=1640098680940" alt="" /></picture>                  <span>Уругвай</span>                </a>              </li>              <li>                <a href="./country-single-page.html">                  <picture><source srcset="./img/countries/europe/andorra.svg" type="image/webp"><img src="./img/countries/europe/andorra.svg?_v=1640098680940" alt="" /></picture>                  <span>Уругвай</span>                </a>              </li>            </ul>          </div>          <div class="popup-country__row">            <div class="popup-country__continent">Океания</div>            <ul class="popup-country__list">              <li>                <a href="./country-single-page.html">                  <picture><source srcset="./img/countries/europe/andorra.svg" type="image/webp"><img src="./img/countries/europe/andorra.svg?_v=1640098680940" alt="" /></picture>                  <span>Уругвай1</span>                </a>              </li>            </ul>          </div>          <div class="popup-country__row">            <!-- <div class="popup-country__continent">Америка</div> -->            <ul class="popup-country__list">              <li>                <a href="./country-single-page.html">                  <picture><source srcset="./img/countries/europe/andorra.svg" type="image/webp"><img src="./img/countries/europe/andorra.svg?_v=1640098680940" alt="" /></picture>                  <span>Уругвай2</span>                </a>              </li>            </ul>          </div>        </div>        <div class="popup-country__column">          <div class="popup-country__row">            <div class="popup-country__continent">Америка</div>            <ul class="popup-country__list">              <li>                <a href="./country-single-page.html">                  <picture><source srcset="./img/countries/europe/andorra.svg" type="image/webp"><img src="./img/countries/europe/andorra.svg?_v=1640098680940" alt="" /></picture>                  <span>Уругвай</span>                </a>              </li>            </ul>          </div>          <div class="popup-country__row">            <div class="popup-country__continent">Африка</div>            <ul class="popup-country__list">              <li>                <a href="./country-single-page.html">                  <picture><source srcset="./img/countries/europe/andorra.svg" type="image/webp"><img src="./img/countries/europe/andorra.svg?_v=1640098680940" alt="" /></picture>                  <span>Уругвай</span>                </a>              </li>            </ul>          </div>        </div>      </div>      <div class="popup-country__view-all">        <a href="./country-page.html"          >Все страны          <span>            <svg width="20" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">              <path                d="M8.28247 9.83496L13.8579 5.66829L8.28247 1.50163"                stroke="#272727"                stroke-width="2"                stroke-linecap="round"                stroke-linejoin="round"              />              <path d="M12.8358 5.66808L1.84839 5.66797" stroke="#272727" stroke-width="2" stroke-linecap="round" />            </svg>          </span>        </a>      </div>    </div>  </div></div><!-- MODAL COUNTRY --><!--  --><div class="popup popup_popup">  <div class="popup__content">    <div class="popup__body">      <div class="popup__close"></div>    </div>  </div></div><div class="popup popup_massagename-message">  <div class="popup__content">    <div class="popup__body">      <div class="popup__close"></div>    </div>  </div></div><div class="popup popup_video">  <div class="popup__content">    <div class="popup__body">      <div class="popup__close popup__close_video"></div>      <div class="popup__video _video"></div>    </div>  </div></div>    <!--  -->    <!-- Swiper --><script src="https://cdn.jsdelivr.net/npm/flatpickr"></script><!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> --><script src="https://unpkg.com/@popperjs/core@2"></script><script src="https://unpkg.com/tippy.js@6"></script><script src="js/vendors.min.js?_v=20211221165800"></script><script src="js/app.min.js?_v=20211221165800"></script>  </body></html>

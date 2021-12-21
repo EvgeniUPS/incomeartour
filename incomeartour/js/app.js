@@ -2738,6 +2738,24 @@ if (document.querySelector('.filter-form-date__start') || document.querySelector
   })
 }
 
+if (document.querySelector('.calendar-archive')) {
+  const calendar = document.querySelector('.calendar-archive__inner')
+  const calendarItem = datepicker(calendar, {
+    customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
+    customMonths: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
+    overlayButton: 'Применить',
+    overlayPlaceholder: 'Год (4 цифры)',
+    startDay: 1,
+    alwaysShow: true,
+    onSelect: (instance, date) => {
+      console.log(date.toLocaleDateString())
+    },
+    onShow: instance => {
+      console.log('Calendar showing.')
+    },
+  })
+}
+
 let scr_body = document.querySelector('body');
 let scr_blocks = document.querySelectorAll('._scr-sector');
 let scr_items = document.querySelectorAll('._scr-item');
