@@ -9796,6 +9796,139 @@ button.swiper-pagination-bullet {
   background-color: #000;
 }
 
+.exchange-archive-page {
+  margin-bottom: 100px;
+}
+@media (max-width: 1230px) {
+  .exchange-archive-page {
+    margin-bottom: calc(
+        60px + 40 *
+          ((100vw - 320px) / 910)
+      );
+  }
+}
+.exchange-archive-page__container {
+  display: flex;
+}
+@media (max-width: 768px) {
+  .exchange-archive-page__container {
+    flex-direction: column;
+  }
+}
+.exchange-archive-page__calendar {
+  min-height: 300px;
+  flex: 0 0 50%;
+  padding: 0 65px;
+}
+@media (max-width: 768px) {
+  .exchange-archive-page__calendar {
+    padding: 0 25px;
+    margin-bottom: 40px;
+  }
+}
+.exchange-archive-page__calendar .calendar-inner {
+  height: 100%;
+  border-radius: 8px;
+}
+.calendar-archive {
+  flex: 0 0 50%;
+  padding: 0 65px;
+  padding-left: 65px;
+  padding-right: 65px;
+}
+@media (max-width: 1230px) {
+  .calendar-archive {
+    padding-left: calc(
+        10px + 55 *
+          ((100vw - 320px) / 910)
+      );
+  }
+}
+@media (max-width: 1230px) {
+  .calendar-archive {
+    padding-right: calc(
+        10px + 55 *
+          ((100vw - 320px) / 910)
+      );
+  }
+}
+.calendar-archive .qs-datepicker-container {
+  top: 0;
+  left: 0;
+  border-radius: 8px;
+  height: 100%;
+}
+.calendar-archive .qs-datepicker .qs-square {
+  height: 40px;
+}
+.calendar-archive__wrapper {
+  min-height: 300px;
+  height: 100%;
+}
+.info-exchange-archive__title {
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 32px;
+  margin-bottom: 40px;
+}
+@media (max-width: 768px) {
+  .info-exchange-archive__title {
+    text-align: center;
+  }
+  .info-exchange-archive__title span {
+    display: block;
+  }
+}
+.info-exchange-archive__main {
+  display: flex;
+  justify-content: space-between;
+  text-transform: uppercase;
+  font-size: 20px;
+  line-height: 30px;
+  min-height: 52px;
+  margin-bottom: 40px;
+  white-space: nowrap;
+}
+@media (max-width: 768px) {
+  .info-exchange-archive__main {
+    flex-direction: column;
+  }
+}
+.info-exchange-archive__date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+}
+.info-exchange-archive__usd {
+  padding: 10px 0;
+  border-left: 0.5px solid #e5e5e5;
+  border-right: 0.5px solid #e5e5e5;
+  flex: 0 1 33.333%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 768px) {
+  .info-exchange-archive__usd {
+    border: none;
+    border-top: 0.5px solid #e5e5e5;
+    border-bottom: 0.5px solid #e5e5e5;
+  }
+}
+.info-exchange-archive__eur {
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.info-exchange-archive__descr {
+  font-size: 13px;
+}
+.info-exchange-archive__descr span {
+  color: #990000;
+}
+
 .news-page-main {
   margin-bottom: 100px;
 }

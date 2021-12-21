@@ -1,0 +1,122 @@
+.exchange-archive-page {
+  @include adaptiv-value('margin-bottom', 100, 60, 1);
+  // .exchange-archive-page__container
+  &__container {
+    display: flex;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+  // .exchange-archive-page__calendar
+  &__calendar {
+    min-height: 300px;
+    flex: 0 0 50%;
+    padding: 0 65px;
+    @media (max-width: 768px) {
+      padding: 0 25px;
+      margin-bottom: 40px;
+    }
+
+    .calendar-inner {
+      // border: 0.5px solid #000;
+      height: 100%;
+      border-radius: 8px;
+    }
+  }
+  // .exchange-archive-page__info
+  &__info {
+  }
+}
+
+.calendar-archive {
+  flex: 0 0 50%;
+  padding: 0 65px;
+  @include adaptiv-value('padding-left', 65, 10, 1);
+  @include adaptiv-value('padding-right', 65, 10, 1);
+
+  .qs-datepicker-container {
+    top: 0;
+    left: 0;
+    border-radius: 8px;
+    height: 100%;
+  }
+  .qs-datepicker .qs-square {
+    height: 40px;
+  }
+
+  // .calendar-archive__wrapper
+  &__wrapper {
+    min-height: 300px;
+    // border: 0.5px solid #000;
+    height: 100%;
+  }
+  // .calendar-archive__inner
+  &__inner {
+  }
+}
+
+.info-exchange-archive {
+  // .info-exchange-archive__title
+  &__title {
+    font-size: 25px;
+    font-weight: 700;
+    line-height: 32px;
+    margin-bottom: 40px;
+    @media (max-width: 768px) {
+      text-align: center;
+      span {
+        display: block;
+      }
+    }
+  }
+  // .info-exchange-archive__main
+  &__main {
+    display: flex;
+    justify-content: space-between;
+    text-transform: uppercase;
+    font-size: 20px;
+    line-height: 30px;
+    min-height: 52px;
+    margin-bottom: 40px;
+    white-space: nowrap;
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+  // .info-exchange-archive__date
+  &__date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0;
+  }
+  // .info-exchange-archive__usd
+  &__usd {
+    padding: 10px 0;
+    border-left: 0.5px solid #e5e5e5;
+    border-right: 0.5px solid #e5e5e5;
+    flex: 0 1 33.333%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @media (max-width: 768px) {
+      border: none;
+      border-top: 0.5px solid #e5e5e5;
+      border-bottom: 0.5px solid #e5e5e5;
+    }
+  }
+  // .info-exchange-archive__eur
+  &__eur {
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  // .info-exchange-archive__descr
+  &__descr {
+    font-size: 13px;
+    span {
+      color: $colorRed;
+    }
+  }
+}

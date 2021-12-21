@@ -6,11 +6,27 @@
       <!-- @@include('_header.html',{}) -->
       <!--  -->
       @@include('_header.html',{})
-      <main class="page">
-        @@include('_page-header.html', { "pageHeader" : "Архив курсов валют", "imgPath" :
-        "./img/eiffel-tower-paris-europe.jpg", "pageText" : "pageTexttttt", "flag" : "./img/flags/4x3/fr.svg"})
+      <main class="page exchange-archive-page">
+        @@include('_page-header.html', { "pageHeader" : "Архив курсов валют", "imgPath" : "./img/eiffel-tower-paris-europe.jpg", "pageText" : "pageTexttttt", "flag" :
+        "./img/flags/4x3/fr.svg"})
 
         <!--  -->
+        <section class="exchange-archive-page__container _container">
+          <div class="exchange-archive-page__calendar calendar-archive">
+            <div class="calendar-archive__wrapper">
+              <div class="calendar-archive__inner"></div>
+            </div>
+          </div>
+          <div class="exchange-archive-page__info info-exchange-archive">
+            <h2 class="info-exchange-archive__title">Курсы валют : <span>05 ноября 2021</span></h2>
+            <div class="info-exchange-archive__main">
+              <div class="info-exchange-archive__date">05.11.2021</div>
+              <div class="info-exchange-archive__usd">USD 27 грн</div>
+              <div class="info-exchange-archive__eur">EUR 31.05 грн</div>
+            </div>
+            <div class="info-exchange-archive__descr"><span>*</span> Данная информацияне является комерческим курсом туроператора “Incomartour93”</div>
+          </div>
+        </section>
 
         <!--  -->
       </main>
