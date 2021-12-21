@@ -121,6 +121,7 @@
   }
 }
 .item-list-news {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
   @include adaptiv-value('margin-bottom', 50, 10, 1);
   // .item-list-news__image
   display: flex;
@@ -207,5 +208,6 @@
   }
   // .item-list-news__text
   &__text {
+    flex-grow: 1;
   }
 }

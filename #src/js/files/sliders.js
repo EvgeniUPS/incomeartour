@@ -283,3 +283,26 @@ const promoSingleSlider = new Swiper('.promo-single-slider', {
     },
   },
 })
+const anyNewsSlider = new Swiper('.any-news-slider', {
+  loop: true,
+  autoHeight: true,
+  autoplay: {
+    delay: 5000,
+  },
+  navigation: {
+    nextEl: '.any-news-slider__next',
+    prevEl: '.any-news-slider__prev',
+  },
+
+  slidesPerView: 1,
+  breakpoints: {
+    992: {
+      slidesPerView: 3,
+      spaceBetween: 10,
+    },
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 10,
+    },
+  },
+})
