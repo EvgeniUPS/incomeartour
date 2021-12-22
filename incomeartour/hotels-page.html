@@ -1,506 +1,1 @@
-<!DOCTYPE html>
-<html lang="ru">
-  <head>
-  <title>Отели</title>
-  <meta charset="UTF-8" />
-
-  <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />
-  <meta name="format-detection" content="telephone=no" />
-  <link rel="stylesheet" href="css/style.min.css" />
-  <link rel="shortcut icon" href="favicon.ico" />
-  <link rel="stylesheet" href="https://npmcdn.com/flatpickr@4.6.9/dist/themes/dark.css" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
-  <!-- TODO: перенести на локал -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""
-  />
-  <script
-    src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""
-  ></script>
-  <!-- <meta name="robots" content="noindex, nofollow"> -->
-  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-</head>
-
-  <body>
-    <div class="wrapper">
-      
-      <!--  -->
-      <div class="preloader">
-  <div class="loading">
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-  </div>
-</div>
-<!-- <input class="header-color-picker" type="color" name="" id="" /> -->
-<header class="header">
-  <!-- TOP-HEADER -->
-  <div class="header__top top-header">
-    <div class="top-header__container _container">
-      <div class="top-header__left" data-da=".menu-burger-footer, 768 , 0">
-        <span><a href="mailto:income@rtour.com">income@rtour.com</a></span>
-        <span><a href="tel:+00000000000">+00 (000) 00-00-00</a></span>
-      </div>
-      <div class="top-header__center">
-        <div class="top-header__currency">
-          <span class="top-header__usd"><a href="./exchange-archive.html"> USD 26.70</a></span>
-          |
-          <span class="top-header__eur"><a href="./exchange-archive.html"> EUR 31.60</a></span>
-        </div>
-        <div class="top-header__date">
-          <a href="./calendar-page.html"><i class="_icon-calendar"></i> <span>09-CЕН-2021</span></a>
-        </div>
-      </div>
-      <div class="top-header__right" data-da=".menu-burger-footer, 768 , 1">
-        <div class="top-header__lang lang-top">
-          <div class="lang-top__active">
-            <a href="/" class="lang-switcher-btn disabled">РУССКИЙ</a>
-          </div>
-          <div class="lang-top__list">
-            <div class="lang-top__item">
-              <a href="/?lang=ua" data-language="ua" class="">Українська</a>
-            </div>
-            <div class="lang-top__item">
-              <a href="/?lang=en" data-language="en" class="">English</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- TOP-HEADER -->
-
-  <!-- MAIN-HEADER -->
-  <div class="header__main main-header">
-    <div class="main-header__container _container">
-      <!--  -->
-      <div class="main-header__logo">
-        <a href="./index.html" class="header__logo">
-          <img src="img/logo.svg" alt="" />
-        </a>
-      </div>
-      <!--  -->
-      <div class="main-header__menu">
-        <div class="header__menu menu">
-          <nav class="menu__body" data-da=".menu-burger-main, 768 , 0">
-            <ul class="menu__list">
-              <li class="menu__item has-submenu">
-                <a href="#" class="menu__link disabled">Туры</a>
-                <ul class="submenu-list">
-                  <li><a href="./calendar-page.html">Календарь</a></li>
-                  <li><a href="#">Типы туров</a></li>
-                </ul>
-              </li>
-              <li class="menu__item">
-                <a href="./filter-page.html" class="menu__link">Поиск туров</a>
-              </li>
-              <li class="menu__item">
-                <a href="#country" class="menu__link _popup-link 1">Страны</a>
-              </li>
-              <li class="menu__item has-submenu">
-                <a href="#" class="menu__link disabled">Услуги</a>
-                <ul class="submenu-list">
-                  <li><a href="#">Авиатуры</a></li>
-                  <li><a href="#">Автобусные туры</a></li>
-                  <li><a href="#">Круизы</a></li>
-                  <li><a href="#">Корпоративный туризм</a></li>
-                  <li><a href="#">Авиабилеты</a></li>
-                  <li><a href="#">ПЦР тестирование</a></li>
-                </ul>
-              </li>
-              <li class="menu__item">
-                <a href="./hotels-page.html" class="menu__link">Отели</a>
-              </li>
-              <li class="menu__item has-submenu">
-                <a href="#" class="menu__link disabled">Агентствам</a>
-                <ul class="submenu-list">
-                  <li><a href="#">Сотрудничество</a></li>
-                  <li><a href="#">Бонусная программа</a></li>
-                  <li><a href="#">Рекламные туры</a></li>
-                  <li><a href="#">Семинары и презентации</a></li>
-                  <li><a href="#">Оплата</a></li>
-                  <li><a href="#">Регистрации</a></li>
-                </ul>
-              </li>
-              <li class="menu__item has-submenu">
-                <a href="#" class="menu__link accordion disabled">Туристам</a>
-                <ul class="submenu-list panel">
-                  <li><a href="#">Договор</a></li>
-                  <li><a href="#">Подарочный сертификат</a></li>
-                  <li><a href="#">Оплата</a></li>
-                  <li><a href="#">Регистрация</a></li>
-                  <li><a href="#">Проверка статуса заявки</a></li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-      <div class="main-header__user">
-        <a href="#login" class="_popup-link"><span></span> вход</a>
-      </div>
-      <!--  -->
-      <div class="main-header__burger">
-        <button type="button" class="menu__icon icon-menu">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <div class="menu-burger-body">
-          <div class="menu-burger-main">
-            <ul class="main-burger-list">
-              <li><a href="./promo-page.html">Акции</a></li>
-              <li><a href="#">Услуги</a></li>
-              <li><a href="./where-buy-page.html">Где купить</a></li>
-              <li><a href="./news-page.html">Новости</a></li>
-              <li><a href="./about-page.html">Контакты</a></li>
-              <li class="has-submenu">
-                <a class="menu-info-link menu__link disabled" href="#">Информация</a>
-                <ul class="menu-info-body submenu-list panel">
-                  <li><a href="./reviews-page.html">Отзывы</a></li>
-                  <li><a href="#">Вакансии</a></li>
-                  <li><a href="#">Использование ваучера</a></li>
-                  <li><a href="#">Безвизовые страны</a></li>
-                  <li><a href="#">Аудиокомплекты</a></li>
-                  <li><a href="#">Страхование</a></li>
-                  <li><a href="#">Правила проведения тура</a></li>
-                  <li><a href="#">Бронирование экскурсий</a></li>
-                  <li><a href="#">Бронирование тура</a></li>
-                  <li><a href="#">О #Безвизе</a></li>
-                  <li><a href="#">Автобусы компании</a></li>
-                  <li>
-                    <a href="#">Серии вебинаров от Мастера экскурсионных туров</a>
-                  </li>
-                  <li>
-                    <a href="#">Перелік укладених агентських договорів</a>
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
-          <div class="menu-burger-footer"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- MAIN-HEADER -->
-</header>
-
-      <main class="page">
-        <section class="page-header">
-  <div class="page-header__container _container">
-    <div class="page-header__breadcrumbs breadcrumbs">
-      <ul class="breadcrumbs__list">
-        <li class="breadcrumbs__item"><a href="./" class="breadcrumbs__link">Главная</a></li>
-        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link disabled">Отели</a></li>
-      </ul>
-    </div>
-
-    <div class="page-header__block block-page-header">
-      <div class="block-page-header__top">
-        <div class="block-page-header__img">
-          <img src="./img/eiffel-tower-paris-europe.jpg" alt="ОтелиText" />
-        </div>
-      </div>
-
-      <div class="block-page-header__center">
-        <!-- <div class="block-page-header__icon"><img src="./img/flags/4x3/fr.svg" alt="" /></div> -->
-        <div class="block-page-header__icon"><img src="./img/flags/4x3/fr.svg" alt="" /></div>
-        <div class="block-page-header__title">Отели</div>
-      </div>
-
-      <div class="block-page-header__bottom">
-        <div class="block-page-header__text">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dolorem dignissimos earum laudantium accusamus
-            ipsa recusandae assumenda ducimus odit ut modi perspiciatis similique, delectus facere magni quasi! Earum,
-            reiciendis ea?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dolorem dignissimos earum laudantium accusamus
-            ipsa recusandae assumenda ducimus odit ut modi perspiciatis similique, delectus facere magni quasi! Earum,
-            reiciendis ea?
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- 
-    <div class="page-header__img"></div>
-    <div class="page-header__top">
-      <div class="page-header__icon">./img/flags/4x3/fr.svg</div>
-      <div class="page-header__header">Отели</div>
-    </div>
-    <div class="page-header__text">pageTexttttt</div> -->
-  </div>
-</section>
-
-
-        <!--  -->
-      </main>
-      <footer class="footer">
-  <div class="footer__container _container">
-    <div class="footer__logo" data-da=".menu-footer,768,0">
-      <a href="#">
-        <img src="./img/logo-footer.svg" alt="Logo" />
-      </a>
-    </div>
-
-    <div class="footer__menu menu-footer">
-      <div class="menu-footer__col">
-        <ul>
-          <li><a href="#">Отзывы</a></li>
-          <li><a href="#">Акции</a></li>
-          <li><a href="#">Где купить</a></li>
-          <li><a href="#">Новости </a></li>
-        </ul>
-      </div>
-
-      <div class="menu-footer__col">
-        <ul>
-          <li><a href="#">Контакты</a></li>
-          <li><a href="#">О компании</a></li>
-          <li><a href="#">Срахование</a></li>
-          <li><a href="#">Безвизовые страны</a></li>
-        </ul>
-      </div>
-      <div class="menu-footer__col">
-        <ul>
-          <li><a href="#">Ваучеры</a></li>
-          <li><a href="#">Аудиокомплекты</a></li>
-          <li><a href="#">Правила проведения тура</a></li>
-          <li><a href="#">Бронирование экскурсий</a></li>
-        </ul>
-      </div>
-      <div class="menu-footer__col">
-        <ul>
-          <li><a href="#">Правила бронирования тура</a></li>
-          <li><a href="#">О #БЕЗВИЗЕ</a></li>
-          <li><a href="#">Автобусы компании</a></li>
-          <li><a href="#">Вебинаров от мастера туров</a></li>
-        </ul>
-      </div>
-      <div class="menu-footer__col">
-        <ul>
-          <li><a href="#">Уставные документы</a></li>
-          <li><a href="#">О компании</a></li>
-          <li><a href="#">Срахование</a></li>
-          <li><a href="#">Перелік укладених договорів</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <button class="scroll-top"><i class="_icon-arrow2-up"></i></button>
-</footer>
-
-    </div>
-    <!-- MODAL RESERV -->
-<div class="popup popup_reserv">
-  <div class="popup__content">
-    <div class="popup__body">
-      <div class="popup__close"></div>
-      <div class="popup__header">Быстрая бронь</div>
-    </div>
-  </div>
-</div>
-<!-- MODAL RESERV -->
-
-<!-- MODAL LOGIN -->
-<div class="popup popup_login">
-  <div class="popup__content">
-    <div class="popup__body">
-      <div class="popup__close"></div>
-      <div class="popup__header">Авторизация</div>
-    </div>
-  </div>
-</div>
-<!-- MODAL LOGIN -->
-
-<!-- MODAL COUNTRY -->
-<div class="popup popup_country popup-country">
-  <div class="popup__content">
-    <div class="popup__body popup-country__body bbb">
-      <div class="popup__close"></div>
-      <!-- <div class="popup__header">Страны</div> -->
-
-      <div class="popup-country__wrapper">
-        <div class="popup-country__column">
-          <div class="popup-country__row">
-            <div class="popup-country__continent">Европа</div>
-            <ul class="popup-country__list">
-              <li>
-                <a href="./country-single-page.html"
-                  ><img src="./img/countries/europe/austria.svg" alt="" /> <span>Австрия</span></a
-                >
-              </li>
-              <li>
-                <a href="./country-single-page.html"
-                  ><img src="./img/countries/europe/andorra.svg" alt="" /> <span>Андорра</span></a
-                >
-              </li>
-
-              <li>
-                <a href="./country-single-page.html"
-                  ><img src="./img/countries/europe/belgium.svg" alt="" /> <span>Бельгия</span></a
-                >
-              </li>
-              <li>
-                <a href="./country-single-page.html"
-                  ><img src="./img/countries/europe/austria.svg" alt="" /> <span>Австрия</span></a
-                >
-              </li>
-              <li>
-                <a href="./country-single-page.html"
-                  ><img src="./img/countries/europe/andorra.svg" alt="" /> <span>Андорра</span></a
-                >
-              </li>
-              <li>
-                <a href="./country-single-page.html"
-                  ><img src="./img/countries/europe/bulgaria.svg" alt="" /> <span>Болгария</span></a
-                >
-              </li>
-              <li>
-                <a href="./country-single-page.html"
-                  ><img src="./img/countries/europe/belgium.svg" alt="" /> <span>Бельгия</span></a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="popup-country__column">
-          <div class="popup-country__row">
-            <div class="popup-country__continent">Азия</div>
-            <ul class="popup-country__list">
-              <li>
-                <a href="./country-single-page.html">
-                  <img src="./img/countries/europe/andorra.svg" alt="" />
-                  <span>Уругвай</span>
-                </a>
-              </li>
-              <li>
-                <a href="./country-single-page.html">
-                  <img src="./img/countries/europe/andorra.svg" alt="" />
-                  <span>Уругвай</span>
-                </a>
-              </li>
-              <li>
-                <a href="./country-single-page.html">
-                  <img src="./img/countries/europe/andorra.svg" alt="" />
-                  <span>Уругвай</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="popup-country__row">
-            <div class="popup-country__continent">Океания</div>
-            <ul class="popup-country__list">
-              <li>
-                <a href="./country-single-page.html">
-                  <img src="./img/countries/europe/andorra.svg" alt="" />
-                  <span>Уругвай1</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="popup-country__row">
-            <!-- <div class="popup-country__continent">Америка</div> -->
-            <ul class="popup-country__list">
-              <li>
-                <a href="./country-single-page.html">
-                  <img src="./img/countries/europe/andorra.svg" alt="" />
-                  <span>Уругвай2</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="popup-country__column">
-          <div class="popup-country__row">
-            <div class="popup-country__continent">Америка</div>
-            <ul class="popup-country__list">
-              <li>
-                <a href="./country-single-page.html">
-                  <img src="./img/countries/europe/andorra.svg" alt="" />
-                  <span>Уругвай</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div class="popup-country__row">
-            <div class="popup-country__continent">Африка</div>
-            <ul class="popup-country__list">
-              <li>
-                <a href="./country-single-page.html">
-                  <img src="./img/countries/europe/andorra.svg" alt="" />
-                  <span>Уругвай</span>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-
-      <div class="popup-country__view-all">
-        <a href="./country-page.html"
-          >Все страны
-          <span>
-            <svg width="20" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M8.28247 9.83496L13.8579 5.66829L8.28247 1.50163"
-                stroke="#272727"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-              <path d="M12.8358 5.66808L1.84839 5.66797" stroke="#272727" stroke-width="2" stroke-linecap="round" />
-            </svg>
-          </span>
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- MODAL COUNTRY -->
-
-<!--  -->
-<div class="popup popup_popup">
-  <div class="popup__content">
-    <div class="popup__body">
-      <div class="popup__close"></div>
-    </div>
-  </div>
-</div>
-<div class="popup popup_massagename-message">
-  <div class="popup__content">
-    <div class="popup__body">
-      <div class="popup__close"></div>
-    </div>
-  </div>
-</div>
-<div class="popup popup_video">
-  <div class="popup__content">
-    <div class="popup__body">
-      <div class="popup__close popup__close_video"></div>
-      <div class="popup__video _video"></div>
-    </div>
-  </div>
-</div>
-
-    <!--  -->
-    <!-- Swiper -->
-<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-<!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> -->
-<script src="https://unpkg.com/@popperjs/core@2"></script>
-<script src="https://unpkg.com/tippy.js@6"></script>
-<script src="js/vendors.min.js"></script>
-<script src="js/app.min.js"></script>
-
-  </body>
-</html>
+<!DOCTYPE html><html lang="ru">  <head>  <title>Отели</title>  <meta charset="UTF-8" />  <meta http-equiv="Permissions-Policy" content="interest-cohort=()" />  <meta name="format-detection" content="telephone=no" />  <link rel="stylesheet" href="css/style.min.css?_v=20211222165802" />  <link rel="shortcut icon" href="favicon.ico" />  <link rel="stylesheet" href="https://npmcdn.com/flatpickr@4.6.9/dist/themes/dark.css?_v=20211222165802" />  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css?_v=20211222165802" />  <!-- TODO: перенести на локал -->  <link    rel="stylesheet"    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css?_v=20211222165802"    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="    crossorigin=""  />  <script    src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="    crossorigin=""  ></script>  <!-- <meta name="robots" content="noindex, nofollow"> -->  <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"> -->  <meta name="viewport" content="width=device-width, initial-scale=1.0" /></head>  <body>    <div class="wrapper">            <!--  -->      <div class="preloader">  <div class="loading">    <div class="dot"></div>    <div class="dot"></div>    <div class="dot"></div>    <div class="dot"></div>    <div class="dot"></div>  </div></div><!-- <input class="header-color-picker" type="color" name="" id="" /> --><header class="header">  <!-- TOP-HEADER -->  <div class="header__top top-header">    <div class="top-header__container _container">      <div class="top-header__left" data-da=".menu-burger-footer, 768 , 0">        <span><a href="mailto:income@rtour.com">income@rtour.com</a></span>        <span><a href="tel:+00000000000">+00 (000) 00-00-00</a></span>      </div>      <div class="top-header__center">        <div class="top-header__currency">          <span class="top-header__usd"><a href="./exchange-archive.html"> USD 26.70</a></span>          |          <span class="top-header__eur"><a href="./exchange-archive.html"> EUR 31.60</a></span>        </div>        <div class="top-header__date">          <a href="./calendar-page.html"><i class="_icon-calendar"></i> <span>09-CЕН-2021</span></a>        </div>      </div>      <div class="top-header__right" data-da=".menu-burger-footer, 768 , 1">        <div class="top-header__lang lang-top">          <div class="lang-top__active">            <a href="/" class="lang-switcher-btn disabled">РУССКИЙ</a>          </div>          <div class="lang-top__list">            <div class="lang-top__item">              <a href="/?lang=ua" data-language="ua" class="">Українська</a>            </div>            <div class="lang-top__item">              <a href="/?lang=en" data-language="en" class="">English</a>            </div>          </div>        </div>      </div>    </div>  </div>  <!-- TOP-HEADER -->  <!-- MAIN-HEADER -->  <div class="header__main main-header">    <div class="main-header__container _container">      <!--  -->      <div class="main-header__logo">        <a href="./index.html" class="header__logo">          <picture><source srcset="img/logo.svg" type="image/webp"><img src="img/logo.svg?_v=1640185082840" alt="" /></picture>        </a>      </div>      <!--  -->      <div class="main-header__menu">        <div class="header__menu menu">          <nav class="menu__body" data-da=".menu-burger-main, 768 , 0">            <ul class="menu__list">              <li class="menu__item has-submenu">                <a href="#" class="menu__link disabled">Туры</a>                <ul class="submenu-list">                  <li><a href="./calendar-page.html">Календарь</a></li>                  <li><a href="#">Типы туров</a></li>                </ul>              </li>              <li class="menu__item">                <a href="./filter-page.html" class="menu__link">Поиск туров</a>              </li>              <li class="menu__item">                <a href="#country" class="menu__link _popup-link 1">Страны</a>              </li>              <li class="menu__item has-submenu">                <a href="#" class="menu__link disabled">Услуги</a>                <ul class="submenu-list">                  <li><a href="#">Авиатуры</a></li>                  <li><a href="#">Автобусные туры</a></li>                  <li><a href="#">Круизы</a></li>                  <li><a href="#">Корпоративный туризм</a></li>                  <li><a href="#">Авиабилеты</a></li>                  <li><a href="#">ПЦР тестирование</a></li>                </ul>              </li>              <li class="menu__item">                <a href="./hotels-page.html" class="menu__link">Отели</a>              </li>              <li class="menu__item has-submenu">                <a href="#" class="menu__link disabled">Агентствам</a>                <ul class="submenu-list">                  <li><a href="#">Сотрудничество</a></li>                  <li><a href="#">Бонусная программа</a></li>                  <li><a href="#">Рекламные туры</a></li>                  <li><a href="#">Семинары и презентации</a></li>                  <li><a href="#">Оплата</a></li>                  <li><a href="#">Регистрации</a></li>                </ul>              </li>              <li class="menu__item has-submenu">                <a href="#" class="menu__link accordion disabled">Туристам</a>                <ul class="submenu-list panel">                  <li><a href="#">Договор</a></li>                  <li><a href="#">Подарочный сертификат</a></li>                  <li><a href="#">Оплата</a></li>                  <li><a href="#">Регистрация</a></li>                  <li><a href="#">Проверка статуса заявки</a></li>                </ul>              </li>            </ul>          </nav>        </div>      </div>      <div class="main-header__user">        <a href="#login" class="_popup-link"><span></span> вход</a>      </div>      <!--  -->      <div class="main-header__burger">        <button type="button" class="menu__icon icon-menu">          <span></span>          <span></span>          <span></span>        </button>        <div class="menu-burger-body">          <div class="menu-burger-main">            <ul class="main-burger-list">              <li><a href="./promo-page.html">Акции</a></li>              <li><a href="#">Услуги</a></li>              <li><a href="./where-buy-page.html">Где купить</a></li>              <li><a href="./news-page.html">Новости</a></li>              <li><a href="./about-page.html">Контакты</a></li>              <li class="has-submenu">                <a class="menu-info-link menu__link disabled" href="#">Информация</a>                <ul class="menu-info-body submenu-list panel">                  <li><a href="./reviews-page.html">Отзывы</a></li>                  <li><a href="#">Вакансии</a></li>                  <li><a href="#">Использование ваучера</a></li>                  <li><a href="#">Безвизовые страны</a></li>                  <li><a href="#">Аудиокомплекты</a></li>                  <li><a href="#">Страхование</a></li>                  <li><a href="#">Правила проведения тура</a></li>                  <li><a href="#">Бронирование экскурсий</a></li>                  <li><a href="#">Бронирование тура</a></li>                  <li><a href="#">О #Безвизе</a></li>                  <li><a href="#">Автобусы компании</a></li>                  <li>                    <a href="#">Серии вебинаров от Мастера экскурсионных туров</a>                  </li>                  <li>                    <a href="#">Перелік укладених агентських договорів</a>                  </li>                </ul>              </li>            </ul>          </div>          <div class="menu-burger-footer"></div>        </div>      </div>    </div>  </div>  <!-- MAIN-HEADER --></header>      <main class="page">        <section class="page-header">  <div class="page-header__container _container">    <div class="page-header__breadcrumbs breadcrumbs">      <ul class="breadcrumbs__list">        <li class="breadcrumbs__item"><a href="./" class="breadcrumbs__link">Главная</a></li>        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link disabled">Отели</a></li>      </ul>    </div>    <div class="page-header__block block-page-header">      <div class="block-page-header__top">        <div class="block-page-header__img">          <picture><source srcset="./img/eiffel-tower-paris-europe.webp" type="image/webp"><img src="./img/eiffel-tower-paris-europe.jpg?_v=1640185082840" alt="ОтелиText" /></picture>        </div>      </div>      <div class="block-page-header__center">        <!-- <div class="block-page-header__icon"><picture><source srcset="./img/flags/4x3/fr.svg" type="image/webp"><img src="./img/flags/4x3/fr.svg?_v=1640185082840" alt="" /></picture></div> -->        <div class="block-page-header__icon"><picture><source srcset="./img/flags/4x3/fr.svg" type="image/webp"><img src="./img/flags/4x3/fr.svg?_v=1640185082840" alt="" /></picture></div>        <div class="block-page-header__title">Отели</div>      </div>      <div class="block-page-header__bottom">        <div class="block-page-header__text">          <p>            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dolorem dignissimos earum laudantium accusamus            ipsa recusandae assumenda ducimus odit ut modi perspiciatis similique, delectus facere magni quasi! Earum,            reiciendis ea?          </p>          <p>            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dolorem dignissimos earum laudantium accusamus            ipsa recusandae assumenda ducimus odit ut modi perspiciatis similique, delectus facere magni quasi! Earum,            reiciendis ea?          </p>        </div>      </div>    </div>    <!--     <div class="page-header__img"></div>    <div class="page-header__top">      <div class="page-header__icon">./img/flags/4x3/fr.svg</div>      <div class="page-header__header">Отели</div>    </div>    <div class="page-header__text">pageTexttttt</div> -->  </div></section>        <!--  -->      </main>      <footer class="footer">  <div class="footer__container _container">    <div class="footer__logo" data-da=".menu-footer,768,0">      <a href="#">        <picture><source srcset="./img/logo-footer.svg" type="image/webp"><img src="./img/logo-footer.svg?_v=1640185082840" alt="Logo" /></picture>      </a>    </div>    <div class="footer__menu menu-footer">      <div class="menu-footer__col">        <ul>          <li><a href="#">Отзывы</a></li>          <li><a href="#">Акции</a></li>          <li><a href="#">Где купить</a></li>          <li><a href="#">Новости </a></li>        </ul>      </div>      <div class="menu-footer__col">        <ul>          <li><a href="#">Контакты</a></li>          <li><a href="#">О компании</a></li>          <li><a href="#">Срахование</a></li>          <li><a href="#">Безвизовые страны</a></li>        </ul>      </div>      <div class="menu-footer__col">        <ul>          <li><a href="#">Ваучеры</a></li>          <li><a href="#">Аудиокомплекты</a></li>          <li><a href="#">Правила проведения тура</a></li>          <li><a href="#">Бронирование экскурсий</a></li>        </ul>      </div>      <div class="menu-footer__col">        <ul>          <li><a href="#">Правила бронирования тура</a></li>          <li><a href="#">О #БЕЗВИЗЕ</a></li>          <li><a href="#">Автобусы компании</a></li>          <li><a href="#">Вебинаров от мастера туров</a></li>        </ul>      </div>      <div class="menu-footer__col">        <ul>          <li><a href="#">Уставные документы</a></li>          <li><a href="#">О компании</a></li>          <li><a href="#">Срахование</a></li>          <li><a href="#">Перелік укладених договорів</a></li>        </ul>      </div>    </div>  </div>  <button class="scroll-top"><i class="_icon-arrow2-up"></i></button></footer>    </div>    <!-- MODAL RESERV --><div class="popup popup_reserv">  <div class="popup__content">    <div class="popup__body">      <div class="popup__close"></div>      <div class="popup__header">Быстрая бронь</div>    </div>  </div></div><!-- MODAL RESERV --><!-- MODAL LOGIN --><div class="popup popup_login">  <div class="popup__content">    <div class="popup__body">      <div class="popup__close"></div>      <div class="popup__header">Авторизация</div>    </div>  </div></div><!-- MODAL LOGIN --><!-- MODAL COUNTRY --><div class="popup popup_country popup-country">  <div class="popup__content">    <div class="popup__body popup-country__body bbb">      <div class="popup__close"></div>      <!-- <div class="popup__header">Страны</div> -->      <div class="popup-country__wrapper">        <div class="popup-country__column">          <div class="popup-country__row">            <div class="popup-country__continent">Европа</div>            <ul class="popup-country__list">              <li>                <a href="./country-single-page.html"                  ><picture><source srcset="./img/countries/europe/austria.svg" type="image/webp"><img src="./img/countries/europe/austria.svg?_v=1640185082840" alt="" /></picture> <span>Австрия</span></a                >              </li>              <li>                <a href="./country-single-page.html"                  ><picture><source srcset="./img/countries/europe/andorra.svg" type="image/webp"><img src="./img/countries/europe/andorra.svg?_v=1640185082840" alt="" /></picture> <span>Андорра</span></a                >              </li>              <li>                <a href="./country-single-page.html"                  ><picture><source srcset="./img/countries/europe/belgium.svg" type="image/webp"><img src="./img/countries/europe/belgium.svg?_v=1640185082840" alt="" /></picture> <span>Бельгия</span></a                >              </li>              <li>                <a href="./country-single-page.html"                  ><picture><source srcset="./img/countries/europe/austria.svg" type="image/webp"><img src="./img/countries/europe/austria.svg?_v=1640185082840" alt="" /></picture> <span>Австрия</span></a                >              </li>              <li>                <a href="./country-single-page.html"                  ><picture><source srcset="./img/countries/europe/andorra.svg" type="image/webp"><img src="./img/countries/europe/andorra.svg?_v=1640185082840" alt="" /></picture> <span>Андорра</span></a                >              </li>              <li>                <a href="./country-single-page.html"                  ><picture><source srcset="./img/countries/europe/bulgaria.svg" type="image/webp"><img src="./img/countries/europe/bulgaria.svg?_v=1640185082840" alt="" /></picture> <span>Болгария</span></a                >              </li>              <li>                <a href="./country-single-page.html"                  ><picture><source srcset="./img/countries/europe/belgium.svg" type="image/webp"><img src="./img/countries/europe/belgium.svg?_v=1640185082840" alt="" /></picture> <span>Бельгия</span></a                >              </li>            </ul>          </div>        </div>        <div class="popup-country__column">          <div class="popup-country__row">            <div class="popup-country__continent">Азия</div>            <ul class="popup-country__list">              <li>                <a href="./country-single-page.html">                  <picture><source srcset="./img/countries/europe/andorra.svg" type="image/webp"><img src="./img/countries/europe/andorra.svg?_v=1640185082840" alt="" /></picture>                  <span>Уругвай</span>                </a>              </li>              <li>                <a href="./country-single-page.html">                  <picture><source srcset="./img/countries/europe/andorra.svg" type="image/webp"><img src="./img/countries/europe/andorra.svg?_v=1640185082840" alt="" /></picture>                  <span>Уругвай</span>                </a>              </li>              <li>                <a href="./country-single-page.html">                  <picture><source srcset="./img/countries/europe/andorra.svg" type="image/webp"><img src="./img/countries/europe/andorra.svg?_v=1640185082840" alt="" /></picture>                  <span>Уругвай</span>                </a>              </li>            </ul>          </div>          <div class="popup-country__row">            <div class="popup-country__continent">Океания</div>            <ul class="popup-country__list">              <li>                <a href="./country-single-page.html">                  <picture><source srcset="./img/countries/europe/andorra.svg" type="image/webp"><img src="./img/countries/europe/andorra.svg?_v=1640185082840" alt="" /></picture>                  <span>Уругвай1</span>                </a>              </li>            </ul>          </div>          <div class="popup-country__row">            <!-- <div class="popup-country__continent">Америка</div> -->            <ul class="popup-country__list">              <li>                <a href="./country-single-page.html">                  <picture><source srcset="./img/countries/europe/andorra.svg" type="image/webp"><img src="./img/countries/europe/andorra.svg?_v=1640185082840" alt="" /></picture>                  <span>Уругвай2</span>                </a>              </li>            </ul>          </div>        </div>        <div class="popup-country__column">          <div class="popup-country__row">            <div class="popup-country__continent">Америка</div>            <ul class="popup-country__list">              <li>                <a href="./country-single-page.html">                  <picture><source srcset="./img/countries/europe/andorra.svg" type="image/webp"><img src="./img/countries/europe/andorra.svg?_v=1640185082840" alt="" /></picture>                  <span>Уругвай</span>                </a>              </li>            </ul>          </div>          <div class="popup-country__row">            <div class="popup-country__continent">Африка</div>            <ul class="popup-country__list">              <li>                <a href="./country-single-page.html">                  <picture><source srcset="./img/countries/europe/andorra.svg" type="image/webp"><img src="./img/countries/europe/andorra.svg?_v=1640185082840" alt="" /></picture>                  <span>Уругвай</span>                </a>              </li>            </ul>          </div>        </div>      </div>      <div class="popup-country__view-all">        <a href="./country-page.html"          >Все страны          <span>            <svg width="20" height="11" viewBox="0 0 15 11" fill="none" xmlns="http://www.w3.org/2000/svg">              <path                d="M8.28247 9.83496L13.8579 5.66829L8.28247 1.50163"                stroke="#272727"                stroke-width="2"                stroke-linecap="round"                stroke-linejoin="round"              />              <path d="M12.8358 5.66808L1.84839 5.66797" stroke="#272727" stroke-width="2" stroke-linecap="round" />            </svg>          </span>        </a>      </div>    </div>  </div></div><!-- MODAL COUNTRY --><!--  --><div class="popup popup_popup">  <div class="popup__content">    <div class="popup__body">      <div class="popup__close"></div>    </div>  </div></div><div class="popup popup_massagename-message">  <div class="popup__content">    <div class="popup__body">      <div class="popup__close"></div>    </div>  </div></div><div class="popup popup_video">  <div class="popup__content">    <div class="popup__body">      <div class="popup__close popup__close_video"></div>      <div class="popup__video _video"></div>    </div>  </div></div>    <!--  -->    <!-- Swiper --><script src="https://cdn.jsdelivr.net/npm/flatpickr"></script><!-- <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script> --><script src="https://unpkg.com/@popperjs/core@2"></script><script src="https://unpkg.com/tippy.js@6"></script><script src="js/vendors.min.js?_v=20211222165802"></script><script src="js/app.min.js?_v=20211222165802"></script>  </body></html>
