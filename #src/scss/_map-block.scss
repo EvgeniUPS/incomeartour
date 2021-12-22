@@ -3,10 +3,9 @@
 }
 
 .map {
-  margin-bottom: 100px;
-}
-
-.map {
+  @include adaptiv-value(' margin-bottom', 100, 60, 1);
+  z-index: -1;
+  position: relative;
   // .map__container
   &__container {
   }

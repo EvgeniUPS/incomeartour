@@ -201,7 +201,7 @@ window.addEventListener('DOMContentLoaded', () => {
   AOS.init({ duration: 1200, offset: 120 })
 })
 
-function renderMap() {
+function renderMap(selector) {
   const points = document.querySelectorAll('.map__point')
   const pointsArr = []
   points.forEach(el => {
@@ -227,6 +227,7 @@ function renderMap() {
     id: 'mapbox/streets-v11',
     tileSize: 512,
     zoomOffset: -1,
+    // TODO: сменить токен
     accessToken: 'pk.eyJ1IjoiZXZlZ2VuaXVwcyIsImEiOiJja3dnODd6MnYwbTExMm9xdm4wMm9lNWhlIn0.8OWrlQuBVEd3qzfDwv99Uw',
   }).addTo(customMap)
 
@@ -240,7 +241,7 @@ function renderMap() {
 }
 //
 if (document.querySelector('#customMap')) {
-  renderMap()
+  renderMap(customMap)
 }
 
 if (document.querySelector('.country-filter__list')) {
@@ -418,3 +419,35 @@ if (document.querySelector('.calendar-archive')) {
     },
   })
 }
+
+if (document.querySelector('.where-buy__toggle')) {
+  const whereBuyToggle = document.querySelector('.where-buy__toggle')
+  whereBuyToggle.addEventListener('click', function (e) {
+    const whereList = document.querySelector('.where-buy__list')
+    const itemsWhereBuy = document.querySelectorAll('.item-where-buy')
+
+    if (whereList.classList.contains('where-buy__list_grid')) {
+      whereList.classList.remove('where-buy__list_grid')
+    } else {
+      whereList.classList.add('where-buy__list_grid')
+    }
+    itemsWhereBuy.forEach(itemWhere => {
+      if (itemWhere.classList.contains('item-where-buy_grid')) {
+        itemWhere.classList.remove('item-where-buy_grid')
+      } else {
+        itemWhere.classList.add('item-where-buy_grid')
+      }
+    })
+  })
+}
+
+window.addEventListener(
+  'resize',
+  e => {
+    if (window.innerWidth <= 768) {
+      document.querySelector('.where-buy__list').classList.add('where-buy__list_grid')
+      document.querySelectorAll('.item-where-buy').forEach(item => item.classList.add('item-where-buy_grid'))
+    }
+  },
+  false,
+)

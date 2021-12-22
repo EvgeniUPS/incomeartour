@@ -1,0 +1,142 @@
+.about-page {
+  // .about-page__contacts
+  &__contacts {
+  }
+
+  // .about-page__tabs
+  &__tabs {
+  }
+}
+.contacts-about {
+  @include adaptiv-value('margin-bottom', 60, 20, 1);
+  line-height: 24px;
+  a {
+    color: inherit;
+  }
+  // .contacts-about__container
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    @media (max-width: 768px) {
+      align-items: flex-start;
+    }
+  }
+  // .contacts-about__top
+  &__top {
+    display: flex;
+    gap: 20px;
+    @include adaptiv-value('margin-bottom', 75, 10, 1);
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+  }
+  // .contacts-about__map
+  &__map {
+    flex: 0 0 60%;
+  }
+  // .contacts-about__contacts
+  &__contacts {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  // .contacts-about__title
+  &__title {
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+  // .contacts-about__item
+  &__item {
+  }
+  // .contacts-about__label
+  &__label {
+    font-weight: 700;
+    // margin-bottom: 5px;
+  }
+  // .contacts-about__text
+  &__text {
+    span {
+      display: block;
+    }
+    @media (max-width: 768px) {
+      margin-bottom: 10px;
+    }
+  }
+  // .contacts-about__time
+  &__time {
+    font-size: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+  }
+  // .contacts-about__time-text
+  &__time-text {
+    max-width: 450px;
+    text-align: center;
+    @media (max-width: 768px) {
+      text-align: left;
+    }
+
+    span {
+      display: block;
+    }
+  }
+}
+
+//<TABS-ABOUT>====================================================================================================
+
+.about-page {
+  // .about-page__tabs
+  &__tabs {
+  }
+}
+.tabs-about {
+  @include adaptiv-value('margin-bottom', 100, 60, 1);
+  // .tabs-about__container
+  &__container {
+  }
+  // .tabs-about__wrapper
+  &__wrapper {
+  }
+  // .tabs-about__nav
+  &__nav {
+    background-color: $colorBeige;
+    display: flex;
+    // gap: 30px;
+    justify-content: space-evenly;
+  }
+  // .tabs-about__item
+  &__item {
+    padding: 0 20px;
+    font-weight: 700;
+    font-size: 15px;
+    text-transform: uppercase;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    &._active {
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 15px;
+        left: 0;
+        background-color: $colorRed;
+      }
+    }
+  }
+  // .tabs-about__body
+  &__body {
+    @include adaptiv-value('padding-top', 60, 20, 1);
+  }
+  // .tabs-about__block
+  &__block {
+  }
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('_head.html',{ "title":"Где купить" })
+  <body>
+    <div class="wrapper">
+      <!-- @@include('_header.html',{}) -->
+      <!--  -->
+      @@include('_header.html',{})
+      <main class="page where-buy">
+        <section class="promo-page__header page-header">
+          <div class="page-header__container _container">
+            <div class="page-header__breadcrumbs breadcrumbs">
+              <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item"><a href="./" class="breadcrumbs__link">Главная</a></li>
+                <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link disabled">Где купить</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        @@include('_map-block.html',{})
+
+        <section class="where-buy">
+          <div class="where-buy__container _container">
+            <h1 class="where-buy__title">где купить</h1>
+            <div class="where-buy__header">
+              <div class="where-buy__filter">
+                <select class="filter-where-buy" id="filterWhereBuy">
+                  <option value="">выберите город</option>
+                  <option value="11111111">Северодонецк</option>
+                  <option value="22222222">сумы</option>
+                  <option value="33333333">Тернополь</option>
+                  <option value="44444444">харьков</option>
+                  <option value="55555555">Херсон</option>
+                </select>
+              </div>
+              <div class="where-buy__toggle"></div>
+            </div>
+            <div class="where-buy__list">
+              <!--  -->
+              <div class="where-buy__item item-where-buy">
+                <div class="item-where-buy__image">
+                  <img src="./img/where01.jpg" alt="" />
+                </div>
+                <div class="item-where-buy__descr">
+                  <div class="item-where-buy__title">Анна-тур Одесса</div>
+                  <div class="item-where-buy__adr">Одесса, ул. Среднефонтанская, 19а помещ 248 (Чудо-город)</div>
+                  <div class="item-where-buy__phones">
+                    <a href="tel:+380487039940">048-703-99-40</a>,
+                    <a href="tel:+380677252560"> 067-725-25-60</a>
+                  </div>
+                  <div class="item-where-buy__email"><a href="mailto:book@anna-tour.org">book@anna-tour.org</a></div>
+                  <div class="item-where-buy__site"><a href="http://anna-tour.org/">http://anna-tour.org/</a></div>
+                </div>
+              </div>
+              <!--  -->
+
+              <div class="where-buy__item item-where-buy">
+                <div class="item-where-buy__image">
+                  <img src="./img/where02.jpg" alt="" />
+                </div>
+                <div class="item-where-buy__descr">
+                  <div class="item-where-buy__title">Ганеж</div>
+                  <div class="item-where-buy__adr">Одесса, ул. Новосельского, 60</div>
+                  <div class="item-where-buy__phones">
+                    <a href="tel:+380487039940">048-703-99-40</a>,
+                    <a href="tel:+380677252560"> 067-725-25-60</a>
+                  </div>
+                  <div class="item-where-buy__email"><a href="mailto:ganezh_odessa@ukr.net">ganezh_odessa@ukr.net</a></div>
+                  <div class="item-where-buy__site"><a href="http://www.ganezh.odessa.ua/">http://www.ganezh.odessa.ua/</a></div>
+                </div>
+              </div>
+              <div class="where-buy__item item-where-buy">
+                <div class="item-where-buy__image">
+                  <img src="./img/where03.jpg" alt="" />
+                </div>
+                <div class="item-where-buy__descr">
+                  <div class="item-where-buy__title">Мемори тур</div>
+                  <div class="item-where-buy__adr">Запорожье, ул. Л. Жаботинского 53, оф. 339</div>
+                  <div class="item-where-buy__phones">
+                    <a href="tel:+380487039940">048-703-99-40</a>, <a href="tel:+380487039940">048-703-99-40</a>,
+                    <a href="tel:+380677252560"> 067-725-25-60</a>
+                  </div>
+                  <div class="item-where-buy__email"><a href="mailto:ganezh_odessa@ukr.net">ganezh_odessa@ukr.net</a></div>
+                  <div class="item-where-buy__site"><a href=" http://www.ganezh.odessa.ua/"> http://www.ganezh.odessa.ua/</a></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+      @@include('_footer.html',{})
+    </div>
+    @@include('_popup.html',{})
+    <!--  -->
+    @@include('_js.html',{})
+  </body>
+</html>

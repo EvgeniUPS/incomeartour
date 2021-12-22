@@ -1,0 +1,148 @@
+.where-buy {
+  @include adaptiv-value('margin-bottom', 100, 60, 1);
+
+  // .where-buy__container
+  &__container {
+  }
+  // .where-buy__title
+  &__title {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 50px;
+    padding-bottom: 0;
+    @include adaptiv-value('margin-bottom', 60, 40, 1);
+  }
+  // .where-buy__header
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include adaptiv-value('margin-bottom', 60, 40, 1);
+  }
+  // .where-buy__filter
+  &__filter {
+    flex: 0 0 260px;
+    @media (max-width: 768px) {
+      flex: 1 0 260px;
+    }
+  }
+  // .where-buy__toggle
+  &__toggle {
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+    background-image: url(../img/icons/grid-icon.svg);
+    background-size: contain;
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+  // .where-buy__list
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+
+    &_grid {
+      flex-direction: row;
+      justify-content: space-around;
+      flex-wrap: wrap;
+    }
+  }
+  // .where-buy__item
+  &__item {
+  }
+}
+
+.item-where-buy {
+  display: flex;
+  gap: 40px;
+  @media (max-width: 768px) {
+    flex-direction: column;
+    gap: 0px;
+  }
+  // .item-where-buy__image
+  &__image {
+    flex: 0 0 250px;
+    box-shadow: 0px 24px 32px rgba(8, 35, 48, 0.12);
+    border-radius: 6px;
+    padding: 20px;
+    height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+      max-width: 250px;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+  // .item-where-buy__descr
+  &__descr {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+    min-height: 200px;
+    a {
+      color: inherit;
+    }
+    @media (max-width: 768px) {
+    }
+  }
+  // .item-where-buy__title
+  &__title {
+    font-size: 25px;
+    font-weight: 700;
+  }
+  // .item-where-buy__adr
+  &__adr {
+  }
+  // .item-where-buy__phones
+  &__phones {
+  }
+  // .item-where-buy__email
+  &__email {
+  }
+  // .item-where-buy__site
+  &__site {
+  }
+}
+
+.item-where-buy_grid {
+  flex: 0 0 250px;
+  flex-direction: column;
+  // .item-where-buy__image
+  &__image {
+  }
+  // .item-where-buy__descr
+  &__descr {
+    justify-content: space-between;
+    min-height: 200px;
+  }
+  // .item-where-buy__title
+  &__title {
+  }
+  // .item-where-buy__adr
+  &__adr {
+  }
+  // .item-where-buy__phones
+  &__phones {
+  }
+  // .item-where-buy__email
+  &__email {
+  }
+  // .item-where-buy__site
+  &__site {
+  }
+}
+
+.filter-where-buy {
+}
