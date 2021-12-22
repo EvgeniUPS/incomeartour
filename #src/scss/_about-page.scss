@@ -87,12 +87,15 @@
 }
 
 //<TABS-ABOUT>====================================================================================================
-
 .about-page {
+  a {
+    color: inherit;
+  }
   // .about-page__tabs
   &__tabs {
   }
 }
+
 .tabs-about {
   @include adaptiv-value('margin-bottom', 100, 60, 1);
   // .tabs-about__container
@@ -110,6 +113,7 @@
   }
   // .tabs-about__item
   &__item {
+    white-space: nowrap;
     padding: 0 20px;
     font-weight: 700;
     font-size: 15px;
@@ -131,6 +135,9 @@
         background-color: $colorRed;
       }
     }
+    @media (max-width: 768px) {
+      padding: 0 10px;
+    }
   }
   // .tabs-about__body
   &__body {
@@ -138,5 +145,283 @@
   }
   // .tabs-about__block
   &__block {
+  }
+}
+
+//<OFFICE>====================================================================================================
+.tabs-about {
+  // .tabs-about__block
+  &__block {
+  }
+}
+.office-tab {
+  // .office-tab__list
+  &__list {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 60px;
+    @media (max-width: 768px) {
+      gap: 30px;
+    }
+  }
+  // .office-tab__item
+  &__item {
+    flex: 0 0 200px;
+  }
+}
+
+.office-item {
+  display: flex;
+  flex-direction: column;
+  // .office-item__image
+  &__image {
+    margin-bottom: 15px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  // .office-item__name
+  &__name {
+    font-size: 20px;
+    font-weight: 700;
+    color: $colorRed;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  // .office-item__position
+  &__position {
+    text-align: center;
+    color: rgba(0, 0, 0, 0.7);
+    font-weight: 700;
+    margin-bottom: 10px;
+    font-size: 12px;
+  }
+  // .office-item__contacts
+  &__contacts {
+    font-size: 12px;
+    &_item {
+      margin-bottom: 10px;
+      padding-left: 25px;
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        width: 15px;
+        height: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+
+  // .office-item__phone
+  &__phone {
+    &:before {
+      background-image: url(../img/icons/icon-phone.svg);
+    }
+  }
+  // .office-item__email
+  &__email {
+    &:before {
+      background-image: url(../img/icons/icon-email.svg);
+    }
+  }
+  // .office-item__skype
+  &__skype {
+    &:before {
+      background-image: url(../img/icons/icon-skype.svg);
+    }
+  }
+}
+//<GUIDE TAB>====================================================================================================
+.guide-tab {
+  // .guide-tab__list
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+    @media (max-width: 768px) {
+      gap: 60px;
+    }
+  }
+  // .guide-tab__item
+  &__item {
+    position: relative;
+    &:not(:last-child) {
+      &:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 1px;
+        bottom: -50px;
+        left: 0;
+        opacity: 0.15;
+        background-color: #000;
+        @media (max-width: 768px) {
+          bottom: -30px;
+        }
+      }
+    }
+  }
+}
+
+.item-guide-tab {
+  display: flex;
+  justify-content: space-between;
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+    // flex-direction: column;
+  }
+  @media (max-width: 600px) {
+    // gap: 10px;
+  }
+
+  // .item-guide-tab__about
+  &__about {
+    padding-right: 30px;
+    gap: 30px;
+    flex: 0 0 400px;
+    display: flex;
+    align-items: center;
+    @media (max-width: 992px) {
+      flex: 0 0 300px;
+      padding-right: 20px;
+      gap: 20px;
+    }
+    @media (max-width: 768px) {
+      width: 100%;
+      flex: 1 0 100%;
+      justify-content: center;
+      margin-bottom: 15px;
+    }
+    @media (max-width: 600px) {
+    }
+  }
+  // .item-guide-tab__column
+  &__column {
+    min-height: 150px;
+  }
+  // .item-guide-tab__image
+  &__image {
+    max-width: 150px;
+    img {
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  // .item-guide-tab__info
+  &__info {
+    // min-height: 100px;
+    height: 100%;
+    padding: 30px 0;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    @media (max-width: 992px) {
+      padding: 20px 0;
+    }
+    @media (max-width: 768px) {
+    }
+  }
+  // .item-guide-tab__stars
+  &__stars {
+    font-weight: 700;
+    span {
+      padding-right: 22px;
+      position: relative;
+      &:before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+
+        background-image: url(../img/icons/star.svg);
+        background-repeat: no-repeat;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 0;
+      }
+    }
+  }
+  // .item-guide-tab__name
+  &__name {
+    font-weight: 700;
+    color: $colorRed;
+  }
+  // .item-guide-tab__reviews
+  &__reviews {
+    white-space: nowrap;
+  }
+  // .item-guide-tab__contacts
+  &__contacts {
+    min-height: 100px;
+    padding: 30px;
+    flex: 0 0 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    border-left: 1px solid #d9d9d9;
+    border-right: 1px solid #d9d9d9;
+
+    // .item-guide-tab__contacts_title
+    &_title {
+      font-weight: 700;
+    }
+    // .item-guide-tab__contacts_item
+    &_item {
+    }
+    @media (max-width: 992px) {
+      flex: 0 0 200px;
+    }
+    @media (max-width: 768px) {
+      border: none;
+      flex: 0 0 100%;
+      width: 100%;
+      flex: 1 0 100%;
+      align-items: center;
+      padding: 0;
+      margin-bottom: 10px;
+    }
+  }
+  // .item-guide-tab__descr
+  &__descr {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    // .item-guide-tab__descr_title
+    &_title {
+      font-weight: 700;
+      color: $colorRed;
+      margin-bottom: 10px;
+    }
+    // .item-guide-tab__descr_text
+    &_text {
+      margin-bottom: 10px;
+    }
+    // .item-guide-tab__descr_link
+    &_link {
+      font-weight: 700;
+    }
+    @media (max-width: 992px) {
+      padding: 20px;
+    }
+    @media (max-width: 768px) {
+      flex: 1 1 100%;
+      width: 100%;
+      flex: 1 0 100%;
+      align-items: center;
+      padding: 0;
+    }
   }
 }
