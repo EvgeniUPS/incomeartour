@@ -7,6 +7,8 @@ $colorBeige: #ece3db;
 $colorOrange: #faa619;
 $secondTextColor: #737373;
 
+$borderColorGray: #d9d9d9;
+
 $colorDarkGrey: #272727;
 
 $randColor: rgb(random(255), random(255), random(255));
@@ -145,6 +147,7 @@ body {
 
 @import 'exchange-archive-page';
 @import 'where-buy-page';
+@import 'guide-single-page';
 @import 'about-page';
 
 @import 'news-page';

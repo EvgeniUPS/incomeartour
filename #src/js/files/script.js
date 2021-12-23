@@ -445,8 +445,10 @@ window.addEventListener(
   'resize',
   e => {
     if (window.innerWidth <= 768) {
-      document.querySelector('.where-buy__list').classList.add('where-buy__list_grid')
-      document.querySelectorAll('.item-where-buy').forEach(item => item.classList.add('item-where-buy_grid'))
+      if (document.querySelector('.where-buy__list')) {
+        document.querySelector('.where-buy__list').classList.add('where-buy__list_grid')
+        document.querySelectorAll('.item-where-buy').forEach(item => item.classList.add('item-where-buy_grid'))
+      }
     }
   },
   false,
