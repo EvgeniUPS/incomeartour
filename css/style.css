@@ -9253,6 +9253,278 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
   min-height: 200px;
 }
 
+.main-guide-single {
+  margin-bottom: 60px;
+}
+
+.main-guide-single__title {
+  color: #990000;
+  font-weight: 700;
+}
+
+.main-guide-single__nav {
+  display: flex;
+  gap: 2px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  background-color: #ece3db;
+  margin-bottom: 30px;
+}
+
+.main-guide-single__item {
+  display: flex;
+  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  padding: 0 15px;
+  transition: all 0.3s ease 0s;
+  font-size: 15px;
+  min-height: 75px;
+  cursor: pointer;
+}
+
+.main-guide-single__item:hover {
+  position: relative;
+}
+
+.main-guide-single__item:hover:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #990000;
+  bottom: 15px;
+  left: 0;
+}
+
+.main-guide-single__item._active {
+  position: relative;
+}
+
+.main-guide-single__item._active:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: #990000;
+  bottom: 15px;
+  left: 0;
+}
+
+.guide-single-about__wrapper {
+  display: flex;
+  gap: 25px;
+}
+
+.guide-single-about__bio {
+  flex: 0 0 320px;
+}
+
+.guide-single-about__avatar {
+  margin: 0px auto;
+  margin-bottom: 15px;
+  max-width: 300px;
+  height: 300px;
+}
+
+.guide-single-about__avatar img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.guide-single-about__title {
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #990000;
+}
+
+.guide-single-about__text p {
+  margin-bottom: 20px;
+}
+
+.guide-about-contacts {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+}
+
+.guide-about-contacts a {
+  color: inherit;
+}
+
+.guide-about-contacts__title {
+  margin: 0px auto;
+  font-weight: 700;
+  color: #990000;
+  font-size: 25px;
+  line-height: 130%;
+  text-transform: uppercase;
+}
+
+.guide-about-contacts__list {
+  margin-bottom: 20px;
+}
+
+.guide-about-contacts__item {
+  padding-left: 30px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.guide-about-contacts__item:before {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+}
+
+.guide-about-contacts__item_skype:before {
+  content: "";
+  background: url("../img/icons/icon-skype.svg") no-repeat;
+  background-size: contain;
+}
+
+.guide-about-contacts__item_phone:before {
+  content: "";
+  background: url("../img/icons/icon-phone.svg") no-repeat;
+  background-size: contain;
+}
+
+.guide-about-contacts__item_email:before {
+  content: "";
+  background: url("../img/icons/icon-email.svg") no-repeat;
+  background-size: contain;
+}
+
+.guide-about-contacts__bottom {
+  font-weight: 700;
+  margin: 0px auto;
+  justify-self: flex-end;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.guide-about-contacts__reviews {
+  text-transform: uppercase;
+}
+
+.guide-about-contacts__reviews a {
+  padding-right: 25px;
+  position: relative;
+}
+
+.guide-about-contacts__reviews a:before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  background: url("../img/icons/icon-rev.svg") no-repeat;
+  background-size: contain;
+}
+
+.item-review-guide {
+  border-bottom: 1px solid #d9d9d9;
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+}
+
+.item-review-guide:first-child {
+  padding-top: 0;
+}
+
+.item-review-guide:last-child {
+  border-bottom: none;
+}
+
+.item-review-guide__info {
+  display: flex;
+  flex: 0 0 40%;
+  gap: 30px;
+  align-items: center;
+  border-right: 1px solid #d9d9d9;
+}
+
+.item-review-guide__image {
+  width: 150px;
+  height: 150px;
+}
+
+.item-review-guide__image img {
+  border-radius: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.item-review-guide__details {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item-review-guide__star {
+  font-weight: 700;
+}
+
+.item-review-guide__star span {
+  padding-right: 25px;
+  position: relative;
+}
+
+.item-review-guide__star span:before {
+  content: "";
+  position: absolute;
+  background: url("../img/icons/star.svg") no-repeat;
+  background-size: contain;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
+  width: 18px;
+  height: 18px;
+}
+
+.item-review-guide__name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #990000;
+  text-transform: uppercase;
+}
+
+.item-review-guide__review {
+  padding-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.item-review-guide__text p {
+  margin-bottom: 10px;
+}
+
+.item-review-guide__button button {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.guide-single-add-review {
+  padding-top: 60px;
+}
+
 .contacts-about {
   margin-bottom: 60px;
   line-height: 24px;
@@ -10821,6 +11093,48 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
       );
   }
 
+  .main-guide-single__item {
+    min-height: calc(
+        40px + 35 *
+          ((100vw - 320px) / 910)
+      );
+  }
+
+  .main-guide-single__item:hover:before {
+    bottom: calc(
+        5px + 10 *
+          ((100vw - 320px) / 910)
+      );
+  }
+
+  .main-guide-single__item._active:before {
+    bottom: calc(
+        5px + 10 *
+          ((100vw - 320px) / 910)
+      );
+  }
+
+  .main-guide-single {
+    margin-bottom: calc(
+        20px + 40 *
+          ((100vw - 320px) / 910)
+      );
+  }
+
+  .guide-single-about__title {
+    margin-bottom: calc(
+        10px + 10 *
+          ((100vw - 320px) / 910)
+      );
+  }
+
+  .guide-single-about__text p {
+    margin-bottom: calc(
+        10px + 10 *
+          ((100vw - 320px) / 910)
+      );
+  }
+
   .contacts-about {
     margin-bottom: calc(
         20px + 40 *
@@ -11979,6 +12293,24 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
     gap: 0px;
   }
 
+  .guide-single-about__wrapper {
+    flex-direction: column;
+  }
+
+  .item-review-guide {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .item-review-guide__info {
+    border-right: none;
+    gap: 15px;
+  }
+
+  .item-review-guide__review {
+    padding-left: 0;
+  }
+
   .contacts-about__container {
     align-items: flex-start;
   }
@@ -12148,6 +12480,10 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
 
   .item-types a span {
     font-size: 12px;
+  }
+
+  .main-guide-single__nav {
+    flex-direction: column;
   }
 
   .list-promo-page__item {
