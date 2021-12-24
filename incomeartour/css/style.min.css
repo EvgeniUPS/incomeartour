@@ -6528,7 +6528,9 @@ button.swiper-pagination-bullet {
   }
 }
 .body-details-gallery__img {
+  cursor: pointer;
   height: 390px;
+  overflow: hidden;
 }
 @media (max-width: 768px) {
   .body-details-gallery__img {
@@ -6536,9 +6538,13 @@ button.swiper-pagination-bullet {
   }
 }
 .body-details-gallery__img img {
+  transition: all 1.5s ease 0s;
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+.body-details-gallery__img img:hover {
+  transform: scale(1.05);
 }
 
 .add-info-details__list {

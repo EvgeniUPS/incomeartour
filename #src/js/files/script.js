@@ -207,6 +207,7 @@ function langHandler() {
 window.addEventListener('DOMContentLoaded', () => {
   currentLanguage = html.getAttribute('lang')
   langHandler()
+  readMore()
   AOS.init({ duration: 1200, offset: 120 })
 })
 
@@ -502,4 +503,3 @@ function readMore() {
     })
   })
 }
-readMore()
