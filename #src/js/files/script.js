@@ -166,9 +166,18 @@ if (headerColorPicker) {
   })
 }
 
-if (document.querySelector('.simple-rating')) {
-  const simpleRatingWrapper = document.querySelector('.simple-rating')
-  const simpleRatingBottom = document.querySelector('.simple-rating__bottom')
+if (document.querySelector('.simple-rating__guide')) {
+  const simpleRatingWrapper = document.querySelector('.simple-rating__guide')
+  const simpleRatingBottom = document.querySelector('.simple-rating__bottom__guide')
+
+  simpleRatingWrapper.addEventListener('click', function (e) {
+    simpleRatingBottom.querySelector('span').innerHTML = e.target.value
+    simpleRatingBottom.style.opacity = '1'
+  })
+}
+if (document.querySelector('.simple-rating__tour')) {
+  const simpleRatingWrapper = document.querySelector('.simple-rating__tour')
+  const simpleRatingBottom = document.querySelector('.simple-rating__bottom__tour')
 
   simpleRatingWrapper.addEventListener('click', function (e) {
     simpleRatingBottom.querySelector('span').innerHTML = e.target.value
@@ -453,3 +462,44 @@ window.addEventListener(
   },
   false,
 )
+
+//<STAR in GUIDE SINGLE>====================================================================================================
+if (document.querySelector('.item-single-reviews__bio-info')) {
+}
+//<STAR in GUIDE SINGLE>====================================================================================================
+
+//<temp>====================================================================================================
+//<temp>====================================================================================================
+//<temp>====================================================================================================
+//<temp>====================================================================================================
+/* 
+  ._read-more 
+  ._read-more__text
+  ._read-more__btn
+  
+*/
+
+function readMore() {
+  if (!document.querySelector('._read-more')) return
+  const readMoreBlocks = document.querySelectorAll('._read-more')
+  // console.log(`readMoreBlocks`, readMoreBlocks)
+  readMoreBlocks.forEach(readMore => {
+    const textLimit = readMore.dataset.textLimit
+    const textBlock = readMore.querySelector('._read-more__text')
+
+    const text = textBlock.textContent
+
+    if (text.length < textLimit) readMore.querySelector('._read-more__btn').style.display = 'none'
+    const smallText = text.slice(0, textLimit)
+
+    textBlock.textContent = smallText
+
+    readMore.addEventListener('click', e => {
+      if (!e.target.classList.contains('_read-more__btn')) return
+      console.log('more')
+      readMore.querySelector('._read-more__text').textContent = text
+      readMore.querySelector('._read-more__btn').style.display = 'none'
+    })
+  })
+}
+readMore()

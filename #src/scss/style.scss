@@ -139,6 +139,7 @@ body {
 @import 'map-block';
 @import 'seo-block';
 @import 'popup';
+
 @import 'filter-page';
 
 @import 'header';
@@ -149,6 +150,7 @@ body {
 @import 'where-buy-page';
 @import 'guide-single-page';
 @import 'about-page';
+@import 'reviews-page';
 
 @import 'news-page';
 @import 'news-single-page';
@@ -354,5 +356,43 @@ body {
   &::-webkit-resizer {
     /* 7 - изменение размеров */
     width: 10px;
+  }
+}
+
+//<temp>====================================================================================================
+//<temp>====================================================================================================
+//<temp>====================================================================================================
+//<temp>====================================================================================================
+
+.rev {
+  // .rev__list
+  &__list {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    gap: 10px;
+  }
+  // .rev__item
+  &__item {
+    flex: 0 1 30%;
+  }
+  // .rev__text
+  &__text {
+  }
+  // .rev__button
+  &__button {
+  }
+}
+
+._read-more {
+  // ._read-more__text
+  &__text {
+  }
+  // ._read-more__btn
+  &__btn {
+    // color: teal;
+    font-weight: 700;
+    text-transform: uppercase;
+    // cursor: pointer;
   }
 }

@@ -234,8 +234,8 @@ if (document.querySelector('.slider-add-exc')) {
       },
     },
     navigation: {
-      nextEl: '.add-exc-button-next',
-      prevEl: '.add-exc-button-prev',
+      nextEl: '.add-exc-button-next2',
+      prevEl: '.add-exc-button-prev2',
     },
   })
 }

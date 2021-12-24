@@ -16,13 +16,9 @@
               <div class="item-single-reviews__date">08.09.2021</div>
             </div>
           </div>
-          <div class="item-single-reviews__text-block _read-more-block">
-            <div class="item-single-reviews__text _read-more-text">
-              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
-            </div>
-            <div class="item-single-reviews__read-more _read-more-btn">
-              <span>Развернуть</span>
-            </div>
+          <div class="item-single-reviews__text-block _read-more" data-text-limit="200">
+            <div class="item-single-reviews__text _read-more__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis, m</div>
+            <button class="item-single-reviews__read-more _read-more__btn">Развернуть</button>
           </div>
         </div>
         <!--  -->
@@ -32,18 +28,22 @@
               <img src="./img/avatar.jpg" alt="example" />
             </div>
             <div class="item-single-reviews__bio-info">
-              <div class="item-single-reviews__stars"><span>4</span></div>
+              <div class="item-single-reviews__stars" data-stars="4"><span>4</span></div>
               <div class="item-single-reviews__name">ИМЯ туриста</div>
               <div class="item-single-reviews__date">08.09.2021</div>
             </div>
           </div>
-          <div class="item-single-reviews__text-block _read-more-block">
-            <div class="item-single-reviews__text _read-more-text">
+          <div class="item-single-reviews__text-block _read-more" data-text-limit="200">
+            <div class="item-single-reviews__text _read-more__text">
+              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
+              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
+              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
+              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
+              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
+              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
               Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
             </div>
-            <div class="item-single-reviews__read-more _read-more-btn">
-              <span>Развернуть</span>
-            </div>
+            <button class="item-single-reviews__read-more _read-more__btn">Развернуть</button>
           </div>
         </div>
         <div class="list-single-reviews__item item-single-reviews">
@@ -57,13 +57,13 @@
               <div class="item-single-reviews__date">08.09.2021</div>
             </div>
           </div>
-          <div class="item-single-reviews__text-block _read-more-block">
-            <div class="item-single-reviews__text _read-more-text">
+          <div class="item-single-reviews__text-block _read-more" data-text-limit="200">
+            <div class="item-single-reviews__text _read-more__text">
+              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
+              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
               Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
             </div>
-            <div class="item-single-reviews__read-more _read-more-btn">
-              <span>Развернуть</span>
-            </div>
+            <button class="item-single-reviews__read-more _read-more__btn">Развернуть</button>
           </div>
         </div>
       </div>
@@ -74,32 +74,62 @@
       <div class="add-new-single-reviews__title _title2">Добавить отзыв</div>
 
       <form action="" method="GET" class="add-new-single-reviews__form form-single-review">
-        <input type="hidden" name="productId" id="productId" value="12" />
+        <!-- <input type="hidden" name="productId" id="productId" value="12" /> -->
         <div class="form-single-review__first-row">
-          <!-- <label for="choiceGuide"> Гид </label> -->
-          <select class="choice-guide" id="choiceGuide">
-            <option value="">Выбрать гида</option>
-            <option value="11111111">Гид 01</option>
-            <option value="22222222">Гид 02</option>
-            <option value="33333333">Гид 03</option>
-            <option value="44444444">Гид 04</option>
-            <option value="55555555">Гид 05</option>
-          </select>
-          <div class="simple-rating">
-            <div class="simple-rating__items">
-              <input id="simple-rating__5" type="radio" class="simple-rating__item" name="guide-rating" value="5" />
-              <label for="simple-rating__5" class="simple-rating__label"></label>
-              <input id="simple-rating__4" type="radio" class="simple-rating__item" name="guide-rating" value="4" />
-              <label for="simple-rating__4" class="simple-rating__label"></label>
-              <input id="simple-rating__3" type="radio" class="simple-rating__item" name="guide-rating" value="3" />
-              <label for="simple-rating__3" class="simple-rating__label"></label>
-              <input id="simple-rating__2" type="radio" class="simple-rating__item" name="guide-rating" value="2" />
-              <label for="simple-rating__2" class="simple-rating__label"></label>
-              <input id="simple-rating__1" type="radio" class="simple-rating__item" name="guide-rating" value="1" />
-              <label for="simple-rating__1" class="simple-rating__label"></label>
+          <!--  -->
+          <div class="form-single-review__choices">
+            <select name="guide_id" class="choice-guide" id="choiceGuide">
+              <option value="">Выбрать гида</option>
+              <option value="11111111">Гид 01</option>
+              <option value="22222222">Гид 02</option>
+              <option value="33333333">Гид 03</option>
+              <option value="44444444">Гид 04</option>
+              <option value="55555555">Гид 05</option>
+            </select>
+            <div class="simple-rating simple-rating__guide">
+              <div class="simple-rating__items">
+                <input id="simple-rating__5" type="radio" class="simple-rating__item" name="guide-rating" value="5" />
+                <label for="simple-rating__5" class="simple-rating__label"></label>
+                <input id="simple-rating__4" type="radio" class="simple-rating__item" name="guide-rating" value="4" />
+                <label for="simple-rating__4" class="simple-rating__label"></label>
+                <input id="simple-rating__3" type="radio" class="simple-rating__item" name="guide-rating" value="3" />
+                <label for="simple-rating__3" class="simple-rating__label"></label>
+                <input id="simple-rating__2" type="radio" class="simple-rating__item" name="guide-rating" value="2" />
+                <label for="simple-rating__2" class="simple-rating__label"></label>
+                <input id="simple-rating__1" type="radio" class="simple-rating__item" name="guide-rating" value="1" />
+                <label for="simple-rating__1" class="simple-rating__label"></label>
+              </div>
+              <div class="simple-rating__bottom simple-rating__bottom__guide">Ваша оценка <span>5</span></div>
             </div>
-            <div class="simple-rating__bottom">Ваша оценка <span>5</span></div>
           </div>
+          <!--  -->
+          <!--  -->
+          <div class="form-single-review__choices">
+            <select name="product_id" class="choice-guide" id="choiceTour">
+              <option value="">Выбрать тур</option>
+              <option value="11111111">Тур 01</option>
+              <option value="22222222">Тур 02</option>
+              <option value="33333333">Тур 03</option>
+              <option value="44444444">Тур 04</option>
+              <option value="55555555">Тур 05</option>
+            </select>
+            <div class="simple-rating simple-rating__tour">
+              <div class="simple-rating__items">
+                <input id="simple-rating__6" type="radio" class="simple-rating__item" name="tour-rating" value="5" />
+                <label for="simple-rating__6" class="simple-rating__label"></label>
+                <input id="simple-rating__7" type="radio" class="simple-rating__item" name="tour-rating" value="4" />
+                <label for="simple-rating__7" class="simple-rating__label"></label>
+                <input id="simple-rating__8" type="radio" class="simple-rating__item" name="tour-rating" value="3" />
+                <label for="simple-rating__8" class="simple-rating__label"></label>
+                <input id="simple-rating__9" type="radio" class="simple-rating__item" name="tour-rating" value="2" />
+                <label for="simple-rating__9" class="simple-rating__label"></label>
+                <input id="simple-rating__10" type="radio" class="simple-rating__item" name="tour-rating" value="1" />
+                <label for="simple-rating__10" class="simple-rating__label"></label>
+              </div>
+              <div class="simple-rating__bottom simple-rating__bottom__tour">Ваша оценка <span>5</span></div>
+            </div>
+          </div>
+          <!--  -->
         </div>
 
         <label for="reviewName">

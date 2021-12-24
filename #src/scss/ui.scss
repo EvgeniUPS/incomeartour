@@ -480,28 +480,28 @@ body.ie {
 //   background-color: #f6f8f4;
 // }
 
-._read-more-block {
-  ._read-more-text {
-    // height: 38px;
-    overflow: hidden;
+// ._read-more-block {
+//   ._read-more-text {
+//     // height: 38px;
+//     overflow: hidden;
 
-    &._active {
-      transition: all 0.3s ease 0s;
-      height: 100%;
-      // background-color: tomato;
-    }
-  }
-  ._read-more-btn {
-    // background-color: #006f6f;
-    cursor: pointer;
-    // padding: 20px 0;
-    transition: all 0.3s ease 0s;
-    &._active {
-      transition: all 0.3s ease 0s;
-      content: 'свернуть';
-    }
-  }
-}
+//     &._active {
+//       transition: all 0.3s ease 0s;
+//       height: 100%;
+//       // background-color: tomato;
+//     }
+//   }
+//   ._read-more-btn {
+//     // background-color: #006f6f;
+//     cursor: pointer;
+//     // padding: 20px 0;
+//     transition: all 0.3s ease 0s;
+//     &._active {
+//       transition: all 0.3s ease 0s;
+//       content: 'свернуть';
+//     }
+//   }
+// }
 
 @keyframes rotate-scale {
   0% {

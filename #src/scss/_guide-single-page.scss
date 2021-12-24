@@ -22,7 +22,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
     background-color: $colorBeige;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
     @media (max-width: 500px) {
       flex-direction: column;
     }
@@ -336,5 +336,5 @@
 
 //<BLOCK>====================================================================================================
 .guide-single-add-review {
-  padding-top: 60px;
+  // padding-top: 60px;
 }
