@@ -4048,6 +4048,12 @@ button.swiper-pagination-bullet {
   width: 100%;
   min-width: 150px;
 }
+.search-block .search-form__date .qs-datepicker .qs-square.qs-active {
+  background: #990000;
+}
+.search-block .search-form__date .qs-datepicker .qs-square.qs-active span {
+  color: #fff;
+}
 .search-block .search-form__date:before {
   content: "";
   height: 0;
@@ -9823,6 +9829,12 @@ button.swiper-pagination-bullet {
       );
   }
 }
+.calendar-archive .qs-datepicker-container .qs-datepicker .qs-square.qs-active {
+  background: #990000;
+}
+.calendar-archive .qs-datepicker-container .qs-datepicker .qs-square.qs-active span {
+  color: #fff;
+}
 .calendar-archive .qs-datepicker-container {
   top: 0;
   left: 0;
@@ -11410,6 +11422,81 @@ button.swiper-pagination-bullet {
   font-size: 13px;
 }
 
+.calendar-page__inner {
+  margin-bottom: 100px;
+}
+@media (max-width: 1230px) {
+  .calendar-page__inner {
+    margin-bottom: calc(
+        60px + 40 *
+          ((100vw - 320px) / 910)
+      );
+  }
+}
+
+.inner-calendar-page__wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+.inner-calendar-page__wrapper input {
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+@media (max-width: 1230px) {
+  .inner-calendar-page__wrapper {
+    gap: calc(
+        20px + 20 *
+          ((100vw - 320px) / 910)
+      );
+  }
+}
+@media (max-width: 1230px) {
+  .inner-calendar-page__wrapper {
+    margin-bottom: calc(
+        30px + 30 *
+          ((100vw - 320px) / 910)
+      );
+  }
+}
+.inner-calendar-page__wrapper .qs-datepicker-container {
+  font-size: 18px;
+  min-height: 250px;
+}
+.inner-calendar-page__wrapper .qs-datepicker-container .qs-datepicker .qs-square.qs-active {
+  background: #990000;
+}
+.inner-calendar-page__wrapper .qs-datepicker-container .qs-datepicker .qs-square.qs-active span {
+  color: #fff;
+}
+.inner-calendar-page__wrapper .qs-datepicker-container .qs-controls {
+  background-color: #fff;
+  color: #000;
+}
+.inner-calendar-page__wrapper .qs-datepicker-container .qs-datepicker .qs-arrow.qs-left:after {
+  border-right-color: #990000;
+}
+.inner-calendar-page__wrapper .qs-datepicker-container .qs-datepicker .qs-arrow.qs-right:after {
+  border-left-color: #990000;
+}
+.inner-calendar-page__start {
+  min-height: 250px;
+  flex: 0 0 300px;
+}
+.inner-calendar-page__end {
+  min-height: 250px;
+  flex: 0 0 300px;
+}
+.inner-calendar-page__actions {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
 .footer {
   min-height: 465px;
   background: #000;
@@ -11602,6 +11689,7 @@ button.swiper-pagination-bullet {
 @media (max-width: 768px) {
   .block-page-header__img {
     margin-bottom: 40px;
+    height: 300px;
   }
 }
 .block-page-header__img img {
@@ -11635,6 +11723,7 @@ button.swiper-pagination-bullet {
   font-size: 50px;
   font-weight: 700;
   text-transform: uppercase;
+  text-align: center;
 }
 .block-page-header__text {
   max-width: 800px;

@@ -58,6 +58,13 @@
       width: 100%;
       min-width: 150px;
 
+      .qs-datepicker .qs-square.qs-active {
+        background: $colorRed;
+        span {
+          color: #fff;
+        }
+      }
+
       &:before {
         content: '';
         height: 0;
@@ -208,8 +215,7 @@
     // color: #fff;
     // color: tomato;
   }
-  .qs-square:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active):hover
-    span {
+  .qs-square:not(.qs-empty):not(.qs-disabled):not(.qs-day):not(.qs-active):hover span {
     // background: $colorRed;
     color: #fff;
   }
@@ -218,12 +224,7 @@
   }
 }
 
-.choices__item
-  .choices__item--choice
-  .is-selected
-  .choices__placeholder
-  .choices__item--selectable
-  .is-highlighted {
+.choices__item .choices__item--choice .is-selected .choices__placeholder .choices__item--selectable .is-highlighted {
   // background-color: tomato;
 }
 .choices__list--dropdown .choices__item--selectable {

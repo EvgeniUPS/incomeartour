@@ -35,6 +35,15 @@
   @include adaptiv-value('padding-right', 65, 10, 1);
 
   .qs-datepicker-container {
+    .qs-datepicker .qs-square.qs-active {
+      background: $colorRed;
+      span {
+        color: #fff;
+      }
+    }
+  }
+
+  .qs-datepicker-container {
     top: 0;
     left: 0;
     border-radius: 8px;

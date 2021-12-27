@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ua">
   <head>
   <title>Календарь</title>
   <meta charset="UTF-8" />
@@ -194,55 +194,45 @@
   <!-- MAIN-HEADER -->
 </header>
 
-      <main class="page">
+      <main class="page calendar-page">
         <section class="page-header">
-  <div class="page-header__container _container">
-    <div class="page-header__breadcrumbs breadcrumbs">
-      <ul class="breadcrumbs__list">
-        <li class="breadcrumbs__item"><a href="./" class="breadcrumbs__link">Главная</a></li>
-        <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link disabled">Календарь</a></li>
-      </ul>
-    </div>
+          <div class="page-header__container _container">
+            <div class="page-header__breadcrumbs breadcrumbs">
+              <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item"><a href="./" class="breadcrumbs__link">Главная</a></li>
+                <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link disabled">Календарь</a></li>
+              </ul>
+            </div>
 
-    <div class="page-header__block block-page-header">
-      <div class="block-page-header__top">
-        <div class="block-page-header__img">
-          <img src="./img/eiffel-tower-paris-europe.jpg" alt="КалендарьText" />
-        </div>
-      </div>
+            <div class="page-header__block block-page-header">
+              <div class="block-page-header__top">
+                <div class="block-page-header__img">
+                  <img src="./img/promo-main.jpg" alt="Календарь" />
+                </div>
+              </div>
 
-      <div class="block-page-header__center">
-        <!-- <div class="block-page-header__icon"><img src="./img/flags/4x3/fr.svg" alt="" /></div> -->
-        <div class="block-page-header__icon"><img src="./img/flags/4x3/fr.svg" alt="" /></div>
-        <div class="block-page-header__title">Календарь</div>
-      </div>
-
-      <div class="block-page-header__bottom">
-        <div class="block-page-header__text">
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dolorem dignissimos earum laudantium accusamus
-            ipsa recusandae assumenda ducimus odit ut modi perspiciatis similique, delectus facere magni quasi! Earum,
-            reiciendis ea?
-          </p>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dolorem dignissimos earum laudantium accusamus
-            ipsa recusandae assumenda ducimus odit ut modi perspiciatis similique, delectus facere magni quasi! Earum,
-            reiciendis ea?
-          </p>
-        </div>
-      </div>
-    </div>
-    <!-- 
-    <div class="page-header__img"></div>
-    <div class="page-header__top">
-      <div class="page-header__icon">./img/flags/4x3/fr.svg</div>
-      <div class="page-header__header">Календарь</div>
-    </div>
-    <div class="page-header__text">pageTexttttt</div> -->
-  </div>
-</section>
-
-        <!--  -->
+              <div class="block-page-header__center">
+                <div class="block-page-header__title">Календарь туров</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="calendar-page__inner inner-calendar-page">
+          <form class="inner-calendar-page__container _container" method="get">
+            <div class="inner-calendar-page__wrapper">
+              <div class="inner-calendar-page__start">
+                <input autocomplete="off" type="text" name="start-date" data-error="Ошибка" data-value="" class="inner-calendar-page__start-item input1 _date1" />
+              </div>
+              <div class="inner-calendar-page__end">
+                <input autocomplete="off" type="text" name="end-date" data-error="Ошибка" data-value="" class="inner-calendar-page__end-item input1 _date1" />
+              </div>
+            </div>
+            <div class="inner-calendar-page__actions">
+              <button type="submit" class="btn btn-green">Подобрать тур</button>
+              <!-- <button type="reset" class="btn btn-white">Отменить</button> -->
+            </div>
+          </form>
+        </section>
 
         <!--  -->
       </main>

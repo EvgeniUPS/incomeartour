@@ -1,0 +1,77 @@
+.calendar-page {
+  // .calendar-page__inner
+  &__inner {
+    @include adaptiv-value('margin-bottom', 100, 60, 1);
+  }
+}
+.inner-calendar-page {
+  // .inner-calendar-page__container
+  &__container {
+  }
+  // .inner-calendar-page__wrapper
+  &__wrapper {
+    input {
+      height: 0;
+      opacity: 0;
+      overflow: hidden;
+    }
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    @include adaptiv-value('gap', 40, 20, 1);
+    @include adaptiv-value('margin-bottom', 60, 30, 1);
+
+    .qs-datepicker-container {
+      .qs-datepicker .qs-square.qs-active {
+        background: $colorRed;
+        span {
+          color: #fff;
+        }
+      }
+
+      font-size: 18px;
+      min-height: 250px;
+      .qs-square .qs-num .qs-active {
+      }
+      .qs-controls {
+        background-color: #fff;
+        color: #000;
+      }
+      .qs-datepicker .qs-arrow.qs-left {
+        &:after {
+          // content: '';
+          border-right-color: $colorRed;
+        }
+      }
+      .qs-datepicker .qs-arrow.qs-right {
+        &:after {
+          // content: '';
+          border-left-color: $colorRed;
+        }
+      }
+    }
+  }
+  // .inner-calendar-page__start
+  &__start {
+    min-height: 250px;
+    flex: 0 0 300px;
+  }
+  // .inner-calendar-page__start-item
+  &__start-item {
+  }
+  // .inner-calendar-page__end
+  &__end {
+    min-height: 250px;
+    flex: 0 0 300px;
+  }
+  // .inner-calendar-page__end-item
+  &__end-item {
+  }
+  // .inner-calendar-page__actions
+  &__actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}

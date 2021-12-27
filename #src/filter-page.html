@@ -7,14 +7,22 @@
       <!--  -->
       @@include('_header.html',{})
       <main class="page">
-        @@include('_page-header.html', { "pageHeader" : "Поиск туров", "imgPath" :
-        "./img/eiffel-tower-paris-europe.jpg", "pageText" : "pageTexttttt", "flag" : "./img/flags/4x3/fr.svg"})
+        @@include('_page-header.html', { "pageHeader" : "Поиск туров", "imgPath" : "./img/eiffel-tower-paris-europe.jpg", "pageText" : "pageTexttttt", "flag" :
+        "./img/flags/4x3/fr.svg"})
         <!--  -->
         <section class="filter-page">
           <div class="filter-page__container _container">
-            <div class="filter-page__filter">
-              <a href="#filter" class="_popup-link">Filter</a>
-            </div>
+            <form class="filter-page__header filter-header">
+              <select class="filter-header__sort">
+                <option value="1111">123</option>
+                <option value="1111">123</option>
+                <option value="1111">123</option>
+              </select>
+              <div class="filter-header__filter">
+                <button>сбросить фильтр</button>
+                <a href="#filter" class="_popup-link">Filter</a>
+              </div>
+            </form>
             <div class="filter-page__list">@@include('_card-list.html',{})</div>
           </div>
         </section>
@@ -55,14 +63,7 @@
                     <div class="filter-form-country__body country-filter">
                       <div class="country-filter__list">
                         <div class="country-filter__item item-filter-country custom-radio">
-                          <input
-                            checked
-                            class="custom-radio__input"
-                            type="radio"
-                            value="all"
-                            name="country"
-                            id="country0"
-                          />
+                          <input checked class="custom-radio__input" type="radio" value="all" name="country" id="country0" />
                           <label class="custom-radio__label noselect" for="country0">Все страны<span>184</span></label>
                         </div>
                         <div class="country-filter__item item-filter-country custom-radio">
@@ -171,9 +172,7 @@
                         </div>
                         <div class="filter-form-type__item item-filter-type custom-radio">
                           <input class="custom-radio__input" type="radio" value="type3" name="type" id="type3" />
-                          <label class="custom-radio__label noselect" for="type3"
-                            >Горнолыжные туры<span>63</span></label
-                          >
+                          <label class="custom-radio__label noselect" for="type3">Горнолыжные туры<span>63</span></label>
                         </div>
 
                         <div class="filter-form-type__item item-filter-type custom-radio">
@@ -216,14 +215,7 @@
                     <div class="filter-form-duration__body">
                       <div class="filter-form-duration__list">
                         <div class="filter-form-duration__item item-filter-duration custom-radio">
-                          <input
-                            checked
-                            class="custom-radio__input"
-                            type="radio"
-                            name="duration"
-                            id="duration3"
-                            value="3"
-                          />
+                          <input checked class="custom-radio__input" type="radio" name="duration" id="duration3" value="3" />
                           <label class="custom-radio__label noselect" for="duration3">3 дня</label>
                         </div>
                         <div class="filter-form-duration__item item-filter-duration custom-radio">
@@ -252,20 +244,8 @@
                     <div class="filter-form-price__body price-filter">
                       <div class="price-filter__range" data-from="500" data-to="20000"></div>
                       <div class="price-filter__actions">
-                        <input
-                          onClick="this.select();"
-                          name="minprice"
-                          type="number"
-                          class="price-filter__min"
-                          value="500"
-                        />
-                        <input
-                          onClick="this.select();"
-                          name="maxprice"
-                          type="number"
-                          class="price-filter__max"
-                          value="20000"
-                        />
+                        <input onClick="this.select();" name="minprice" type="number" class="price-filter__min" value="500" />
+                        <input onClick="this.select();" name="maxprice" type="number" class="price-filter__max" value="20000" />
                         <!-- <button class="price-filter__reset"></button> -->
                       </div>
                     </div>
@@ -276,14 +256,7 @@
                     <div class="filter-form-transport__body">
                       <div class="filter-form-transport__list">
                         <div class="filter-form-transport__item item-filter-transport custom-radio">
-                          <input
-                            checked
-                            class="custom-radio__input"
-                            type="radio"
-                            name="transport"
-                            id="transport4"
-                            value="1"
-                          />
+                          <input checked class="custom-radio__input" type="radio" name="transport" id="transport4" value="1" />
                           <label class="custom-radio__label noselect" for="transport4">Все туры<span>122</span></label>
                         </div>
 
@@ -294,9 +267,7 @@
 
                         <div class="filter-form-transport__item item-filter-transport custom-radio">
                           <input class="custom-radio__input" type="radio" name="transport" id="transport2" value="3" />
-                          <label class="custom-radio__label noselect" for="transport2"
-                            >Автобусный тур<span>48</span></label
-                          >
+                          <label class="custom-radio__label noselect" for="transport2">Автобусный тур<span>48</span></label>
                         </div>
                       </div>
                     </div>
@@ -305,22 +276,10 @@
                     <div class="filter-form-date__header form-filter__item_header">Выберите дату</div>
                     <div class="filter-form-date__body">
                       <div class="filter-form-date__item filter-form-date__start">
-                        <input
-                          autocomplete="off"
-                          type="text"
-                          name="date-start"
-                          data-error="Ошибка"
-                          class="input filter-input-start"
-                        />
+                        <input autocomplete="off" type="text" name="date-start" data-error="Ошибка" class="input filter-input-start" />
                       </div>
                       <div class="filter-form-date__item filter-form-date__end">
-                        <input
-                          autocomplete="off"
-                          type="text"
-                          name="date-end"
-                          data-error="Ошибка"
-                          class="input filter-input-end"
-                        />
+                        <input autocomplete="off" type="text" name="date-end" data-error="Ошибка" class="input filter-input-end" />
                       </div>
                     </div>
                   </div>

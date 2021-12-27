@@ -459,35 +459,6 @@ function inputs_init(inputs) {
           }
         }
       })
-      if (input.classList.contains('_date')) {
-        // console.log('date')
-
-        const calendarItem = datepicker(input, {
-          customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-          customMonths: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-          overlayButton: 'Применить',
-          overlayPlaceholder: 'Год (4 цифры)',
-          startDay: 1,
-          position: 'br',
-          formatter: (input, date, instance) => {
-            const value = date.toLocaleDateString()
-            // const value = date.toDateString()
-            const val = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
-            input.value = val
-          },
-          onSelect: function (input, instance, date) {
-            input_focus_add(input.el)
-          },
-        })
-        const dataFrom = input.getAttribute('data-from')
-        const dataTo = input.getAttribute('data-to')
-        if (dataFrom) {
-          calendarItem.setMin(new Date(dataFrom))
-        }
-        if (dataTo) {
-          calendarItem.setMax(new Date(dataTo))
-        }
-      }
     }
   }
 }

@@ -1,15 +1,50 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ua">
   @@include('_head.html',{ "title":"Календарь" })
   <body>
     <div class="wrapper">
       <!-- @@include('_header.html',{}) -->
       <!--  -->
       @@include('_header.html',{})
-      <main class="page">
-        @@include('_page-header.html', { "pageHeader" : "Календарь", "imgPath" : "./img/eiffel-tower-paris-europe.jpg",
-        "pageText" : "pageTexttttt", "flag" : "./img/flags/4x3/fr.svg"})
-        <!--  -->
+      <main class="page calendar-page">
+        <section class="page-header">
+          <div class="page-header__container _container">
+            <div class="page-header__breadcrumbs breadcrumbs">
+              <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item"><a href="./" class="breadcrumbs__link">Главная</a></li>
+                <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link disabled">Календарь</a></li>
+              </ul>
+            </div>
+
+            <div class="page-header__block block-page-header">
+              <div class="block-page-header__top">
+                <div class="block-page-header__img">
+                  <img src="./img/promo-main.jpg" alt="Календарь" />
+                </div>
+              </div>
+
+              <div class="block-page-header__center">
+                <div class="block-page-header__title">Календарь туров</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="calendar-page__inner inner-calendar-page">
+          <form class="inner-calendar-page__container _container" method="get">
+            <div class="inner-calendar-page__wrapper">
+              <div class="inner-calendar-page__start">
+                <input autocomplete="off" type="text" name="start-date" data-error="Ошибка" data-value="" class="inner-calendar-page__start-item input1 _date1" />
+              </div>
+              <div class="inner-calendar-page__end">
+                <input autocomplete="off" type="text" name="end-date" data-error="Ошибка" data-value="" class="inner-calendar-page__end-item input1 _date1" />
+              </div>
+            </div>
+            <div class="inner-calendar-page__actions">
+              <button type="submit" class="btn btn-green">Подобрать тур</button>
+              <!-- <button type="reset" class="btn btn-white">Отменить</button> -->
+            </div>
+          </form>
+        </section>
 
         <!--  -->
       </main>

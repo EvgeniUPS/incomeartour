@@ -1,8 +1,11 @@
 const html = document.querySelector('html')
+const body = document.querySelector('body')
+
 const $ = document.querySelector.bind(document)
 
+const currentLanguage = html.getAttribute('lang')
+
 const preloader = document.querySelector('.preloader')
-const body = document.querySelector('body')
 document.addEventListener('DOMContentLoaded', () => {
   // body.classList.remove('_lock')
   preloader.remove()
@@ -204,13 +207,6 @@ function langHandler() {
   })
 }
 
-window.addEventListener('DOMContentLoaded', () => {
-  currentLanguage = html.getAttribute('lang')
-  langHandler()
-  readMore()
-  AOS.init({ duration: 1200, offset: 120 })
-})
-
 function renderMap(selector) {
   const points = document.querySelectorAll('.map__point')
   const pointsArr = []
@@ -363,73 +359,8 @@ if (document.querySelector('.item-tour_list')) {
     el.setAttribute('data-aos-once', 'true')
   })
 }
-//Календарь на странице Поиск тура
-if (document.querySelector('.filter-form-date__start') || document.querySelector('.filter-form-date__end')) {
-  const dateOption = {
-    id: 1,
-    customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-    customMonths: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-    overlayButton: 'Применить',
-    overlayPlaceholder: 'Год (4 цифры)',
-    dateSelected: new Date(),
-    // startDate: new Date(),
-    minDate: new Date(),
-    // alwaysShow: true,
-    startDay: 1,
-    formatter: (input, date, instance) => {
-      const value = date.toLocaleDateString()
-      // const value = date.toDateString()
-      // const val = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
-      input.value = value
-    },
-    onSelect: function (input, instance, date) {
-      input_focus_add(input.el)
-    },
-  }
 
-  document.querySelector('.filter-input-end').value = new Date().toLocaleDateString()
-  const start = datepicker('.filter-input-start', dateOption)
-  const end = datepicker('.filter-input-end', {
-    id: 1,
-    customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-    customMonths: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-    overlayButton: 'Применить',
-    overlayPlaceholder: 'Год (4 цифры)',
-    // dateSelected: new Date(),
-    // startDate: new Date(),
-    minDate: new Date(),
-    // alwaysShow: true,
-    startDay: 1,
-    formatter: (input, date, instance) => {
-      const value = date.toLocaleDateString()
-      // const value = date.toDateString()
-      // const val = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
-      input.value = value
-    },
-    onSelect: function (input, instance, date) {
-      input_focus_add(input.el)
-    },
-  })
-}
-
-if (document.querySelector('.calendar-archive')) {
-  const calendar = document.querySelector('.calendar-archive__inner')
-  const calendarItem = datepicker(calendar, {
-    customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-    customMonths: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-    overlayButton: 'Применить',
-    overlayPlaceholder: 'Год (4 цифры)',
-    startDay: 1,
-    alwaysShow: true,
-    onSelect: (instance, date) => {
-      console.log(date.toLocaleDateString())
-    },
-    onShow: instance => {
-      console.log('Calendar showing.')
-    },
-  })
-}
-
+//<Toggle View on WhereBuy Page>====================================================================================================
 if (document.querySelector('.where-buy__toggle')) {
   const whereBuyToggle = document.querySelector('.where-buy__toggle')
   whereBuyToggle.addEventListener('click', function (e) {
@@ -450,35 +381,24 @@ if (document.querySelector('.where-buy__toggle')) {
     })
   })
 }
+function hideToggleViewWhereBuy() {
+  if (document.querySelector('.where-buy__list')) {
+    document.querySelector('.where-buy__list').classList.add('where-buy__list_grid')
+    document.querySelectorAll('.item-where-buy').forEach(item => item.classList.add('item-where-buy_grid'))
+  }
+}
+
+//<Toggle View on WhereBuy Page>====================================================================================================
 
 window.addEventListener(
   'resize',
   e => {
     if (window.innerWidth <= 768) {
-      if (document.querySelector('.where-buy__list')) {
-        document.querySelector('.where-buy__list').classList.add('where-buy__list_grid')
-        document.querySelectorAll('.item-where-buy').forEach(item => item.classList.add('item-where-buy_grid'))
-      }
+      hideToggleViewWhereBuy
     }
   },
   false,
 )
-
-//<STAR in GUIDE SINGLE>====================================================================================================
-if (document.querySelector('.item-single-reviews__bio-info')) {
-}
-//<STAR in GUIDE SINGLE>====================================================================================================
-
-//<temp>====================================================================================================
-//<temp>====================================================================================================
-//<temp>====================================================================================================
-//<temp>====================================================================================================
-/* 
-  ._read-more 
-  ._read-more__text
-  ._read-more__btn
-  
-*/
 
 function readMore() {
   if (!document.querySelector('._read-more')) return
@@ -503,3 +423,9 @@ function readMore() {
     })
   })
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+  langHandler()
+  readMore()
+  AOS.init({ duration: 1200, offset: 120 })
+})
