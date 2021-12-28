@@ -10,7 +10,7 @@ const filterPageSelectItem = new Choices(filterPageSelect, {
   removeItems: true,
   removeItemButton: false,
   editItems: false,
-  allowHTML: true,
+  // allowHTML: true,
   duplicateItemsAllowed: true,
   delimiter: ',',
   paste: true,
@@ -79,4 +79,11 @@ const filterPageSelectItem = new Choices(filterPageSelect, {
   callbackOnCreateTemplates: null,
 })
 
-console.log(5555555555)
+function tempF() {
+  document.body.style.backgroundColor = 'grey'
+  // console.dir(sortListOption)
+}
+
+filterPageSelect.addEventListener('showDropdown', function (event) {
+  console.log(123)
+})
