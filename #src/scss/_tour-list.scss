@@ -221,7 +221,7 @@
     border-right: 1px solid #000;
     border-left: 1px solid #000;
     border-bottom: 1px solid #000;
-    padding: 5px 10px 26px;
+    padding: 5px 10px 10px;
   }
 }
 .tour-list__labels {
@@ -740,6 +740,7 @@
 .tour-list-block__bottom {
   // margin-top: 65px;
   // margin: 65px 0 100px;
+  @include adaptiv-value('margin-top', 30, 10, 1);
   text-transform: uppercase;
   @include adaptiv-value('margin-bottom', 100, 44, 1);
   font-size: 15px;
@@ -765,7 +766,10 @@
   .item-tour_grid {
     .tour-list__title {
       // background-color: tomato;
-      height: 45px;
+      min-height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 
@@ -825,6 +829,7 @@
     }
   }
   .tour-info {
+    padding-right: 35px;
     // .tour-info__duration
     &__duration {
       margin-bottom: 10px;
@@ -846,6 +851,7 @@
   }
 
   .tour-price {
+    padding-right: 35px;
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -857,7 +863,7 @@
     &__main {
       font-size: 13px;
       font-weight: 700;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       @media (max-width: 768px) {
       }
       span {
@@ -867,7 +873,7 @@
     // .tour-price__currency
     &__currency {
       font-size: 20px;
-      margin-bottom: 10px;
+      margin-bottom: 5px;
       @media (max-width: 768px) {
         margin-bottom: 5px;
       }
@@ -876,24 +882,25 @@
     &__description {
       font-size: 11px;
       line-height: 140%;
-      margin-bottom: 28px;
+      margin-bottom: 00px;
       span {
       }
     }
   }
   .tour-buttons {
-    padding: 30px 35px;
+    padding: 20px 35px 0;
     display: flex;
-    gap: 5px;
+    gap: 10px;
     justify-content: space-between;
+    flex-wrap: wrap;
     align-items: center;
     @media (max-width: 992px) {
       flex-direction: column;
+      gap: 10px;
     }
     // .tour-buttons__reserve
     &__reserve {
       margin-bottom: 0;
-      // width: 100%;
     }
     // .tour-buttons__details
     &__details {
@@ -914,6 +921,7 @@
   }
 
   .tour-reviews {
+    padding-right: 35px;
     color: rgba(0, 0, 0, 0.9);
     display: flex;
     justify-content: flex-end;
@@ -979,7 +987,7 @@
 }
 
 .item-tour_grid {
-  padding-bottom: 60px;
+  padding-bottom: 30px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   position: relative;
 
@@ -994,6 +1002,9 @@
   }
   .tour-labels__item {
     background-color: #fff;
+  }
+  .tour-price-price {
+    gap: 0;
   }
 }
 

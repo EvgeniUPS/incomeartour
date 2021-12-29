@@ -8,8 +8,43 @@
       @@include('_header.html',Х)
       <main class="page">
         <!--  -->
-        @@include('_page-header.html', { "pageHeader" : "Страны", "imgPath" : "./img/eiffel-tower-paris-europe.jpg", "pageText" : "pageTexttttt", "flag" :
-        "./img/flags/4x3/fr.svg"})
+        <!-- @@include('_page-header.html', { "pageHeader" : "Страны", "imgPath" : "./img/eiffel-tower-paris-europe.jpg", "pageText" : "pageTexttttt", "flag" :
+        "./img/flags/4x3/fr.svg"}) -->
+
+        <section class="page-header">
+          <div class="page-header__container _container">
+            <div class="page-header__breadcrumbs breadcrumbs">
+              <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item"><a href="./" class="breadcrumbs__link">Главная</a></li>
+                <li class="breadcrumbs__item"><a href="#" class="breadcrumbs__link disabled">Страны</a></li>
+              </ul>
+            </div>
+
+            <div class="page-header__block block-page-header">
+              <div class="block-page-header__top">
+                <div class="block-page-header__img">
+                  <img src="./img/eiffel-tower-paris-europe.jpg" alt="СтраныText" />
+                </div>
+              </div>
+
+              <div class="block-page-header__center">
+                <div class="block-page-header__title">Страны</div>
+              </div>
+
+              <div class="block-page-header__bottom">
+                <div class="block-page-header__text">
+                  <p>
+                    Жизнь современного человека сложно представить без путешествий. В масштабном плане это головокружительные турне в другие страны на отдаленные континенты, в
+                    более локальном это ежедневная дорога на работу и поездки к друзьям и родственникам на выходные. Желание же отправиться в путешествие в полной мере поможет Вам
+                    воплотить в реальность туристический оператор «Инкомартур 93». Мы предлагаем экскурсионные туры по самой выгодной цене в Украине, а самое главное — безопасность
+                    и максимальный комфорт во время вояжа.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <!--  -->
         <!-- <country-search>======================================================================================== -->
         <section class="country-search">
@@ -22,7 +57,7 @@
         </section>
         <!-- <country-all>======================================================================================== -->
 
-        @@include('_map-block.html',{})
+        <!-- @@include('_map-block.html',{}) -->
         <section class="country-all">
           <div class="country-all__container _container">
             <div class="country-all__title">Все страны</div>
@@ -186,7 +221,7 @@
                       <div class="descr-add-exc__title">Мексика</div>
                       <div class="descr-add-exc__price"><span>Цена:</span>95 €/80 €</div>
                       <div class="descr-add-exc__descr">Средняя цена по стране</div>
-                      <a href="#" class="descr-add-exc__link disabled">Детали</a>
+                      <a href="./country-single-page.html" class="descr-add-exc__link">Детали</a>
                       <div class="_close"></div>
                     </div>
                   </div>
@@ -198,7 +233,7 @@
                       <div class="descr-add-exc__title">Франция</div>
                       <div class="descr-add-exc__price"><span>Цена:</span>95 €/80 €</div>
                       <div class="descr-add-exc__descr">Средняя цена по стране</div>
-                      <a href="#" class="descr-add-exc__link disabled">Детали</a>
+                      <a href="./country-single-page.html" class="descr-add-exc__link">Детали</a>
                       <div class="_close"></div>
                     </div>
                   </div>
@@ -211,7 +246,7 @@
                       <div class="descr-add-exc__title">Мексика</div>
                       <div class="descr-add-exc__price"><span>Цена:</span>95 €/80 €</div>
                       <div class="descr-add-exc__descr">Средняя цена по стране</div>
-                      <a href="#" class="descr-add-exc__link">Детали</a>
+                      <a href="./country-single-page.html" class="descr-add-exc__link">Детали</a>
                       <div class="_close"></div>
                     </div>
                   </div>
@@ -221,8 +256,8 @@
                   <!-- Slides -->
                   <!-- Slides -->
                 </div>
-                <div class="swiper-button-prev add-exc-button-prev"></div>
-                <div class="swiper-button-next add-exc-button-next"></div>
+                <div class="_slider-button_prev"></div>
+                <div class="_slider-button_next"></div>
               </div>
               <!-- ************* -->
             </div>

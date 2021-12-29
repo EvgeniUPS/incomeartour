@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const changeViewButton = document.querySelector('#changeViewButton')
 const itemTour = document.querySelectorAll('.item-tour')
 const itemList = document.querySelector('.tour-list')
+
 const changeViewHandler = e => {
   itemList.classList.toggle('tour-list_list')
   itemList.classList.toggle('tour-list_grid')
@@ -359,9 +360,16 @@ if (document.querySelector('.item-tour_list')) {
     el.setAttribute('data-aos', 'fade-right')
     el.setAttribute('data-aos-once', 'true')
   })
+
   itemsTourOdd.forEach(el => {
     el.setAttribute('data-aos', 'fade-left')
     el.setAttribute('data-aos-once', 'true')
+  })
+
+  const gridItem = document.querySelectorAll('.item-tour_grid')
+
+  gridItem.forEach(el => {
+    el.classList.remove('aos-init')
   })
 }
 
@@ -398,6 +406,31 @@ function hideToggleViewWhereBuy() {
 window.addEventListener(
   'resize',
   e => {
+    if (window.innerWidth <= 992) {
+      if (document.querySelector('#changeViewButton')) {
+        const handlerView = document.querySelector('#changeViewButton')
+        handlerView.style.display = 'none'
+      }
+
+      if (document.querySelector('.tour-list_grid')) {
+        const tourList = document.querySelector('.tour-list')
+        tourList.classList.remove('tour-list_grid')
+
+        const itemsTourGrid = document.querySelectorAll('.item-tour_grid')
+        itemsTourGrid.forEach(el => {
+          el.classList.remove('item-tour_grid')
+          el.classList.add('item-tour_list')
+        })
+      }
+    }
+
+    if (window.innerWidth > 992) {
+      if (document.querySelector('#changeViewButton')) {
+        const handlerView = document.querySelector('#changeViewButton')
+        handlerView.style.display = 'block'
+      }
+    }
+
     if (window.innerWidth <= 768) {
       hideToggleViewWhereBuy
     }

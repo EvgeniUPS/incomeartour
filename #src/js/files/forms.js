@@ -613,8 +613,7 @@ if (searchDirection) {
       noResults: 'has-no-results',
       noChoices: 'has-no-choices',
     },
-    // Choices uses the great Fuse library for searching. You
-    // can find more options here: https://github.com/krisk/Fuse#options
+
     fuseOptions: {
       include: 'score',
     },
@@ -695,8 +694,7 @@ if (searchTransport) {
       noResults: 'has-no-results',
       noChoices: 'has-no-choices',
     },
-    // Choices uses the great Fuse library for searching. You
-    // can find more options here: https://github.com/krisk/Fuse#options
+
     fuseOptions: {
       include: 'score',
     },
@@ -704,6 +702,7 @@ if (searchTransport) {
     callbackOnCreateTemplates: null,
   })
 }
+
 if (document.querySelector('#choiceGuide')) {
   const choiceGuide = document.querySelector('#choiceGuide')
   const choiceGuideItem = new Choices(choiceGuide, {
@@ -776,8 +775,7 @@ if (document.querySelector('#choiceGuide')) {
       noResults: 'has-no-results',
       noChoices: 'has-no-choices',
     },
-    // Choices uses the great Fuse library for searching. You
-    // can find more options here: https://github.com/krisk/Fuse#options
+
     fuseOptions: {
       include: 'score',
     },
@@ -858,8 +856,7 @@ if (document.querySelector('#choiceTour')) {
       noResults: 'has-no-results',
       noChoices: 'has-no-choices',
     },
-    // Choices uses the great Fuse library for searching. You
-    // can find more options here: https://github.com/krisk/Fuse#options
+
     fuseOptions: {
       include: 'score',
     },
@@ -1017,8 +1014,7 @@ if (document.querySelector('#filterWhereBuy')) {
       noResults: 'has-no-results',
       noChoices: 'has-no-choices',
     },
-    // Choices uses the great Fuse library for searching. You
-    // can find more options here: https://github.com/krisk/Fuse#options
+
     fuseOptions: {
       include: 'score',
     },
