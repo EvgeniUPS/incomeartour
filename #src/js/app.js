@@ -11,4 +11,5 @@
 @@include('files/selects.js', {})
 
 @@include('files/scroll.js', {})
-@@include('files/google-translate.js', {})
+
+
