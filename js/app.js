@@ -3921,7 +3921,7 @@ function scroll_animate(event) {
 	//disableScroll();
 }
 
-console.log(5555)
+console.log(56565)
 /*!***************************************************
  * google-translate.js v1.0.3
  * https://Get-Web.Site/
@@ -3937,7 +3937,7 @@ const googleTranslateConfig = {
   /* Если скрипт не работает на поддомене, 
     раскомментируйте и
     укажите основной домен в свойстве domain */
-  // domain: 'http://localhost:3000/',
+  domain: 'https://evgeniups.github.io/incomeartour/',
 }
 function TranslateInit() {
   if (googleTranslateConfig.langFirstVisit && !Cookies.get('googtrans')) {
