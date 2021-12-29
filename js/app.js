@@ -3946,7 +3946,7 @@ const googleTranslateConfig = {
   /* Если скрипт не работает на поддомене, 
     раскомментируйте и
     укажите основной домен в свойстве domain */
-  domain: 'evgeniups.github.io/incomeartour/',
+  domain: 'translate.evgeniups.zzz.com.ua/',
 }
 function TranslateInit() {
   if (googleTranslateConfig.langFirstVisit && !Cookies.get('googtrans')) {
