@@ -1368,8 +1368,8 @@ if (document.querySelector('.slider-add-exc')) {
       },
     },
     navigation: {
-      nextEl: '.add-exc-button-next',
-      prevEl: '.add-exc-button-prev',
+      nextEl: '.add-exc-button-next2',
+      prevEl: '.add-exc-button-prev2',
     },
   })
 }
@@ -1902,35 +1902,6 @@ function inputs_init(inputs) {
           }
         }
       })
-      if (input.classList.contains('_date')) {
-        // console.log('date')
-
-        const calendarItem = datepicker(input, {
-          customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-          customMonths: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-          overlayButton: 'Применить',
-          overlayPlaceholder: 'Год (4 цифры)',
-          startDay: 1,
-          position: 'br',
-          formatter: (input, date, instance) => {
-            const value = date.toLocaleDateString()
-            // const value = date.toDateString()
-            const val = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
-            input.value = val
-          },
-          onSelect: function (input, instance, date) {
-            input_focus_add(input.el)
-          },
-        })
-        const dataFrom = input.getAttribute('data-from')
-        const dataTo = input.getAttribute('data-to')
-        if (dataFrom) {
-          calendarItem.setMin(new Date(dataFrom))
-        }
-        if (dataTo) {
-          calendarItem.setMax(new Date(dataTo))
-        }
-      }
     }
   }
 }
@@ -2258,6 +2229,88 @@ if (document.querySelector('#choiceGuide')) {
   })
 }
 
+if (document.querySelector('#choiceTour')) {
+  const choiceTour = document.querySelector('#choiceTour')
+  const choiceTourItem = new Choices(choiceTour, {
+    silent: false,
+    items: [],
+    choices: [],
+    renderChoiceLimit: -1,
+    maxItemCount: -1,
+    addItems: true,
+    addItemFilter: null,
+    removeItems: true,
+    removeItemButton: false,
+    editItems: false,
+    duplicateItemsAllowed: true,
+    delimiter: ',',
+    paste: true,
+    searchEnabled: false,
+    // searchChoices: true,
+    searchFloor: 1,
+    searchResultLimit: 4,
+    searchFields: ['label', 'value'],
+    position: 'auto',
+    resetScrollPosition: true,
+    shouldSort: true,
+    shouldSortItems: false,
+    sorter: () => {},
+    placeholderValue: '23432423',
+    searchPlaceholderValue: null,
+    prependValue: null,
+    appendValue: null,
+    renderSelectedChoices: 'auto',
+    loadingText: 'Загрузка',
+    noResultsText: 'Не найдено',
+    noChoicesText: 'No choices to choose from',
+    itemSelectText: '',
+    addItemText: value => {
+      return `Press Enter to add <b>"${value}"</b>`
+    },
+    maxItemText: maxItemCount => {
+      return `Only ${maxItemCount} values can be added`
+    },
+    valueComparer: (value1, value2) => {
+      return value1 === value2
+    },
+    classNames: {
+      containerOuter: 'choices',
+      containerInner: 'choices__inner',
+      input: 'choices__input',
+      inputCloned: 'choices__input--cloned',
+      list: 'choices__list',
+      listItems: 'choices__list--multiple',
+      listSingle: 'choices__list--single',
+      listDropdown: 'choices__list--dropdown',
+      item: 'choices__item',
+      itemSelectable: 'choices__item--selectable',
+      itemDisabled: 'choices__item--disabled',
+      itemChoice: 'choices__item--choice',
+      placeholder: 'choices__placeholder',
+      group: 'choices__group',
+      groupHeading: 'choices__heading',
+      button: 'choices__button',
+      activeState: 'is-active',
+      focusState: 'is-focused',
+      openState: 'is-open',
+      disabledState: 'is-disabled',
+      highlightedState: 'is-highlighted',
+      selectedState: 'is-selected',
+      flippedState: 'is-flipped',
+      loadingState: 'is-loading',
+      noResults: 'has-no-results',
+      noChoices: 'has-no-choices',
+    },
+    // Choices uses the great Fuse library for searching. You
+    // can find more options here: https://github.com/krisk/Fuse#options
+    fuseOptions: {
+      include: 'score',
+    },
+    callbackOnInit: null,
+    callbackOnCreateTemplates: null,
+  })
+}
+
 /* ********************** */
 // const picker = datepicker('#searchDate', {
 //   // Event callbacks.
@@ -2418,15 +2471,21 @@ if (document.querySelector('#filterWhereBuy')) {
 }
 
 const html = document.querySelector('html')
+const body = document.querySelector('body')
+
 const $ = document.querySelector.bind(document)
 
+const currentLanguage = html.getAttribute('lang')
+
+//<PRELOADER>====================================================================================================
 const preloader = document.querySelector('.preloader')
-const body = document.querySelector('body')
 document.addEventListener('DOMContentLoaded', () => {
   // body.classList.remove('_lock')
   preloader.remove()
 })
+//<PRELOADER>====================================================================================================
 
+//<HOME PAGE VIEW HANDLER>====================================================================================================
 const changeViewButton = document.querySelector('#changeViewButton')
 const itemTour = document.querySelectorAll('.item-tour')
 const itemList = document.querySelector('.tour-list')
@@ -2447,10 +2506,12 @@ const changeViewHandler = e => {
     changeViewButton.classList.add('icon-grid-handler')
   }
 }
-// if (changeViewButton) {
-//   changeViewButton.addEventListener('click', changeViewHandler)
-// }
+if (changeViewButton) {
+  changeViewButton.addEventListener('click', changeViewHandler)
+}
+//<HOME PAGE VIEW HANDLER>====================================================================================================
 
+//<Tooltips>====================================================================================================
 tippy('.tooltip-link', {
   duration: 0,
   animation: 'fade',
@@ -2585,9 +2646,18 @@ if (headerColorPicker) {
   })
 }
 
-if (document.querySelector('.simple-rating')) {
-  const simpleRatingWrapper = document.querySelector('.simple-rating')
-  const simpleRatingBottom = document.querySelector('.simple-rating__bottom')
+if (document.querySelector('.simple-rating__guide')) {
+  const simpleRatingWrapper = document.querySelector('.simple-rating__guide')
+  const simpleRatingBottom = document.querySelector('.simple-rating__bottom__guide')
+
+  simpleRatingWrapper.addEventListener('click', function (e) {
+    simpleRatingBottom.querySelector('span').innerHTML = e.target.value
+    simpleRatingBottom.style.opacity = '1'
+  })
+}
+if (document.querySelector('.simple-rating__tour')) {
+  const simpleRatingWrapper = document.querySelector('.simple-rating__tour')
+  const simpleRatingBottom = document.querySelector('.simple-rating__bottom__tour')
 
   simpleRatingWrapper.addEventListener('click', function (e) {
     simpleRatingBottom.querySelector('span').innerHTML = e.target.value
@@ -2613,12 +2683,6 @@ function langHandler() {
     langTopList.classList.toggle('_active')
   })
 }
-
-window.addEventListener('DOMContentLoaded', () => {
-  currentLanguage = html.getAttribute('lang')
-  langHandler()
-  AOS.init({ duration: 1200, offset: 120 })
-})
 
 function renderMap(selector) {
   const points = document.querySelectorAll('.map__point')
@@ -2772,73 +2836,8 @@ if (document.querySelector('.item-tour_list')) {
     el.setAttribute('data-aos-once', 'true')
   })
 }
-//Календарь на странице Поиск тура
-if (document.querySelector('.filter-form-date__start') || document.querySelector('.filter-form-date__end')) {
-  const dateOption = {
-    id: 1,
-    customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-    customMonths: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-    overlayButton: 'Применить',
-    overlayPlaceholder: 'Год (4 цифры)',
-    dateSelected: new Date(),
-    // startDate: new Date(),
-    minDate: new Date(),
-    // alwaysShow: true,
-    startDay: 1,
-    formatter: (input, date, instance) => {
-      const value = date.toLocaleDateString()
-      // const value = date.toDateString()
-      // const val = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
-      input.value = value
-    },
-    onSelect: function (input, instance, date) {
-      input_focus_add(input.el)
-    },
-  }
 
-  document.querySelector('.filter-input-end').value = new Date().toLocaleDateString()
-  const start = datepicker('.filter-input-start', dateOption)
-  const end = datepicker('.filter-input-end', {
-    id: 1,
-    customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-    customMonths: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-    overlayButton: 'Применить',
-    overlayPlaceholder: 'Год (4 цифры)',
-    // dateSelected: new Date(),
-    // startDate: new Date(),
-    minDate: new Date(),
-    // alwaysShow: true,
-    startDay: 1,
-    formatter: (input, date, instance) => {
-      const value = date.toLocaleDateString()
-      // const value = date.toDateString()
-      // const val = `${date.getFullYear()}-${date.getMonth() + 1}-${date.getDate()}`
-      input.value = value
-    },
-    onSelect: function (input, instance, date) {
-      input_focus_add(input.el)
-    },
-  })
-}
-
-if (document.querySelector('.calendar-archive')) {
-  const calendar = document.querySelector('.calendar-archive__inner')
-  const calendarItem = datepicker(calendar, {
-    customDays: ['Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс'],
-    customMonths: ['Янв', 'Фев', 'Мар', 'Апр', 'Май', 'Июн', 'Июл', 'Авг', 'Сен', 'Окт', 'Ноя', 'Дек'],
-    overlayButton: 'Применить',
-    overlayPlaceholder: 'Год (4 цифры)',
-    startDay: 1,
-    alwaysShow: true,
-    onSelect: (instance, date) => {
-      console.log(date.toLocaleDateString())
-    },
-    onShow: instance => {
-      console.log('Calendar showing.')
-    },
-  })
-}
-
+//<Toggle View on WhereBuy Page>====================================================================================================
 if (document.querySelector('.where-buy__toggle')) {
   const whereBuyToggle = document.querySelector('.where-buy__toggle')
   whereBuyToggle.addEventListener('click', function (e) {
@@ -2859,19 +2858,605 @@ if (document.querySelector('.where-buy__toggle')) {
     })
   })
 }
+function hideToggleViewWhereBuy() {
+  if (document.querySelector('.where-buy__list')) {
+    document.querySelector('.where-buy__list').classList.add('where-buy__list_grid')
+    document.querySelectorAll('.item-where-buy').forEach(item => item.classList.add('item-where-buy_grid'))
+  }
+}
+
+//<Toggle View on WhereBuy Page>====================================================================================================
 
 window.addEventListener(
   'resize',
   e => {
     if (window.innerWidth <= 768) {
-      if (document.querySelector('.where-buy__list')) {
-        document.querySelector('.where-buy__list').classList.add('where-buy__list_grid')
-        document.querySelectorAll('.item-where-buy').forEach(item => item.classList.add('item-where-buy_grid'))
-      }
+      hideToggleViewWhereBuy
     }
   },
   false,
 )
+
+function readMore() {
+  if (!document.querySelector('._read-more')) return
+  const readMoreBlocks = document.querySelectorAll('._read-more')
+  // console.log(`readMoreBlocks`, readMoreBlocks)
+  readMoreBlocks.forEach(readMore => {
+    const textLimit = readMore.dataset.textLimit
+    const textBlock = readMore.querySelector('._read-more__text')
+
+    const text = textBlock.textContent
+
+    if (text.length < textLimit) readMore.querySelector('._read-more__btn').style.display = 'none'
+    const smallText = text.slice(0, textLimit)
+
+    textBlock.textContent = smallText
+
+    readMore.addEventListener('click', e => {
+      if (!e.target.classList.contains('_read-more__btn')) return
+      console.log('more')
+      readMore.querySelector('._read-more__text').textContent = text
+      readMore.querySelector('._read-more__btn').style.display = 'none'
+    })
+  })
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  langHandler()
+  readMore()
+  AOS.init({ duration: 1200, offset: 120 })
+})
+
+
+//<month lang>====================================================================================================
+if (currentLanguage === 'ru') {
+  customMonths = ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь']
+  customDays = ['Вс', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб']
+  overlayButton = 'Применить'
+  overlayPlaceholder = 'Год (4 цифры)'
+} else if (currentLanguage === 'ua') {
+  customMonths = ['Січень', 'Лютий', 'Березень', 'Квітень', 'Травень', 'Червень', 'Липень', 'Серпень', 'Вересень', 'Жовтень', 'Листопад', 'Грудень']
+  customDays = ['Нд', 'Пн', 'Вт', 'Ср', 'Чт', 'Пт', 'Сб']
+  overlayButton = 'Застосувати'
+  overlayPlaceholder = 'Рік (4 цифри)'
+}
+//<month lang>====================================================================================================
+
+const now = new Date()
+let nextMonth
+if (now.getMonth() == 11) {
+  nextMonth = new Date(now.getFullYear() + 1, 0, 1)
+} else {
+  nextMonth = new Date(now.getFullYear(), now.getMonth() + 1, 1)
+}
+
+//<Календарь на главной>====================================================================================================
+if (document.querySelector('.main-search-date')) {
+  const mainSearchDate = document.querySelector('.main-search-date')
+  const mainSearchDateItem = datepicker(mainSearchDate, {
+    customDays,
+    customMonths,
+    overlayButton,
+    overlayPlaceholder,
+    startDay: 1,
+    position: 'br',
+    formatter: (input, date, instance) => {
+      const value = date.toLocaleDateString()
+      const val = value.split('.').reverse().join('-')
+      input.value = val
+    },
+    onSelect: function (input, instance, date) {
+      input_focus_add(input.el)
+    },
+  })
+  // const dataFrom = input.getAttribute('data-from')
+  // const dataTo = input.getAttribute('data-to')
+  // if (dataFrom) {
+  //   calendarItem.setMin(new Date(dataFrom))
+  // }
+  // if (dataTo) {
+  //   calendarItem.setMax(new Date(dataTo))
+  // }
+}
+//<Календарь на главной>====================================================================================================
+
+//<Календарь на странице курс валют >====================================================================================================
+if (document.querySelector('.calendar-archive')) {
+  const calendar = document.querySelector('.calendar-archive__inner')
+  const calendarItem = datepicker(calendar, {
+    customDays,
+    customMonths,
+    overlayButton,
+    overlayPlaceholder,
+    startDay: 1,
+    maxDate: new Date(),
+    alwaysShow: true,
+
+    formatter: (input, date, instance) => {
+      const value = date.toLocaleDateString()
+      const formatedValue = value.split('.').reverse().join('-')
+      input.value = formatedValue
+    },
+    onSelect: (instance, date) => {
+      const value = date.toLocaleDateString()
+      const formatedValue = value.split('.').reverse().join('-')
+
+      console.log(formatedValue)
+    },
+    onShow: instance => {
+      // console.log('Calendar showing.')
+    },
+  })
+}
+//<Календарь на странице курс валют >====================================================================================================
+
+//<Календари на странице календарь>====================================================================================================
+if (document.querySelector('.inner-calendar-page')) {
+  //<calendar page>====================================================================================================
+  const calendarPageStart = document.querySelector('.inner-calendar-page__start-item')
+  const calendarPageEnd = document.querySelector('.inner-calendar-page__end-item')
+  const calendarStart = datepicker(calendarPageStart, {
+    customDays,
+    customMonths,
+    overlayButton,
+    overlayPlaceholder,
+    startDay: 1,
+    alwaysShow: true,
+    id: 5,
+    dateSelected: new Date(),
+    minDate: new Date(),
+    formatter: (input, date, instance) => {
+      const value = date.toLocaleDateString()
+      const formatedValue = value.split('.').reverse().join('-')
+      input.value = formatedValue
+    },
+
+    onSelect: (instance, date) => {},
+    onShow: instance => {
+      // console.log('Calendar START.')
+    },
+  })
+
+  const calendarEnd = datepicker(calendarPageEnd, {
+    customDays,
+    customMonths: customMonths,
+    overlayButton,
+    overlayPlaceholder: 'Год (4 цифры)',
+    startDay: 1,
+    alwaysShow: true,
+    id: 5,
+    startDate: nextMonth,
+
+    formatter: (input, date, instance) => {
+      const value = date.toLocaleDateString()
+      const formatedValue = value.split('.').reverse().join('-')
+      input.value = formatedValue
+    },
+
+    onSelect: (instance, date) => {},
+    onShow: instance => {},
+    onMonthChange: instance => {},
+  })
+}
+//<Календари на странице календарь>====================================================================================================
+
+//<Календарь на странице Поиск тура>====================================================================================================
+if (document.querySelector('.filter-form-date__start') || document.querySelector('.filter-form-date__end')) {
+  const dateOption = {
+    id: 1,
+    customDays,
+    customMonths,
+    overlayButton,
+    overlayPlaceholder,
+    dateSelected: new Date(),
+    minDate: new Date(),
+    startDay: 1,
+    formatter: (input, date, instance) => {
+      const value = date.toLocaleDateString()
+      const val = value.split('.').reverse().join('-')
+      input.value = val
+    },
+    onSelect: function (input, instance, date) {
+      input_focus_add(input.el)
+    },
+  }
+
+  document.querySelector('.filter-input-end').value = new Date().toLocaleDateString()
+  const start = datepicker('.filter-input-start', dateOption)
+  const end = datepicker('.filter-input-end', {
+    id: 1,
+    customDays,
+    customMonths,
+    overlayButton,
+    overlayPlaceholder,
+    minDate: new Date(),
+
+    startDay: 1,
+    formatter: (input, date, instance) => {
+      const value = date.toLocaleDateString()
+      const val = value.split('.').reverse().join('-')
+      input.value = val
+    },
+    onSelect: function (input, instance, date) {
+      input_focus_add(input.el)
+    },
+  })
+}
+//<Календарь на странице Поиск тура>====================================================================================================
+
+//<SORT SELECT on filter page>====================================================================================================
+if (document.querySelector('.filter-header__sort')) {
+  const filterPageSelect = document.querySelector('.filter-header__sort')
+  const filterPageSelectItem = new Choices(filterPageSelect, {
+    silent: false,
+    items: [],
+    choices: [],
+    renderChoiceLimit: -1,
+    maxItemCount: -1,
+
+    delimiter: ',',
+
+    searchEnabled: false,
+    searchChoices: true,
+    searchFloor: 1,
+    searchResultLimit: 4,
+    searchFields: ['label', 'value'],
+    position: 'auto',
+    resetScrollPosition: true,
+    shouldSort: true,
+    shouldSortItems: false,
+    sorter: () => {},
+    placeholder: true,
+    placeholderValue: null,
+    searchPlaceholderValue: null,
+    prependValue: null,
+    appendValue: null,
+    renderSelectedChoices: 'auto',
+    loadingText: 'Загрузка...',
+    noResultsText: 'Не найдено',
+    noChoicesText: 'No choices to choose from',
+    itemSelectText: '',
+
+    classNames: {
+      containerOuter: 'choices',
+      containerInner: 'choices__inner',
+      input: 'choices__input',
+      inputCloned: 'choices__input--cloned',
+      list: 'choices__list',
+      listItems: 'choices__list--multiple',
+      listSingle: 'choices__list--single',
+      listDropdown: 'choices__list--dropdown',
+      item: 'choices__item',
+      itemSelectable: 'choices__item--selectable',
+      itemDisabled: 'choices__item--disabled',
+      itemChoice: 'choices__item--choice',
+      placeholder: 'choices__placeholder',
+      group: 'choices__group',
+      groupHeading: 'choices__heading',
+      button: 'choices__button',
+      activeState: 'is-active',
+      focusState: 'is-focused',
+      openState: 'is-open',
+      disabledState: 'is-disabled',
+      highlightedState: 'is-highlighted',
+      selectedState: 'is-selected',
+      flippedState: 'is-flipped',
+      loadingState: 'is-loading',
+      noResults: 'has-no-results',
+      noChoices: 'has-no-choices',
+    },
+
+    fuseOptions: {
+      include: 'score',
+    },
+    callbackOnInit: null,
+    callbackOnCreateTemplates: null,
+  })
+
+  filterPageSelect.addEventListener('showDropdown', function (event) {
+    console.log('sort select')
+  })
+}
+//<SORT SELECT on filter page>====================================================================================================
+
+//<SORT TOUR ON REVIEWS PAGE>====================================================================================================
+if (document.querySelector('.item-sort-reviews__tour')) {
+  const reviewsPageTour = document.querySelector('.item-sort-reviews__tour')
+  const reviewsPageTourItem = new Choices(reviewsPageTour, {
+    silent: false,
+    items: [],
+    choices: [],
+    renderChoiceLimit: -1,
+    maxItemCount: -1,
+    delimiter: ',',
+    searchEnabled: true,
+    searchChoices: true,
+    searchFloor: 1,
+    searchResultLimit: 4,
+    searchFields: ['label', 'value'],
+    position: 'auto',
+    resetScrollPosition: true,
+    shouldSort: true,
+    shouldSortItems: false,
+    sorter: () => {},
+    placeholder: true,
+    placeholderValue: null,
+    searchPlaceholderValue: 'Поиск',
+    prependValue: null,
+    appendValue: null,
+    renderSelectedChoices: 'auto',
+    loadingText: 'Загрузка...',
+    noResultsText: 'Не найдено',
+    noChoicesText: 'No choices to choose from',
+    itemSelectText: '',
+
+    classNames: {
+      containerOuter: 'choices',
+      containerInner: 'choices__inner',
+      input: 'choices__input',
+      inputCloned: 'choices__input--cloned',
+      list: 'choices__list',
+      listItems: 'choices__list--multiple',
+      listSingle: 'choices__list--single',
+      listDropdown: 'choices__list--dropdown',
+      item: 'choices__item',
+      itemSelectable: 'choices__item--selectable',
+      itemDisabled: 'choices__item--disabled',
+      itemChoice: 'choices__item--choice',
+      placeholder: 'choices__placeholder',
+      group: 'choices__group',
+      groupHeading: 'choices__heading',
+      button: 'choices__button',
+      activeState: 'is-active',
+      focusState: 'is-focused',
+      openState: 'is-open',
+      disabledState: 'is-disabled',
+      highlightedState: 'is-highlighted',
+      selectedState: 'is-selected',
+      flippedState: 'is-flipped',
+      loadingState: 'is-loading',
+      noResults: 'has-no-results',
+      noChoices: 'has-no-choices',
+    },
+
+    fuseOptions: {
+      include: 'score',
+    },
+    callbackOnInit: null,
+    callbackOnCreateTemplates: null,
+  })
+
+  reviewsPageTour.addEventListener('showDropdown', function (event) {
+    console.log('sort tour')
+  })
+}
+//<SORT TOUR ON REVIEWS PAGE>====================================================================================================
+
+//<SORT GUIDE ON REVIEWS PAGE>====================================================================================================
+if (document.querySelector('.item-sort-reviews__guide')) {
+  const reviewsPageGuide = document.querySelector('.item-sort-reviews__guide')
+
+  const reviewsPageGuideItem = new Choices(reviewsPageGuide, {
+    silent: false,
+    items: [],
+    choices: [],
+    renderChoiceLimit: -1,
+    maxItemCount: -1,
+
+    delimiter: ',',
+
+    searchEnabled: true,
+    searchChoices: true,
+    searchFloor: 1,
+    searchResultLimit: 4,
+    searchFields: ['label', 'value'],
+    position: 'auto',
+    resetScrollPosition: true,
+    placeholder: true,
+    placeholderValue: 'null',
+    searchPlaceholderValue: 'Поиск',
+    prependValue: null,
+    appendValue: null,
+    renderSelectedChoices: 'auto',
+    loadingText: 'Загрузка...',
+    noResultsText: 'Не найдено',
+    noChoicesText: 'No choices to choose from',
+    itemSelectText: '',
+
+    classNames: {
+      containerOuter: 'choices',
+      containerInner: 'choices__inner',
+      input: 'choices__input',
+      inputCloned: 'choices__input--cloned',
+      list: 'choices__list',
+      listItems: 'choices__list--multiple',
+      listSingle: 'choices__list--single',
+      listDropdown: 'choices__list--dropdown',
+      item: 'choices__item',
+      itemSelectable: 'choices__item--selectable',
+      itemDisabled: 'choices__item--disabled',
+      itemChoice: 'choices__item--choice',
+      placeholder: 'choices__placeholder',
+      group: 'choices__group',
+      groupHeading: 'choices__heading',
+      button: 'choices__button',
+      activeState: 'is-active',
+      focusState: 'is-focused',
+      openState: 'is-open',
+      disabledState: 'is-disabled',
+      highlightedState: 'is-highlighted',
+      selectedState: 'is-selected',
+      flippedState: 'is-flipped',
+      loadingState: 'is-loading',
+      noResults: 'has-no-results',
+      noChoices: 'has-no-choices',
+    },
+
+    fuseOptions: {
+      include: 'score',
+    },
+    callbackOnInit: null,
+    callbackOnCreateTemplates: null,
+  })
+
+  reviewsPageGuide.addEventListener('showDropdown', function (event) {
+    console.log('sort guide')
+  })
+}
+//<SORT GUIDE ON REVIEWS PAGE>====================================================================================================
+
+//<SORT DATE ON REVIEWS PAGE>====================================================================================================
+if (document.querySelector('.item-sort-reviews__date')) {
+  const reviewsPageDate = document.querySelector('.item-sort-reviews__date')
+
+  const reviewsPageDateItem = new Choices(reviewsPageDate, {
+    silent: false,
+    items: [],
+    choices: [],
+    renderChoiceLimit: -1,
+    maxItemCount: -1,
+
+    delimiter: ',',
+
+    searchEnabled: false,
+    searchChoices: true,
+    searchFloor: 1,
+    searchResultLimit: 4,
+    searchFields: ['label', 'value'],
+    position: 'auto',
+    resetScrollPosition: true,
+    shouldSort: true,
+    shouldSortItems: false,
+    sorter: () => {},
+    placeholder: true,
+    placeholderValue: null,
+    searchPlaceholderValue: null,
+    prependValue: null,
+    appendValue: null,
+    renderSelectedChoices: 'auto',
+    loadingText: 'Загрузка...',
+    noResultsText: 'Не найдено',
+    noChoicesText: 'No choices to choose from',
+    itemSelectText: '',
+
+    classNames: {
+      containerOuter: 'choices',
+      containerInner: 'choices__inner',
+      input: 'choices__input',
+      inputCloned: 'choices__input--cloned',
+      list: 'choices__list',
+      listItems: 'choices__list--multiple',
+      listSingle: 'choices__list--single',
+      listDropdown: 'choices__list--dropdown',
+      item: 'choices__item',
+      itemSelectable: 'choices__item--selectable',
+      itemDisabled: 'choices__item--disabled',
+      itemChoice: 'choices__item--choice',
+      placeholder: 'choices__placeholder',
+      group: 'choices__group',
+      groupHeading: 'choices__heading',
+      button: 'choices__button',
+      activeState: 'is-active',
+      focusState: 'is-focused',
+      openState: 'is-open',
+      disabledState: 'is-disabled',
+      highlightedState: 'is-highlighted',
+      selectedState: 'is-selected',
+      flippedState: 'is-flipped',
+      loadingState: 'is-loading',
+      noResults: 'has-no-results',
+      noChoices: 'has-no-choices',
+    },
+
+    fuseOptions: {
+      include: 'score',
+    },
+    callbackOnInit: null,
+    callbackOnCreateTemplates: null,
+  })
+
+  reviewsPageDate.addEventListener('showDropdown', function (event) {
+    console.log('sort date')
+  })
+}
+//<SORT DATE ON REVIEWS PAGE>====================================================================================================
+
+//<SORT RATING ON REVIEWS PAGE>====================================================================================================
+if (document.querySelector('.item-sort-reviews__rating')) {
+  const reviewsPageRating = document.querySelector('.item-sort-reviews__rating')
+
+  const reviewsPageRatingItem = new Choices(reviewsPageRating, {
+    silent: false,
+    items: [],
+    choices: [],
+    renderChoiceLimit: -1,
+    maxItemCount: -1,
+
+    delimiter: ',',
+
+    searchEnabled: false,
+    searchChoices: true,
+    searchFloor: 1,
+    searchResultLimit: 4,
+    searchFields: ['label', 'value'],
+    position: 'auto',
+    resetScrollPosition: true,
+    shouldSort: true,
+    shouldSortItems: false,
+    sorter: () => {},
+    placeholder: true,
+    placeholderValue: null,
+    searchPlaceholderValue: null,
+    prependValue: null,
+    appendValue: null,
+    renderSelectedChoices: 'auto',
+    loadingText: 'Загрузка...',
+    noResultsText: 'Не найдено',
+    noChoicesText: 'No choices to choose from',
+    itemSelectText: '',
+
+    classNames: {
+      containerOuter: 'choices',
+      containerInner: 'choices__inner',
+      input: 'choices__input',
+      inputCloned: 'choices__input--cloned',
+      list: 'choices__list',
+      listItems: 'choices__list--multiple',
+      listSingle: 'choices__list--single',
+      listDropdown: 'choices__list--dropdown',
+      item: 'choices__item',
+      itemSelectable: 'choices__item--selectable',
+      itemDisabled: 'choices__item--disabled',
+      itemChoice: 'choices__item--choice',
+      placeholder: 'choices__placeholder',
+      group: 'choices__group',
+      groupHeading: 'choices__heading',
+      button: 'choices__button',
+      activeState: 'is-active',
+      focusState: 'is-focused',
+      openState: 'is-open',
+      disabledState: 'is-disabled',
+      highlightedState: 'is-highlighted',
+      selectedState: 'is-selected',
+      flippedState: 'is-flipped',
+      loadingState: 'is-loading',
+      noResults: 'has-no-results',
+      noChoices: 'has-no-choices',
+    },
+
+    fuseOptions: {
+      include: 'score',
+    },
+    callbackOnInit: null,
+    callbackOnCreateTemplates: null,
+  })
+
+  reviewsPageRating.addEventListener('showDropdown', function (event) {
+    console.log('sort rating')
+  })
+}
+//<SORT RATING ON REVIEWS PAGE>====================================================================================================
+
 
 let scr_body = document.querySelector('body');
 let scr_blocks = document.querySelectorAll('._scr-sector');
@@ -3334,5 +3919,85 @@ function scroll_animate(event) {
 	}
 	//If native scroll
 	//disableScroll();
+}
+
+console.log(5555)
+/*!***************************************************
+ * google-translate.js v1.0.3
+ * https://Get-Web.Site/
+ * author: Vitalii P.
+ *****************************************************/
+
+const googleTranslateConfig = {
+  /* Original language */
+  lang: 'ru',
+  /* The language we translate into on the first visit*/
+  /* Язык, на который переводим при первом посещении */
+  langFirstVisit: 'en',
+  /* Если скрипт не работает на поддомене, 
+    раскомментируйте и
+    укажите основной домен в свойстве domain */
+  // domain: 'http://localhost:3000/',
+}
+function TranslateInit() {
+  if (googleTranslateConfig.langFirstVisit && !Cookies.get('googtrans')) {
+    // Если установлен язык перевода для первого посещения и куки не назначены
+    TranslateCookieHandler('/auto/' + googleTranslateConfig.langFirstVisit)
+  }
+
+  let code = TranslateGetCode()
+  // Находим флаг с выбранным языком для перевода и добавляем к нему активный класс
+  if (document.querySelector('[data-google-lang="' + code + '"]') !== null) {
+    document.querySelector('[data-google-lang="' + code + '"]').classList.add('language__img_active')
+  }
+
+  if (code == googleTranslateConfig.lang) {
+    // Если язык по умолчанию, совпадает с языком на который переводим
+    // То очищаем куки
+    TranslateCookieHandler(null, googleTranslateConfig.domain)
+  }
+
+  // Инициализируем виджет с языком по умолчанию
+  new google.translate.TranslateElement({
+    pageLanguage: googleTranslateConfig.lang,
+  })
+
+  // Вешаем событие  клик на флаги
+  TranslateEventHandler('click', '[data-google-lang]', function (e) {
+    TranslateCookieHandler('/' + googleTranslateConfig.lang + '/' + e.getAttribute('data-google-lang'), googleTranslateConfig.domain)
+    // Перезагружаем страницу
+    window.location.reload()
+  })
+}
+
+function TranslateGetCode() {
+  // Если куки нет, то передаем дефолтный язык
+  let lang = Cookies.get('googtrans') != undefined && Cookies.get('googtrans') != 'null' ? Cookies.get('googtrans') : googleTranslateConfig.lang
+  return lang.match(/(?!^\/)[^\/]*$/gm)[0]
+}
+
+function TranslateCookieHandler(val, domain) {
+  // Записываем куки /язык_который_переводим/язык_на_который_переводим
+  Cookies.set('googtrans', val)
+  Cookies.set('googtrans', val, {
+    domain: '.' + document.domain,
+  })
+
+  if (domain == 'undefined') return
+  // записываем куки для домена, если он назначен в конфиге
+  Cookies.set('googtrans', val, {
+    domain: domain,
+  })
+
+  Cookies.set('googtrans', val, {
+    domain: '.' + domain,
+  })
+}
+
+function TranslateEventHandler(event, selector, handler) {
+  document.addEventListener(event, function (e) {
+    let el = e.target.closest(selector)
+    if (el) handler(el)
+  })
 }
 
