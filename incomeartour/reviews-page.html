@@ -17,6 +17,7 @@
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""
   />
+
   <script
     src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
@@ -220,27 +221,53 @@
 
               <div class="block-page-header__bottom">
                 <div class="block-page-header__text">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dolorem dignissimos earum laudantium accusamus ipsa recusandae assumenda ducimus odit ut modi
-                    perspiciatis similique, delectus facere magni quasi! Earum, reiciendis ea?
-                  </p>
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut dolorem dignissimos earum laudantium accusamus ipsa recusandae assumenda ducimus odit ut modi
-                    perspiciatis similique, delectus facere magni quasi! Earum, reiciendis ea?
-                  </p>
+                  Текст описание блок доп. инф: текст описание блок доп. инф: текст описание блок доп. инфТекст описание блок доп. инф: текст описание блок доп. инф: текст описание
+                  блок доп. инфТекст описание блок доп. инф: текст описание блок доп. инф: текст описание блок доп. инфТекст описание блок доп. инф: текст описание блок доп. инф:
+                  текст описание блок доп. инфТекст описание блок доп. инф: текст описание блок доп. инф: текст описание блок доп. инфТекст описание блок доп. инф: текст описание
+                  блок доп. инф: текст описание блок доп. инф
                 </div>
               </div>
             </div>
-            <!-- 
-            <div class="page-header__img"></div>
-            <div class="page-header__top">
-              <div class="page-header__icon">@@flag</div>
-              <div class="page-header__header">@@pageHeader</div>
-            </div>
-            <div class="page-header__text">@@pageText</div> -->
           </div>
         </section>
         <!--  -->
+
+        <section class="reviews-page__sort sort-reviews-page">
+          <div class="sort-reviews-page__container _container">
+            <!--  -->
+            <div class="sort-reviews-page__item item-sort-reviews">
+              <select class="item-sort-reviews__tour" placeholder="Select an item">
+                <option value="" disabled selected>по Туру</option>
+                <option value="1">название тура</option>
+                <option value="2">название тура</option>
+                <option value="3">название тура</option>
+              </select>
+            </div>
+            <!--  -->
+            <div class="sort-reviews-page__item item-sort-reviews">
+              <select class="item-sort-reviews__guide">
+                <option value="" disabled selected>по Гиду</option>
+                <option value="1">имя гида</option>
+                <option value="2">имя гида</option>
+                <option value="3">имя гида</option>
+              </select>
+            </div>
+            <div class="sort-reviews-page__item item-sort-reviews">
+              <select class="item-sort-reviews__date">
+                <option value="" disabled selected>по дате от-до</option>
+                <option value="1">от старых к новым</option>
+                <option value="2">от новых к старым</option>
+              </select>
+            </div>
+            <div class="sort-reviews-page__item item-sort-reviews">
+              <select class="item-sort-reviews__rating">
+                <option value="" disabled selected>по оценке от-до</option>
+                <option value="1">от самой низкой</option>
+                <option value="2">от самой высокой</option>
+              </select>
+            </div>
+          </div>
+        </section>
 
         <!-- <SINGLE ОТЗЫВЫ>======================================================================================== -->
 <section class="single-reviews">
@@ -280,12 +307,6 @@
           <div class="item-single-reviews__text-block _read-more" data-text-limit="200">
             <div class="item-single-reviews__text _read-more__text">
               Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
-              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
-              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
-              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
-              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
-              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
-              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
             </div>
             <button class="item-single-reviews__read-more _read-more__btn">Развернуть</button>
           </div>
@@ -311,14 +332,13 @@
           </div>
         </div>
       </div>
-      <div class="list-single-reviews__view-all">Смотреть больше</div>
+      <a href="./reviews-page.html" class="list-single-reviews__view-all">Смотреть больше</a>
     </div>
     <!-- <Добавление Отзыва>======================================================================================== -->
     <div class="single-reviews__add-new add-new-single-reviews">
       <div class="add-new-single-reviews__title _title2">Добавить отзыв</div>
 
       <form action="" method="GET" class="add-new-single-reviews__form form-single-review">
-        <!-- <input type="hidden" name="productId" id="productId" value="12" /> -->
         <div class="form-single-review__first-row">
           <!--  -->
           <div class="form-single-review__choices">
@@ -649,6 +669,11 @@
 <script src="https://unpkg.com/tippy.js@6"></script>
 <script src="js/vendors.min.js"></script>
 <script src="js/app.min.js"></script>
+<!--  -->
+
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- <script src="js/google-translate.js"></script> -->
+<!-- <script src="js/google-translate1.js"></script> -->
 
   </body>
 </html>

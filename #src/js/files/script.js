@@ -5,12 +5,15 @@ const $ = document.querySelector.bind(document)
 
 const currentLanguage = html.getAttribute('lang')
 
+//<PRELOADER>====================================================================================================
 const preloader = document.querySelector('.preloader')
 document.addEventListener('DOMContentLoaded', () => {
   // body.classList.remove('_lock')
   preloader.remove()
 })
+//<PRELOADER>====================================================================================================
 
+//<HOME PAGE VIEW HANDLER>====================================================================================================
 const changeViewButton = document.querySelector('#changeViewButton')
 const itemTour = document.querySelectorAll('.item-tour')
 const itemList = document.querySelector('.tour-list')
@@ -31,10 +34,12 @@ const changeViewHandler = e => {
     changeViewButton.classList.add('icon-grid-handler')
   }
 }
-// if (changeViewButton) {
-//   changeViewButton.addEventListener('click', changeViewHandler)
-// }
+if (changeViewButton) {
+  changeViewButton.addEventListener('click', changeViewHandler)
+}
+//<HOME PAGE VIEW HANDLER>====================================================================================================
 
+//<Tooltips>====================================================================================================
 tippy('.tooltip-link', {
   duration: 0,
   animation: 'fade',

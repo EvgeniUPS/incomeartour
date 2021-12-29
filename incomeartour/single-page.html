@@ -17,6 +17,7 @@
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""
   />
+
   <script
     src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
@@ -297,13 +298,13 @@
   <div class="main-single__bottom bottom-main-single">
     <div class="bottom-main-single__route">
       <div class="bottom-main-single__flags">
-        <a href="#" class="bottom-main-single__flag">
+        <a href="#" class="bottom-main-single__flag tooltip-link" data-tippy-content="Германия">
           <img src="./img/flags/4x3/de.svg" alt="Германия" />
         </a>
-        <a href="#" class="bottom-main-single__flag">
+        <a href="#" class="bottom-main-single__flag tooltip-link" data-tippy-content="Италия">
           <img src="./img/flags/4x3/it.svg" alt="Италия" />
         </a>
-        <a href="#" class="bottom-main-single__flag">
+        <a href="#" class="bottom-main-single__flag tooltip-link" data-tippy-content="Франция">
           <img src="./img/flags/4x3/fr.svg" alt="Франция" />
         </a>
       </div>
@@ -440,12 +441,25 @@
               </div> -->
             </div>
             <!--  -->
+
+            <h3 class="staff-manager__title">Нужна помощь?</h3>
+            <div class="staff-manager__subtitle">Мы с радостью вам поможем</div>
             <div class="single-main__staff staff-single">
               <div class="staff-single__column staff-manager">
-                <h3 class="staff-manager__title">Нужна помощь?</h3>
-                <div class="staff-manager__subtitle">Мы с радостью вам поможем</div>
+                <h2 class="staff-manager__title">Менеджеры</h2>
+                <!-- <div class="staff-manager__subtitle">Мы с радостью вам поможем</div> -->
                 <div class="staff-manager__list list-staff">
                   <!--  -->
+                  <div class="list-staff__item">
+                    <div class="list-staff__photo">
+                      <img src="./img/staff1.jpg" alt="Менеджер 01" />
+                    </div>
+                    <div class="list-staff__desc">
+                      <div class="list-staff__name">Менеджер 01</div>
+                      <div class="list-staff__text">Текст описания, строка вторая строка третья</div>
+                    </div>
+                  </div>
+
                   <div class="list-staff__item">
                     <div class="list-staff__photo">
                       <img src="./img/staff1.jpg" alt="Менеджер 01" />
@@ -486,10 +500,19 @@
                 </div>
               </div>
               <div class="staff-single__column staff-guide">
-                <p class="staff-guide__subtitle">Гид</p>
-                <h2 class="staff-guide__title">Гид</h2>
+                <!-- <p class="staff-guide__subtitle">Гид1</p> -->
+                <h2 class="staff-guide__title">Гиды</h2>
                 <div class="staff-guide__list list-staff">
                   <!--  -->
+                  <div class="list-staff__item">
+                    <div class="list-staff__photo">
+                      <img src="./img/staff1.jpg" alt="Гид 01" />
+                    </div>
+                    <div class="list-staff__desc">
+                      <div class="list-staff__name">Гид 01</div>
+                      <div class="list-staff__text">Текст описания, строка вторая строка третья</div>
+                    </div>
+                  </div>
                   <div class="list-staff__item">
                     <div class="list-staff__photo">
                       <img src="./img/staff1.jpg" alt="Гид 01" />
@@ -853,12 +876,6 @@
           <div class="item-single-reviews__text-block _read-more" data-text-limit="200">
             <div class="item-single-reviews__text _read-more__text">
               Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
-              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
-              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
-              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
-              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
-              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
-              Благодарим Инкомартур и лично Андрея Кочетова за прекрасную организацию путешествия, заботу о туристах, интересные и познавательные рассказы. До новых встреч!
             </div>
             <button class="item-single-reviews__read-more _read-more__btn">Развернуть</button>
           </div>
@@ -884,14 +901,13 @@
           </div>
         </div>
       </div>
-      <div class="list-single-reviews__view-all">Смотреть больше</div>
+      <a href="./reviews-page.html" class="list-single-reviews__view-all">Смотреть больше</a>
     </div>
     <!-- <Добавление Отзыва>======================================================================================== -->
     <div class="single-reviews__add-new add-new-single-reviews">
       <div class="add-new-single-reviews__title _title2">Добавить отзыв</div>
 
       <form action="" method="GET" class="add-new-single-reviews__form form-single-review">
-        <!-- <input type="hidden" name="productId" id="productId" value="12" /> -->
         <div class="form-single-review__first-row">
           <!--  -->
           <div class="form-single-review__choices">
@@ -1645,6 +1661,11 @@
 <script src="https://unpkg.com/tippy.js@6"></script>
 <script src="js/vendors.min.js"></script>
 <script src="js/app.min.js"></script>
+<!--  -->
+
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- <script src="js/google-translate.js"></script> -->
+<!-- <script src="js/google-translate1.js"></script> -->
 
   </body>
 </html>

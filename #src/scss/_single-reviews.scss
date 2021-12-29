@@ -24,6 +24,9 @@
   }
   &__view-all {
     text-align: center;
+    display: block;
+    font-weight: 700;
+    color: inherit;
   }
 }
 .item-single-reviews {
@@ -196,6 +199,7 @@
       gap: 20px;
       @media (max-width: 768px) {
         flex-direction: column-reverse;
+        gap: 0;
       }
     }
     &__choices {
@@ -236,7 +240,6 @@
 
 .form-single-review__first-row {
   border-bottom: 1px solid #ccc;
-
   .choices {
     margin-bottom: 20px;
     // min-width: 400px;
@@ -260,7 +263,7 @@
   .choices__inner {
     height: 44px;
     background-color: #fff;
-    margin-top: 15px;
+    // margin-top: 15px;
     color: $colorRed;
     border: 1px solid #000;
     border-radius: 2px;
@@ -269,7 +272,7 @@
   }
   .choices[data-type*='select-one']:after {
     // background-color: tomato;
-    margin-top: 3.5px;
+    // margin-top: 3.5px;
   }
   .choices[data-type*='select-one'].is-open:after {
     margin-top: -4.5px;
@@ -281,6 +284,7 @@
     line-height: 100%;
   }
   .choices__placeholder {
+    // text-transform: uppercase;
     opacity: 1;
   }
   > label {
@@ -357,8 +361,10 @@
   }
 
   &__bottom {
+    transition: all 0.8s ease 0s;
     font-size: 14px;
     opacity: 0;
+
     text-align: center;
     span {
       font-weight: 700;

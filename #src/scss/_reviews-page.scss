@@ -3,3 +3,58 @@
     max-width: 100%;
   }
 }
+
+.reviews-page {
+  // .reviews-page__sort
+  &__sort {
+  }
+}
+
+.sort-reviews-page {
+  background-color: $colorBeige;
+  min-height: 100px;
+  padding: 5px 0;
+  display: flex;
+  align-items: center;
+  @include adaptiv-value('margin-bottom', 60, 40, 1);
+  // .sort-reviews-page__container
+  &__container {
+    flex: 1 1 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: space-around;
+    @media (max-width: 768px) {
+      gap: 5px;
+    }
+  }
+  // .sort-reviews-page__item
+  &__item {
+    flex: 0 0 250px;
+    @media (max-width: 768px) {
+      flex: 1 1 100%;
+    }
+  }
+}
+.choices__list {
+  text-transform: uppercase;
+}
+.choices__inner {
+  @media (max-width: 768px) {
+  }
+}
+
+.item-sort-reviews {
+  // .item-sort-reviews__tour
+  &__tour {
+  }
+  // .item-sort-reviews__guide
+  &__guide {
+  }
+  // .item-sort-reviews__date
+  &__date {
+  }
+  // .item-sort-reviews__rating
+  &__rating {
+  }
+}

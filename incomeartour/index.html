@@ -17,6 +17,7 @@
     integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
     crossorigin=""
   />
+
   <script
     src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
     integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
@@ -355,17 +356,17 @@
           <div class="tour-list__flags tour-flags">
             <div class="tour-flags__countries">
               <div class="tour-flags__flag">
-                <a href="#">
+                <a href="#" class="tool tooltip-link" data-tippy-content="Германия">
                   <img src="./img/flags/4x3/de.svg" alt="Германия" />
                 </a>
               </div>
               <div class="tour-flags__flag">
-                <a href="#">
+                <a href="#" class="tool tooltip-link" data-tippy-content="Нидерланды">
                   <img src="./img/flags/4x3/fr.svg" alt="Нидерланды" />
                 </a>
               </div>
               <div class="tour-flags__flag">
-                <a href="#">
+                <a href="#" class="tool tooltip-link" data-tippy-content="Франция">
                   <img src="./img/flags/4x3/ar.svg" alt="Франция" />
                 </a>
               </div>
@@ -1389,6 +1390,13 @@
 
 <!-- *************** -->
 
+
+        <!--  -->
+        <div class="language">
+          <b data-google-lang="ru">ru</b>
+          <b data-google-lang="uk">ua</b>
+          <b data-google-lang="en">en</b>
+        </div>
         <!--  -->
       </main>
       <footer class="footer">
@@ -1627,6 +1635,11 @@
 <script src="https://unpkg.com/tippy.js@6"></script>
 <script src="js/vendors.min.js"></script>
 <script src="js/app.min.js"></script>
+<!--  -->
+
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
+<!-- <script src="js/google-translate.js"></script> -->
+<!-- <script src="js/google-translate1.js"></script> -->
 
   </body>
 </html>

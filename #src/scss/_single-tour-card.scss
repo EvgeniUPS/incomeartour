@@ -7,7 +7,8 @@
 .main-single {
   display: flex;
   flex-direction: column;
-
+  @media (max-width: 768px) {
+  }
   // .main-single__top
   &__top {
     width: 100%;
@@ -24,6 +25,7 @@
   margin-bottom: 55px;
   @media (max-width: 768px) {
     flex-direction: column;
+    margin-bottom: 20px;
   }
   // .top-main-single__col
   &__col {
