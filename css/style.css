@@ -4592,6 +4592,7 @@ button.swiper-pagination-bullet {
 }
 
 .tour-list-block__bottom {
+  margin-top: 30px;
   text-transform: uppercase;
   margin-bottom: 100px;
   font-size: 15px;
@@ -4616,7 +4617,10 @@ button.swiper-pagination-bullet {
 }
 
 .tour-list_grid .item-tour_grid .tour-list__title {
-  height: 45px;
+  min-height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .tour-list_grid .tour-labels__item {
@@ -4652,6 +4656,10 @@ button.swiper-pagination-bullet {
   color: rgba(0, 0, 0, 0.5);
 }
 
+.tour-list_grid .tour-info {
+  padding-right: 35px;
+}
+
 .tour-list_grid .tour-info__duration {
   margin-bottom: 10px;
 }
@@ -4667,6 +4675,7 @@ button.swiper-pagination-bullet {
 }
 
 .tour-list_grid .tour-price {
+  padding-right: 35px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
@@ -4675,7 +4684,7 @@ button.swiper-pagination-bullet {
 .tour-list_grid .tour-price__main {
   font-size: 13px;
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .tour-list_grid .tour-price__main span {
@@ -4684,20 +4693,21 @@ button.swiper-pagination-bullet {
 
 .tour-list_grid .tour-price__currency {
   font-size: 20px;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .tour-list_grid .tour-price__description {
   font-size: 11px;
   line-height: 140%;
-  margin-bottom: 28px;
+  margin-bottom: 0px;
 }
 
 .tour-list_grid .tour-buttons {
-  padding: 30px 35px;
+  padding: 20px 35px 0;
   display: flex;
-  gap: 5px;
+  gap: 10px;
   justify-content: space-between;
+  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -4713,6 +4723,7 @@ button.swiper-pagination-bullet {
 }
 
 .tour-list_grid .tour-reviews {
+  padding-right: 35px;
   color: rgba(0, 0, 0, 0.9);
   display: flex;
   justify-content: flex-end;
@@ -4773,7 +4784,7 @@ button.swiper-pagination-bullet {
 }
 
 .item-tour_grid {
-  padding-bottom: 60px;
+  padding-bottom: 30px;
   border: 1px solid rgba(0, 0, 0, 0.2);
   position: relative;
 }
@@ -4788,6 +4799,10 @@ button.swiper-pagination-bullet {
 
 .item-tour_grid .tour-labels__item {
   background-color: #fff;
+}
+
+.item-tour_grid .tour-price-price {
+  gap: 0;
 }
 
 #changeViewButton {
@@ -4949,7 +4964,7 @@ button.swiper-pagination-bullet {
   justify-content: space-between;
   gap: 10px;
   flex-wrap: wrap;
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 .news-block__item {
@@ -6265,6 +6280,7 @@ button.swiper-pagination-bullet {
 .item-card-list__img {
   width: 100%;
   position: relative;
+  min-height: 320px;
 }
 
 .item-card-list__img img {
@@ -10772,24 +10788,6 @@ body[data-aos-easing=ease-in-out-quart] [data-aos] {
   text-transform: uppercase;
 }
 
-body {
-  top: 0 !important;
-}
-
-.goog-text-highlight {
-  background-color: transparent !important;
-  box-shadow: none !important;
-}
-
-.skiptranslate {
-  display: none !important;
-  height: 0 !important;
-}
-
-.language b {
-  cursor: pointer;
-}
-
 @media (min-width: 768px) {
   .main-header .menu-burger-body li a:hover {
     color: #fff;
@@ -10822,10 +10820,6 @@ body {
 
   .checkbox a:hover {
     text-decoration: none;
-  }
-
-  .slider-add-exc__slide {
-    cursor: pointer;
   }
 
   .slider-add-exc__slide:hover .slider-add-exc__descr {
@@ -11029,6 +11023,13 @@ body {
   }
 
   .tour-list-block__bottom {
+    margin-top: calc(
+        10px + 20 *
+          ((100vw - 320px) / 910)
+      );
+  }
+
+  .tour-list-block__bottom {
     margin-bottom: calc(
         44px + 56 *
           ((100vw - 320px) / 910)
@@ -11079,7 +11080,7 @@ body {
 
   .news-block__list {
     margin-bottom: calc(
-        30px + 30 *
+        10px + 20 *
           ((100vw - 320px) / 910)
       );
   }
@@ -11651,6 +11652,7 @@ body {
 
   .tour-list_grid .tour-buttons {
     flex-direction: column;
+    gap: 10px;
   }
 
   .item-hot__details {
@@ -11999,7 +12001,7 @@ body {
     border-right: 1px solid #000;
     border-left: 1px solid #000;
     border-bottom: 1px solid #000;
-    padding: 5px 10px 26px;
+    padding: 5px 10px 10px;
   }
 
   .tour-list__date {
@@ -12152,7 +12154,7 @@ body {
   }
 
   .photo-slider {
-    height: 200px;
+    height: 250px;
   }
 
   .news-block__list {

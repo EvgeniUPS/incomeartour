@@ -1368,8 +1368,8 @@ if (document.querySelector('.slider-add-exc')) {
       },
     },
     navigation: {
-      nextEl: '.add-exc-button-next2',
-      prevEl: '.add-exc-button-prev2',
+      nextEl: '._slider-button_next',
+      prevEl: '._slider-button_prev',
     },
   })
 }
@@ -2056,8 +2056,7 @@ if (searchDirection) {
       noResults: 'has-no-results',
       noChoices: 'has-no-choices',
     },
-    // Choices uses the great Fuse library for searching. You
-    // can find more options here: https://github.com/krisk/Fuse#options
+
     fuseOptions: {
       include: 'score',
     },
@@ -2138,8 +2137,7 @@ if (searchTransport) {
       noResults: 'has-no-results',
       noChoices: 'has-no-choices',
     },
-    // Choices uses the great Fuse library for searching. You
-    // can find more options here: https://github.com/krisk/Fuse#options
+
     fuseOptions: {
       include: 'score',
     },
@@ -2147,6 +2145,7 @@ if (searchTransport) {
     callbackOnCreateTemplates: null,
   })
 }
+
 if (document.querySelector('#choiceGuide')) {
   const choiceGuide = document.querySelector('#choiceGuide')
   const choiceGuideItem = new Choices(choiceGuide, {
@@ -2219,8 +2218,7 @@ if (document.querySelector('#choiceGuide')) {
       noResults: 'has-no-results',
       noChoices: 'has-no-choices',
     },
-    // Choices uses the great Fuse library for searching. You
-    // can find more options here: https://github.com/krisk/Fuse#options
+
     fuseOptions: {
       include: 'score',
     },
@@ -2301,8 +2299,7 @@ if (document.querySelector('#choiceTour')) {
       noResults: 'has-no-results',
       noChoices: 'has-no-choices',
     },
-    // Choices uses the great Fuse library for searching. You
-    // can find more options here: https://github.com/krisk/Fuse#options
+
     fuseOptions: {
       include: 'score',
     },
@@ -2460,8 +2457,7 @@ if (document.querySelector('#filterWhereBuy')) {
       noResults: 'has-no-results',
       noChoices: 'has-no-choices',
     },
-    // Choices uses the great Fuse library for searching. You
-    // can find more options here: https://github.com/krisk/Fuse#options
+
     fuseOptions: {
       include: 'score',
     },
@@ -2489,6 +2485,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const changeViewButton = document.querySelector('#changeViewButton')
 const itemTour = document.querySelectorAll('.item-tour')
 const itemList = document.querySelector('.tour-list')
+
 const changeViewHandler = e => {
   itemList.classList.toggle('tour-list_list')
   itemList.classList.toggle('tour-list_grid')
@@ -2831,9 +2828,16 @@ if (document.querySelector('.item-tour_list')) {
     el.setAttribute('data-aos', 'fade-right')
     el.setAttribute('data-aos-once', 'true')
   })
+
   itemsTourOdd.forEach(el => {
     el.setAttribute('data-aos', 'fade-left')
     el.setAttribute('data-aos-once', 'true')
+  })
+
+  const gridItem = document.querySelectorAll('.item-tour_grid')
+
+  gridItem.forEach(el => {
+    el.classList.remove('aos-init')
   })
 }
 
@@ -2870,6 +2874,31 @@ function hideToggleViewWhereBuy() {
 window.addEventListener(
   'resize',
   e => {
+    if (window.innerWidth <= 992) {
+      if (document.querySelector('#changeViewButton')) {
+        const handlerView = document.querySelector('#changeViewButton')
+        handlerView.style.display = 'none'
+      }
+
+      if (document.querySelector('.tour-list_grid')) {
+        const tourList = document.querySelector('.tour-list')
+        tourList.classList.remove('tour-list_grid')
+
+        const itemsTourGrid = document.querySelectorAll('.item-tour_grid')
+        itemsTourGrid.forEach(el => {
+          el.classList.remove('item-tour_grid')
+          el.classList.add('item-tour_list')
+        })
+      }
+    }
+
+    if (window.innerWidth > 992) {
+      if (document.querySelector('#changeViewButton')) {
+        const handlerView = document.querySelector('#changeViewButton')
+        handlerView.style.display = 'block'
+      }
+    }
+
     if (window.innerWidth <= 768) {
       hideToggleViewWhereBuy
     }
@@ -3922,91 +3951,4 @@ function scroll_animate(event) {
 }
 
 
-/**
- * Minified by jsDelivr using Terser v3.14.1.
- * Original file: /npm/js-cookie@2.2.1/src/js.cookie.js
- * 
- * Do NOT use SRI with dynamically generated files! More information: https://www.jsdelivr.com/using-sri-with-dynamic-files
- */
-!function(e){var n;if("function"==typeof define&&define.amd&&(define(e),n=!0),"object"==typeof exports&&(module.exports=e(),n=!0),!n){var t=window.Cookies,o=window.Cookies=e();o.noConflict=function(){return window.Cookies=t,o}}}(function(){function e(){for(var e=0,n={};e<arguments.length;e++){var t=arguments[e];for(var o in t)n[o]=t[o]}return n}function n(e){return e.replace(/(%[0-9A-Z]{2})+/g,decodeURIComponent)}return function t(o){function r(){}function i(n,t,i){if("undefined"!=typeof document){"number"==typeof(i=e({path:"/"},r.defaults,i)).expires&&(i.expires=new Date(1*new Date+864e5*i.expires)),i.expires=i.expires?i.expires.toUTCString():"";try{var c=JSON.stringify(t);/^[\{\[]/.test(c)&&(t=c)}catch(e){}t=o.write?o.write(t,n):encodeURIComponent(String(t)).replace(/%(23|24|26|2B|3A|3C|3E|3D|2F|3F|40|5B|5D|5E|60|7B|7D|7C)/g,decodeURIComponent),n=encodeURIComponent(String(n)).replace(/%(23|24|26|2B|5E|60|7C)/g,decodeURIComponent).replace(/[\(\)]/g,escape);var f="";for(var u in i)i[u]&&(f+="; "+u,!0!==i[u]&&(f+="="+i[u].split(";")[0]));return document.cookie=n+"="+t+f}}function c(e,t){if("undefined"!=typeof document){for(var r={},i=document.cookie?document.cookie.split("; "):[],c=0;c<i.length;c++){var f=i[c].split("="),u=f.slice(1).join("=");t||'"'!==u.charAt(0)||(u=u.slice(1,-1));try{var a=n(f[0]);if(u=(o.read||o)(u,a)||n(u),t)try{u=JSON.parse(u)}catch(e){}if(r[a]=u,e===a)break}catch(e){}}return e?r[e]:r}}return r.set=i,r.get=function(e){return c(e,!1)},r.getJSON=function(e){return c(e,!0)},r.remove=function(n,t){i(n,"",e(t,{expires:-1}))},r.defaults={},r.withConverter=t,r}(function(){})});
-//# sourceMappingURL=/sm/b0ce608ffc029736e9ac80a8dd6a7db2da8e1d45d2dcfc92043deb2214aa30d8.map
-console.log(111)
-/*!***************************************************
- * google-translate.js v1.0.3
- * https://Get-Web.Site/
- * author: Vitalii P.
- *****************************************************/
-
-const googleTranslateConfig = {
-  /* Original language */
-  lang: 'ru',
-  /* The language we translate into on the first visit*/
-  /* Язык, на который переводим при первом посещении */
-  // langFirstVisit: 'en',
-  /* Если скрипт не работает на поддомене, 
-    раскомментируйте и
-    укажите основной домен в свойстве domain */
-  domain: 'translate.evgeniups.zzz.com.ua/',
-}
-function TranslateInit() {
-  if (googleTranslateConfig.langFirstVisit && !Cookies.get('googtrans')) {
-    // Если установлен язык перевода для первого посещения и куки не назначены
-    TranslateCookieHandler('/auto/' + googleTranslateConfig.langFirstVisit)
-  }
-
-  let code = TranslateGetCode()
-  // Находим флаг с выбранным языком для перевода и добавляем к нему активный класс
-  if (document.querySelector('[data-google-lang="' + code + '"]') !== null) {
-    document.querySelector('[data-google-lang="' + code + '"]').classList.add('language__img_active')
-  }
-
-  if (code == googleTranslateConfig.lang) {
-    // Если язык по умолчанию, совпадает с языком на который переводим
-    // То очищаем куки
-    TranslateCookieHandler(null, googleTranslateConfig.domain)
-  }
-
-  // Инициализируем виджет с языком по умолчанию
-  new google.translate.TranslateElement({
-    pageLanguage: googleTranslateConfig.lang,
-  })
-
-  // Вешаем событие  клик на флаги
-  TranslateEventHandler('click', '[data-google-lang]', function (e) {
-    TranslateCookieHandler('/' + googleTranslateConfig.lang + '/' + e.getAttribute('data-google-lang'), googleTranslateConfig.domain)
-    // Перезагружаем страницу
-    window.location.reload()
-  })
-}
-
-function TranslateGetCode() {
-  // Если куки нет, то передаем дефолтный язык
-  let lang = Cookies.get('googtrans') != undefined && Cookies.get('googtrans') != 'null' ? Cookies.get('googtrans') : googleTranslateConfig.lang
-  return lang.match(/(?!^\/)[^\/]*$/gm)[0]
-}
-
-function TranslateCookieHandler(val, domain) {
-  // Записываем куки /язык_который_переводим/язык_на_который_переводим
-  Cookies.set('googtrans', val)
-  Cookies.set('googtrans', val, {
-    domain: '.' + document.domain,
-  })
-
-  if (domain == 'undefined') return
-  // записываем куки для домена, если он назначен в конфиге
-  Cookies.set('googtrans', val, {
-    domain: domain,
-  })
-
-  Cookies.set('googtrans', val, {
-    domain: '.' + domain,
-  })
-}
-
-function TranslateEventHandler(event, selector, handler) {
-  document.addEventListener(event, function (e) {
-    let el = e.target.closest(selector)
-    if (el) handler(el)
-  })
-}
 
