@@ -2936,6 +2936,8 @@ window.addEventListener('DOMContentLoaded', () => {
   AOS.init({ duration: 1200, offset: 120 })
 })
 
+console.log('test')
+
 
 //<month lang>====================================================================================================
 if (currentLanguage === 'ru') {
