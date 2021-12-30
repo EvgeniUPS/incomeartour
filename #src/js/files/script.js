@@ -455,7 +455,6 @@ function readMore() {
 
     readMore.addEventListener('click', e => {
       if (!e.target.classList.contains('_read-more__btn')) return
-      console.log('more')
       readMore.querySelector('._read-more__text').textContent = text
       readMore.querySelector('._read-more__btn').style.display = 'none'
     })
@@ -467,3 +466,4 @@ window.addEventListener('DOMContentLoaded', () => {
   readMore()
   AOS.init({ duration: 1200, offset: 120 })
 })
+
