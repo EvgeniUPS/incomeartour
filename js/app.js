@@ -2935,7 +2935,6 @@ window.addEventListener('DOMContentLoaded', () => {
   AOS.init({ duration: 1200, offset: 120 })
 })
 
-console.log(12121)
 
 
 //<month lang>====================================================================================================
