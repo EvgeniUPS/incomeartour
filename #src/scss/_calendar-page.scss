@@ -10,6 +10,8 @@
   }
   // .inner-calendar-page__wrapper
   &__wrapper {
+    position: relative;
+    z-index: 4;
     input {
       height: 0;
       opacity: 0;

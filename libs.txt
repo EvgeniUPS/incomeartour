@@ -1,0 +1,8 @@
+https://leafletjs.com/reference.html карта 
+https://github.com/Choices-js/Choices кастомный селект
+https://www.npmjs.com/package/js-datepicker календари
+https://michalsnik.github.io/aos/ анимация при скролле
+https://fancyapps.com/docs/ui/fancybox/ галерея
+https://swiperjs.com/ слайдер 
+https://atomiks.github.io/tippyjs/  всплывающие подсказки
+

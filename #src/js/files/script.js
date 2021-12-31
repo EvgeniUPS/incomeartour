@@ -44,6 +44,7 @@ if (changeViewButton) {
 tippy('.tooltip-link', {
   duration: 0,
   animation: 'fade',
+  
 })
 tippy('.tooltip-link-click', {
   duration: 0,
